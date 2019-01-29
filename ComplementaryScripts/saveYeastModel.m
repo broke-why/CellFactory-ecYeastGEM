@@ -22,7 +22,7 @@ scriptFolder = fileparts(which(mfilename));
 currentDir = cd(scriptFolder);
 
 %Set minimal media
-cd modelCuration
+cd modelexpansion
 model = minimal_Y6(model);
 cd ..
 
