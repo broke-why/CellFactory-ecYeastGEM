@@ -1,0 +1,5 @@
+rxnID	coefficient	Metabolite standard name	Metabolite_type	compartment
+MNXR137087	1	Ala-Gln	reactant	extracellular
+MNXR137087	1	H+	reactant	extracellular
+MNXR137087	1	H+	product	cytoplasm
+MNXR137087	1	Ala-Gln	product	cytoplasm
