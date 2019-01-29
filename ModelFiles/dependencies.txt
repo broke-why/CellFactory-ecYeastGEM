@@ -1,0 +1,7 @@
+MATLAB	9.1.0.441655 (R2016b)
+libSBML	5.17.0
+RAVEN_toolbox	2.1.0
+COBRA_toolbox	3.0.3
+SBML_level	3
+SBML_version	1
+fbc_version	2
