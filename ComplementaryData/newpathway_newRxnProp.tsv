@@ -1,0 +1,7 @@
+rxnID	rev	GPR	rxn_name_seed	EC	rxnID_kegg	"Source;reason"
+MNXR106663	0		malonyl-CoA reductase	1.2.1.75	R00740	"rhea:26446;3-oxopropanoate_P Source "
+MNXR101737	0		3-hydroxypropionate dehydrogenase	"1.1.1.-;1.1.1.298"	R01043	"rhea:26438;3-hydroxypropanoate_P Source "
+3-hydroxypropionate transport 	0		3-hydroxypropionate transport			"NA;3-hydroxypropanoate_P Source "
+3-hydroxypropionate exchange	0		3-hydroxypropionate exchange			"NA;3-hydroxypropanoate_P Source "
+MNXR95865	0		beta-alanine-pyruvate aminotransferase	2.6.1.18	R00907	"rhea:14077;3-oxopropanoate_P Source"
+MNXR96077	0		aspartate 1-decarboxylase	"4.1.1.11;4.1.1.15"	R00489	"rhea:19497;beta-alanine_P Source"
