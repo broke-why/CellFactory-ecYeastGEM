@@ -4,11 +4,11 @@
 
 * Brief Model Description:
 
-This repository contains the data and script for in silico strain with protein constrainted genome-scale metabolic model of _Saccharomyces cerevisiae_. 
+This repository contains the data and script for _in silico_ strain with protein constrainted genome-scale metabolic model of _Saccharomyces cerevisiae_. 
 
 * Model KeyWords:
 
-**GEM Category:** Species; **Utilisation:** predictive simulation, multi-omics integrative analysis, _in silico_ strain design; **Field:** cell factory in silico design; **Model Source:** [Yeast 8.3](https://github.com/SysBioChalmers/yeast-GEM); **Taxonomy:** _Saccharomyces cerevisiae_; **Metabolic System:** General Metabolism; **Condition:** aerobic, glucose-limited, defined media, maximization of growth.
+**GEM Category:** Species; **Utilisation:** predictive simulation, multi-omics integrative analysis, _in silico_ strain design; **Field:** cell factory _in silico_ design; **Model Source:** [Yeast 8.3](https://github.com/SysBioChalmers/yeast-GEM); **Taxonomy:** _Saccharomyces cerevisiae_; **Metabolic System:** General Metabolism; **Condition:** aerobic, glucose-limited, defined media, maximization of growth.
 
 * Last update: 2018-12-01
 
@@ -83,6 +83,9 @@ Contributions are always welcome! Please read the [contributions guideline](http
   
 ## Contributors
 
-* [Eduard J. Kerkhoven](https://www.chalmers.se/en/staff/Pages/Eduard-Kerkhoven.aspx) ([@edkerk](https://github.com/edkerk)), Chalmers University of Technology, Sweden
-* [Feiran Li](https://www.chalmers.se/en/staff/Pages/feiranl.aspx) ([@feiranl](https://github.com/feiranl)), Chalmers University of Technology, Sweden
-* [Hongzhong Lu](https://www.chalmers.se/en/Staff/Pages/luho.aspx) ([@hongzhonglu](https://github.com/hongzhonglu)), Chalmers University of Technology, Sweden
+* [Eduard J. Kerkhoven](https://www.sysbio.se/people/eduard-kerkhoven/) ([@edkerk](https://github.com/edkerk)), Chalmers University of Technology, Sweden
+* [Feiran Li](https://www.sysbio.se/people/feiran-li) 
+([@feiranl](https://github.com/feiranl)), Chalmers University of Technology, Sweden
+* [Hongzhong Lu](https://www.sysbio.se/people/hongzhong-lu) ([@hongzhonglu](https://github.com/hongzhonglu)), Chalmers University of Technology, Sweden
+* [Yao Lu](hhttps://www.sysbio.se/people/yao-lu) 
+([@Yaolu](https://github.com/yaolu)), Chalmers University of Technology, Sweden
