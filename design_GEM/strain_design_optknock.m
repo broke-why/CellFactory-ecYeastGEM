@@ -29,7 +29,7 @@ model1 = changeObjective(model1,'r_2111');
 model1=changeRxnBounds(model1,'r_1714', -1.634, 'b'); %% qs glucose
 model1=changeRxnBounds(model1,'r_1808', 0.050, 'b'); %% q-glycerol
 model1=changeRxnBounds(model1,'r_2033', 0.0166, 'b'); %% q-pyruvate
-model1=changeRxnBounds(model1,'r_2056', 0.0, 'b');  %% q-succinate
+model1=changeRxnBounds(model1,'r_2056', 0.0, 'b');  %% q-succiate
 model1=changeRxnBounds(model1,'r_1634', 1.360, 'b'); %% q-acetate
 model1=changeRxnBounds(model1,'r_1761', 0, 'b'); %% q-ethonal
 FBAsolution1 = optimizeCbModel(model1,'max','one');
@@ -54,7 +54,7 @@ selectedRxnList = model1.rxns(1:200);
 %% 
 % Then, calculates the production of metabolites before running optKnock.
 
-% determine succinate production and growth rate
+% determine 3HP production and growth rate
 model1 = changeObjective(model1,'r_2111');
 fbaWT = optimizeCbModel(model1);
 succFluxWT = fbaWT.x(strcmp(model1.rxns, 'new5'));
@@ -65,7 +65,7 @@ succFluxWT = fbaWT.x(strcmp(model1.rxns, 'new5'));
 %%
 fprintf('\n...EXAMPLE 1: Finding optKnock sets of size 2 or less...\n\n')
 % Set optKnock options
-% The exchange of succinate will be the objective of the outer problem
+% The exchange of 3HP will be the objective of the outer problem
 options = struct('targetRxn', 'new5', 'numDel', 3);
 % We will impose that biomass be at least 50% of the biomass of wild-type
 constrOpt = struct('rxnList', {{biomass}},'values', 0.5*fbaWT.f, 'sense', 'G');
@@ -84,7 +84,7 @@ while nIter < threshold
         optKnockSol = OptKnock(model1, selectedRxnList, options, constrOpt, previousSolutions, 1);
     end
     
-    % determine succinate production and growth rate after optimization
+    % determine 3HP production and growth rate after optimization
     succFluxM1 = optKnockSol.fluxes(strcmp(model1.rxns, 'new5'));
     growthRateM1 = optKnockSol.fluxes(strcmp(model1.rxns, biomass));
     setM1 = optKnockSol.rxnList;
@@ -104,13 +104,13 @@ while nIter < threshold
             end
         end
         fprintf('\n');
-        fprintf('The production of succinate after optimization is %.3f \n', succFluxM1);
+        fprintf('The production of 3HP after optimization is %.3f \n', succFluxM1);
         fprintf('The growth rate after optimization is %.3f \n', growthRateM1);
         fprintf('...Performing coupling analysis...\n');
         %[type, maxGrowth, maxProd, minProd] = analyzeOptKnock(model1, setM1, 'new5');
         %fprintf('The solution is of type: %s\n', type);
         %fprintf('The maximun growth rate given the optKnock set is %.3f\n', maxGrowth);
-        %fprintf(['The maximun and minimun production of succinate given the optKnock set is ' ...
+        %fprintf(['The maximun and minimun production of 3HP given the optKnock set is ' ...
         %         '%.3f and %.3f, respectively \n\n'], minProd, maxProd);
         %if strcmp(type, 'growth coupled')
         %    singleProductionEnvelope(model, setM1, 'new5', biomass, 'savePlot', 1, 'showPlot', 1, ...
