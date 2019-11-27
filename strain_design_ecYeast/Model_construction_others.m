@@ -527,3 +527,131 @@ model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn8');
 FBAsolution=optimizeCbModel(model)
 save ecLimonene.mat model
+
+% 4-hydroxymandelic acid + mandelic acid
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=3.7*3600;
+MW1=36.597
+Kcat2=0.88*3600;
+Kcat3=120*3600;
+Kcat4=0.2153*3600;
+MW2=39.7487;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0204','s_1275','prot_Q5J1Q8','s_0456','s_4245'},'stoichCoeffList',[-1 -1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0951','s_1275','prot_Q5J1Q8','s_0456','s_4246','s_0794'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1 1],'reversible',false);
+model = addReaction(model,'r_0997No1','metaboliteList',{'s_0434','s_1429','prot_P08566','s_0261','s_0394','s_0794'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_0551','s_0803','s_1360','prot_P32449ly','s_0349','s_1322'},'stoichCoeffList',[-1 -1 -1 -1/Kcat4 1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4245','s_4247'},'stoichCoeffList',[-1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4247'},'stoichCoeffList',[-1],'reversible',false);
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4246','s_4248'},'stoichCoeffList',[-1 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'s_4248'},'stoichCoeffList',[-1],'reversible',false);
+model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_Q5J1Q8'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'prot_pool','prot_P32449ly'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn10','metaboliteList',{'s_4249','s_0427'},'stoichCoeffList',[-1 1],'reversible',false); % add anthranilate
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4249'},'stoichCoeffList',[1],'reversible',false); % add anthranilate
+model = removeGenes(model,'YER090W'); % delete TRP2
+model = removeGenes(model,'YGL202W'); % delete ARO8
+model = removeGenes(model,'YDR380W'); % delete ARO10
+model = removeGenes(model,'YLR134W'); % delete PDC5
+model=changeGeneAssociation(model,'newRxn1','hmaS');
+model=changeGeneAssociation(model,'newRxn2','hmaS');
+model=changeGeneAssociation(model,'newRxn3','ARO4K229L');
+model.geneShortNames(1124)={'hmaS'};
+model.geneShortNames(1125)={'ARO4K229L'};
+model.enzymes(964)={'Q5J1Q8'};
+model.enzymes(965)={'P32449ly'};
+model.enzGenes(964)={'hmaS'};
+model.enzGenes(965)={'ARO4K229L'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=3;
+model.metComps(4152)=3;
+model.metComps(4153)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn5');
+model=changeRxnBounds(model,'newRxn11',1,'u'); % add anthranilate
+model=changeRxnBounds(model,'r_1903_REV',1,'u'); % add phenylalanine
+model=changeRxnBounds(model,'r_0938No1',0,'u'); % for 4-hydroxymandelic acid production
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/Others/Models
+save ec4-hydroxymandelic_acid.mat model
+model=changeObjective(model,'newRxn7');
+model=changeRxnBounds(model,'r_1903_REV',0,'u'); 
+model=changeRxnBounds(model,'r_0938No1',Inf,'u'); 
+model=changeRxnBounds(model,'r_0939No1',0,'u'); % for mandelic acid production
+model=changeRxnBounds(model,'r_1913_REV',1,'u'); % add tyrosine
+FBAsolution=optimizeCbModel(model)
+save ecmandelic_acid.mat model
+
+% Oleanolic acid
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=0.77*3600;
+MW1=87.516;
+MW2=54.713;
+Kcat2=92.4996*3600;
+Kcat3=0.152*3600;
+Kcat4=3.3*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0037','prot_Q9MB42','s_4250'},'stoichCoeffList',[-1 -1/Kcat1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0794','s_4250','s_1275','s_1212','prot_Q2MJ20','s_0803','s_4251','s_1207'},'stoichCoeffList',[-2 -1 -3 -3 -1 4 1 3],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'prot_pool','prot_Q9MB42'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'prot_pool','prot_Q2MJ20'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4251','s_4252'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4252'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'r_0558No2','metaboliteList',{'pmet_r_0558','prot_P12683','s_0028','s_0529','s_1207'},'stoichCoeffList',[-1 -1/Kcat2 1 1 2],'reversible',false);
+model = addReaction(model,'r_1010No1','metaboliteList',{'s_0795','s_1204','s_1276','s_1448','prot_P32476','s_0038','s_0804','s_1199'},'stoichCoeffList',[-1 -1 -1 -1 -1/Kcat3 1 1 1],'reversible',false);
+model = addReaction(model,'r_1011No1','metaboliteList',{'s_0795','s_1213','s_1276','s_1448','prot_P32476','s_0038','s_0804','s_1208'},'stoichCoeffList',[-1 -1 -1 -1 -1/Kcat3 1 1 1],'reversible',false);
+model = addReaction(model,'r_1012No1','metaboliteList',{'s_0190','s_0794','s_1212','prot_P29704','s_0633','s_1207','s_1447'},'stoichCoeffList',[-2 -1 -1 -1/Kcat4 2 1 1],'reversible',false);
+model = removeGenes(model,'YBR020W'); % delete GAL1
+model=changeGeneAssociation(model,'newRxn1','GgbAS1');
+model=changeGeneAssociation(model,'newRxn2','CYP716A12');
+model.geneShortNames(1127)={'GgbAS1'};
+model.geneShortNames(1128)={'CYP716A12'};
+model.enzymes(964)={'Q9MB42'};
+model.enzymes(965)={'Q2MJ20'};
+model.enzGenes(964)={'GgbAS1'};
+model.enzGenes(965)={'CYP716A12'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn6');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecOleanolate.mat model
+
+% Fumaric acid
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=24.0266*3600;
+MW1=35.595;
+Kcat2=72.4806*3600;
+Kcat3=72.4804*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0794','s_1203','s_1271','prot_D6R7B7','s_0066','s_1198'},'stoichCoeffList',[-1 -1 -1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'r_0958No1','metaboliteList',{'pmet_r_0958','prot_P32327','s_0394','s_0794','s_1271','s_1322'},'stoichCoeffList',[-1 -1/Kcat2 1 1 1 1],'reversible',false);
+model = addReaction(model,'r_0958No2','metaboliteList',{'pmet_r_0958','prot_P11154','s_0394','s_0794','s_1271','s_1322'},'stoichCoeffList',[-1 -1/Kcat3 1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'prot_pool','prot_D6R7B7'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model=changeGeneAssociation(model,'newRxn1','RoMDH');
+model.geneShortNames(1128)={'RoMDH'};
+model.enzymes(964)={'D6R7B7'};
+model.enzGenes(964)={'RoMDH'};
+model.metComps(4147)=1;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'r_1798');
+model=changeRxnBounds(model,'r_0714_REVNo1',0,'u'); % block r_0714_REVNo1 (Mdh2p is known to be subject to glucose catabolite inactivation)
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/Others/Models
+save ecFumaric_acid.mat model
