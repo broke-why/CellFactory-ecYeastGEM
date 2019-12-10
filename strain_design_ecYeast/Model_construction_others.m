@@ -655,3 +655,41 @@ model=changeRxnBounds(model,'r_0714_REVNo1',0,'u'); % block r_0714_REVNo1 (Mdh2p
 FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/Others/Models
 save ecFumaric_acid.mat model
+
+% Pyruvate
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=57.4246*3600;
+MW1=48.872;
+Kcat2=167.9*3600;
+MW2=51.56;
+Kcat3=9.1304*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_1275','s_0794','s_1203','prot_A2RIB7','s_0803','s_1198'},'stoichCoeffList',[-1 -3 -1 -1/Kcat1 2 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_1207','s_1203','prot_P27306','s_1212','s_1198'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn2_REV','metaboliteList',{'s_1212','s_1198','prot_P27306','s_1207','s_1203'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'prot_pool','prot_A2RIB7'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'prot_pool','prot_P27306'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = removeGenes(model,'YLR044C');
+model = removeGenes(model,'YLR134W');
+model = removeGenes(model,'YGR087C');
+model=changeGeneAssociation(model,'newRxn1','noxE');
+model=changeGeneAssociation(model,'newRxn2','udhA');
+model=changeGeneAssociation(model,'newRxn2_REV','udhA');
+model.geneShortNames(1125)={'noxE'};
+model.geneShortNames(1126)={'udhA'};
+model.enzymes(964)={'A2RIB7'};
+model.enzymes(965)={'P27306'};
+model.enzGenes(964)={'noxE'};
+model.enzGenes(965)={'udhA'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.2,'l');
+model=changeObjective(model,'r_2033');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecPyruvate.mat model
