@@ -693,3 +693,72 @@ model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/Others/Models
 save ecPyruvate.mat model
+
+% Adipic acid
+load('eccis_Muconate.mat');
+Kcat1=8.376*3600;
+MW1=72.835;
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4213','s_1203','s_0794','prot_G2TQU6','s_4253','s_1198'},'stoichCoeffList',[-1 -1 -3 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn12','metaboliteList',{'prot_pool','prot_G2TQU6'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn13','metaboliteList',{'s_4253','s_4254'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn14','metaboliteList',{'s_4254'},'stoichCoeffList',[-1],'reversible',false); 
+model=changeGeneAssociation(model,'newRxn11','ERBC');
+model.geneShortNames(1129)={'ERBC'};
+model.enzymes(968)={'G2TQU6'};
+model.enzGenes(968)={'ERBC'};
+model.metComps(4155)=1;
+model.metComps(4156)=1;
+model.metComps(4157)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn14');
+model=changeRxnBounds(model,'r_2189_REV',1,'u'); % add oleic acid
+model=changeRxnBounds(model,'r_1757_REV',1,'u'); % add ergosterol
+model=changeRxnBounds(model,'r_2038_REV',1,'u'); % add riboflavin
+model=changeRxnBounds(model,'r_1807_REV',1,'u'); % add glutathione
+FBAsolution=optimizeCbModel(model)
+save ecAdipic_acid.mat model
+
+%Isobutanol + 3-Methyl-1-Butanol
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=32.2*3600;
+Kcat2=16.1*3600;
+Kcat3=50*3600;
+Kcat4=36.6*3600;
+Kcat5=1.96*3600;
+Kcat6=1140*3600;
+Kcat7=286*3600;
+model = addReaction(model,'r_0016No1','metaboliteList',{'pmet_r_0016','prot_P25605','prot_P07342','s_0039','s_0460'},'stoichCoeffList',[-1 -1/57960 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'r_0016No2','metaboliteList',{'pmet_r_0016','prot_P07342','s_0039','s_0460'},'stoichCoeffList',[-1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'r_0097No1','metaboliteList',{'prot_P25605','prot_P07342','pmet_r_0097','s_0146','s_0460'},'stoichCoeffList',[-1/28980 -1/Kcat2 -1 1 1],'reversible',false);
+model = addReaction(model,'r_0097No2','metaboliteList',{'prot_P07342','pmet_r_0097','s_0146','s_0460'},'stoichCoeffList',[-1/Kcat2 -1 1 1],'reversible',false);
+model = addReaction(model,'r_0352No1','metaboliteList',{'s_0016','prot_P39522','s_0233','s_0807'},'stoichCoeffList',[-1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'r_0353No1','metaboliteList',{'s_0008','prot_P39522','s_0060','s_0807'},'stoichCoeffList',[-1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'r_0096No1','metaboliteList',{'s_0146','s_0799','s_1214','prot_P06168','s_0016','s_1210'},'stoichCoeffList',[-1 -1 -1 -1/Kcat4 1 1],'reversible',false);
+model = addReaction(model,'r_0669No1','metaboliteList',{'s_0039','s_0799','s_1214','prot_P06168','s_0008','s_1210'},'stoichCoeffList',[-1 -1 -1 -1/Kcat5 1 1],'reversible',false);
+model = addReaction(model,'r_0854No1','metaboliteList',{'s_0794','s_0951','prot_Q06408','s_0456','s_1318'},'stoichCoeffList',[-1 -1 -1/Kcat6 1 1],'reversible',false);
+model = addReaction(model,'r_0163No1','metaboliteList',{'s_0680','s_1198','prot_P00331','s_0359','s_0794','s_1203'},'stoichCoeffList',[-1 -1 -1/Kcat7 1 1 1],'reversible',false);
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'r_1866');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecIsobutanol.mat model
+Kcat8=27.58*3600
+model = addReaction(model,'r_0024No1','metaboliteList',{'pmet_r_0024','prot_P06208','s_0162','s_0529','s_0794'},'stoichCoeffList',[-1 -1/Kcat8 1 1 1],'reversible',false);
+model = addReaction(model,'r_0025No1','metaboliteList',{'s_0233','s_0376','s_0807','prot_P06208','s_0164','s_0532','s_0799'},'stoichCoeffList',[-1 -1 -1 -1/Kcat8 1 1 1],'reversible',false);
+model=changeObjective(model,'r_1598');
+FBAsolution=optimizeCbModel(model)
+save ec3-methylbutanol.mat model
+
+
+
+
+
+
+
