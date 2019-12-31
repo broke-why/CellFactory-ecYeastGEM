@@ -1005,6 +1005,82 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/Others/Models
 save ecAmorphadiene.mat model
 
+% Ginsenosides (protopanaxadiol)
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+MW1=88.343;
+MW2=55.356;
+Kcat1=92.5526*3600;
+Kcat2=0.152*3600;
+Kcat3=3.3*3600;
+Kcat4=2.2*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0037','s_0803','prot_Q08IT1','s_4263'},'stoichCoeffList',[-1 -1 -1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0794','s_1275','s_4263','s_1212','prot_H2DH16','s_4264','s_0803','s_1207'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'prot_pool','prot_Q08IT1'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'prot_pool','prot_H2DH16'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4264','s_4265'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4265'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'r_0558No1','metaboliteList',{'pmet_r_0558','prot_P12684','s_0028','s_0529','s_1207'},'stoichCoeffList',[-1 -1/Kcat1 1 1 2],'reversible',false);
+model = addReaction(model,'r_1010No1','metaboliteList',{'s_0795','s_1204','s_1276','s_1448','prot_P32476','s_0038','s_0804','s_1199'},'stoichCoeffList',[-1 -1 -1 -1 -1/Kcat2 1 1 1],'reversible',false);
+model = addReaction(model,'r_1011No1','metaboliteList',{'s_0795','s_1213','s_1276','s_1448','prot_P32476','s_0038','s_0804','s_1208'},'stoichCoeffList',[-1 -1 -1 -1 -1/Kcat2 1 1 1],'reversible',false);
+model = addReaction(model,'r_1012No1','metaboliteList',{'s_0190','s_0794','s_1212','prot_P29704','s_0633','s_1207','s_1447'},'stoichCoeffList',[-2 -1 -1 -1/Kcat3 2 1 1],'reversible',false);
+model = addReaction(model,'r_0355No1','metaboliteList',{'s_0943','s_1376','prot_P08524','s_0633','s_0745'},'stoichCoeffList',[-1 -1 -1/Kcat4 1 1],'reversible',false);
+model = addReaction(model,'r_0462No1','metaboliteList',{'s_0745','s_0943','prot_P08524','s_0190','s_0633'},'stoichCoeffList',[-1 -1 -1/Kcat4 1 1],'reversible',false);
+model=changeGeneAssociation(model,'newRxn1','DDS');
+model=changeGeneAssociation(model,'newRxn2','PPDS');
+model.geneShortNames(1128)={'DDS'};
+model.geneShortNames(1129)={'PPDS'};
+model.enzymes(964)={'Q08IT1'};
+model.enzymes(965)={'H2DH16'};
+model.enzGenes(964)={'DDS'};
+model.enzGenes(965)={'PPDS'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn6');
+model=changeRxnBounds(model,'r_1900_REV',1,'u'); % add lysine
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/Others/Models
+save ecProtopanaxadiol.mat model
+
+% Monoterpenoids (geraniol)
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=1*3600;
+MW1=67.728;
+Kcat2=92.5526*3600;
+Kcat3=59800*3600;
+Kcat4=0.1212*3600;
+Kcat5=2.2*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0745','s_0803','prot_J9PZR5','s_4266','s_0633'},'stoichCoeffList',[-1 -1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'prot_pool','prot_J9PZR5'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4266','s_4267'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4267'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'r_0558No1','metaboliteList',{'pmet_r_0558','prot_P12684','s_0028','s_0529','s_1207'},'stoichCoeffList',[-1 -1/Kcat2 1 1 2],'reversible',false);
+model = addReaction(model,'r_0667No1','metaboliteList',{'s_0943','prot_P15496','s_1376'},'stoichCoeffList',[-1 -1/Kcat3 1],'reversible',false);
+model = addReaction(model,'r_0667_REVNo1','metaboliteList',{'s_1376','prot_P15496','s_0943'},'stoichCoeffList',[-1 -1/Kcat4 1],'reversible',false);
+model = addReaction(model,'r_0355No1','metaboliteList',{'s_0943','s_1376','prot_P08524','s_0633','s_0745'},'stoichCoeffList',[-1 -1 -1/Kcat5 1 1],'reversible',false);
+model = addReaction(model,'r_0462No1','metaboliteList',{'s_0745','s_0943','prot_P08524','s_0190','s_0633'},'stoichCoeffList',[-1 -1 -1/Kcat5 1 1],'reversible',false);
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.31,'l');
+model=changeObjective(model,'newRxn4');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecGeraniol.mat model
+
+
+
+
+
 
 
 
