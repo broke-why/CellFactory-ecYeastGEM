@@ -1139,21 +1139,7 @@ model = addReaction(model,'newRxn4','metaboliteList',{'s_4271'},'stoichCoeffList
 model = addReaction(model,'r_0558No1','metaboliteList',{'pmet_r_0558','prot_P12684','s_0028','s_0529','s_1207'},'stoichCoeffList',[-1 -1/Kcat1 1 1 2],'reversible',false);
 model = addReaction(model,'r_0559No1','metaboliteList',{'s_0367','s_0373','s_0803','prot_P54839','s_0218','s_0529','s_0794'},'stoichCoeffList',[-1 -1 -1 -1/Kcat2 1 1 1],'reversible',false);
 model = addReaction(model,'r_0560No1','metaboliteList',{'s_0370','s_0376','s_0807','prot_P54839','s_0221','s_0532','s_0799'},'stoichCoeffList',[-1 -1 -1 -1/Kcat2 1 1 1],'reversible',false);
-model = addReaction(model,'r_0698No1','metaboliteList',{'s_0037','prot_P38604','s_1059'},'stoichCoeffList',[-1 -1/Kcat3 1],'reversible',false);
-model=changeGeneAssociation(model,'newRxn1','LUP');
-model.geneShortNames(1128)={'LUP'};
-model.enzymes(964)={'A0A3B1EU92'};
-model.enzGenes(964)={'LUP'};
-model.metComps(4147)=1;
-model.metComps(4148)=1;
-model.metComps(4149)=3;
-model=changeRxnBounds(model,'r_1714_REV',1000,'u');
-model=changeRxnBounds(model,'r_2111',0.1,'l');
-model=changeObjective(model,'newRxn4');
-model=changeRxnBounds(model,'r_1710_REV',1,'u'); % add galactose
-FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
-save ecLupeol.mat model
+model = addReaction(model,'r_0698No1','metaboliteList',{'s_0037 + 6.8144e-05 prot_P38604  -> s_1059'},'stoichCoeffList',[-1 -1/Kcat3 1],'reversible',false);
 
 
 
