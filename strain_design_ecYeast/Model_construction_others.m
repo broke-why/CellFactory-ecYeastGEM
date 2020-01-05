@@ -1155,6 +1155,57 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/Others/Models
 save ecLupeol.mat model
 
+% ¦Â-Amyrin
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+MW1=87.516;
+MW2=55.298;
+MW3=20.508;
+Kcat1=0.77*3600;
+Kcat2=3.3*3600;
+Kcat3=2.2*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0037','prot_Q9MB42','s_4272'},'stoichCoeffList',[-1 -1/Kcat1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0795','s_1204','s_1276','s_1448','prot_Q92206','s_0038','s_0804','s_1199'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_0795','s_1213','s_1276','s_1448','prot_Q92206','s_0038','s_0804','s_1208'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_0943','prot_Q46822','s_1376'},'stoichCoeffList',[-1 -1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_1376','prot_Q46822','s_0943'},'stoichCoeffList',[-1 -1 1],'reversible',false);
+model = addReaction(model,'r_1012No1','metaboliteList',{'s_0190','s_0794','s_1212','prot_P29704','s_0633','s_1207','s_1447'},'stoichCoeffList',[-2 -1 -1 -1/Kcat2 2 1 1],'reversible',false);
+model = addReaction(model,'r_0355No1','metaboliteList',{'s_0943','s_1376','prot_P08524','s_0633','s_0745'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'r_0462No1','metaboliteList',{'s_0745','s_0943','prot_P08524','s_0190','s_0633'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'newRxn6','metaboliteList',{'prot_pool','prot_Q9MB42'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'prot_pool','prot_Q92206'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_Q46822'},'stoichCoeffList',[-MW3 1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'s_4272','s_4273'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn10','metaboliteList',{'s_4273'},'stoichCoeffList',[-1],'reversible',false); 
+model=changeGeneAssociation(model,'newRxn1','bAS');
+model=changeGeneAssociation(model,'newRxn2','CaERG1');
+model=changeGeneAssociation(model,'newRxn3','CaERG1');
+model=changeGeneAssociation(model,'newRxn4','EcIDI');
+model=changeGeneAssociation(model,'newRxn5','EcIDI');
+model.geneShortNames(1128)={'bAS'};
+model.geneShortNames(1129)={'CaERG1'};
+model.geneShortNames(1130)={'EcIDI'};
+model.enzymes(964)={'Q9MB42'};
+model.enzymes(965)={'Q92206'};
+model.enzymes(966)={'Q46822'};
+model.enzGenes(964)={'bAS'};
+model.enzGenes(965)={'CaERG1'};
+model.enzGenes(966)={'EcIDI'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn10');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecbeta_Amyrin.mat model 
 
 
 
