@@ -1176,8 +1176,48 @@ model = addReaction(model,'r_0462No1','metaboliteList',{'s_0745','s_0943','prot_
 model = addReaction(model,'newRxn6','metaboliteList',{'prot_pool','prot_Q9MB42'},'stoichCoeffList',[-MW1 1],'reversible',false);
 model = addReaction(model,'newRxn7','metaboliteList',{'prot_pool','prot_Q92206'},'stoichCoeffList',[-MW2 1],'reversible',false);
 model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_Q46822'},'stoichCoeffList',[-MW3 1],'reversible',false);
-model = addReaction(model,'newRxn9','metaboliteList',{'s_4270','s_4271'},'stoichCoeffList',[-1 1],'reversible',false); 
-model = addReaction(model,'newRxn4','metaboliteList',{'s_4271'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'newRxn9','metaboliteList',{'s_4272','s_4273'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn10','metaboliteList',{'s_4273'},'stoichCoeffList',[-1],'reversible',false); 
+model=changeGeneAssociation(model,'newRxn1','bAS');
+model=changeGeneAssociation(model,'newRxn2','CaERG1');
+model=changeGeneAssociation(model,'newRxn3','CaERG1');
+model=changeGeneAssociation(model,'newRxn4','EcIDI');
+model=changeGeneAssociation(model,'newRxn5','EcIDI');
+model.geneShortNames(1128)={'bAS'};
+model.geneShortNames(1129)={'CaERG1'};
+model.geneShortNames(1130)={'EcIDI'};
+model.enzymes(964)={'Q9MB42'};
+model.enzymes(965)={'Q92206'};
+model.enzymes(966)={'Q46822'};
+model.enzGenes(964)={'bAS'};
+model.enzGenes(965)={'CaERG1'};
+model.enzGenes(966)={'EcIDI'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn10');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecbeta_Amyrin.mat model 
+
+% Carotenoids (astaxanthin)
+load('ecbeta_Carotene.mat');
+model = ecModel_batch;
+MW1=35.989;
+MW2=32.017;
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4239','s_1275','prot_Q39982','s_4276','s_0803'},'stoichCoeffList',[-1 -1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn12','metaboliteList',{'s_4276','s_1275','prot_Q39982','s_4277','s_0803'},'stoichCoeffList',[-1 -1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn13','metaboliteList',{'s_0794 + s_1203 + s_4277 + s_1275 + prot_A0A0K0P8J8 -> s_0803 + s_4278 + s_1198'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+
+
+
 
 
 

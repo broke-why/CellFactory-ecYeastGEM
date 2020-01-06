@@ -1207,6 +1207,44 @@ FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/Others/Models
 save ecbeta_Amyrin.mat model 
 
+% Carotenoids (astaxanthin)
+load('ecbeta_Carotene.mat');
+MW1=35.989;
+MW2=32.017;
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4239','s_1275','prot_Q39982','s_4276','s_0803'},'stoichCoeffList',[-1 -1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn12','metaboliteList',{'s_4276','s_1275','prot_Q39982','s_4277','s_0803'},'stoichCoeffList',[-1 -1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn13','metaboliteList',{'s_0794','s_1203','s_4277','s_1275','prot_A0A0K0P8J8','s_0803','s_4278','s_1198'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn14','metaboliteList',{'s_0794','s_1203','s_4278','s_1275','prot_A0A0K0P8J8','s_0803','s_4279','s_1198'},'stoichCoeffList',[-1 -1 -1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn15','metaboliteList',{'prot_pool','prot_Q39982'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn16','metaboliteList',{'prot_pool','prot_A0A0K0P8J8'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn17','metaboliteList',{'s_4279','s_4280'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn18','metaboliteList',{'s_4280'},'stoichCoeffList',[-1],'reversible',false); 
+model=changeGeneAssociation(model,'newRxn11','bkt');
+model=changeGeneAssociation(model,'newRxn12','bkt');
+model=changeGeneAssociation(model,'newRxn13','crtZ');
+model=changeGeneAssociation(model,'newRxn14','crtZ');
+model.geneShortNames(1131)={'bkt'};
+model.geneShortNames(1132)={'crtZ'};
+model.enzymes(967)={'Q39982'};
+model.enzymes(968)={'A0A0K0P8J8'};
+model.enzGenes(967)={'bkt'};
+model.enzGenes(968)={'crtZ'};
+model.metComps(4155)=1;
+model.metComps(4156)=1;
+model.metComps(4157)=1;
+model.metComps(4158)=1;
+model.metComps(4159)=1;
+model.metComps(4160)=1;
+model.metComps(4161)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn18');
+FBAsolution=optimizeCbModel(model)
+save ecAstaxanthin.mat model
+
+
+
+
 
 
 
