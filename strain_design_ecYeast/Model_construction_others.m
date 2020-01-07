@@ -1240,7 +1240,59 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn18');
 FBAsolution=optimizeCbModel(model)
-save ecAstaxanthin.mat model
+
+% Farnesene + Santalene
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+MW1=66.183;
+Kcat1=0.0613*3600;
+MW2=63.937;
+Kcat2=0.075*3600;
+Kcat3=92.5526*3600;
+Kcat4=2.2*3600;
+Kcat5=0.825*3600;
+Kcat6=47.9999*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0190','prot_Q84LB2','s_4281','s_0633'},'stoichCoeffList',[-1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'prot_pool','prot_Q84LB2'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4281','s_4282'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4282'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'newRxn5','metaboliteList',{'s_0190','prot_E5LLI1','s_4283','s_0633'},'stoichCoeffList',[-1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn6','metaboliteList',{'prot_pool','prot_E5LLI1'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'s_4283','s_4284'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn8','metaboliteList',{'s_4284'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'r_0558No1','metaboliteList',{'pmet_r_0558','prot_P12684','s_0028','s_0529','s_1207'},'stoichCoeffList',[-1 -1/Kcat3 1 1 2],'reversible',false);
+model = addReaction(model,'r_0355No1','metaboliteList',{'s_0943','s_1376','prot_P08524','s_0633','s_0745'},'stoichCoeffList',[-1 -1 -1/Kcat4 1 1],'reversible',false);
+model = addReaction(model,'r_0462No1','metaboliteList',{'s_0745','s_0943','prot_P08524','s_0190','s_0633'},'stoichCoeffList',[-1 -1 -1/Kcat4 1 1],'reversible',false);
+model = addReaction(model,'r_1012No1','metaboliteList',{'s_0190','s_0794','s_1212','prot_P29704','s_0633','s_1207','s_1447'},'stoichCoeffList',[-2 -1 -1 -1/Kcat5 2 1 1],'reversible',false);
+model = addReaction(model,'r_0470No1','metaboliteList',{'s_0803','s_0991','s_1198','prot_P33327','s_0180','s_0419','s_0794','s_1203'},'stoichCoeffList',[-1 -1 -1 -1/Kcat6 1 1 1 1],'reversible',false);
+model = removeGenes(model,'YDR503C'); % delete LPP1
+model = removeGenes(model,'YDR284C'); % delete DPP1
+model = removeGenes(model,'YOR375C'); % delete GDH1
+model=changeGeneAssociation(model,'newRxn1','AFS');
+model=changeGeneAssociation(model,'newRxn5','SAS');
+model.geneShortNames(1125)={'AFS'};
+model.geneShortNames(1126)={'SAS'};
+model.enzymes(964)={'Q84LB2'};
+model.enzymes(965)={'E5LLI1'};
+model.enzGenes(964)={'AFS'};
+model.enzGenes(965)={'SAS'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=3;
+model.metComps(4150)=1;
+model.metComps(4151)=1;
+model.metComps(4152)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.043,'l');
+model=changeObjective(model,'newRxn4'); % for farnesene production
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/Others/Models
+save ecFarnesene.mat model
+model=changeObjective(model,'newRxn8'); % for santalene production
+model=changeRxnBounds(model,'r_2111',0.05,'l');
+FBAsolution=optimizeCbModel(model)
+save ecSantalene.mat model
 
 
 
