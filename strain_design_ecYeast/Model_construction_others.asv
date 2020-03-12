@@ -1660,46 +1660,6 @@ c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/Others/Models
-save ecTyrosine.mat model 
-
-% triacylglycerols
-cd ../../../ModelFiles/mat
-load('ecYeastGEM_batch.mat');
-model = ecModel_batch;
-Kcat1=65.3426*3600;
-Kcat2=23.1467*3600;
-model = addReaction(model,'r_0109No1','metaboliteList',{'s_0373','s_0434','s_0445','prot_P48445','prot_Q00955','s_0394','s_0794','s_1101','s_1322'},'stoichCoeffList',[-1 -1 -1 -1/450000/3600 -1/Kcat1 1 1 1 1],'reversible',false);
-model = addReaction(model,'r_2344No1','metaboliteList',{'s_2808','s_2954','prot_P32567','s_2966','s_2967'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2345No1','metaboliteList',{'s_2808','s_2955','prot_P32567','s_2966','s_2968'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2346No1','metaboliteList',{'s_2808','s_2956','prot_P32567','s_2966','s_2969'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2347No1','metaboliteList',{'s_2808','s_2957','prot_P32567','s_2966','s_2970'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2348No1','metaboliteList',{'s_2808','s_2958','prot_P32567','s_2966','s_2971'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2349No1','metaboliteList',{'s_2808','s_2959','prot_P32567','s_2966','s_2972'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2350No1','metaboliteList',{'s_2808','s_2960','prot_P32567','s_2966','s_2973'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'r_2351No1','metaboliteList',{'s_2808','s_2961','prot_P32567','s_2966','s_2974'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
-model = addReaction(model,'newRxn1','metaboliteList',{'s_1524','s_4310'},'stoichCoeffList',[-1 1],'reversible',false); 
-model = addReaction(model,'newRxn2','metaboliteList',{'s_4310'},'stoichCoeffList',[-1],'reversible',false); 
-model = removeGenes(model,'YMR313C'); % delete TGL3
-model = removeGenes(model,'YKR089C'); % delete TGL4
-model = removeGenes(model,'YOR081C'); % delete TGL5
-model = removeGenes(model,'YPL147W'); % delete PXA1
-model.metComps(4147)=3;
-model=changeRxnBounds(model,'r_1714_REV',1000,'u');
-model=changeRxnBounds(model,'r_2111',0.1,'l');
-model=changeObjective(model,'newRxn2');
-FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
-save ectriacylglycerol.mat model
-
-
-
-
-
-
-
-
-
-
-
+save ecbeta_Ionone.mat model 
 
 
