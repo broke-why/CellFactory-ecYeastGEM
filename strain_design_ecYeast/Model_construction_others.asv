@@ -1240,6 +1240,8 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn18');
 FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecAstaxanthin.mat model 
 
 % Farnesene + Santalene
 cd ../../../ModelFiles/mat
@@ -1780,11 +1782,162 @@ save ecARA.mat model
 model=changeObjective(model,'newRxn17'); % For EPA production
 FBAsolution=optimizeCbModel(model)
 save ecEPA.mat model
-model = addReaction(model,'newRxn24','metaboliteList',{'s_4318','s_2799','s_2782','s_2783','prot_D5KSD4','s_2785','s_2784','s_2808','s_2800','s_4325'},'stoichCoeffList',[-1 -2 -1 -3 1 1 1 1 1],'reversible',false); 
-model = addReaction(model,'newRxn25','metaboliteList',{'s_4312','s_2821','s_2817','s_2818','prot_A0A1Y5I9G7','s_2808','s_2820','s_4314'},'stoichCoeffList',[-1 -1 -1 -1 -1 2 1 1],'reversible',false); 
+model = addReaction(model,'newRxn24','metaboliteList',{'s_4318','s_2799','s_2782','s_2783','s_2785','s_2784','s_2808','s_2800','s_4325'},'stoichCoeffList',[-1 -2 -1 -3 1 1 1 1 1],'reversible',false); 
+model = addReaction(model,'newRxn25','metaboliteList',{'s_4325','s_2821','s_2817','s_2818','s_2808','s_2820','s_4326'},'stoichCoeffList',[-1 -1 -1 -1 2 1 1],'reversible',false); 
+model = addReaction(model,'newRxn26','metaboliteList',{'s_4326','s_4327'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn27','metaboliteList',{'s_4327','s_0809','prot_P41903','s_0801','s_0534','s_4328'},'stoichCoeffList',[-1 -1 -1 1 1 1],'reversible',false); 
+model = addReaction(model,'newRxn28','metaboliteList',{'s_4328','s_4329'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn29','metaboliteList',{'s_4329'},'stoichCoeffList',[-1],'reversible',false); 
+model.metComps(4167)=5;
+model.metComps(4168)=5;
+model.metComps(4169)=12;
+model.metComps(4170)=12;
+model.metComps(4171)=3;
+model=changeObjective(model,'newRxn29'); % For DHA production
+FBAsolution=optimizeCbModel(model)
+save ecDHA.mat model
 
+% n-Butanol
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=18.6*3600;
+MW1=47.186;
+Kcat2=18.54*3600;
+MW2=85.794;
+Kcat3=18.1*3600;
+MW3=38.953;
+Kcat4=27.58*3600;
+MW4=68.409;
+Kcat5=10.4*3600;
+Kcat6=8.3156*3600;
+MW7=40.825;
+Kcat8=1.74*3600;
+Kcat9=274.1995*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_1401','s_0376','prot_A0FDH8','s_4333'},'stoichCoeffList',[-1 -1 -1/Kcat1 1],'reversible',false); 
+model = addReaction(model,'newRxn2','metaboliteList',{'s_4333','s_0807','prot_P07264ly','s_4334'},'stoichCoeffList',[-1 -1 -1/Kcat2 1],'reversible',false); 
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4334','s_0807','prot_P07264ly','s_4335'},'stoichCoeffList',[-1 -1 -1/Kcat2 1],'reversible',false); 
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4335','s_1200','prot_P04173ly','s_0179','s_1205','s_0799','s_0460'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1 1 1],'reversible',false); 
+model = addReaction(model,'newRxn5','metaboliteList',{'s_0179','s_0807','s_0376','prot_P06208ly','s_0532','s_4336'},'stoichCoeffList',[-1 -1 -1 -1/Kcat4 1 1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4336','prot_P07264ly','s_4337'},'stoichCoeffList',[-1 -1/Kcat2 1],'reversible',false); 
+model = addReaction(model,'newRxn7','metaboliteList',{'s_4337','s_1200','prot_P04173ly','s_1205','s_0799','s_4338'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1 1],'reversible',false); 
+model = addReaction(model,'newRxn8','metaboliteList',{'s_4338','s_0799','prot_P04173ly','s_0460','s_4339'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false); 
+model = addReaction(model,'newRxn9','metaboliteList',{'s_4336','s_4340'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn10','metaboliteList',{'s_4339','s_4341'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4340','prot_P07264','s_4342'},'stoichCoeffList',[-1 -1/Kcat2 1],'reversible',false); 
+model = addReaction(model,'newRxn12','metaboliteList',{'s_4342','s_1198','prot_P04173','s_1203','s_0794','s_4343'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1 1],'reversible',false); 
+model = addReaction(model,'newRxn13','metaboliteList',{'s_4343','s_0794','prot_P04173','s_0456','s_4341'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false); 
+model = addReaction(model,'newRxn14','metaboliteList',{'s_4341','prot_Q06408','s_4344','s_0456'},'stoichCoeffList',[-1 -1/Kcat5 1 1],'reversible',false); 
+model = addReaction(model,'newRxn15','metaboliteList',{'s_4344','s_1203','s_0794','prot_P25377','s_1198','s_4345'},'stoichCoeffList',[-1 -1 -1 -1/Kcat6 1 1],'reversible',false); 
+model = addReaction(model,'newRxn16','metaboliteList',{'s_4345','s_4346'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn17','metaboliteList',{'s_4346'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'r_1129','metaboliteList',{'s_0529','prot_P38702','s_0532'},'stoichCoeffList',[-1 -1 1],'reversible',false); 
+model = addReaction(model,'r_4173No1','metaboliteList',{'s_3784','s_3785','prot_P25374','s_0957','s_3786'},'stoichCoeffList',[-1 -1 -1/Kcat8 1 1],'reversible',false); 
+model = addReaction(model,'r_4173_REVNo1','metaboliteList',{'s_0957','s_3786','prot_P25374','s_3785','s_3784'},'stoichCoeffList',[-1 -1 -1/Kcat9 1 1],'reversible',false); 
+model = addReaction(model,'newRxn18','metaboliteList',{'prot_pool','prot_A0FDH8'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn19','metaboliteList',{'prot_pool','prot_P07264ly'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn20','metaboliteList',{'prot_pool','prot_P04173ly'},'stoichCoeffList',[-MW3 1],'reversible',false);
+model = addReaction(model,'newRxn21','metaboliteList',{'prot_pool','prot_P06208ly'},'stoichCoeffList',[-MW4 1],'reversible',false);
+model = addReaction(model,'newRxn22','metaboliteList',{'prot_pool','prot_P38702'},'stoichCoeffList',[-MW7 1],'reversible',false);
+model = removeGenes(model,'YOL086C'); % delete ADH1
+model=changeGeneAssociation(model,'newRxn1','cimA');
+model=changeGeneAssociation(model,'newRxn2','LEU1m');
+model=changeGeneAssociation(model,'newRxn3','LEU1m');
+model=changeGeneAssociation(model,'newRxn4','LEU2m');
+model=changeGeneAssociation(model,'newRxn5','LEU4m');
+model=changeGeneAssociation(model,'newRxn6','LEU1m');
+model=changeGeneAssociation(model,'newRxn7','LEU2m');
+model=changeGeneAssociation(model,'newRxn8','LEU2m');
+model=changeGeneAssociation(model,'r_1129','LEU5');
+model.geneShortNames(1127)={'cimA'};
+model.geneShortNames(1128)={'LEU1m'};
+model.geneShortNames(1129)={'LEU2m'};
+model.geneShortNames(1130)={'LEU4m'};
+model.geneShortNames(1131)={'LEU5'};
+model.enzymes(964)={'A0FDH8'};
+model.enzymes(965)={'P07264ly'};
+model.enzymes(966)={'P04173ly'};
+model.enzymes(967)={'P06208ly'};
+model.enzymes(968)={'P38702'};
+model.enzGenes(964)={'cimA'};
+model.enzGenes(965)={'LEU1m'};
+model.enzGenes(966)={'LEU2m'};
+model.enzGenes(967)={'LEU4m'};
+model.enzGenes(968)={'LEU5'};
+model.metComps(4147)=1;
+model.metComps(4148)=9;
+model.metComps(4149)=1;
+model.metComps(4150)=9;
+model.metComps(4151)=9;
+model.metComps(4152)=1;
+model.metComps(4153)=1;
+model.metComps(4154)=9;
+model.metComps(4155)=9;
+model.metComps(4156)=9;
+model.metComps(4157)=9;
+model.metComps(4158)=1;
+model.metComps(4159)=1;
+model.metComps(4160)=1;
+model.metComps(4161)=1;
+model.metComps(4162)=1;
+model.metComps(4163)=1;
+model.metComps(4164)=3;
+model.metComps(4165)=1;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn17');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/Others/Models
+save ecn-Butanol.mat model
 
+% ergosterol
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'r_1757'); 
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/Others/Models
+save ecErgosterol.mat model
 
+% 2-phenylethanol
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=0.2153*3600;
+MW1=39.7487;
+Kcat2=0.062*3600;
+MW2=29.7468;
+Kcat3=130.8652*3600;
+MW3=19.151;
+Kcat4=1.74*3600;
+Kcat5=3080*3600;
+Kcat6=2400*3600;
+Kcat7=699.9998*3600;
+Kcat8=999.9992*3600;
+Kcat9=3864*3600;
+Kcat10=138.0002*3600;
+Kcat11=115.9998*3600;
+Kcat12=1140*3600;
+Kcat13=13.15*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0551','s_0803','s_1360','prot_P32449ly','s_0349','s_1322'},'stoichCoeffList',[-1 -1 -1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0515','prot_P32178ly','s_1377'},'stoichCoeffList',[-1 -1/Kcat2 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_1429','s_0434','prot_P0A6E1','s_0261','s_0794','s_0394'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1 1],'reversible',false); 
+model = addReaction(model,'r_0279No1','metaboliteList',{'s_0324','prot_P28777','s_0515','s_1322'},'stoichCoeffList',[-1 -1/Kcat4 1 1],'reversible',false); 
+model = addReaction(model,'r_0026No4','metaboliteList',{'pmet_r_0026','prot_P38840','s_0180','s_1029'},'stoichCoeffList',[-1 -1/Kcat5 1 1],'reversible',false); 
+model = addReaction(model,'r_2117No1','metaboliteList',{'s_1032','s_1399','prot_P38840','s_0951','s_0955'},'stoichCoeffList',[-1 -1 -1/Kcat6 1 1],'reversible',false); 
+model = addReaction(model,'r_2118No1','metaboliteList',{'s_0951','s_1048','prot_P38840','s_0855','s_1032'},'stoichCoeffList',[-1 -1 -1/Kcat7 1 1],'reversible',false); 
+model = addReaction(model,'r_2119No1','metaboliteList',{'s_0204','s_0955','prot_P38840','s_1051','s_1399'},'stoichCoeffList',[-1 -1 -1/Kcat5 1 1],'reversible',false); 
+model = addReaction(model,'r_2117_REVNo1','metaboliteList',{'s_0951','s_0955','prot_P38840','s_1032','s_1399'},'stoichCoeffList',[-1 -1 -1/Kcat5 1 1],'reversible',false); 
+model = addReaction(model,'r_2119_REVNo1','metaboliteList',{'s_1051','s_1399','prot_P38840','s_0204','s_0955'},'stoichCoeffList',[-1 -1 -1/Kcat8 1 1],'reversible',false); 
+model = addReaction(model,'r_0938No1','metaboliteList',{'s_0794','s_1377','prot_P32452','s_0456','s_0803','s_0951'},'stoichCoeffList',[-1 -1 -1/Kcat9 1 1 1],'reversible',false); 
+model = addReaction(model,'r_1049No2','metaboliteList',{'pmet_r_1049 + 4.02576e-06 prot_P23254  -> s_0764 + s_1427'},'stoichCoeffList',[-1 -1/Kcat10 1 1],'reversible',false); 
 
-
-
+model = addReaction(model,'newRxn13','metaboliteList',{'s_4343','s_0794','prot_P04173','s_0456','s_4341'},'stoichCoeffList',[-1 -1 -1/Kcat3 1 1],'reversible',false); 
+model = addReaction(model,'newRxn14','metaboliteList',{'s_4341','prot_Q06408','s_4344','s_0456'},'stoichCoeffList',[-1 -1/Kcat5 1 1],'reversible',false); 
+model = addReaction(model,'newRxn15','metaboliteList',{'s_4344','s_1203','s_0794','prot_P25377','s_1198','s_4345'},'stoichCoeffList',[-1 -1 -1 -1/Kcat6 1 1],'reversible',false); 
+model = addReaction(model,'newRxn16','metaboliteList',{'s_4345','s_4346'},'stoichCoeffList',[-1 1],'reversible',false); 
