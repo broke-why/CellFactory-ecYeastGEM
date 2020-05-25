@@ -2250,57 +2250,18 @@ model = addReaction(model,'newRxn2','metaboliteList',{'s_0955','s_0965','s_0969'
 model = addReaction(model,'newRxn3','metaboliteList',{'s_4357','s_4356','s_4358'},'stoichCoeffList',[-1 -4 1],'reversible',false); 
 model = addReaction(model,'newRxn4','metaboliteList',{'s_4358','s_4359'},'stoichCoeffList',[-1 1],'reversible',false); 
 model = addReaction(model,'newRxn5','metaboliteList',{'s_4359'},'stoichCoeffList',[-1],'reversible',false); 
-model = addReaction(model,'r_0557No1','metaboliteList',{'s_0803','s_1372','prot_P28789','s_0419','s_1378'},'stoichCoeffList',[-1 -4 -1/Kcat20 4 1],'reversible',false); 
-model.metComps(4147)=1;
-model.metComps(4148)=1;
-model.metComps(4149)=1;
-model.metComps(4150)=3;
-model=changeRxnBounds(model,'r_1714_REV',1000,'u');
-model=changeRxnBounds(model,'r_2111',0.25,'l');
-model=changeObjective(model,'newRxn5');
-FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
-save ecHemoglobin.mat model
+model = addReaction(model,'r_0557No1','metaboliteList',{'s_0803 + 4 s_1372 + 0.00444444 prot_P28789  -> 4 s_0419 + s_1378'},'stoichCoeffList',[-1-4],'reversible',false); 
 
-% Glucagon
-cd ../../../ModelFiles/mat
-load('ecYeastGEM_batch.mat');
-model = ecModel_batch;
-Kcat1=0.6223; 
-Kcat2=0.7659; 
-Kcat3=0.3829; 
-Kcat4=0.7659;
-Kcat5=0.6223; 
-Kcat6=0.4787; 
-Kcat7=0.4308; 
-Kcat8=0.1915; 
-Kcat9=0.3829; 
-Kcat10=0.5744; 
-Kcat11=0.4787; 
-Kcat12=0.2393; 
-Kcat13=0.5265; 
-Kcat14=0.1436; 
-Kcat15=0.8137; 
-Kcat16=0.4308; 
-Kcat17=0.1915; 
-Kcat18=0.1915; 
-Kcat19=0.3829; 
-model = addReaction(model,'newRxn1','metaboliteList',{'s_0955','s_0965','s_0969','s_0973','s_0991','s_0999','s_1003','s_1006','s_1016','s_1021','s_1025',...
-    's_1029','s_1032','s_1035','s_1039','s_1045','s_1048','s_1051','s_1056','s_0785','s_4360','s_0739','s_1322'},'stoichCoeffList',[-Kcat1 -Kcat2 -Kcat3 -Kcat4 -Kcat5...
-    -Kcat6 -Kcat7 -Kcat8 -Kcat9 -Kcat10 -Kcat11 -Kcat12 -Kcat13 -Kcat14 -Kcat15 -Kcat16 -Kcat17 -Kcat18 -Kcat19 -0.36 1 0.36 0.36],'reversible',false);
-model = addReaction(model,'newRxn2','metaboliteList',{'s_4360','s_4361'},'stoichCoeffList',[-1 1],'reversible',false); 
-model = addReaction(model,'newRxn3','metaboliteList',{'s_4361'},'stoichCoeffList',[-1],'reversible',false); 
 model.metComps(4147)=1;
 model.metComps(4148)=3;
 model=changeRxnBounds(model,'r_1714_REV',1000,'u');
-model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeRxnBounds(model,'r_2111',0.2,'l');
 model=changeObjective(model,'newRxn3');
-cd ../../strain_design_ecYeast
-c_sourceID = 'D-glucose exchange (reversible)';
-model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
-save ecGlucagon.mat model 
+cd ../../result_ecYeast/Others/Models
+save ecalpha_Amylase.mat model
+
+
 
 
 
