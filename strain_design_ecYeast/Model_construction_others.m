@@ -36,7 +36,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecLactate.mat model
 
 % Malate
@@ -64,7 +64,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'r_1552');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecMalate.mat model
 
 % cis,cis-muconic acid
@@ -123,7 +123,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save eccis_Muconate.mat model
 
 % Resveratrol
@@ -167,7 +167,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.15,'l');
 model=changeObjective(model,'newRxn8');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecResveratrol.mat model
 
 % Flavonoids (genistein, kaempferol, quercetin)
@@ -285,7 +285,7 @@ model=changeRxnBounds(model,'newRxn4',0,'u');
 model=changeRxnBounds(model,'newRxn9',0,'u');
 model=changeRxnBounds(model,'newRxn14',0,'u');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecQuercetin.mat model
 model=changeObjective(model,'newRxn23'); % For ecKaempferol
 model=changeRxnBounds(model,'newRxn4',0,'u');
@@ -331,7 +331,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecCinnamate.mat model
 
 % p-coumaric acid
@@ -387,7 +387,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecCoumaric_acid.mat model
 
 % Artemisinic acid
@@ -430,7 +430,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecArtemisinic_acid.mat model
 
 % ¦Â-Carotene
@@ -485,7 +485,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecbeta_Carotene.mat model
 
 % Linalool + Limonene
@@ -524,7 +524,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.09,'l');
 model=changeObjective(model,'newRxn6');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecLinalool.mat model
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn8');
@@ -580,7 +580,7 @@ model=changeRxnBounds(model,'newRxn11',1,'u'); % add anthranilate
 model=changeRxnBounds(model,'r_1903_REV',1,'u'); % add phenylalanine
 model=changeRxnBounds(model,'r_0938No1',0,'u'); % for 4-hydroxymandelic acid production
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ec4-hydroxymandelic_acid.mat model
 model=changeObjective(model,'newRxn7');
 model=changeRxnBounds(model,'r_1903_REV',0,'u'); 
@@ -631,7 +631,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecOleanolate.mat model
 
 % Fumaric acid
@@ -656,7 +656,7 @@ model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'r_1798');
 model=changeRxnBounds(model,'r_0714_REVNo1',0,'u'); % block r_0714_REVNo1 (Mdh2p is known to be subject to glucose catabolite inactivation)
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecFumaric_acid.mat model
 
 % Pyruvate
@@ -694,7 +694,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecPyruvate.mat model
 
 % Adipic acid
@@ -752,7 +752,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecIsobutanol.mat model
 Kcat8=27.58*3600
 model = addReaction(model,'r_0024No1','metaboliteList',{'pmet_r_0024','prot_P06208','s_0162','s_0529','s_0794'},'stoichCoeffList',[-1 -1/Kcat8 1 1 1],'reversible',false);
@@ -844,7 +844,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.2,'l');
 model=changeObjective(model,'newRxn16');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecNarinrenin.mat model
 
 % Catechin
@@ -947,7 +947,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn20');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecCatechin.mat model
 
 % Amorphadiene
@@ -1004,7 +1004,7 @@ model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn4');
 model=changeRxnBounds(model,'r_1710_REV',1,'u'); % add galactose
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecAmorphadiene.mat model
 
 % Ginsenosides (protopanaxadiol)
@@ -1047,7 +1047,7 @@ model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn6');
 model=changeRxnBounds(model,'r_1900_REV',1,'u'); % add lysine
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecProtopanaxadiol.mat model
 
 % Monoterpenoids (geraniol)
@@ -1083,7 +1083,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecGeraniol.mat model 
 
 % Sesquiterpenoids (patchoulol)
@@ -1121,7 +1121,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecPatchoulol.mat model 
 
 % Triterpenoids (lupeol)
@@ -1152,7 +1152,7 @@ model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn4');
 model=changeRxnBounds(model,'r_1710_REV',1,'u'); % add galactose
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecLupeol.mat model
 
 % ¦Â-Amyrin
@@ -1204,7 +1204,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecbeta_Amyrin.mat model 
 
 % Carotenoids (astaxanthin)
@@ -1240,7 +1240,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn18');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecAstaxanthin.mat model 
 
 % Farnesene + Santalene
@@ -1289,7 +1289,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.043,'l');
 model=changeObjective(model,'newRxn4'); % for farnesene production
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecFarnesene.mat model
 model=changeObjective(model,'newRxn8'); % for santalene production
 model=changeRxnBounds(model,'r_2111',0.05,'l');
@@ -1334,7 +1334,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecLactase.mat model 
 
 % L-ornithine 
@@ -1414,7 +1414,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'r_1987');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecOrnithine.mat model
 
 % (S)-reticuline
@@ -1505,7 +1505,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ec(S)-reticuline.mat model 
 
 % ¦Â-ionone
@@ -1573,7 +1573,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecbeta_Ionone.mat model 
 
 % Xanthone
@@ -1626,7 +1626,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecXanthone.mat model 
 
 % tyrosine
@@ -1671,7 +1671,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecTyrosine.mat model 
 
 % triacylglycerols
@@ -1700,7 +1700,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn2');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ectriacylglycerol.mat model
 
 % very-long-chain polyunsaturated fatty acids (VLC-PUFAs)(ARA, EPA, DHA)
@@ -1787,7 +1787,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn13'); % For ARA production
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecARA.mat model
 model=changeObjective(model,'newRxn17'); % For EPA production
 FBAsolution=optimizeCbModel(model)
@@ -1900,7 +1900,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecn-Butanol.mat model
 
 % ergosterol
@@ -1911,7 +1911,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'r_1757'); 
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecErgosterol.mat model
 
 % 2-phenylethanol
@@ -1978,7 +1978,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'r_1589'); 
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ec2-phenylethanol.mat model
 
 % docosanol
@@ -2043,7 +2043,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.1,'l');
 model=changeObjective(model,'newRxn9'); 
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecDocosanol.mat model
 
 % Itaconic acid
@@ -2072,7 +2072,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecItaconic_acid.mat model
 
 % Glutathione
@@ -2114,7 +2114,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecGlutathione.mat model
              
 % Ethylene
@@ -2139,7 +2139,7 @@ model=changeRxnBounds(model,'r_2111',0.24,'l');
 model=changeObjective(model,'newRxn3');
 model=changeRxnBounds(model,'r_1889_REV',1,'u'); % add glutamate
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecEthylene.mat model
 
 % Human Serum Albumin
@@ -2178,7 +2178,7 @@ model=changeRxnBounds(model,'r_2111',0.22,'l');
 model=changeRxnBounds(model,'r_1992_REV',4.6,'u');
 model=changeObjective(model,'newRxn3');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecHSA.mat model
 
 % ¦Á-Amylase
@@ -2216,7 +2216,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.2,'l');
 model=changeObjective(model,'newRxn3');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecalpha_Amylase.mat model
 
 % Hemoglobin
@@ -2259,7 +2259,7 @@ model=changeRxnBounds(model,'r_1714_REV',1000,'u');
 model=changeRxnBounds(model,'r_2111',0.25,'l');
 model=changeObjective(model,'newRxn5');
 FBAsolution=optimizeCbModel(model)
-cd ../../result_ecYeast/Others/Models
+cd ../../result_ecYeast/ecModels
 save ecHemoglobin.mat model
 
 % Glucagon
@@ -2299,7 +2299,7 @@ cd ../../strain_design_ecYeast
 c_sourceID = 'D-glucose exchange (reversible)';
 model = lychangeMedia_batch(model,c_sourceID,'YEP');
 FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/Others/Models
+cd ../result_ecYeast/ecModels
 save ecGlucagon.mat model 
 
 
