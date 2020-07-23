@@ -3,7 +3,7 @@ mkdir(resultsFolder)
 current      = pwd;
 tol          = 1E-6;
 OE           = 2;
-thresholds   = [1E-2 1];
+thresholds   = [0.5 1];
 % clone GECKO
 git ('clone https://github.com/SysBioChalmers/GECKO')
 cd GECKO
