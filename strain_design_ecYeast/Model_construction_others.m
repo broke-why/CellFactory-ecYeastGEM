@@ -2302,7 +2302,51 @@ FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/ecModels
 save ecGlucagon.mat model 
 
-
+% l-phenylacetylcarbinol(L-PAC)
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=62*3600;
+Kcat2=144.9999*3600;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_4363'},'stoichCoeffList',[1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_4363','s_3800'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn3','metaboliteList',{'s_1399','s_3800','pmet_r_3'},'stoichCoeffList',[-1 -1 1],'reversible',false); 
+model = addReaction(model,'newRxn4','metaboliteList',{'prot_P26263','pmet_r_3','s_4364','s_0456'},'stoichCoeffList',[-1/Kcat1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'prot_P06169','pmet_r_3','s_4364','s_0456'},'stoichCoeffList',[-1/Kcat2 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn6','metaboliteList',{'prot_P16467','pmet_r_3','s_4364','s_0456'},'stoichCoeffList',[-1/Kcat1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'s_4364','s_4365'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn8','metaboliteList',{'s_4365'},'stoichCoeffList',[-1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'s_3800','s_1203','prot_P00330','s_4366','s_1198'},'stoichCoeffList',[-1 -1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn10','metaboliteList',{'s_4366','s_4367'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4367'},'stoichCoeffList',[-1],'reversible',false);
+model = addReaction(model,'newRxn12','metaboliteList',{'s_3800','s_1275','s_4368'},'stoichCoeffList',[-1 -1 1],'reversible',false);
+model = addReaction(model,'newRxn13','metaboliteList',{'s_4368','s_4369'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn14','metaboliteList',{'s_4369'},'stoichCoeffList',[-1],'reversible',false);
+model=changeGeneAssociation(model,'newRxn4','YGR087C');
+model=changeGeneAssociation(model,'newRxn5','YLR044C');
+model=changeGeneAssociation(model,'newRxn6','YLR134W');
+model=changeGeneAssociation(model,'newRxn9','YOL086C');
+model.metComps(4147)=3;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=3;
+model.metComps(4151)=1;
+model.metComps(4152)=3;
+model.metComps(4153)=1;
+model.metComps(4154)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.13,'l');
+model=changeRxnBounds(model,'r_4046',1,'l');
+model=changeRxnBounds(model,'r_4046',1,'u');
+model=changeRxnBounds(model,'r_1992_REV',2,'u');
+model=changeRxnBounds(model,'newRxn1',1,'u');
+model=changeObjective(model,'newRxn8');
+cd ../../strain_design_ecYeast
+c_sourceID = 'D-glucose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/ecModels
+save ecL_PAC.mat model
 
 
 
