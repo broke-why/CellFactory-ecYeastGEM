@@ -2348,6 +2348,40 @@ FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/ecModels
 save ecL_PAC.mat model
 
-
+% Nicotianamine
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=0.0354*3600;
+MW1=66.288;
+Kcat2=0.0365*3600;
+MW2=35.679;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0306','s_0794','s_1212','prot_Q9SE60','s_0322','s_1207'},'stoichCoeffList',[-1 -2 -1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_0306','s_0794','s_1203','prot_Q9SE60','s_0322','s_1198'},'stoichCoeffList',[-1 -2 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_1416','prot_Q9FKT9','s_0794','s_4370','s_0303'},'stoichCoeffList',[-3 -1 3 1 3],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4370','s_4371'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4371'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'prot_pool','prot_Q9SE60'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'prot_pool','prot_Q9FKT9'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = removeGenes(model,'YGL125W');
+model=changeGeneAssociation(model,'newRxn1','MTHFR1');
+model=changeGeneAssociation(model,'newRxn2','MTHFR1');
+model=changeGeneAssociation(model,'newRxn3','NAS2');
+model.geneShortNames(1127)={'MTHFR1'};
+model.geneShortNames(1128)={'NAS2'};
+model.enzymes(964)={'Q9SE60'};
+model.enzymes(965)={'Q9FKT9'};
+model.enzGenes(964)={'MTHFR1'};
+model.enzGenes(965)={'NAS2'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn5');
+model=changeRxnBounds(model,'r_1810_REV',1,'u'); % add glycine
+model=changeRxnBounds(model,'r_1793_REV',1,'u'); % add formate
+model=changeRxnBounds(model,'r_0080No2',0,'u'); % disrupt MET12
 
 
