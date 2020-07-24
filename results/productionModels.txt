@@ -1,4 +1,6 @@
 models	objectives	objIdx
+ec(S)-reticuline.mat	newRxn18	8040
+ec2-phenylethanol.mat	2-phenylethanol exchange	337
 ec3-methylbutanol.mat	3-methylbutanal exchange	343
 ec3HP-asp.mat	newRxn3	8030
 ec3HP-malcoa.mat	newRxn3	8026
