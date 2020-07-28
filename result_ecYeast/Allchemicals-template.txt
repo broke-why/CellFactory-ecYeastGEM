@@ -630,6 +630,18 @@ Nicotianamine	r_1810_REV				0	0	1
 Nicotianamine	r_1793_REV				0	0	1									
 Nicotianamine	r_0080No2				0	0	0									
 																
+Psilocybin	Psilocybin_1	tryptophan decarboxylase	L-tryptophan[c] => tryptamine[c] + carbon dioxide[c]	CrTdc	0	0	1000	A0A3S7SKS7	3.33	56.221	4.1.1.105	0.1			Min	YBR249C
+Psilocybin	Psilocybin_2	Tryptamine 4-monooxygenase	tryptamine[c] + oxygen[c] => 4-hydroxytryptamine[c] + H2O[c]	PcpsiH	0	0	1000	P0DPA7		57.515	1.14.99.59					
+Psilocybin	Psilocybin_3	4-hydroxytryptamine kinase	4-hydroxytryptamine[c] + ATP[c] => norbaeocystin[c] + ADP[c] + H+[c]	PcPsiK	0	0	1000	P0DPA8		40.442	2.7.1.222					
+Psilocybin	Psilocybin_4	N-methyltransferase	norbaeocystin[c] + 2 S-adenosyl-L-methionine[c] => 2 H+[c] + psilocybin[c] + 2 S-adenosyl-L-homocysteine[c]	PcPsiM	0	0	1000	P0DPA9		34.434	2.1.1.345					
+Psilocybin	Psilocybin_5	spontaneous reaction	psilocybin[c] => psilocin[c]		0	0	1000									
+Psilocybin	Psilocybin_6	4-hydroxytryptamine kinase	ATP[c] + psilocin[c] => ADP[c] + psilocybin[c]	PcPsiK	0	0	1000	P0DPA8		40.442	2.7.1.222					
+Psilocybin	r_0997No1	shikimate dehydrogenase	ATP[c] + shikimate[c] => 3-phosphoshikimic acid[c] + ADP[c] + H+[c]	YDR127W	0	0	1000	P08566	120	174.753						
+Psilocybin	r_0279No1	chorismate synthase (No1)	5-O-(1-carboxyvinyl)-3-phosphoshikimic acid[c] => chorismate[c] + phosphate[c]	YGL148W	0	0	1000	P28777	1.74							
+Psilocybin	Psilocybin_7	3-deoxy-D-arabino-heptulosonate 7-phosphate synthetase	D-erythrose 4-phosphate[c] + H2O[c] + phosphoenolpyruvate[c] => 7-phospho-2-dehydro-3-deoxy-D-arabino-heptonic acid[c] + phosphate[c]	ARO4K229L 	0	0	1000	P32449ly	0.082809792	39.7487	2.5.1.54					
+Psilocybin	Psilocybin_8	Psilocybin transport	psilocybin[c] => psilocybin[e]		0	0	1000									
+Psilocybin	Psilocybin_9	Psilocybin exchange	psilocybin[e] =>		1	0	1000									
+																
 Ergosterol												0.1			Min	
 Glycine												0.1			Min	
 Alanine												0.1			Min	
