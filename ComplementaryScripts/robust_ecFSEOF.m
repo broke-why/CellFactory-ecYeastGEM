@@ -3,16 +3,17 @@ mkdir(resultsFolder)
 current      = pwd;
 tol          = 1E-15;
 OE           = 2;
-thresholds   = [1E-2 1];
+thresholds   = [0.5 1];
 % clone GECKO
-system('git clone https://github.com/SysBioChalmers/GECKO')
+system('git clone https://github.com/SysBioChalmers/GECKO');
 cd GECKO
-system('git checkout feat/add_FSEOF_utilities')
+system('git checkout feat/add_FSEOF_utilities');
 %Get model parameters
 cd geckomat
 parameters = getModelParameters;
 bioRXN     = parameters.bioRxn;
 c_source   = parameters.c_source;
+
 %Parameters for FSEOF method
 Nsteps     = 16;
 alphaLims  = [0.5*expYield 2*expYield];
@@ -33,7 +34,7 @@ actions(actions<0.5) = 0;
 actions(actions>1)   = 1;
 MWeigths             = [];
 %Identify candidate genes in model enzymes
-[~,iB]    = ismember(genes,model.enzGenes);
+[~,iB]     = ismember(genes,model.enzGenes);
 candidates = {};
 for i=1:numel(iB)
     if iB(i)>0

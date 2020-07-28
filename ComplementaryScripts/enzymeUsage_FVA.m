@@ -12,8 +12,8 @@ end
 %Get parsimonious protein usages
 tempModel  = model;
 pool_indx  = find(strcmpi(model.rxns,'prot_pool_exchange'));
-prot_indxs = find(contains(model.rxnNames,'prot_'));
-prot_indxs = prot_indxs(1:(end-1));
+prot_indxs = find(contains(model.rxnNames,'draw_prot_'));
+%prot_indxs = prot_indxs(1:(end-1));
 tempModel = setParam(tempModel, 'obj',pool_indx,-1);
 sol       = solveLP(tempModel,1);
 %initialize variables
@@ -27,7 +27,7 @@ if ~isempty(sol.x)
     for i=1:length(enzymes)
         if ~isempty(enzymes{i})
             rxnIndx = find(contains(model.rxnNames,enzymes{i}));
-            enzIndx = strcmpi(model.enzymes,enzymes{i});
+            enzIndx = find(strcmpi(model.enzymes,enzymes{i}));
             model = setParam(model, 'obj', rxnIndx, -1);
             sol   = solveLP(model);
             if ~isempty(sol.f)
@@ -35,7 +35,7 @@ if ~isempty(sol.x)
                 model   = setParam(model, 'obj', rxnIndx, +1);
                 sol     = solveLP(model);
                 if ~isempty(sol.f)
-                   %disp(['Ready with enzyme #' num2str(i)])
+                   %disp(['Ready with enzyme #' num2str(i) ' ' model.enzymes{enzIndx}])
                    maxFlux = sol.x(rxnIndx); 
                 else
                    maxFlux = nan; 

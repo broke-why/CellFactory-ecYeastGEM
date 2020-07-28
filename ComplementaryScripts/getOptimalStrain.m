@@ -44,7 +44,7 @@ for i=[1 2 3]
                     enzUsage = medianUsage(i);
                 end
                 tempMutant = getMutant(optStrain,modifications,enzUsage);
-                [mutSol,~] = solveECmodel(tempMutant,model,'pFBA',minIndex);
+                [mutSol,~] = solveECmodel(tempMutant,model,'pFBA',prot_index);
                 
                 if ~isempty(mutSol)
                     yield = mutSol(targetIndex)/(mutSol(minIndex));
@@ -52,7 +52,7 @@ for i=[1 2 3]
                     %Just keep those genes that don't affect the production phenotype
                     if FC >= (previousFC-1E-12)
                         FChanges   = [FChanges; FC];
-                        genesFC    = [genesFC;gene];
+                        genesFC    = [genesFC;{gene}];
                         optStrain  = tempMutant;
                         previousFC = FC;
                         counter = counter+1;
