@@ -2459,6 +2459,65 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
 save ecPsilocybin.mat model
 
+% vanillin-¦Â-glucoside
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+Kcat1=125.055*3600;
+MW1=41.685;
+Kcat2=4.6057*3600;
+MW2=30.037;
+Kcat3=4.49211*3600;
+MW3=128.346;
+MW4=52.992;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_0211','prot_Q86ZM4','s_4211','s_0803'},'stoichCoeffList',[-1 -1/Kcat1 1 1],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_4211','s_0322','prot_P21964','s_1487','s_4378'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4211','s_1212','s_0434','s_0794','prot_Q6RKB1','s_4379','s_0423','s_0633','s_1207'},'stoichCoeffList',[-1 -1 -1 -1 -1/Kcat3 1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4378','s_1203','s_0794','prot_Q6RKB1','s_1198','s_0803','s_4380'},'stoichCoeffList',[-1 -1 -1 -1/Kcat3 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4379','s_0322','prot_P21964','s_1487','s_4380'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn6','metaboliteList',{'s_1543','s_4380','prot_Q9LVR1','s_1538','s_0794','s_4381'},'stoichCoeffList',[-1 -1 -1 1 1 1],'reversible',false);
+model = addReaction(model,'newRxn7','metaboliteList',{'prot_pool','prot_Q86ZM4'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_P21964'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'prot_pool','prot_Q6RKB1'},'stoichCoeffList',[-MW3 1],'reversible',false);
+model = addReaction(model,'newRxn10','metaboliteList',{'prot_pool','prot_Q9LVR1'},'stoichCoeffList',[-MW4 1],'reversible',false);
+model = addReaction(model,'newRxn11','metaboliteList',{'s_4381','s_4382'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn12','metaboliteList',{'s_4382'},'stoichCoeffList',[-1],'reversible',false); 
+model = removeGenes(model,'YMR318C');
+model = removeGenes(model,'YLR300W');
+model=changeGeneAssociation(model,'newRxn1','3DSD');
+model=changeGeneAssociation(model,'newRxn2','OMT');
+model=changeGeneAssociation(model,'newRxn3','ACAR');
+model=changeGeneAssociation(model,'newRxn4','ACAR');
+model=changeGeneAssociation(model,'newRxn5','OMT');
+model=changeGeneAssociation(model,'newRxn6','UGT');
+model.geneShortNames(1126)={'3DSD'};
+model.geneShortNames(1127)={'OMT'};
+model.geneShortNames(1128)={'ACAR'};
+model.geneShortNames(1129)={'UGT'};
+model.enzymes(964)={'Q86ZM4'};
+model.enzymes(965)={'P21964'};
+model.enzymes(966)={'Q6RKB1'};
+model.enzymes(967)={'Q9LVR1'};
+model.enzGenes(964)={'3DSD'};
+model.enzGenes(965)={'OMT'};
+model.enzGenes(966)={'ACAR'};
+model.enzGenes(967)={'UGT'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=1;
+model.metComps(4152)=1;
+model.metComps(4153)=1;
+model.metComps(4154)=1;
+model.metComps(4155)=1;
+model.metComps(4156)=3;
+model=changeRxnBounds(model,'r_1714_REV',1000,'u');
+model=changeRxnBounds(model,'r_2111',0.3,'l');
+model=changeObjective(model,'newRxn12');
+FBAsolution=optimizeCbModel(model)
+cd ../../result_ecYeast/ecModels
+save ecVanillin_beta_glucoside.mat model
 
 
 
