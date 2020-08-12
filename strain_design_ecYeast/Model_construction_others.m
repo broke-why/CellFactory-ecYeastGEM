@@ -2519,6 +2519,54 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
 save ecVanillin_beta_glucoside.mat model
 
+% Betaxanthin
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+MW1=56.212;
+Kcat2=0.030171*3600;
+MW2=30.171;
+Kcat3=0.0828*3600;
+MW3=39.7487;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_1275','s_1051','prot_I3PFJ5','s_4291'},'stoichCoeffList',[-1 -2 -1 2],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_4291','s_1275','prot_B6F0W8','s_4383','s_0794'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4383','s_0794','s_4384','s_0803'},'stoichCoeffList',[-1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4384','s_1051','s_4385','s_0803'},'stoichCoeffList',[-1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4385','s_4386'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4386'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'newRxn7','metaboliteList',{'s_0551','s_0803','s_1360','prot_P32449ly','s_0349','s_1322'},'stoichCoeffList',[-1 -1 -1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_I3PFJ5'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'prot_pool','prot_B6F0W8'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn10','metaboliteList',{'prot_pool','prot_P32449ly'},'stoichCoeffList',[-MW3 1],'reversible',false);
+model = removeGenes(model,'YBR249C');
+model=changeGeneAssociation(model,'newRxn1','CYP76AD5');
+model=changeGeneAssociation(model,'newRxn2','DOD');
+model=changeGeneAssociation(model,'newRxn7','ARO4K229L');
+model.geneShortNames(1127)={'CYP76AD5'};
+model.geneShortNames(1128)={'DOD'};
+model.geneShortNames(1129)={'ARO4K229L'};
+model.enzymes(964)={'I3PFJ5'};
+model.enzymes(965)={'B6F0W8'};
+model.enzymes(966)={'P32449ly'};
+model.enzGenes(964)={'CYP76AD5'};
+model.enzGenes(965)={'DOD'};
+model.enzGenes(966)={'ARO4K229L'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=1;
+model.metComps(4152)=1;
+model.metComps(4153)=3;
+model.metComps(4154)=1;
+cd ../../strain_design_ecYeast
+c_sourceID = 'raffinose exchange (reversible)';
+model = lychangeMedia_batch(model,c_sourceID,'YEP');
+model=changeRxnBounds(model,'r_2111',0.1,'l');
+model=changeObjective(model,'newRxn6');
+FBAsolution=optimizeCbModel(model)
+cd ../result_ecYeast/ecModels
+save ecBetaxanthin.mat model
 
 
 

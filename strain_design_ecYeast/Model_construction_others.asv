@@ -2488,23 +2488,20 @@ model=changeGeneAssociation(model,'newRxn1','3DSD');
 model=changeGeneAssociation(model,'newRxn2','OMT');
 model=changeGeneAssociation(model,'newRxn3','ACAR');
 model=changeGeneAssociation(model,'newRxn4','ACAR');
-model=changeGeneAssociation(model,'newRxn5','PcPsiK');
+model=changeGeneAssociation(model,'newRxn5','OMT');
 model=changeGeneAssociation(model,'newRxn6','UGT');
-model.geneShortNames(1127)={'CrTdc'};
-model.geneShortNames(1128)={'PcpsiH'};
-model.geneShortNames(1129)={'PcPsiK'};
-model.geneShortNames(1130)={'PcPsiM'};
-model.geneShortNames(1131)={'ARO4K229L'};
-model.enzymes(964)={'A0A3S7SKS7'};
-model.enzymes(965)={'P0DPA7'};
-model.enzymes(966)={'P0DPA8'};
-model.enzymes(967)={'P0DPA9'};
-model.enzymes(968)={'P32449ly'};
-model.enzGenes(964)={'CrTdc'};
-model.enzGenes(965)={'PcpsiH'};
-model.enzGenes(966)={'PcPsiK'};
-model.enzGenes(967)={'PcPsiM'};
-model.enzGenes(968)={'ARO4K229L'};
+model.geneShortNames(1126)={'3DSD'};
+model.geneShortNames(1127)={'OMT'};
+model.geneShortNames(1128)={'ACAR'};
+model.geneShortNames(1129)={'UGT'};
+model.enzymes(964)={'Q86ZM4'};
+model.enzymes(965)={'P21964'};
+model.enzymes(966)={'Q6RKB1'};
+model.enzymes(967)={'Q9LVR1'};
+model.enzGenes(964)={'3DSD'};
+model.enzGenes(965)={'OMT'};
+model.enzGenes(966)={'ACAR'};
+model.enzGenes(967)={'UGT'};
 model.metComps(4147)=1;
 model.metComps(4148)=1;
 model.metComps(4149)=1;
@@ -2514,15 +2511,59 @@ model.metComps(4152)=1;
 model.metComps(4153)=1;
 model.metComps(4154)=1;
 model.metComps(4155)=1;
-model.metComps(4156)=1;
-model.metComps(4157)=3;
+model.metComps(4156)=3;
 model=changeRxnBounds(model,'r_1714_REV',1000,'u');
-model=changeRxnBounds(model,'r_2111',0.1,'l');
-model=changeObjective(model,'newRxn14');
+model=changeRxnBounds(model,'r_2111',0.3,'l');
+model=changeObjective(model,'newRxn12');
 FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
-save ecPsilocybin.mat model
+save ecVanillin_beta_glucoside.mat model
 
+% Betaxanthin
+cd ../../../ModelFiles/mat
+load('ecYeastGEM_batch.mat');
+model = ecModel_batch;
+MW1=56.212;
+Kcat2=0.030171*3600;
+MW2=30.171;
+Kcat3=0.0828*3600;
+MW3=39.7487;
+model = addReaction(model,'newRxn1','metaboliteList',{'s_1275','s_1051','prot_I3PFJ5','s_4291'},'stoichCoeffList',[-1 -2 -1 2],'reversible',false);
+model = addReaction(model,'newRxn2','metaboliteList',{'s_4291','s_1275','prot_B6F0W8','s_4383','s_0794'},'stoichCoeffList',[-1 -1 -1/Kcat2 1 1],'reversible',false);
+model = addReaction(model,'newRxn3','metaboliteList',{'s_4383','s_0794','s_4384','s_0803'},'stoichCoeffList',[-1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn4','metaboliteList',{'s_4384','s_1051','s_4385','s_0803'},'stoichCoeffList',[-1 -1 1 1],'reversible',false);
+model = addReaction(model,'newRxn5','metaboliteList',{'s_4385','s_4386'},'stoichCoeffList',[-1 1],'reversible',false); 
+model = addReaction(model,'newRxn6','metaboliteList',{'s_4386'},'stoichCoeffList',[-1],'reversible',false); 
+model = addReaction(model,'newRxn7','metaboliteList',{'s_0551','s_0803','s_1360','prot_P32449ly','s_0349','s_1322'},'stoichCoeffList',[-1 -1 -1 -1/Kcat3 1 1],'reversible',false);
+model = addReaction(model,'newRxn8','metaboliteList',{'prot_pool','prot_I3PFJ5'},'stoichCoeffList',[-MW1 1],'reversible',false);
+model = addReaction(model,'newRxn9','metaboliteList',{'prot_pool','prot_B6F0W8'},'stoichCoeffList',[-MW2 1],'reversible',false);
+model = addReaction(model,'newRxn10','metaboliteList',{'prot_pool','prot_P32449ly'},'stoichCoeffList',[-MW3 1],'reversible',false);
+model = removeGenes(model,'YBR249C');
+model=changeGeneAssociation(model,'newRxn1','CYP76AD5');
+model=changeGeneAssociation(model,'newRxn2','DOD');
+model=changeGeneAssociation(model,'newRxn7','ARO4K229L');
+model.geneShortNames(1126)={'3DSD'};
+model.geneShortNames(1127)={'OMT'};
+model.geneShortNames(1128)={'ACAR'};
+model.geneShortNames(1129)={'UGT'};
+model.enzymes(964)={'Q86ZM4'};
+model.enzymes(965)={'P21964'};
+model.enzymes(966)={'Q6RKB1'};
+model.enzymes(967)={'Q9LVR1'};
+model.enzGenes(964)={'3DSD'};
+model.enzGenes(965)={'OMT'};
+model.enzGenes(966)={'ACAR'};
+model.enzGenes(967)={'UGT'};
+model.metComps(4147)=1;
+model.metComps(4148)=1;
+model.metComps(4149)=1;
+model.metComps(4150)=1;
+model.metComps(4151)=1;
+model.metComps(4152)=1;
+model.metComps(4153)=1;
+model.metComps(4154)=1;
+model.metComps(4155)=1;
+model.metComps(4156)=3;
 
 
 
