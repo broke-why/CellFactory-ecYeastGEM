@@ -2542,31 +2542,28 @@ model = removeGenes(model,'YBR249C');
 model=changeGeneAssociation(model,'newRxn1','CYP76AD5');
 model=changeGeneAssociation(model,'newRxn2','DOD');
 model=changeGeneAssociation(model,'newRxn7','ARO4K229L');
-model.geneShortNames(1127)={'CYP76AD5'};
-model.geneShortNames(1128)={'DOD'};
-model.geneShortNames(1129)={'ARO4K229L'};
-model.enzymes(964)={'I3PFJ5'};
-model.enzymes(965)={'B6F0W8'};
-model.enzymes(966)={'P32449ly'};
-model.enzGenes(964)={'CYP76AD5'};
-model.enzGenes(965)={'DOD'};
-model.enzGenes(966)={'ARO4K229L'};
+model.geneShortNames(1126)={'3DSD'};
+model.geneShortNames(1127)={'OMT'};
+model.geneShortNames(1128)={'ACAR'};
+model.geneShortNames(1129)={'UGT'};
+model.enzymes(964)={'Q86ZM4'};
+model.enzymes(965)={'P21964'};
+model.enzymes(966)={'Q6RKB1'};
+model.enzymes(967)={'Q9LVR1'};
+model.enzGenes(964)={'3DSD'};
+model.enzGenes(965)={'OMT'};
+model.enzGenes(966)={'ACAR'};
+model.enzGenes(967)={'UGT'};
 model.metComps(4147)=1;
 model.metComps(4148)=1;
 model.metComps(4149)=1;
 model.metComps(4150)=1;
 model.metComps(4151)=1;
 model.metComps(4152)=1;
-model.metComps(4153)=3;
+model.metComps(4153)=1;
 model.metComps(4154)=1;
-cd ../../strain_design_ecYeast
-c_sourceID = 'raffinose exchange (reversible)';
-model = lychangeMedia_batch(model,c_sourceID,'YEP');
-model=changeRxnBounds(model,'r_2111',0.1,'l');
-model=changeObjective(model,'newRxn6');
-FBAsolution=optimizeCbModel(model)
-cd ../result_ecYeast/ecModels
-save ecBetaxanthin.mat model
+model.metComps(4155)=1;
+model.metComps(4156)=3;
 
 
 
