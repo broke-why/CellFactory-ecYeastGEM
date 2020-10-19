@@ -6,12 +6,14 @@ cd GECKO
 git checkout feat/add_FSEOF_utilities
 cd ..
 clc
-success = [];
-fail = [];
-models = [];
+success    = [];
+fail       = [];
+models     = [];
 objectives = [];
-objIdx = [];
-fileNames = dir('../ModelFiles/production_ecModels');
+steps      = [];
+objIdx     = [];
+fileNames  = dir('../ModelFiles/production_ecModels');
+strain_conditions = readtable('../ComplementaryData/strain_conditions.txt','Delimiter','\t');
 for i=1:length(fileNames)
     cd (current)
     file = fileNames(i).name;
@@ -21,20 +23,38 @@ for i=1:length(fileNames)
         if startsWith(modelName,'ec')
             modelName = lower(modelName(3:end));          
             load(['../ModelFiles/production_ecModels/' file])
-            model = check_enzyme_fields(model);
+            model       = check_enzyme_fields(model);
             targetIndex = find(model.c);
-            models = [models;{file}];
-            objectives = [objectives;model.rxnNames(targetIndex)];
+            models      = [models;{file}];
+            objectives  = [objectives;model.rxnNames(targetIndex)];
             objIdx = [objIdx;targetIndex];
             disp(' ')
             %Set media conditions
-            cd GECKO/geckomat/kcat_sensitivity_analysis
-            c_source = 'D-glucose exchange (reversible)';
-            tempModel = changeMedia_batch(model,c_source);
+            %find specific conditions and strain background
+            idx = find(strcmpi(strain_conditions.Chemicals,modelName));
+            if ~isempty(idx)
+                medium   = strain_conditions.Medium{idx};
+                c_source = [strain_conditions.CarbonSource{idx} ' exchange (reversible)'];
+                if ~isempty(strain_conditions.deletion(idx))
+                    genes2delete = strsplit(strain_conditions.deletion{idx},',');
+                    columns = cell(length(genes2delete),1);
+                    columns(:,1) = {0};
+                    modifications = [genes2delete' columns columns];
+                    %Search genes in model
+                    [iA,iB] = ismember(modifications(:,1),model.genes);
+                    modifications = modifications(iA,:);
+                    if ~isempty(modifications)
+                        model = getMutant(model,modifications,[],true);
+                    end
+                end
+            else
+                medium   = 'Min';
+                c_source = 'D-glucose exchange (reversible)';
+            end
+            tempModel = changeMedia_batch(model,c_source,'YEP');
             CS_MW     = 0.18015;
             CS_index  = find(strcmpi(tempModel.rxnNames,c_source));
             growthPos = find(strcmpi(tempModel.rxnNames,'growth'));
-            cd ../../../
             %Unconstrain growth
             tempModel = setParam(tempModel,'lb',growthPos,0);
             tempModel = setParam(tempModel,'ub',growthPos,1000);
@@ -50,15 +70,15 @@ for i=1:length(fileNames)
                 mkdir(resultsFolder)
                 expYield = 0.2;
                 try
-                    [optStrain,candidates] = robust_ecFSEOF(tempModel,tempModel.rxns(targetIndex),0.122,CS_MW,resultsFolder);
+                    [optStrain,candidates,step] = robust_ecFSEOF(tempModel,tempModel.rxns(targetIndex),0.122,CS_MW,resultsFolder);
                     success = [success; {modelName}];
                 catch
                     disp('The model is not suitable for robust ecFSEOF')
                     fail = [fail; {modelName}];
                 end
                 disp(' ')
-                clc
              end
         end
     end
+    clc
 end

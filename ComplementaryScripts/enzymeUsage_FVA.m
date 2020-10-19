@@ -17,47 +17,51 @@ prot_indxs = find(contains(model.rxnNames,'draw_prot_'));
 tempModel = setParam(tempModel, 'obj',pool_indx,-1);
 sol       = solveLP(tempModel,1);
 %initialize variables
-ranges    = [];
-minUsgs   = [];
-maxUsgs   = [];
-enz_pUsgs = [];
+ranges    = zeros(length(enzymes),1);
+minUsgs   = zeros(length(enzymes),1);
+maxUsgs   = zeros(length(enzymes),1);
+enz_pUsgs = zeros(length(enzymes),1);
+enzIDs    = cell(length(enzymes),1);
 if ~isempty(sol.x)
     pUsgs = sol.x(prot_indxs);
     %Loop through all the provided enzymes
     for i=1:length(enzymes)
         if ~isempty(enzymes{i})
-            rxnIndx = find(contains(model.rxnNames,enzymes{i}));
-            enzIndx = find(strcmpi(model.enzymes,enzymes{i}));
-            model = setParam(model, 'obj', rxnIndx, -1);
-            sol   = solveLP(model);
-            if ~isempty(sol.f)
-                minFlux = sol.x(rxnIndx); 
-                model   = setParam(model, 'obj', rxnIndx, +1);
-                sol     = solveLP(model);
+            minFlux = 0;
+            maxFlux = 0;
+            pUsage  = 0;
+            rxnIndx = find(contains(model.rxnNames,enzymes{i}),1);
+            enzIndx = find(strcmpi(model.enzymes,enzymes{i}),1);
+            enzIDs(i)  = enzymes(i);
+            if ~isempty(enzIndx)
+                model  = setParam(model, 'obj', rxnIndx, -1);
+                sol    = solveLP(model);
+                pUsage = pUsgs(enzIndx);
                 if ~isempty(sol.f)
-                   %disp(['Ready with enzyme #' num2str(i) ' ' model.enzymes{enzIndx}])
-                   maxFlux = sol.x(rxnIndx); 
-                else
-                   maxFlux = nan; 
+                    minFlux = sol.x(rxnIndx);
+                    model   = setParam(model, 'obj', rxnIndx, +1);
+                    sol     = solveLP(model);
+                    if ~isempty(sol.f)
+                        %disp(['Ready with enzyme #' num2str(i) ' ' model.enzymes{enzIndx}])
+                        maxFlux = sol.x(rxnIndx);
+                    end
                 end
-            else
-                minFlux = nan;
-                maxFlux = nan; 
+                ranges(i)    = (maxFlux-minFlux);
+                minUsgs(i)   = minFlux;
+                maxUsgs(i)   = maxFlux;
+                enz_pUsgs(i) = pUsage;
             end
-            ranges    = [ranges; (maxFlux-minFlux)];
-            minUsgs   = [minUsgs; minFlux]; 
-            maxUsgs   = [maxUsgs; maxFlux];
-            enz_pUsgs = [enz_pUsgs;pUsgs(enzIndx)];
         else
-            ranges    = [ranges; 0];
-            minUsgs   = [minUsgs; 0]; 
-            maxUsgs   = [maxUsgs; 0];
-            enz_pUsgs = [enz_pUsgs;0];
+                ranges(i)    = NaN;
+                minUsgs(i)   = NaN;
+                maxUsgs(i)   = NaN;
+                enz_pUsgs(i) = NaN;
+                %enzIDs{i}    = 'empty';
         end
     end
 else
     disp('Model is not feasible')
 end
 varNamesT = {'enzymes' 'ranges' 'minU' 'maxU' 'pU'};
-FVAtable  = table(enzymes,ranges,minUsgs,maxUsgs,enz_pUsgs,'VariableNames', varNamesT);
+FVAtable  = table(enzIDs,ranges,minUsgs,maxUsgs,enz_pUsgs,'VariableNames', varNamesT);
 end
