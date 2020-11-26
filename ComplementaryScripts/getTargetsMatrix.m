@@ -14,9 +14,6 @@ genesTable.subSystems(presence) = subSystems(iB(iB~=0));
 %retrieve chemical classes info
 chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
 comp_classes   = unique(chemicals_info.class);
-
-
-
 %Iterate through all chemical compounds
 d = dir('../results');
 isub = [d(:).isdir]; %# returns logical vector
@@ -41,10 +38,13 @@ for i=1:length(nameFolders)
             candidates = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
             OEs =candidates.genes(strcmpi(candidates.actions,'OE'));
             [~,iB]=ismember(OEs,genesTable.genes);
-            eval(['genesTable.' newStr '(iB(iB>0)) = 1;'])
-            dels=candidates.genes(strcmpi(candidates.actions,'deletion'));
+            eval(['genesTable.' newStr '(iB(iB>0)) = 3;'])
+            dels=candidates.genes(candidates.k_scores<=0.05);
             [~,iA]=ismember(dels,genesTable.genes);
-            eval(['genesTable.' newStr '(iA(iA>0)) = -1;'])
+            eval(['genesTable.' newStr '(iA(iA>0)) = 1;'])
+            dRegs=candidates.genes(candidates.k_scores>0.05 & candidates.k_scores<=0.5);
+            [~,iA]=ismember(dRegs,genesTable.genes);
+            eval(['genesTable.' newStr '(iA(iA>0)) = 2;'])
         catch
             disp(chemical)
         end
