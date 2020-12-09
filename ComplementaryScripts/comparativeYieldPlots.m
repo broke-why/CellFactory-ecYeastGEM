@@ -43,43 +43,39 @@ for i=1:length(nameFolds)
                         sol2 = solveLP(model);
                         FC = -sol2.f/-sol1.f;
                         maxYield = [maxYield;{met} {-sol1.f} {-sol2.f} {FC}];
-                        
-                        [BioYield_ec,yield_ec] = getYieldPlot(ecModel,index_ec,1,MWeight);
-                        [BioYield,yield] = getYieldPlot(model,index,1,MWeight);
+                        %Get biomass and product yields for low glucose
+                        %consumption
+                        [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,1,MWeight);
+                        [BioYield_l,yield_l] = getYieldPlot(model,index,1,MWeight);
+                        %Get biomass and product yields for high glucose
+                        %consumption
+                        [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,100,MWeight);
+                        [BioYield_h,yield_h] = getYieldPlot(model,index,20,MWeight);
                         figure
+                        hold on
                         xStr = 'Biomass yield [g_{biomass}/g_{glucose}]';
                         yStr = 'Product yield [g_{product}/g_{glucose}]';
-                        plot(BioYield,yield,BioYield_ec,yield_ec,'LineWidth',5,'Color',[0.8 0.4 0.1])
-                        hold on
-                        plot(BioYield_ec,yield_ec,'LineWidth',5,'Color',[0.1 0 0.8])
+                        plot(BioYield_l,yield_l,'-','LineWidth',5)%,'Color','blue')'
+                        plot(BioYield_h,yield_h,'-','LineWidth',5)%,'Color','yellow')
+                        plot(BioYield_ec_l,yield_ec_l,'-.','LineWidth',5)%,'Color','red')
+                        plot(BioYield_ec_h,yield_ec_h,'-.','LineWidth',5)%,'Color','purple')
                         xlabel(xStr)
                         ylabel(yStr)
+                        xlim([0 1])
+                        ylim([0 1])
+                        legend({'GEM low' 'GEM high' 'ecModel low' 'ecModel high'})
                         set(gca,'FontSize',22)
-                        saveas(gcf,['../results/yieldPlots/'  met '_lowGlc_yieldPlot.jpg'])
+                        saveas(gcf,['../results/yieldPlots/'  met '_yieldPlot.jpg'])
                         hold off
                         close all
                         
-                        [BioYield_ec,yield_ec] = getYieldPlot(ecModel,index_ec,20,MWeight);
-                        [BioYield,yield] = getYieldPlot(model,index,20,MWeight);
-                        figure
-                        set(gca,'FontSize',22)
-                        xStr = 'Biomass yield [g_{biomass}/g_{glucose}]';
-                        yStr = 'Product yield [g_{product}/g_{glucose}]';
-                        plot(BioYield,yield,BioYield_ec,yield_ec,'LineWidth',5,'Color',[0.8 0.4 0.1])
-                        hold on
-                        plot(BioYield_ec,yield_ec,'LineWidth',5,'Color',[0.1 0 0.8])
-                        xlabel(xStr)
-                        ylabel(yStr)
-                        set(gca,'FontSize',22)
-                        saveas(gcf,['../results/yieldPlots/'  met '_highGlc_yieldPlot.jpg'])
-                        hold off
-                        close all                         
+                                      
                     end
                 end
             end
                 
         else
-            %disp(folder)
+            disp(folder)
             class = {''};
         end
     end
