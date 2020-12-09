@@ -12,7 +12,7 @@ function subSystems = mapEnzymeSubSystems(enzymes,model)
 %
 %   usage: subSystems = mapEnzymeSubSystems(enzymes,model)
 %
-% Last modified.  Ivan Domenzain 2019-04-16
+% Last modified.  Ivan Domenzain 2020-10-22
 
 subSystems = {};
 for i=1:length(enzymes)
@@ -33,4 +33,7 @@ for i=1:length(enzymes)
     subSystem  = strjoin(subSystem,' // ');
     subSystems = [subSystems; {subSystem}];
 end
+subSystems = strtrim(subSystems);
+subSystems = strrep(subSystems,'/  /','');
+subSystems(strcmpi(subSystems,'//')) = {''};
 end
