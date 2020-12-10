@@ -65,7 +65,7 @@ p-coumaric acid 	C9H8O3	C00811	32374	1	heterologous	aromatic	ecCoumaric_acid.mat
 rosmarinate 	C18H16O8	C01850	50371	1	heterologous	aromatic	ecRosmarinic_acid.mat
 Salidroside 	C14H20O7	C06046	9009	1	heterologous	aromatic	ecSalidroside.mat
 Tyrosol 	C8H10O2	C06044	1879	1	heterologous	aromatic	ecTyrosol.mat
-vanillin-_-glucoside  				1	heterologous	aromatic	ecVanillin.mat
+vanillinbetaglucoside				1	heterologous	aromatic	ecvanillin_beta_glucoside.mat
 ARA 	C20H32O2	C00219Ê	15843	1	heterologous	fatty acids and lipids	ecARA.mat
 DHA 	C22H32O2	C06429	28125	1	heterologous	fatty acids and lipids	ecDHA.mat
 EPA 	C20H30O2	C06428	28364	1	heterologous	fatty acids and lipids	ecEPA.mat
