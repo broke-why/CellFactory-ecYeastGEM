@@ -132,13 +132,13 @@ for i=1:length(nameFolds)
     
 end
 models = strrep(models,'_targets','');
-t = table(models,chemClass,cand_1_total,cand_1_OE,cand_1_del,cand_2_total,cand_2_OE,cand_2_del,cand_3_total,cand_3_OE,cand_3_del);
+t = table(models,chemClass,cand_1_total,cand_1_OE,cand_1_dR,cand_1_del,cand_2_total,cand_2_OE,cand_2_dR,cand_2_del,cand_3_total,cand_3_OE,cand_3_dR,cand_3_del);
 writetable(t,'../results/targets_summary.txt','delimiter','\t');
 
 t = table(del_genes,del_targets,subSystems_del,chem_class_del,chem_comp_del);
 writetable(t,'../results/all_deletions.txt','delimiter','\t','QuoteStrings',false);
 
-t = table(dR_genes,dR_targets,subSystems_dR,chem_class_dR,chem_class_dR);
+t = table(dR_genes,dR_targets,subSystems_dR,chem_class_dR,chem_comp_dR);
 writetable(t,'../results/all_downRegs.txt','delimiter','\t','QuoteStrings',false);
 
 expression = '(\w+)''';
