@@ -119,12 +119,6 @@ toRemove = intersect(unused,find(candidates.actions>0));
 candidates(toRemove,:) = [];
 disp('Discard OE targets with lb=ub=0')
 disp([num2str(height(candidates)) ' gene targets remain'])
-% Get ECCs
-tempModel.lb(CUR_indx) = 0;
-tempModel.ub(CUR_indx) = 1000;
-candidates = getECCs(candidates,tempModel,targetIndx);
-tempModel.lb(CUR_indx) = (1-tol)*1;
-tempModel.ub(CUR_indx) = (1+tol)*1;
 % 3.- Mechanistic validations of FSEOF results
 step = 3;
 disp(num2str(step))
