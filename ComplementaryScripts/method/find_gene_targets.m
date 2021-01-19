@@ -31,26 +31,26 @@ for i=1:length(fileNames)
             disp(' ')
             %Set media conditions
             %find specific conditions and strain background
-%             idx = find(strcmpi(strain_conditions.Chemicals,modelName));
-%             if ~isempty(idx)
-%                 medium   = strain_conditions.Medium{idx};
-%                 c_source = [strain_conditions.CarbonSource{idx} ' exchange (reversible)'];
-%                 if ~isempty(strain_conditions.deletion(idx))
-%                     genes2delete = strsplit(strain_conditions.deletion{idx},',');
-%                     columns = cell(length(genes2delete),1);
-%                     columns(:,1) = {0};
-%                     modifications = [genes2delete' columns columns];
-%                     %Search genes in model
-%                     [iA,iB] = ismember(modifications(:,1),model.genes);
-%                     modifications = modifications(iA,:);
-%                     if ~isempty(modifications)
-%                         model = getMutant(model,modifications,[],true);
-%                     end
-%                 end
-%             else
+            idx = find(strcmpi(strain_conditions.Chemicals,modelName));
+            if ~isempty(idx)
+                medium   = strain_conditions.Medium{idx};
+                c_source = [strain_conditions.CarbonSource{idx} ' exchange (reversible)'];
+                if ~isempty(strain_conditions.deletion(idx))
+                    genes2delete = strsplit(strain_conditions.deletion{idx},',');
+                    columns = cell(length(genes2delete),1);
+                    columns(:,1) = {0};
+                    modifications = [genes2delete' columns columns];
+                    %Search genes in model
+                    [iA,iB] = ismember(modifications(:,1),model.genes);
+                    modifications = modifications(iA,:);
+                    if ~isempty(modifications)
+                        model = getMutant(model,modifications,[],true);
+                    end
+                end
+            else
                  medium   = 'Min';
                  c_source = 'D-glucose exchange (reversible)';
-%             end
+            end
             tempModel = changeMedia_batch(model,c_source,medium);
             CS_MW     = 0.18015;
             CS_index  = find(strcmpi(tempModel.rxnNames,c_source));
@@ -70,11 +70,11 @@ for i=1:length(fileNames)
                 mkdir(resultsFolder)
                 expYield = 0.2;
                 try
-                    [optStrain,candidates,step] = robust_ecFSEOF(tempModel,tempModel.rxns(targetIndex),0.122,CS_MW,resultsFolder);
+                    [optStrain,candidates,step] = robust_ecFSEOF(tempModel,tempModel.rxns(targetIndex),0.49*WT_yield,CS_MW,resultsFolder);
                     success = [success; {modelName}];
                 catch
-                   disp('The model is not suitable for robust ecFSEOF')
-                   fail = [fail; {modelName}];
+                    disp('The model is not suitable for robust ecFSEOF')
+                    fail = [fail; {modelName}];
                 end
                 disp(' ')
              end
