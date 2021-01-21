@@ -48,7 +48,7 @@ for i=1:length(enzymes)
         temp_model.S(enzPos,rxnIdx) = Kcats./perturbation;      
         %Get mean activity for the i-th enzyme (considering all reaction in
         %which it might be present)
-        A_i     = mean(Kcats*E_usg);
+        A_i     = mean(Kcats.*E_usg);
         new_sol = solveLP(temp_model);
         if ~isempty(new_sol.f)
             %Modified enzyme activity (A_i = Kcat*perturbation*E_i)
