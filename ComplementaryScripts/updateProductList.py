@@ -24,7 +24,7 @@ for i, x in chemical_info.iterrows():
     products_info.append(newline0)
 
 # combine the product information as a readme file
-new_lines = part1 + [newline1] +[product_template] + [newline2] + products_info + part2
+new_lines = part1 + [newline1] + ['\n'] + [product_template] + [newline2] + products_info + part2
 
 out = open('README.md', 'w')
 for line in new_lines:
