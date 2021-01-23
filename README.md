@@ -18,6 +18,7 @@ This repository contains the data and script for _in silico_ strain with protein
 |:-------:|:--------------:|:---------:|:----------:|:-----:|
 |_Saccharomyces cerevisiae_|[Yeast 8.3](https://github.com/SysBioChalmers/yeast-GEM)|3962|2691|1150|
 
+* Product list:
 | Name | Formula | KEGG ID | CHEBI ID | Group | class |
 |:-------:|:--------------:|:---------:|:----------:|:-----:|:-----:|
 | (R,R)-2,3-butanediol  | C4H10O2 | C03044 | 16982 | native | alcohol |
