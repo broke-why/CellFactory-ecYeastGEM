@@ -3,7 +3,7 @@ mkdir(resultsFolder)
 current      = pwd;
 tol          = 1E-15;
 OE           = 2;
-thresholds   = [0.5 2];
+thresholds   = [0.5 1];
 step         = 0;
 essential = readtable('../../ComplementaryData/Essential_ORFs.txt','Delimiter','\t');
 essential = strtrim(essential.Ids);
