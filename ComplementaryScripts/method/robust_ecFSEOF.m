@@ -1,9 +1,10 @@
 function [mutantStrain,filtered,step] = robust_ecFSEOF(model,rxnTarget,expYield,CS_MW,resultsFolder)
 mkdir(resultsFolder)
 current      = pwd;
-tol          = 1E-15;
+tol          = 1E-12;
 OE           = 2;
 thresholds   = [0.5 1];
+delLimit     = 0.05;
 step         = 0;
 essential = readtable('../../ComplementaryData/Essential_ORFs.txt','Delimiter','\t');
 essential = strtrim(essential.Ids);
@@ -23,11 +24,12 @@ file2   = 'results/rxnsResults_ecFSEOF.txt';
 % 1.- Run FSEOF to find gene candidates
 cd utilities/ecFSEOF
 mkdir('results')
+step = 1;
+disp([num2str(step) '.-  **** Running ecFSEOF method (from GECKO utilities) ****'])
 results = run_ecFSEOF(model,rxnTarget,c_source,alphaLims,Nsteps,file1,file2);
 genes   = results.genes;
+disp(' ')
 disp(['ecFSEOF yielded ' num2str(length(genes)) ' targets'])
-step = 1;
-disp(num2str(step))
 disp(' ')
 %Format results table
 geneShorts = results.geneNames;
@@ -36,6 +38,7 @@ actions(actions<0.5) = 0;
 actions(actions>1)   = 1;
 MWeigths             = [];
 %Identify candidate genes in model enzymes
+disp('Extracting enzymatic information for target genes')
 [~,iB]     = ismember(genes,model.enzGenes);
 candidates = {};
 for i=1:numel(iB)
@@ -47,25 +50,30 @@ for i=1:numel(iB)
         MWeigths   = [MWeigths; nan];
     end
 end
+disp(' ')
 %Get results files structures
 candidates = table(genes,candidates,geneShorts,MWeigths,actions,results.k_genes,'VariableNames',{'genes' 'enzymes' 'shortNames' 'MWs' 'actions' 'k_scores'});
 % Keep top results
-%candidates = candidates(((candidates.actions==1)|(candidates.actions==0)),:); 
-toKeep = find((candidates.k_scores>=thresholds(2)|candidates.k_scores<=thresholds(1)));
+disp(['Removing targets ' num2str(thresholds(1)) ' < K_score < ' num2str(thresholds(2))])
+toKeep     = find((candidates.k_scores>=thresholds(2)|candidates.k_scores<=thresholds(1)));
 candidates = candidates(toKeep,:);
-%discard essential genes from deletion targets
+disp([num2str(height(candidates)) ' gene targets remain'])
+disp(' ')
+
+% 2.- discard essential genes from deletion targets
+step = step+1;
+disp([num2str(step) '.-  **** Removing essential genes from KD and KO targets list ****'])
 [~,iB]    = ismember(candidates.genes,essential);
 toRemove  = iB & candidates.k_scores<=0.05;
 candidates(toRemove,:) = [];
 cd (current)
-writetable(candidates,[resultsFolder '/candidates_ecFSEOF.txt'],'Delimiter','\t','QuoteStrings',false);
-disp(['Remove targets ' num2str(thresholds(1)) ' < K_score < ' num2str(thresholds(2))])
 disp([num2str(height(candidates)) ' gene targets remain'])
-
-% 2.- Enzyme usage variability analysis (EVA)
-step = 2;
-disp(num2str(step))
 disp(' ')
+writetable(candidates,[resultsFolder '/candidates_ecFSEOF.txt'],'Delimiter','\t','QuoteStrings',false);
+
+% 3.- Enzyme usage variability analysis (EVA)
+step = step+1;
+disp([num2str(step) '.-  **** Running enzyme usage variability analysis ****'])
 tempModel = model;
 %Get relevant rxn indexes
 targetIndx  = find(strcmpi(tempModel.rxns,rxnTarget));
@@ -73,8 +81,7 @@ CUR_indx    = find(strcmpi(tempModel.rxnNames,c_source));
 growth_indx = find(strcmpi(tempModel.rxns,bioRXN));
 prot_indx = find(contains(tempModel.rxns,'prot_pool'));
 %Fix suboptimal experimental biomass yield conditions
-Yield = expYield;
-V_bio = Yield*CS_MW;
+V_bio = expYield*CS_MW;
 tempModel.lb(growth_indx) = V_bio;
 %Fix unit C source uptake
 tempModel.lb(CUR_indx) = (1-tol)*1;
@@ -86,13 +93,26 @@ WT_prod   = sol.x(targetIndx);
 WT_CUR    = sol.x(CUR_indx);
 tempModel.lb(targetIndx) = (1-tol)*WT_prod;
 tempModel.ub(targetIndx) = (1+tol)*WT_prod;
-%Calculate WT yields
-WT_prod_yield = WT_prod/WT_CUR;
-% Run FVA for all enzyme usages subject to fixed CUR and Grates
-disp('Running enzyme usage variability analysis')
+%Run FVA for all enzyme usages subject to fixed CUR and Grates
 FVAtable = enzymeUsage_FVA(tempModel,candidates.enzymes);
 %sort results
 candidateUsages = FVAtable.pU;
+%Classify enzyme variability ranges
+disp(' ')
+disp('Classifying enzyme usage variability ranges')
+candidates.EV_type = cell(height(candidates),1);
+idxs = find(FVAtable.minU<=tol & FVAtable.maxU<=tol);
+candidates.EV_type(idxs) = {'unusable'};
+idxs = find(FVAtable.minU>tol);
+candidates.EV_type(idxs) = {'essential'};
+idxs = find(FVAtable.minU<=tol & FVAtable.maxU>tol);
+candidates.EV_type(idxs) = {'totally_variable'};
+idxs = find((FVAtable.minU./FVAtable.maxU)>=0.99 & FVAtable.minU>tol);
+candidates.EV_type(idxs) = {'tightly_constrained'};
+idxs = find(strcmpi(candidates.EV_type,'totally_variable') & (candidateUsages./FVAtable.maxU)>=0.99);
+candidates.EV_type(idxs) = {'variable_optimal'};
+idxs = find(strcmpi(candidates.EV_type,'totally_variable') & candidateUsages<=tol);
+candidates.EV_type(idxs) = {'variable_NOToptimal'};
 %Classify overexpression types
 for i=1:length(candidates.enzymes)
     if FVAtable.maxU(i)~=0 && candidates.actions(i)>0
@@ -109,36 +129,41 @@ candidates.OE(candidates.actions==0) = 0;
 candidates.minUsage = FVAtable.minU;
 candidates.maxUsage = FVAtable.maxU;
 candidates.pUsage   = candidateUsages;
-%Generate table with FVA results
-t = table(candidates.enzymes,FVAtable.minU,FVAtable.maxU,FVAtable.ranges,candidateUsages,'VariableNames',{'enzNames' 'minUsages' 'maxUsages' 'ranges' 'pUsages'});
-writetable(candidates,[resultsFolder '/candidates_enzUsageFVA.txt'],'Delimiter','\t','QuoteStrings',false);
 %Discard enzymes whose usage LB = UB = 0
-tempMat  = table2array(t(:,[2 3]));
-unused   = find(sum(tempMat,2)==0);
-toRemove = intersect(unused,find(candidates.actions>0));
-candidates(toRemove,:) = [];
-disp('Discard OE targets with lb=ub=0')
-disp([num2str(height(candidates)) ' gene targets remain'])
-% 3.- Mechanistic validations of FSEOF results
-step = 3;
-disp(num2str(step))
 disp(' ')
-disp('Mechanistic validation of results')
+disp('Discard OE targets with lb=ub=0')
+toRemove = strcmpi(candidates.EV_type,'unusable') & candidates.actions>0;
+candidates(toRemove,:) = [];
+disp([num2str(height(candidates)) ' gene targets remain'])
+disp(' ')
+disp('Discard essential enzymes from deletion targets')
+toRemove = (strcmpi(candidates.EV_type,'tightly_constrained') | strcmpi(candidates.EV_type,'essential')) & ...
+       (candidates.k_scores<=delLimit);
+candidates(toRemove,:) = [];       
+disp([num2str(height(candidates)) ' gene targets remain'])
+disp(' ')
+%Generate table with FVA results
+writetable(candidates,[resultsFolder '/candidates_enzUsageFVA.txt'],'Delimiter','\t','QuoteStrings',false);
+
+% 4.- Mechanistic validations of FSEOF results
+step = step+1;
+disp([num2str(step) '.-  **** Mechanistic validation of results ****'])
 %Relevant rxn indexes
-relIndexes = [CUR_indx, targetIndx];
+relIndexes = [CUR_indx, targetIndx, growth_indx];
 %relax target rxn bounds
 tempModel.lb(targetIndx) = (1-tol)*WT_prod;
 tempModel.ub(targetIndx) = 1000;
 %set Max product formation as objective function
 tempModel = setParam(tempModel,'obj',targetIndx,+1);
+%Calculate WT yields
+WT_prod_yield = WT_prod/WT_CUR;
 %Run mechanistic validation of targets
-[~,~,FCs,validated]  = testAllmutants(candidates,tempModel,relIndexes,WT_prod_yield);
-step = 4;
-disp(num2str(step))
+[FCs_y,FCs_p,validated]  = testAllmutants(candidates,tempModel,relIndexes,WT_prod_yield);
 %Discard genes with a negative impact on production yield
-candidates.foldChange = FCs; 
+candidates.foldChange_yield = FCs_y; 
+candidates.foldChange_pRate = FCs_p; 
 candidates            = candidates(validated,:);
-disp('Discard gene modifications with a negative impact on product yield')
+disp('Discard gene modifications with a negative impact on product yield or rate')
 disp([num2str(height(candidates)) ' gene targets remain'])
 disp(' ')
 writetable(candidates,[resultsFolder '/candidates_mech_validated.txt'],'Delimiter','\t','QuoteStrings',false);
@@ -231,47 +256,74 @@ origin = 'GECKO/geckomat/utilities/ecFSEOF/results/*';
 copyfile(origin,resultsFolder)
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [maxVal,TOPgene,FoldChanges,positive] = testAllmutants(candidates,tempModel,indexes,WTval,tol)
-if nargin<5
-    tol = 0;
+function [FChanges_y,FChanges_p,validated] = testAllmutants(candidates,tempModel,indexes,tol)
+if nargin<4
+    tol = 0.001;
 end
-FoldChanges = [];
+FChanges_y = [];
+FChanges_p = [];
 CUR_indx    = indexes(1);
 targetIndx  = indexes(2);
-medianUsage = (candidates.maxUsage-candidates.minUsage)/2.001; 
+growth_indx = indexes(3);
 %Index to minimize (bi-level optimization)
 minIndex = find(contains(tempModel.rxnNames,'prot_pool'));
+%Unconstrain CUR and biomass formation
+tempModel = setParam(tempModel,'ub',CUR_indx,1000);
+tempModel = setParam(tempModel,'lb',CUR_indx,0);
+tempModel = setParam(tempModel,'ub',growth_indx,1000);
+tempModel = setParam(tempModel,'lb',growth_indx,0);
+tempModel = setParam(tempModel,'obj',growth_indx,1);
+%Get WT solutions
+[WTsol,~] = solveECmodel(tempModel,tempModel,'pFBA',minIndex);
+maxGrowth = WTsol(growth_indx);
+tempModel = setParam(tempModel,'lb',growth_indx,0.9*maxGrowth);
+tempModel = setParam(tempModel,'obj',targetIndx,1);
+[WTsol,~] = solveECmodel(tempModel,tempModel,'pFBA',minIndex);
+prodWT    = WTsol(targetIndx);
+WTval     = prodWT/WTsol(CUR_indx);
+
 for i=1:height(candidates)
     gene   = candidates.genes{i};
+    enzyme = candidates.enzymes{i};
     short  = candidates.shortNames{i};
     action = candidates.actions(i);
+    if action ==1
+        action = 2;
+    end
     OEf    = candidates.OE(i);
     modifications = {gene action OEf};
-    if action == 0
-        pUsage = candidates.maxUsage(i);
-    else
-        pUsage = medianUsage(i);
+    if ~isempty(enzyme)
+        index  = find(contains(tempModel.rxnNames,['draw_prot_' enzyme]));
+        pUsage = WTsol(index);
+    else 
+        pUsage = [];
+    end
+    if action ==0 & isempty(pUsage)
+        pUsage = 1E-9;
     end
     mutantModel     = getMutant(tempModel,modifications,pUsage);
     [mutSolution,~] = solveECmodel(mutantModel,mutantModel,'pFBA',minIndex);
     if ~isempty(mutSolution)
         yield = mutSolution(targetIndx)/mutSolution(CUR_indx);
-        FC    = yield/WTval;
+        FC_y  = yield/WTval;
+        FC_p  = mutSolution(targetIndx)/prodWT;
     else
-        FC = 0;
+        FC_y = 0;
+        FC_p = 0;
     end
-    FoldChanges = [FoldChanges; FC];
-    %disp(['Ready with genetic modification #' num2str(i) '[' short ': ' num2str(action) '] FC: ' num2str(FC)])
+    FChanges_y = [FChanges_y; FC_y];
+    FChanges_p = [FChanges_p; FC_p];
+    disp(['Ready with genetic modification #' num2str(i) '[' short ': ' num2str(action) '] FC: ' num2str(FC_y)])
 end
-positive   = FoldChanges>(1-tol);
-[maxVal,I] = max(FoldChanges);
+validated  = mean([FChanges_y,FChanges_p])>=1-tol;
+[maxVal,I] = max(FChanges_y);
 if ~(maxVal>=1)
     maxVal = [];
     gene   = [];
 else 
     TOPgene = candidates.genes{I};
-    FC   = FoldChanges(I);
-    disp(['candidate gene: ' short ' FC: ' num2str(FC)])
+    FC_y    = FChanges_y(I);
+    disp(['candidate gene: ' short ' FC: ' num2str(FC_y)])
 end
 end
 
