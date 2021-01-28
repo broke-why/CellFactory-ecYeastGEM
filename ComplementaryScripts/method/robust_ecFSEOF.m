@@ -192,82 +192,69 @@ candidates.conectivity = Gconect.mets_number;
 candidates.groups = groups;
 % Rank candidates by priority
 disp(' Ranking gene targets by priority level:')
-disp('   1.- Unique gene candidates for OE with min. usage>0 (essential)')
-disp('   1.- Unique gene candidates for del with pUsage=0 and maxUsage>0')
-disp('   2.- Isoenzyme candidates for OE with the lowest MW for a metabolic rxn')
-disp('   2.- Groups of isoenzymes candidates for deletion with all pUsage=0')
-disp('   3.- The heaviest enzymes in a group of isoenzymes candidates for deletion and at least one pUsage>0')
-disp('  ')
-priority = zeros(height(candidates),1);
-%%% 1st. unique=1 OEs with both min and pUsage>0 & Deletions with pUsage=0
-%unique Enzymes that are necesarily used
-cond1 = (candidates.actions>0 & candidates.minUsage>0);
-%unique enzymes that are not used in a parsimonious simulation
-cond2   = (candidates.actions==0 & candidates.pUsage==0);
-indexes = (candidates.unique==1 & (cond2 | cond1));
-priority(indexes) = 1; 
-%%% 2nd. unique=0, for OEs pick the enzyme with the lowest MW for each group, these 
-% are usually isoenzymes, therefore the lowest protein burden impact is
-% desired. For deletions assign 2 to groups of isoenzymes in which none of
-% them is used. For groups of isoenzymes candidates for deletions in which 
-% there are used enzymes in the parsimonious distribution then delete the
-% non-used ones.
-for i=1:max(candidates.groups)
-    %Find group genes
-    groupIndxs = find(candidates.groups==i);
-    groupTable = candidates(groupIndxs,:); 
-    if sum(candidates.actions(groupIndxs))==0
-        nonZeros = (candidates.pUsage(groupIndxs)>0);
-        if sum(nonZeros)==0
-            priority(groupIndxs) = 2;
-        else
-            priority(groupIndxs(~nonZeros)) = 3;
-        end
-    else
-        if all(candidates.actions(groupIndxs)>0)
-            %Select those with pUsage>0  and minUsage>0 and the lowest MW
-            groupTable = groupTable((groupTable.pUsage>0),:);
-            [~,minMW]  = min(groupTable{:,'MWs'});
-            groupGenes = groupTable.genes(minMW);
-            if ~isempty(groupGenes)                
-                prtyIndx = (strcmpi(candidates.genes,groupGenes));
-                priority(prtyIndx) = 2;
-            end
+candidates.priority = zeros(height(candidates),1);
+disp('   1.- Gene candidates for OE with min. usage>0 (essential for production)')
+idxs =(strcmpi(candidates.EV_type,'essential') | ...
+       strcmpi(candidates.EV_type,'tightly_const')) & ...
+       candidates.actions>0;
+candidates.priority(idxs) = 1;
+disp('   1.- Gene candidates for KO/KD with maxUsage=0 (unusable)')
+idxs =strcmpi(candidates.EV_type,'unusable'); %& candidates.unique;
+candidates.priority(idxs) = 1;
+disp('   2.- Isoenzyme candidates for OE with pUsage=maxUsage>0 (optimal isoforms const.)')
+idxs =strcmpi(candidates.EV_type,'opt_isoenz_tight') & candidates.actions>0;
+candidates.priority(idxs) = 2;
+disp('   2.- Suboptimal isoenzymes candidates for KO/KD (maxUsage>0 pUsage=0)')
+idxs =strcmpi(candidates.EV_type,'subOpt_isoenz') & candidates.actions==0;
+candidates.priority(idxs) = 2;
+disp('   3.- Isoenzyme candidates for OE with pUsage>0 & pUsage<maxUsage (optimal isoforms)')
+idxs =strcmpi(candidates.EV_type,'opt_isoenz') & candidates.actions>0;
+candidates.priority(idxs) = 3;
+disp('   3.- Groups of remaining isoenzymes that are not used for optimal production')
+for k=1:max(candidates.groups)
+    idx = find(candidates.groups==k & candidates.actions==0);
+    if length(idx)>1
+        if ~isempty(candidates.enzymes(idx(1))) & ~any(candidates.pUsage(idx)>tol)
+            candidates.priority(idx) = 3;
         end
     end
 end
-candidates.priority = priority;
+disp('  ')
 %Keep priority genes and sort them accordingly
-candidates = candidates(priority>0,:);
 disp(' Discard genes with priority level = 0')
+candidates = candidates(candidates.priority>0,:);
+candidates = sortrows(candidates,'priority','ascend');
 disp([num2str(height(candidates)) ' gene targets remain'])
+writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t','QuoteStrings',false);
 
 % 6.- Find compatible combinations
 step = step+1;
 disp([num2str(step) '.-  **** Find compatible combinations ****'])
 disp('  ')
-candidates = sortrows(candidates,'priority','ascend');
-writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t','QuoteStrings',false);
 % get optimal strain according to priority candidates
 disp(' Constructing optimal strain')
-[mutantStrain,filtered] = getOptimalStrain(tempModel,candidates,[targetIndx CUR_indx growth_indx prot_indx],false);
-actions = cell(height(filtered),1);
-actions(filtered.actions==0 & filtered.k_scores<=delLimit)= {'KO'};
-actions(filtered.actions==0 & filtered.k_scores>delLimit)= {'KD'};
-actions(filtered.actions>0) = {'OE'};
-filtered.actions = actions;
-disp([num2str(height(filtered)) ' gene targets remain'])
-disp('  ')
-%Write final results
+tempModel.lb(targetIndx) = 0;
+[mutantStrain,filtered] = getOptimalStrain(tempModel,candidates,[CUR_indx targetIndx growth_indx prot_indx],false);
+filtered = discardRedundancies(model,filtered);
 cd (current)
-writetable(filtered,[resultsFolder '/compatible_genes_results.txt'],'Delimiter','\t','QuoteStrings',false);
+if ~isempty(filtered)
+    actions = cell(height(filtered),1);
+    actions(filtered.actions==0 & filtered.k_scores<=delLimit)= {'KO'};
+    actions(filtered.actions==0 & filtered.k_scores>delLimit)= {'KD'};
+    actions(filtered.actions>0) = {'OE'};
+    filtered.actions = actions;
+    disp([num2str(height(filtered)) ' gene targets remain'])
+    disp('  ')
+    %Write final results
+    writetable(filtered,[resultsFolder '/compatible_genes_results.txt'],'Delimiter','\t','QuoteStrings',false);
+end
 origin = 'GECKO/geckomat/utilities/ecFSEOF/results/*';
 copyfile(origin,resultsFolder)
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [FChanges_y,FChanges_p,validated] = testAllmutants(candidates,tempModel,indexes,tol)
 if nargin<4
-    tol = 0.0001;
+    tol = 0;
 end
 FChanges_y = [];
 FChanges_p = [];
