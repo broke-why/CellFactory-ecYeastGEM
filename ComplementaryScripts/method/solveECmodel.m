@@ -24,7 +24,7 @@ function [mutSolution,flag] = solveECmodel(mutant,model,method,prots,tol)
 %
 
 if nargin<5
-    tol = 1E-15;
+    tol = 1E-12;
 end
 
 minFlag = false;
@@ -60,7 +60,7 @@ elseif strcmpi(method,'pFBA')
     end
 end
 
-if ~isempty(mutSolution)
+if ~isempty(mutSolution) && any(mutSolution)
     flag = 1;
 else 
     flag = 0;
