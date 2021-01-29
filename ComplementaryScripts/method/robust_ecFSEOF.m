@@ -57,7 +57,7 @@ candidates = table(genes,candidates,geneShorts,MWeigths,actions,results.k_genes,
 disp(['Removing targets ' num2str(thresholds(1)) ' < K_score < ' num2str(thresholds(2))])
 toKeep     = find((candidates.k_scores>=thresholds(2)|candidates.k_scores<=thresholds(1)));
 candidates = candidates(toKeep,:);
-disp([num2str(height(candidates)) ' gene targets remain'])
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 disp('  ')
 
 % 2.- discard essential genes from deletion targets
@@ -67,7 +67,7 @@ disp([num2str(step) '.-  **** Removing essential genes from KD and KO targets li
 toRemove  = iB & candidates.k_scores<=0.05;
 candidates(toRemove,:) = [];
 cd (current)
-disp([num2str(height(candidates)) ' gene targets remain'])
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 disp('  ')
 writetable(candidates,[resultsFolder '/candidates_ecFSEOF.txt'],'Delimiter','\t','QuoteStrings',false);
 
@@ -136,44 +136,18 @@ disp('  ')
 disp(' Discard OE targets with lb=ub=0')
 toRemove = strcmpi(candidates.EV_type,'unusable') & candidates.actions>0;
 candidates(toRemove,:) = [];
-disp([num2str(height(candidates)) ' gene targets remain'])
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 disp('  ')
 disp(' Discard essential enzymes from deletion targets')
 toRemove = (strcmpi(candidates.EV_type,'tightly_constrained') | strcmpi(candidates.EV_type,'essential')) & ...
        (candidates.k_scores<=delLimit);
 candidates(toRemove,:) = [];       
-disp([num2str(height(candidates)) ' gene targets remain'])
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 disp('  ')
 %Generate table with FVA results
 writetable(candidates,[resultsFolder '/candidates_enzUsageFVA.txt'],'Delimiter','\t','QuoteStrings',false);
 
-% 4.- Mechanistic validations of FSEOF results
-step = step+1;
-disp([num2str(step) '.-  **** Mechanistic validation of results ****'])
-%Relevant rxn indexes
-relIndexes = [CUR_indx, targetIndx, growth_indx];
-%relax target rxn bounds
-tempModel.lb(targetIndx) = (1-tol)*WT_prod;
-tempModel.ub(targetIndx) = 1000;
-%Unconstrain CUR and biomass formation
-tempModel = setParam(tempModel,'ub',CUR_indx,1000);
-tempModel = setParam(tempModel,'lb',CUR_indx,0);
-tempModel = setParam(tempModel,'ub',growth_indx,1000);
-tempModel = setParam(tempModel,'lb',growth_indx,0);
-%set Max product formation as objective function
-tempModel = setParam(tempModel,'obj',targetIndx,+1);
-%Run mechanistic validation of targets
-[FCs_y,FCs_p,validated]  = testAllmutants(candidates,tempModel,relIndexes);
-%Discard genes with a negative impact on production yield
-candidates.foldChange_yield = FCs_y; 
-candidates.foldChange_pRate = FCs_p; 
-candidates = candidates(validated,:);
-disp(' Discard gene modifications with a negative impact on product yield or rate')
-disp([num2str(height(candidates)) ' gene targets remain'])
-disp('  ')
-writetable(candidates,[resultsFolder '/candidates_mech_validated.txt'],'Delimiter','\t','QuoteStrings',false);
-
-% 5.- Assess genes redundancy
+% 4.- Assess genes redundancy
 step = step+1;
 disp([num2str(step) '.-  **** Assess genes redundancy ****'])
 disp('  ')
@@ -224,8 +198,34 @@ disp('  ')
 disp(' Discard genes with priority level = 0')
 candidates = candidates(candidates.priority>0,:);
 candidates = sortrows(candidates,'priority','ascend');
-disp([num2str(height(candidates)) ' gene targets remain'])
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t','QuoteStrings',false);
+
+% 5.- Mechanistic validations of FSEOF results
+step = step+1;
+disp([num2str(step) '.-  **** Mechanistic validation of results ****'])
+%Relevant rxn indexes
+relIndexes = [CUR_indx, targetIndx, growth_indx];
+%relax target rxn bounds
+tempModel.lb(targetIndx) = (1-tol)*WT_prod;
+tempModel.ub(targetIndx) = 1000;
+%Unconstrain CUR and biomass formation
+tempModel = setParam(tempModel,'ub',CUR_indx,1000);
+tempModel = setParam(tempModel,'lb',CUR_indx,0);
+tempModel = setParam(tempModel,'ub',growth_indx,1000);
+tempModel = setParam(tempModel,'lb',growth_indx,0);
+%set Max product formation as objective function
+tempModel = setParam(tempModel,'obj',targetIndx,+1);
+%Run mechanistic validation of targets
+[FCs_y,FCs_p,validated]  = testAllmutants(candidates,tempModel,relIndexes);
+%Discard genes with a negative impact on production yield
+candidates.foldChange_yield = FCs_y; 
+candidates.foldChange_pRate = FCs_p; 
+candidates = candidates(validated,:);
+disp(' Discard gene modifications with a negative impact on product yield or rate')
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
+disp('  ')
+writetable(candidates,[resultsFolder '/candidates_mech_validated.txt'],'Delimiter','\t','QuoteStrings',false);
 
 % 6.- Find compatible combinations
 step = step+1;
@@ -235,10 +235,10 @@ disp('  ')
 disp(' Constructing optimal strain')
 tempModel.lb(targetIndx) = 0;
 [mutantStrain,filtered] = getOptimalStrain(tempModel,candidates,[CUR_indx targetIndx growth_indx prot_indx],false);
-filtered = discardRedundancies(model,filtered);
 cd (current)
 if ~isempty(filtered)
-    actions = cell(height(filtered),1);
+    filtered = discardRedundancies(tempModel,filtered);
+    actions  = cell(height(filtered),1);
     actions(filtered.actions==0 & filtered.k_scores<=delLimit)= {'KO'};
     actions(filtered.actions==0 & filtered.k_scores>delLimit)= {'KD'};
     actions(filtered.actions>0) = {'OE'};
