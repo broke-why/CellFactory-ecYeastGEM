@@ -24,7 +24,7 @@ function [mutSolution,flag] = solveECmodel(mutant,model,method,prots,tol)
 %
 
 if nargin<5
-    tol = 1E-12;
+    tol = 1E-9;
 end
 
 minFlag = false;

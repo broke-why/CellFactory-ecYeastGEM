@@ -2,12 +2,12 @@ function candidates = discardRedundancies(model,candidates)
 tempModel = model;
 threshold = 1E-12;
 original = candidates;
-candidates = candidates(~strcmpi(candidates.actions,'OE'),:);
+candidates = candidates(candidates.actions==0,:);
 %Iterate through each priority level
 removed = [];
 for priority = [1 2 3]
     %Isolate deletion targets for the ith priority level
-    targets  = candidates(candidates.priority==priority);
+    targets  = candidates(candidates.priority==priority,:);
     if ~isempty(targets)
         %Rank targets by mean(pYield FC, pRate FC)
         %targets.FC = mean([targets.foldChange_yield targets.foldChange_pRate],2);
@@ -39,9 +39,9 @@ for priority = [1 2 3]
                         if ~flux
                             position = find(strcmpi(candidates.enzymes,enzyme));
                             if ~isempty(position) & ~strcmpi(protein,enzyme)
-                                disp([' Discarding ' name2 ' due to redundancy with ' name2])
+                                disp([' Discarding ' name2 ' due to redundancy with ' name1])
                                 candidates(position,:) = [];
-                                removed = [removed;enzyme];
+                                removed = [removed;{enzyme}];
                             end
                         end
                     end
@@ -51,7 +51,9 @@ for priority = [1 2 3]
         end
     end
 end
-[~,iB] = ismember(removed,original.enzymes);
 candidates = original;
-candidates(iB,:) = [];
+if ~isempty(removed)
+    [~,iB] = ismember(removed,original.enzymes);
+    candidates(iB,:) = [];
+end
 end
