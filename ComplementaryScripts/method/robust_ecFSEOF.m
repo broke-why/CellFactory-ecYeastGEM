@@ -41,18 +41,21 @@ MWeigths           = [];
 disp(' Extracting enzymatic information for target genes')
 [~,iB]     = ismember(genes,model.enzGenes);
 candidates = {};
+pathways   = {};
 for i=1:numel(iB)
     if iB(i)>0
         candidates = [candidates; model.enzymes(iB(i))];
         MWeigths   = [MWeigths; model.MWs(iB(i))];
+        pathways   = [pathways; model.pathways(iB(i))];
     else
         candidates = [candidates; {''}];
         MWeigths   = [MWeigths; nan];
+        pathways   = [pathways; {''}]; 
     end
 end
 disp('  ')
 %Get results files structures
-candidates = table(genes,candidates,geneShorts,MWeigths,actions,k_scores,'VariableNames',{'genes' 'enzymes' 'shortNames' 'MWs' 'actions' 'k_scores'});
+candidates = table(genes,candidates,geneShorts,MWeigths,pathways,actions,k_scores,'VariableNames',{'genes' 'enzymes' 'shortNames' 'MWs' 'pathways' 'actions' 'k_scores'});
 % Keep top results
 disp(['Removing targets ' num2str(thresholds(1)) ' < K_score < ' num2str(thresholds(2))])
 toKeep     = find((candidates.k_scores>=thresholds(2)|candidates.k_scores<=thresholds(1)));

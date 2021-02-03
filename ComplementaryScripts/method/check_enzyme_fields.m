@@ -20,6 +20,9 @@ if isfield(model,'enzNames')
             if length(model.enzymes)>length(model.MWs)
                 model.MWs(j) = mean(model.MWs);
             end
+             if length(model.enzymes)>length(model.pathways)
+                model.pathways{j} = '';
+            end
         end
     end
 end
