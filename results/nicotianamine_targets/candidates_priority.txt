@@ -9,7 +9,7 @@ YNL141W	P53909	AAH1	39.63458	sce00230  Purine metabolism	2	1000	tightly_const	2	
 YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.7229062874298e-08	2.72787960654317e-08	2.72466152002226e-08	1	6	0	1
 YJR024C	P47095	MDE1	27.42662	sce00270  Cysteine and methionine metabolism	2	1000	tightly_const	2	1.27201477140124e-07	1.27219466642677e-07	1.27201477140124e-07	1	3	0	1
 YPR118W	Q06489	MRI1	45.01983	sce00270  Cysteine and methionine metabolism	1	1000	essential	2	1.25678232840068e-10	2.13543434802993e-09	1.25678232840068e-10	1	2	0	1
-YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.6822080835844e-11	4.25269721568686e-09	1.5728024228112e-10	1	16	0	1
+YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.68220811181713e-11	4.25269721568686e-09	1.5728024228112e-10	1	16	0	1
 NAS2	Q9FKT9	NAS2	35.679		2	1000	tightly_const	2	0.00251859176596622	0.00251859176597126	0.00251859176596622	1	4	0	1
 YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	2	11.9251604398536	essential	2	8.9247015917587e-07	9.05510258956312e-07	8.94115463726267e-07	1	17	0	1
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.43712112470779	essential	2	1.89719043502483e-06	2.03715515153084e-06	2.03610198873226e-06	1	6	0	1
