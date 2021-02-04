@@ -1,0 +1,9 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
+r_1129	coenzyme A transport	0.278421322008992	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_1265	succinate-fumarate transport	0.27783	YJR095W	fumarate[m] + succinate[c] => fumarate[c] + succinate[m]
+r_2132	oxoglutarate/malate exchange	0.236522613428679	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1194	L-glutamate transport	0.188206271058758	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1245	phosphate transport	0.156969340385396	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1277_REV	water diffusion (reversible)	0.29284794166126	YLL052C or YPR192W	H2O[c] => H2O[e]

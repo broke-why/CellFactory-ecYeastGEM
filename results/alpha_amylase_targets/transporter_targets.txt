@@ -1,0 +1,10 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1112_REV	AKG transporter, mitochonrial (reversible)	1000	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
+r_1115	ammonia transport	1.70805209255848	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_1194	L-glutamate transport	1.58068539247767	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_2034	pyruvate transport	1.52096695317245	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1237	ornithine transport	1.51238605188023	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1099	2-oxoadipate and 2-oxoglutarate transport	1.16166082432621	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
+r_2132	oxoglutarate/malate exchange	1.0792132683906	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1266	sulfate uniport	3.6809194885405	YBR294W or YLR092W	sulphate[e] => sulphate[c]
+r_1277_REV	water diffusion (reversible)	1.07341668416466	YLL052C or YPR192W	H2O[c] => H2O[e]

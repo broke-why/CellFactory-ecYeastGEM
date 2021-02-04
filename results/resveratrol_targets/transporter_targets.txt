@@ -1,0 +1,6 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
+r_1110	ADP/ATP transporter	0.234091848679008	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
+r_2132	oxoglutarate/malate exchange	0.228578843453017	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1245	phosphate transport	0.180090652038624	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
