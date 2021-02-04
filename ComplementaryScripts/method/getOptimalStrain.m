@@ -1,6 +1,6 @@
 function [optStrain,optGenes,FChanges,iB] = getOptimalStrain(model,candidates,rxnIndxs,protFlag)
 
-tolerance = 0.005;
+tolerance = 0.001;
 
 GURindex    = rxnIndxs(1);
 targetIndex = rxnIndxs(2);
@@ -33,6 +33,7 @@ if flag
         levelCandidates.foldChange = mean([levelCandidates.foldChange_yield,levelCandidates.foldChange_pRate],2);
         levelCandidates = sortrows(levelCandidates,'foldChange','descend');
         for j=1:length(levelCandidates.genes)
+            counter = counter+1;
             gene   = levelCandidates.genes{j};
             enzyme = levelCandidates.enzymes{j};
             enzRxn = find(contains(optStrain.rxnNames,['prot_' enzyme]),1);
@@ -53,11 +54,11 @@ if flag
                         action = 2;%sol(enzRxn);%candidates.maxUsage(i);
                         numTol = tolerance;
                     else
-                        numTol = 1E-10;
+                        numTol = 1E-12;
                     end
                     
                     if enzUsage==0
-                        enzUsage = 1E-9;
+                        enzUsage = 1E-8;
                     end
                     tempMutant = getMutant(optStrain,modifications,enzUsage);
                     [mutSol,~] = solveECmodel(tempMutant,model,'pFBA',prot_index);
@@ -74,7 +75,7 @@ if flag
                             optStrain  = tempMutant;
                             previousFC = score;
                             %counter = counter+1;
-                            disp(['Ready with gene #' num2str(j) ' (' short ')' '  FC:' num2str(score)])
+                            disp(['  Added target #' num2str(counter) ': (' short ')' '|  FC:' num2str(score)])
                         end
                     end
                 end

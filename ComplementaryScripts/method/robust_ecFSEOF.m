@@ -1,4 +1,4 @@
-function [mutantStrain,filtered,step] = robust_ecFSEOF(model,rxnTarget,expYield,CS_MW,resultsFolder)
+function [mutantStrain,filtered,step] = robust_ecFSEOF(model,rxnTarget,c_source,expYield,CS_MW,resultsFolder)
 mkdir(resultsFolder)
 current      = pwd;
 tol          = 1E-12;
@@ -14,7 +14,6 @@ cd GECKO
 cd geckomat
 parameters = getModelParameters;
 bioRXN     = parameters.bioRxn;
-c_source   = parameters.c_source;
 %Parameters for FSEOF method
 Nsteps     = 16;
 alphaLims  = [0.5*expYield 2*expYield];
@@ -24,35 +23,39 @@ file2   = 'results/rxnsResults_ecFSEOF.txt';
 % 1.- Run FSEOF to find gene candidates
 cd utilities/ecFSEOF
 mkdir('results')
-step = 1;
+step = step+1;
 disp([num2str(step) '.-  **** Running ecFSEOF method (from GECKO utilities) ****'])
 results = run_ecFSEOF(model,rxnTarget,c_source,alphaLims,Nsteps,file1,file2);
-genes   = results.genes;
+genes   = results.geneTable(:,1);
 disp('  ')
 disp(['ecFSEOF yielded ' num2str(length(genes)) ' targets'])
 disp('  ')
 %Format results table
-geneShorts = results.geneNames;
-actions    = results.k_genes;
-actions(actions<0.5) = 0;
-actions(actions>1)   = 1;
-MWeigths             = [];
+geneShorts = results.geneTable(:,2);
+k_scores   = cell2mat(results.geneTable(:,3));
+actions    = k_scores;
+actions(actions<thresholds(1)) = 0;
+actions(actions>1) = 1;
+MWeigths           = [];
 %Identify candidate genes in model enzymes
 disp(' Extracting enzymatic information for target genes')
 [~,iB]     = ismember(genes,model.enzGenes);
 candidates = {};
+pathways   = {};
 for i=1:numel(iB)
     if iB(i)>0
         candidates = [candidates; model.enzymes(iB(i))];
         MWeigths   = [MWeigths; model.MWs(iB(i))];
+        pathways   = [pathways; model.pathways(iB(i))];
     else
         candidates = [candidates; {''}];
         MWeigths   = [MWeigths; nan];
+        pathways   = [pathways; {''}]; 
     end
 end
 disp('  ')
 %Get results files structures
-candidates = table(genes,candidates,geneShorts,MWeigths,actions,results.k_genes,'VariableNames',{'genes' 'enzymes' 'shortNames' 'MWs' 'actions' 'k_scores'});
+candidates = table(genes,candidates,geneShorts,MWeigths,pathways,actions,k_scores,'VariableNames',{'genes' 'enzymes' 'shortNames' 'MWs' 'pathways' 'actions' 'k_scores'});
 % Keep top results
 disp(['Removing targets ' num2str(thresholds(1)) ' < K_score < ' num2str(thresholds(2))])
 toKeep     = find((candidates.k_scores>=thresholds(2)|candidates.k_scores<=thresholds(1)));
@@ -77,7 +80,7 @@ disp([num2str(step) '.-  **** Running enzyme usage variability analysis ****'])
 tempModel = model;
 %Get relevant rxn indexes
 targetIndx  = find(strcmpi(tempModel.rxns,rxnTarget));
-CUR_indx    = find(strcmpi(tempModel.rxnNames,c_source));
+CUR_indx    = find(strcmpi(tempModel.rxns,c_source));
 growth_indx = find(strcmpi(tempModel.rxns,bioRXN));
 prot_indx = find(contains(tempModel.rxns,'prot_pool'));
 %Fix suboptimal experimental biomass yield conditions
@@ -136,8 +139,6 @@ disp('  ')
 disp(' Discard OE targets with lb=ub=0')
 toRemove = strcmpi(candidates.EV_type,'unusable') & candidates.actions>0;
 candidates(toRemove,:) = [];
-disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
-disp('  ')
 disp(' Discard essential enzymes from deletion targets')
 toRemove = (strcmpi(candidates.EV_type,'tightly_constrained') | strcmpi(candidates.EV_type,'essential')) & ...
        (candidates.k_scores<=delLimit);
@@ -149,14 +150,15 @@ writetable(candidates,[resultsFolder '/candidates_enzUsageFVA.txt'],'Delimiter',
 
 % 4.- Assess genes redundancy
 step = step+1;
-disp([num2str(step) '.-  **** Assess genes redundancy ****'])
+disp([num2str(step) '.-  **** Ranking gene targets by priority level:'])
+%disp([num2str(step) '.-  **** Assess genes redundancy ****'])
 disp('  ')
 %Get Genes-metabolites network
 disp('  Constructing genes-metabolites graph')
 disp('  ')
 [GeneMetMatrix,~,Gconect] = getGeneMetMatrix(tempModel,candidates.genes);
 %Get independent genes from GeneMetMatrix
-disp('  Obtain redundant vectors in genes-metabolites graph')
+disp('  Obtain redundant vectors in genes-metabolites graph (redundant targets)')
 disp('  ')
 [indGenes,G2Gmatrix,~] = getGeneDepMatrix(GeneMetMatrix);
 %Append algebraic results to candidates table
@@ -165,7 +167,7 @@ candidates.conectivity = Gconect.mets_number;
 [~,groups]        = getGenesGroups(G2Gmatrix,candidates.genes);
 candidates.groups = groups;
 % Rank candidates by priority
-disp(' Ranking gene targets by priority level:')
+disp(' Priority levels:')
 candidates.priority = zeros(height(candidates),1);
 disp('   1.- Gene candidates for OE with min. usage>0 (essential for production)')
 idxs =(strcmpi(candidates.EV_type,'essential') | ...
@@ -203,6 +205,7 @@ writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t
 
 % 5.- Mechanistic validations of FSEOF results
 step = step+1;
+disp('  ')
 disp([num2str(step) '.-  **** Mechanistic validation of results ****'])
 %Relevant rxn indexes
 relIndexes = [CUR_indx, targetIndx, growth_indx];
@@ -233,17 +236,21 @@ disp([num2str(step) '.-  **** Find compatible combinations ****'])
 disp('  ')
 % get optimal strain according to priority candidates
 disp(' Constructing optimal strain')
-tempModel.lb(targetIndx) = 0;
+disp(' ')
 [mutantStrain,filtered] = getOptimalStrain(tempModel,candidates,[CUR_indx targetIndx growth_indx prot_indx],false);
-cd (current)
-if ~isempty(filtered)
-    filtered = discardRedundancies(tempModel,filtered);
+cd (current) 
+if ~isempty(filtered) & istable(filtered)
+    disp(' ')
+    step = step+1;
+    disp([num2str(step) '.-  **** Discard redundant deletion targets ****'])
+    disp(' ')
+    %filtered = discardRedundancies(tempModel,filtered);
     actions  = cell(height(filtered),1);
     actions(filtered.actions==0 & filtered.k_scores<=delLimit)= {'KO'};
     actions(filtered.actions==0 & filtered.k_scores>delLimit)= {'KD'};
     actions(filtered.actions>0) = {'OE'};
     filtered.actions = actions;
-    disp([num2str(height(filtered)) ' gene targets remain'])
+    disp([' * ' num2str(height(filtered)) ' gene targets remain'])
     disp('  ')
     %Write final results
     writetable(filtered,[resultsFolder '/compatible_genes_results.txt'],'Delimiter','\t','QuoteStrings',false);
@@ -254,7 +261,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [FChanges_y,FChanges_p,validated] = testAllmutants(candidates,tempModel,indexes,tol)
 if nargin<4
-    tol = 0;
+    tol = 1E-9;
 end
 FChanges_y = [];
 FChanges_p = [];
@@ -315,7 +322,7 @@ if ~(maxVal>=1)
 else 
     TOPgene = candidates.genes{I};
     FC_y    = FChanges_y(I);
-    disp(['candidate gene: ' short ' FC: ' num2str(FC_y)])
+    disp([' Top candidate gene: ' short ' FC: ' num2str(FC_y)])
 end
 end
 

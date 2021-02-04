@@ -1,111 +1,90 @@
-genes	enzymes	shortNames	MWs	actions	k_scores	OE	minUsage	maxUsage	pUsage
-YAR035W	P80235	YAT1	77.76483	2	1000	2	0	9.15311812472825e-08	9.14221387808951e-08
-YBL015W	P32316	ACH1	58.71137	1	1000	2	0	0.00142423594923692	1.30603856562277e-11
-YBR252W	P33317	DUT1	15.30716	1	1000	2	0	7.73483861013316e-09	0
-YDR300C	P32264	PRO1	47.16164	2	1000	2	0	2.12070501590455e-07	2.11661390951431e-07
-YEL047C	P32614	FRD1	50.84351	1	1000	2	1.4991442696873e-05	0.00165962462603824	1.49917486000622e-05
-YER024W	P40017	YAT2	103.33286	1	1000	2	0	2.43096895627821e-07	0
-YER073W	P40047	ALD5	56.69214	2	1000	2	0	1.26817961525271e-06	1.26800377061532e-06
-YER170W	P26364	ADK2	25.19373	1	1000	2	0	0.00331903965273355	8.10414041490051e-13
-YIL099W	P08019	SGA1	61.46231	1	1000	2	0	3.10876784161282e-08	1.23516550779867e-08
-YLR011W	Q07923	LOT6	21.2804	1	1000	2	1.22799882168069e-05	0.000936844055651112	1.22804758012673e-05
-YLR138W		NHA1	NaN	1	1000	2	NaN	NaN	NaN
-YML042W	P32796	CAT2	77.24096	2	1000	2	0	9.23204125113193e-08	9.22104298217919e-08
-YMR170C	P47771	ALD2	55.18718	1	1000	2	0	1.43620455550117e-06	0
-YMR241W		YHM2	NaN	1	1000	2	NaN	NaN	NaN
-YNL037C	P28834	IDH1	39.32357	2	1000	2	3.67187547621921e-07	6.7515149943987e-07	3.67543031540995e-07
-YOR100C		CRC1	NaN	1	1000	2	NaN	NaN	NaN
-YOR136W	P28241	IDH2	39.73903	2	1000	2	3.67187547621921e-07	6.7515149943987e-07	3.67543031540995e-07
-YOR323C	P54885	PRO2	49.73991	2	1000	2	0	2.74906063349596e-08	2.74376007147709e-08
-YOR374W	P46367	ALD4	56.72295	1	1000	2	0	1.26817961525158e-06	0
-YJR069C	P47119	HAM1	22.09268	1	1000	2	0	0.0037849105260004	1.58382700248086e-10
-YMR110C	Q04458	HFD1	59.97826	1	1000	2	0	0.00139535088418045	0
-YBR241C		YBR241C	NaN	1	1000	2	NaN	NaN	NaN
-YGL104C		VPS73	NaN	1	1000	2	NaN	NaN	NaN
-YDR456W		NHX1	NaN	1	1000	2	NaN	NaN	NaN
-YDR038C	Q12691	ENA5	120.29497	1	1000	2	0	4.584216378085e-07	2.09980389951128e-09
-YDR039C	Q01896	ENA2	120.31602	1	1000	2	0	4.58421637802588e-07	0
-YDR040C	P13587	ENA1	120.35609	1	1000	2	0	4.58421637809467e-07	0
-YBR296C		PHO89	NaN	1	67.5207650934995	2	NaN	NaN	NaN
-YCR037C		PHO87	NaN	1	67.5207650934995	2	NaN	NaN	NaN
-YJL198W		PHO90	NaN	1	67.5207650934995	2	NaN	NaN	NaN
-YML123C		PHO84	NaN	1	67.5207650934995	2	NaN	NaN	NaN
-YNR013C		PHO91	NaN	1	67.5207650934995	2	NaN	NaN	NaN
-YFR015C	P23337	GSY1	80.50931	1	15.5643391555711	2	0	1.84382822929618e-07	0
-YJL137C	P47011	GLG2	44.54552	1	15.5643391555711	2	0	1.84382822929804e-07	4.36654255290145e-08
-YKR058W	P36143	GLG1	69.72308	1	15.5643391555711	2	0	1.84382822930361e-07	0
-YLR258W	P27472	GSY2	80.07802	1	15.5643391555711	2	0	1.84382822929804e-07	4.36654255290145e-08
-YOL126C	P22133	MDH2	40.7305	1	10.4748861066639	2	2.85335042602201e-08	0.00205300822424178	2.85338707255953e-08
-YBR218C	P32327	PYC2	130.16549	1	4.80026924458007	2	0	4.5008286856408e-06	0
-YGL062W	P11154	PYC1	130.09827	2	4.80026924391852	2	0	4.50082868563996e-06	4.38694664917057e-06
-YKL035W	P32861	UGP1	55.98734	1	3.97902927527299	2	0	0.00149394750507368	0
-YKL127W	P33401	PGM1	63.11105	1	3.97902927527299	2	0	0.00132509824516742	0
-YMR105C	P37012	PGM2	63.08769	1	3.97902927527299	2	0	0.00132558977884476	1.50032134475732e-07
-YHL012W	P38709	YHL012W	55.99958	1	3.97902927527299	2	0	0.00149361936783136	3.45214768727399e-07
-YNL036W	P53615	NCE103	24.85889	1	3.31444201530095	2	0	0.00336374061887844	2.97565979388479e-10
-YAL038W	P00549	CDC19	54.54404	2	1.81207976424929	2	0	1.43183419609268e-06	1.43181369584003e-06
-YOR347C	P52489	PYK2	55.19478	1	1.81207976424929	2	0	1.43183419609249e-06	0
-YGR254W	P00924	ENO1	46.81564	1	1.70213121572146	2	0	0.0017876112985532	1.47827283829472e-06
-YHR174W	P00925	ENO2	46.91368	1	1.70213121572146	2	0	0.00178387327174266	0
-YKL152C	P00950	GPM1	27.60828	1	1.70213121572146	2	0	0.00302914615983871	0
-YMR323W	P42222	ERR3	47.31216	1	1.70213121572146	2	0	0.00176884810912501	0
-YOR393W	P0CX10	ERR1	47.32712	1	1.70213121572146	2	0	0.00176829122233455	0
-YPL281C	P0CX11	ERR2	47.32712	1	1.70213121572146	2	0	0.00176829122233455	0
-YOR283W	Q12040	YOR283W	26.17622	1	1.70213121572146	2	0	0.0031948706662045	4.08166733100632e-07
-YDR516C	Q04409	EMI2	55.92028	2	1.44666182273087	2	1.86175895035566e-07	2.2168286874519e-07	1.96758005148787e-07
-YLR354C	P15019	TAL1	37.0359	1	1.29839836055615	2	0	0.00226108590730347	3.30658295436576e-06
-YGR043C	P53228	NQM1	37.25314	1	1.29839836055615	2	0	0.00224790290081366	0
-YDR050C	P00942	TPI1	26.79508	1	1.25255161951975	2	2.85439190870498e-08	0.00312070692510265	2.85444039976552e-08
-YGR240C	P16861	PFK1	107.96906	1	1.24549754896932	2	0	3.86329379950658e-07	0
-YKL060C	P14540	FBA1	39.62024	1	1.24549754896932	2	0	0.00211360244406383	0
-YMR205C	P16862	PFK2	104.61673	2	1.24549754896932	2	3.86317153928416e-07	6.94743043099551e-07	6.94732318976968e-07
-YCR012W	P00560	PGK1	44.73787	1	1.23983917208443	2	9.16370761429834e-07	0.00187000029225685	9.16377306303624e-07
-YGR192C	P00359	TDH3	35.74626	1	1.23983917208443	2	0	0.00235619287712766	0
-YJL052W	P00360	TDH1	35.74956	1	1.23983917208443	2	0	0.00235597544687647	1.69592992652561e-05
-YJR009C	P00358	TDH2	35.84645	1	1.23983917208443	2	0	0.00234961327898124	0
-YBR196C	P12709	PGI1	61.29832	1	1.23828795732064	2	3.79097743040689e-07	0.00136450975849202	3.79117370541938e-07
-YBR029C	P38221	CDS1	51.82218	0	0.281215478576026	0	7.40688115609084e-08	0.00161364685726952	7.40697596610837e-08
-YOR222W		ODC2	NaN	0	0.278033686316053	0	NaN	NaN	NaN
-YPL134C		ODC1	NaN	0	0.278033686316053	0	NaN	NaN	NaN
-YOR317W	P30624	FAA1	77.86529	0	0.268685712045075	0	0	0.00107406894354946	0
-YMR246W	P47912	FAA4	77.26612	0	0.268685712045075	0	0	0.00108239832189799	1.74942271180597e-07
-YOR175C	Q08548	ALE1	72.22714	0	0.268497860707542	0	1.5639977610912e-08	2.236762335229e-08	2.23274676480486e-08
-YBL039C	P28274	URA7	64.70953	0	0.26001165391426	0	0	4.18291091516157e-08	0
-YJR103W	P38627	URA8	64.50989	0	0.26001165391426	0	0	4.182910915102e-08	3.66373792577614e-08
-YDL052C	P33333	SLC1	33.88654	0	0.244155636604281	0	0	3.01173551020403e-06	0
-YLR304C	P19414	ACO1	85.36736	0	0.219352179988901	0	0	0.000979728223134568	2.10419621746784e-07
-YDR503C	Q04396	LPP1	31.58604	0	0.209419511092661	0	0	9.89279956924554e-10	9.60481544020521e-10
-YER070W	P21524	RNR1	99.56021	0	0.197373864627833	0	0	4.90700781659764e-07	0
-YIL066C	P21672	RNR3	97.51369	0	0.197373864627833	0	0	4.90700781657372e-07	0
-YJL026W	P09938	RNR2	46.14681	0	0.197373864627833	0	0	4.90700781658435e-07	0
-YPR021C		AGC1	NaN	0	0.189525505439075	0	NaN	NaN	NaN
-YGR180C	P49723	RNR4	40.05407	0	0.181998548642638	0	0	4.90700781658648e-07	1.06670659909726e-07
-YER069W	Q01217	ARG5,6	94.86823	0	0.146210815496569	0	6.17685874715535e-07	1.25196947382883e-06	6.17685874715535e-07
-YMR062C	Q04728	ARG7	47.84821	0	0.146210815496569	0	1.35547590932551e-07	0.00174772253537516	1.35547590932551e-07
-YOL140W	P18544	ARG8	46.68082	0	0.146210815496569	0	1.53424952589946e-06	3.10972559079316e-06	1.53424952589946e-06
-YOR130C		ORT1	NaN	0	0.146210815496569	0	NaN	NaN	NaN
-YOR095C	Q12189	RKI1	28.25777	0	0.142320444397234	0	3.99664430260704e-07	0.00295954330896957	3.9966443026066e-07
-YFL018C	P09624	LPD1	54.00934	0	0.121539455236622	0	8.67140995654374e-08	5.77348623546926e-06	8.67169788542323e-08
-YGL080W		MPC1	NaN	0	0.111002615699056	0	NaN	NaN	NaN
-YGR243W		MPC3	NaN	0	0.111002615699056	0	NaN	NaN	NaN
-YHR162W		MPC2	NaN	0	0.111002615699056	0	NaN	NaN	NaN
-YBR221C	P32473	PDB1	40.0532	0	0	0	0	3.3943179617018e-07	0
-YCL040W	P17709	GLK1	55.37689	0	0	0	0	1.14562126117058e-11	0
-YDR148C	P19262	KGD2	50.43011	0	0	0	0	5.12803072005762e-06	0
-YER178W	P16387	PDA1	46.34261	0	0	0	0	3.3943179617018e-07	0
-YFR053C	P04806	HXK1	53.73784	0	0	0	0	1.14562126315433e-11	0
-YGL253W	P04807	HXK2	53.9419	0	0	0	0	2.47878109155605e-11	0
-YGR193C	P16451	PDX1	45.36125	0	0	0	0	3.3943179617018e-07	0
-YGR248W	P53315	SOL4	28.44737	0	0	0	0	1.41327527529226e-09	0
-YGR256W	P53319	GND2	53.92235	0	0	0	0	3.8826224609298e-10	0
-YHR002W		LEU5	NaN	0	0	0	NaN	NaN	NaN
-YHR163W	P38858	SOL3	27.78417	0	0	0	0	1.41327527047521e-09	0
-YHR183W	P38720	GND1	53.54274	0	0	0	0	3.8826224789119e-10	0
-YIL125W	P20967	KGD1	114.41496	0	0	0	0	5.12803072005762e-06	0
-YJR095W		SFC1	NaN	0	0	0	NaN	NaN	NaN
-YLR438W	P07991	CAR2	46.08557	0	0	0	0	2.50846387225609e-08	0
-YMR267W	P28239	PPA2	35.57213	0	0	0	0	1.81189658358888e-11	0
-YNL071W	P12695	LAT1	51.81762	0	0	0	0	3.3943179617018e-07	0
-YNL241C	P11412	ZWF1	57.5209	0	0	0	0	2.23336547219059e-11	0
-YPL061W	P54115	ALD6	54.41344	0	0	0	0	2.14133078149621e-10	0
-YLR446W	Q06204	YLR446W	48.96875	0	0	0	0	1.88060433134954e-09	0
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage
+YAR035W	P80235	YAT1	77.76483	sce04146  Peroxisome	2	1000	opt_isoenz_tight	2	0	9.08954562967148e-08	9.07857746761151e-08
+YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	opt_isoenz	2	0	0.00142524585280757	1.2969475940736e-11
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz_tight	2	0	2.10599583469728e-07	2.10188074822914e-07
+YEL047C	P32614	FRD1	50.84351	sce00NNN  None	1	1000	essential	2	1.50803587205431e-05	0.00166087953625022	1.50806664167864e-05
+YER073W	P40047	ALD5	56.69214	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00280  Valine, leucine and isoleucine degradation sce00310  Lysine degradation sce00330  Arginine and proline metabolism sce00340  Histidine metabolism sce00380  Tryptophan metabolism sce00410  beta-Alanine metabolism sce00561  Glycerolipid metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	2	1000	opt_isoenz_tight	2	0	1.25935441276963e-06	1.25917754870555e-06
+YER170W	P26364	ADK2	25.19373	sce00230  Purine metabolism sce00730  Thiamine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	1	1000	subOpt_isoenz	2	0	0.00332139299214413	8.04772974408912e-13
+YIL099W	P08019	SGA1	61.46231	sce00500  Starch and sucrose metabolism	1	1000	opt_isoenz	2	0	3.24440398012939e-08	1.3838119758296e-08
+YLR011W	Q07923	LOT6	21.2804	sce00NNN  None	1	1000	essential	2	1.23528222990431e-05	0.000937561210243028	1.23533127414877e-05
+YLR138W		NHA1	NaN		1	1000		2	NaN	NaN	NaN
+YML042W	P32796	CAT2	77.24096	sce04146  Peroxisome	2	1000	opt_isoenz_tight	2	0	9.16792059968151e-08	9.1568578642117e-08
+YMR241W		YHM2	NaN		1	1000		2	NaN	NaN	NaN
+YNL037C	P28834	IDH1	39.32357	sce00020  Citrate cycle (TCA cycle) sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	2	1000	essential	2	3.94317239049477e-07	7.00151633743889e-07	3.94674275505493e-07
+YOR100C		CRC1	NaN		1	1000		2	NaN	NaN	NaN
+YOR136W	P28241	IDH2	39.73903	sce00020  Citrate cycle (TCA cycle) sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	2	1000	essential	2	3.94317239049477e-07	7.00151633743889e-07	3.94674275505493e-07
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz_tight	2	0	2.72999589393397e-08	2.72466152002226e-08
+YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	opt_isoenz	2	0	0.00378759418462487	1.5728024228112e-10
+YBR241C		YBR241C	NaN		1	1000		2	NaN	NaN	NaN
+YGL104C		VPS73	NaN		1	1000		2	NaN	NaN	NaN
+YDR456W		NHX1	NaN		1	1000		2	NaN	NaN	NaN
+YDR038C	Q12691	ENA5	120.29497	sce00NNN  None	1	1000	opt_isoenz	2	0	4.78422653417745e-07	2.08538848020916e-09
+YBR296C		PHO89	NaN		1	67.6944994612486		2	NaN	NaN	NaN
+YCR037C		PHO87	NaN		1	67.6944994612486		2	NaN	NaN	NaN
+YJL198W		PHO90	NaN		1	67.6944994612486		2	NaN	NaN	NaN
+YML123C		PHO84	NaN		1	67.6944994612486		2	NaN	NaN	NaN
+YNR013C		PHO91	NaN		1	67.6944994612486		2	NaN	NaN	NaN
+YJL137C	P47011	GLG2	44.54552	sce00500  Starch and sucrose metabolism	1	15.7038328862703	opt_isoenz	2	0	1.91983259896346e-07	4.78025360300247e-08
+YLR258W	P27472	GSY2	80.07802	sce00500  Starch and sucrose metabolism	1	15.7038328862703	opt_isoenz	2	0	1.91983259896254e-07	4.78025360300247e-08
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	10.5003273891053	essential	2	2.8682187841426e-08	0.00205446392993159	2.86825564548455e-08
+YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	4.81037832918288	opt_isoenz	2	0	4.51910801285643e-06	4.40601666411639e-06
+YMR105C	P37012	PGM2	63.08769	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00052  Galactose metabolism sce00230  Purine metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	1	4.01111383847083	opt_isoenz	2	0	0.00132653779075016	1.58334666125771e-07
+YHL012W	P38709	YHL012W	55.99958	sce00040  Pentose and glucuronate interconversions sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01130  Biosynthesis of antibiotics	1	4.01111383847083	opt_isoenz	2	0	0.00149469669329868	3.64318386451931e-07
+YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	1	3.32053655626385	opt_isoenz	2	0	0.00336612555687943	2.98661063688448e-10
+YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.81404538967885	opt_isoenz_tight	2	0	1.43469710048465e-06	1.43467648256406e-06
+YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	1.7038048267996	opt_isoenz	2	0	0.00178888034146321	1.48092377864164e-06
+YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	1.7038048267996	opt_isoenz	2	0	0.00319713640710582	4.08898685709797e-07
+YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.4507966938629	essential	2	1.86175882697471e-07	2.23231939301128e-07	1.98031259937247e-07
+YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.29902442332914	opt_isoenz	2	0	0.0022626894309109	3.30934717577806e-06
+YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.25317138938718	essential	2	2.85684332130531e-08	0.00312291964251037	2.85689217214268e-08
+YKL060C	P14540	FBA1	39.62024	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.24609755481521	subOpt_isoenz	2	0	0.00211510137491174	0
+YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	1.24609755481521	essential	2	3.86639750886714e-07	6.95323303947938e-07	6.95312541672205e-07
+YCR012W	P00560	PGK1	44.73787	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.24048194529482	essential	2	9.17197312864871e-07	0.00187132637838104	9.17203924729368e-07
+YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.24048194529482	opt_isoenz	2	0	0.00235764903519605	1.69745974062772e-05
+YBR196C	P12709	PGI1	61.29832	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.23864085218288	essential	2	3.79281372215727e-07	0.00136547716852785	3.79301117105948e-07
+YBR029C	P38221	CDS1	51.82218	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04070  Phosphatidylinositol signaling system	0	0.280134188662634	essential	0	7.35532207035094e-08	0.00161479038607714	7.3554180645688e-08
+YOR222W		ODC2	NaN		0	0.276098371082231		0	NaN	NaN	NaN
+YPL134C		ODC1	NaN		0	0.276098371082231		0	NaN	NaN	NaN
+YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.267930836053589	essential	0	1.55299188983454e-08	2.22123759818249e-08	2.2172052349836e-08
+YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0.266504125054437	opt_isoenz	0	0	0.00108316437353704	1.7360962732126e-07
+YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0.266504125054437	subOpt_isoenz	0	0	0.00107482905481835	0
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040243	subOpt_isoenz	0	0	4.15393865490274e-08	0
+YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	0	0.258201785040243	opt_isoenz	0	0	4.15393865489441e-08	3.6382356641098e-08
+YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.244910606724649	subOpt_isoenz	0	0	2.99130858403206e-06	0
+YLR304C	P19414	ACO1	85.36736	sce00020  Citrate cycle (TCA cycle) sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.217825330414917	opt_isoenz	0	0	0.000980421247267085	2.08954949228654e-07
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.207961799394324	opt_isoenz	0	0	9.82826945789241e-10	9.53795898879539e-10
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.196000000000006	subOpt_isoenz	0	0	4.87288496035171e-07	0
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.196000000000006	subOpt_isoenz	0	0	4.87288496036193e-07	0
+YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.196000000000006	subOpt_isoenz	0	0	4.87288496033966e-07	0
+YPR021C		AGC1	NaN		0	0.188206271058759		0	NaN	NaN	NaN
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.180731707317078	opt_isoenz	0	0	4.87288496034704e-07	1.05928155086443e-07
+YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	essential	0	6.13386334976688e-07	1.24327055166117e-06	6.13386334976688e-07
+YMR062C	Q04728	ARG7	47.84821	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	essential	0	1.34604081816388e-07	0.00174896065408802	1.34604081816388e-07
+YOL140W	P18544	ARG8	46.68082	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	essential	0	1.52357004126829e-06	3.08811862555569e-06	1.52357004126829e-06
+YOR130C		ORT1	NaN		0	0.145193082637183		0	NaN	NaN	NaN
+YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.141329791330293	essential	0	3.96882477215523e-07	0.00296163859904938	3.96882477215485e-07
+YFL018C	P09624	LPD1	54.00934	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00260  Glycine, serine and threonine metabolism sce00280  Valine, leucine and isoleucine degradation sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00640  Propanoate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.121484926975154	essential	0	8.66523020065051e-08	5.76725717404961e-06	8.665519662864e-08
+YGL080W		MPC1	NaN		0	0.110229957335233		0	NaN	NaN	NaN
+YGR243W		MPC3	NaN		0	0.110229957335233		0	NaN	NaN	NaN
+YHR162W		MPC2	NaN		0	0.110229957335233		0	NaN	NaN	NaN
+YBR117C	P33315	TKL2	75.02862	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.000897929074800546	subOpt_isoenz	0	0	0.00111533912378311	0
+YBR221C	P32473	PDB1	40.0532	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	3.37074290687604e-07	0
+YCL040W	P17709	GLK1	55.37689	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	1.15234388605963e-11	0
+YDR148C	P19262	KGD2	50.43011	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	5.12437942404442e-06	0
+YER178W	P16387	PDA1	46.34261	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	3.37074290687604e-07	0
+YFR053C	P04806	HXK1	53.73784	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	1.15292908121618e-11	0
+YGL253W	P04807	HXK2	53.9419	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	2.49331049647971e-11	0
+YGR193C	P16451	PDX1	45.36125	sce00NNN  None	0	0	subOpt_isoenz	0	0	3.37074290687604e-07	0
+YGR248W	P53315	SOL4	28.44737	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	1.42155920719812e-09	0
+YGR256W	P53319	GND2	53.92235	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	3.90538055083999e-10	0
+YHR002W		LEU5	NaN		0	0		0	NaN	NaN	NaN
+YHR163W	P38858	SOL3	27.78417	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	1.42155920852228e-09	0
+YHR183W	P38720	GND1	53.54274	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	3.90538054132914e-10	0
+YIL125W	P20967	KGD1	114.41496	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce00380  Tryptophan metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	5.12437942404442e-06	0
+YJR095W		SFC1	NaN		0	0		0	NaN	NaN	NaN
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0	subOpt_isoenz	0	0	2.49106520102359e-08	0
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	0	0	subOpt_isoenz	0	0	1.82251705073706e-11	0
+YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	3.37074290687604e-07	0
+YNL241C	P11412	ZWF1	57.5209	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	2.24645637642912e-11	0
+YPL061W	P54115	ALD6	54.41344	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00280  Valine, leucine and isoleucine degradation sce00310  Lysine degradation sce00330  Arginine and proline metabolism sce00340  Histidine metabolism sce00380  Tryptophan metabolism sce00410  beta-Alanine metabolism sce00561  Glycerolipid metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0	subOpt_isoenz	0	0	2.1538822403411e-10	0
+YLR446W	Q06204	YLR446W	48.96875	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	subOpt_isoenz	0	0	1.89162752179612e-09	0
