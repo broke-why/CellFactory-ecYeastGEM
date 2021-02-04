@@ -92,7 +92,12 @@ ECC_low_df2$class <- product_df$class
 # PCA analysis
 # it seems there is no good classification based on product families?
 library(ggfortify)
-autoplot(prcomp(ECC_low_df1), data = ECC_low_df2, colour = 'class') +
+# firstly remove genes with no ECCs in all products
+sum_result <- mapply(sum,ECC_low_df1[,])
+sum_result1 <- sum_result[which(sum_result >0)]
+ECC_low_df10 <- ECC_low_df1[, names(sum_result1)]
+
+autoplot(prcomp(ECC_low_df10), data = ECC_low_df2, colour = 'class') +
   theme(axis.text=element_text(size=20, family="Arial"),
         axis.title=element_text(size=20, family="Arial") ) +
   ggtitle('') +
@@ -163,7 +168,7 @@ ggplot(data=product_num_df, aes(x=Group, y=Number)) +
 top_10_genes <- as.character(product_num_gene_top_10$gene)
 ECC_low_df1_top10 <- ECC_low_df1[, top_10_genes]
 # randome choose 20 products
-ECC_low_df1_top10_20products <- ECC_low_df1_top10[sample(nrow(ECC_low_df1_top10), 20), ]
+ECC_low_df1_top10_20products <- ECC_low_df1_top10[sample(nrow(ECC_low_df1_top10), 40), ]
 library(pheatmap)
 pheatmap(ECC_low_df1_top10_20products,
          method = c("pearson"),
