@@ -14,10 +14,10 @@ if (exists("RStudio.Version")){
 # merge all the ECC result together
 # datafile
 ECC_dir <- "../results/ECC/"
-all_strain <- list.files(ECC_dir)
+all_product <- list.files(ECC_dir)
 All_gene <- vector()
 
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -36,7 +36,7 @@ All_gene_unique <- unique(All_gene)
 # creat a dataframe
 # low ECC
 ECC_low_df <- data.frame(gene=All_gene_unique, stringsAsFactors = FALSE)
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -54,7 +54,7 @@ for (x in all_strain){
 
 # High ECC
 ECC_high_df <- data.frame(gene=All_gene_unique, stringsAsFactors = FALSE)
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -91,7 +91,15 @@ chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
 
-product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
+# product classification by Iven
+filename <- paste('../results/targets_summary.txt',sep='')
+targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
+targets_summary$name0 <- str_replace_all(targets_summary$models, "^ec", "")
+
+#product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
+product_df$class <- getSingleReactionFormula(targets_summary$chemClass,targets_summary$name0,product_df$product)
+
+
 
 # it is found some products are not grouped
 # also need a unique name of product
@@ -114,7 +122,6 @@ autoplot(prcomp(ECC_input_df10), data = ECC_input_df2, colour = 'class') +
   theme(panel.background = element_rect(fill = "white", color="black", size = 1)) +
   theme(legend.text=element_text(size=15),
         legend.title =element_text(size=15))
-
 
 
 # other statistical analysis
@@ -262,6 +269,65 @@ pheatmap(ECC_input_df1_top15_20products,
          legend = T,
          fontsize = 12,
          color = colorRampPalette(c("white", "SandyBrown", "firebrick3"))(100))
+
+
+
+
+# tSNE plot
+
+library(Rtsne) # Load package
+library(plotly)
+ECC_input_tsne <- ECC_input_df10[!duplicated(ECC_input_df10[,1:ncol(ECC_input_df10)]),]
+metadata <- data.frame(sample_id = rownames(ECC_input_tsne),
+                       colour = NA)
+metadata$colour <- getSingleReactionFormula(targets_summary$chemClass,targets_summary$name0, metadata$sample_id)
+
+
+data <- as.matrix(ECC_input_tsne)
+set.seed(1)
+tsne <- Rtsne(data)
+df <- data.frame(x = tsne$Y[,1],
+                 y = tsne$Y[,2],
+                 colour = metadata$colour)
+# 2D
+ggplot(df, aes(x, y, colour = colour)) +
+  geom_point()
+
+# 3D
+set.seed(8)
+tsne_out <- Rtsne(data, dims=3, perplexity=10,check_duplicates=FALSE) # perplexity <- 10 seems good!
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
+colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
+plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)
+
+
+
+
+
+
+
+
+
+
+
+# one Rtsne example
+'library(Rtsne) # Load package
+library(plotly)
+experiment <- iris[!duplicated(iris[,1:4]),]
+metadata <- data.frame(sample_id = rownames(experiment),
+                       colour = experiment$Species)
+data <- as.matrix(experiment[,1:4])
+set.seed(1)
+tsne <- Rtsne(data)
+df <- data.frame(x = tsne$Y[,1],
+                 y = tsne$Y[,2],
+                 colour = metadata$colour)
+ggplot(df, aes(x, y, colour = colour)) +
+  geom_point()
+tsne_out <- Rtsne(data, dims=3, perplexity=30,check_duplicates=FALSE)
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
+colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
+plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)'
 
 
 
