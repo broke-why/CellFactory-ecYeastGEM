@@ -69,6 +69,11 @@ for (x in all_strain){
 }
 
 
+
+
+
+
+
 # cluster analysis
 ECC_low_df1 <- as.data.frame(t(ECC_low_df), stringsAsFactors = FALSE)
 colnames(ECC_low_df1) <- ECC_low_df1[1,]
@@ -83,6 +88,7 @@ chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
 
 product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
+
 # it is found some products are not grouped
 # also need a unique name of product
 ECC_low_df2 <- ECC_low_df1
@@ -118,19 +124,14 @@ for ( gene in All_gene_unique ){
 }
 
 product_num_gene <- data.frame(gene=All_gene_unique, products=InfluencedProducts, stringsAsFactors = FALSE)
-
-
-
-
-
 # plot
 # choose the top 10 genes which could affect most products in ECC analysis
-product_num_gene_top_10 <- product_num_gene[product_num_gene$products > 52,]
-Factor <- product_num_gene_top_10
+product_num_gene_top_15 <- product_num_gene[product_num_gene$products > 52,]
+Factor <- product_num_gene_top_15
 Factor <- Factor[order(Factor$products,decreasing = TRUE),]
-product_num_gene_top_10$gene <-factor(product_num_gene_top_10$gene, levels=Factor$gene)
+product_num_gene_top_15$gene <-factor(product_num_gene_top_15$gene, levels=Factor$gene)
 
-ggplot(data=product_num_gene_top_10, aes(x=gene, y=products)) +
+ggplot(data=product_num_gene_top_15, aes(x=gene, y=products)) +
   geom_bar(stat="identity") +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
   theme(legend.position = c(0.85, 0.2)) +
@@ -140,6 +141,74 @@ ggplot(data=product_num_gene_top_10, aes(x=gene, y=products)) +
   ggtitle('') #+
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
 
+
+
+# build a dataframe of top 15 genes which affect the most products with product families information
+gene_product_family <- data.frame()
+for (x in product_num_gene_top_15$gene){
+  print(x)
+  ss0 <- ECC_low_df2[,c(x, 'class')]
+  # remove the zero ECCs
+  ss0 <- ss0[ss0[[x]] >0,]
+  new_df <- as.data.frame(table(ss0$class), stringsAsFactors = FALSE)
+  new_df$gene <- x
+  gene_product_family <- rbind.data.frame(gene_product_family, new_df)
+}
+colnames(gene_product_family) <- c("class","num","gene")
+gene_product_family$gene <- factor(gene_product_family$gene, levels=Factor$gene)
+# Stacked
+ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
+  geom_bar(position="stack", stat="identity")+
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('') #+
+
+# Stacked + percent
+ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
+  geom_bar(position="fill", stat="identity")+
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('') #+
+
+
+
+
+# check the ECC distribution of each gene across all products that this gene has effect
+all_ECC <- vector()
+all_ECC_gene <- vector()
+
+for (x in colnames(ECC_low_df1)){
+  print(x)
+  ecc0 <- ECC_low_df1[[x]]
+  if(sum(ecc0)>0){
+    all_ECC <- c(all_ECC, ecc0)
+    ecc_gene0 <- rep(x,each=length(ecc0))
+    all_ECC_gene <- c(all_ECC_gene, ecc_gene0)
+  }
+}
+
+ECC_gene_df_low <- data.frame(ECC=all_ECC, gene = all_ECC_gene, stringsAsFactors = FALSE)
+# still choose the top 15 genes
+ECC_gene_df_low1 <- ECC_gene_df_low[which(ECC_gene_df_low$gene %in% product_num_gene_top_15$gene),]
+# plot the box plot
+ECC_gene_df_low1$gene <- factor(ECC_gene_df_low1$gene, levels=Factor$gene)
+#ECC_gene_df_low1$gene <- as.factor(ECC_gene_df_low1$gene)
+ggplot(ECC_gene_df_low1, aes(x=gene, y=ECC)) + 
+  geom_boxplot() +
+  ylim(0,0.6) +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(legend.position = c(0.85, 0.2)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('')
+
+
+
 # general analysis
 product_num_gene$group <- NA
 product_num_gene$group[product_num_gene$products==1] <- "a. 1 product"
@@ -147,12 +216,15 @@ product_num_gene$group[product_num_gene$products > 1 &  product_num_gene$product
 product_num_gene$group[product_num_gene$products > 3 &  product_num_gene$products <=5] <- "c. 4-5 products"
 product_num_gene$group[product_num_gene$products > 5 &  product_num_gene$products <=11] <- "d. 6-11 products"
 product_num_gene$group[product_num_gene$products > 11 &  product_num_gene$products <= 19] <- "e. 12-19 products"
-product_num_gene$group[product_num_gene$products > 19] <- "over 20 products"
+product_num_gene$group[product_num_gene$products > 19] <- "f. over 20 products"
 
 product_num_gene1 <- product_num_gene[!is.na(product_num_gene$group),]
-
 product_num_df <- as.data.frame(table(product_num_gene1$group), stringsAsFactors = FALSE)
+# add a new row
+product_num_df[nrow(product_num_df) + 1,] = c("g. over 60 products", length (which(product_num_gene$products > 60)))
+product_num_df$Freq <- as.numeric(product_num_df$Freq)
 colnames(product_num_df) <- c("Group", "Number")
+# plot
 ggplot(data=product_num_df, aes(x=Group, y=Number)) +
   geom_bar(stat="identity") +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
@@ -164,13 +236,13 @@ ggplot(data=product_num_df, aes(x=Group, y=Number)) +
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
 
 # heatmap
-# choose the top 10 genes and prepare a heatmap
-top_10_genes <- as.character(product_num_gene_top_10$gene)
-ECC_low_df1_top10 <- ECC_low_df1[, top_10_genes]
+# choose the top 15 genes and prepare a heatmap
+top_15_genes <- as.character(product_num_gene_top_15$gene)
+ECC_low_df1_top15 <- ECC_low_df1[, top_15_genes]
 # randome choose 20 products
-ECC_low_df1_top10_20products <- ECC_low_df1_top10[sample(nrow(ECC_low_df1_top10), 40), ]
+ECC_low_df1_top15_20products <- ECC_low_df1_top15[sample(nrow(ECC_low_df1_top15), 40), ]
 library(pheatmap)
-pheatmap(ECC_low_df1_top10_20products,
+pheatmap(ECC_low_df1_top15_20products,
          method = c("pearson"),
          clustering_method = "complete",
          treeheight_row = 40,
