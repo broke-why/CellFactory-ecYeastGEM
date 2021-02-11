@@ -17,3 +17,5 @@ YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	KD	0.207585616094156	s
 YMR145C	P40215	NDE1	62.77345	sce00NNN  None	KD	0.188436602462461	subOpt_isoenz	0	0	4.67853449944747e-05	0	0	6	6	2	1	1	0
 YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.171194904596931	subOpt_isoenz	0	0	2.4911923987124e-07	0	0	6	7	2	1.00000000000002	1.00000000000002	0
 YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378424141233	subOpt_isoenz	0	0	1.01733999416457e-07	0	1	122	0	2	0.999999999999949	0.999999999999963	0
+YKL184W	P08432	SPE1	52.28467	sce00330  Arginine and proline metabolism sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	flux_leak	0	0	0	0	1	0	0	1	0.999999999999997	0.999999999999994	0
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	flux_leak	0	0	0	0	1	0	0	1	1.00000000000002	1.00000000000002	0

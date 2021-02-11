@@ -61,11 +61,11 @@ YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Gluta
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.223546323359013	opt_isoenz	0	0	6.0201274376631e-05	9.53795898879539e-10
 YER053C		PIC2	NaN		0	0.215352522156273		0	NaN	NaN	NaN
 YJR077C		MIR1	NaN		0	0.215352522156273		0	NaN	NaN	NaN
-YPL061W	P54115	ALD6	54.41344	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00280  Valine, leucine and isoleucine degradation sce00310  Lysine degradation sce00330  Arginine and proline metabolism sce00340  Histidine metabolism sce00380  Tryptophan metabolism sce00410  beta-Alanine metabolism sce00561  Glycerolipid metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0.191581268340629	opt_isoenz	0	0	4.81783505809582e-05	1.17129093455009e-09
+YPL061W	P54115	ALD6	54.41344	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00280  Valine, leucine and isoleucine degradation sce00310  Lysine degradation sce00330  Arginine and proline metabolism sce00340  Histidine metabolism sce00380  Tryptophan metabolism sce00410  beta-Alanine metabolism sce00561  Glycerolipid metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0.191581266314982	opt_isoenz	0	0	4.81783505809582e-05	1.17129093455009e-09
 YGL080W		MPC1	NaN		0	0.167480769579176		0	NaN	NaN	NaN
 YGR243W		MPC3	NaN		0	0.167480769579176		0	NaN	NaN	NaN
 YHR162W		MPC2	NaN		0	0.167480769579176		0	NaN	NaN	NaN
-udhA	P27306	udhA	51.56		0	0.141835037830189	essential	0	7.85608967057404e-06	0.00168118245212502	8.0785151245112e-06
+udhA	P27306	udhA	51.56		0	0.141835037830212	essential	0	7.85608967057404e-06	0.00168118245212502	8.0785151245112e-06
 YMR241W		YHM2	NaN		0	0.130196194500623		0	NaN	NaN	NaN
 YNL037C	P28834	IDH1	39.32357	sce00020  Citrate cycle (TCA cycle) sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.130106257643573	essential	0	3.86839919227437e-05	0.000783591033882116	3.87024944739423e-05
 YOR136W	P28241	IDH2	39.73903	sce00020  Citrate cycle (TCA cycle) sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.130106257643573	essential	0	3.86839919227437e-05	0.000783591033882116	3.87024944739423e-05

@@ -1,5 +1,5 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage
-YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10039463499628e-07	2.1031712295967e-07	2.10188074822914e-07
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10109445114159e-07	2.1031712295967e-07	2.10188074822914e-07
 YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.72363387091041e-08	2.72775793009181e-08	2.72466152002226e-08
 YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.67112515184272e-11	4.25789769406784e-09	1.5728024228112e-10
 YDR452W	Q04119	PPN1	78.34335	sce00NNN  None	1	1000	opt_isoenz	2	0	1.13456698220535e-09	1.59461388661699e-12
@@ -24,7 +24,7 @@ YPL023C	P46151	MET12	73.94088	sce00670  One carbon pool by folate sce01200  Carb
 YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293884450454309	tightly_const	0	6.44205922246332e-07	6.44333226219295e-07	6.44226117841574e-07
 YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	0	0.293827460547136	tightly_const	0	1.9108851155787e-06	1.91164129596417e-06	1.91105956507182e-06
 YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	0	0.293827460547136	tightly_const	0	5.90893119287074e-08	5.96196944979319e-08	5.92051978551671e-08
-YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293827460547136	subOpt_isoenz	0	0	2.14337285459006e-09	0
+YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293827460547136	subOpt_isoenz	0	0	2.14427216222703e-09	0
 YLR180W	P10659	SAM1	41.81793	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293827460547136	tightly_const	0	2.58937778792613e-06	2.59039337346854e-06	2.58960509176977e-06
 YBL030C		PET9	NaN		0	0.293255801125883		0	NaN	NaN	NaN
 YBR085W		AAC3	NaN		0	0.293255801125883		0	NaN	NaN	NaN
@@ -50,7 +50,7 @@ YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	0	0.28441336769
 YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	0	0.270038958404129	opt_isoenz	0	0	3.64431697375521e-09	4.77348289001624e-11
 YER053C		PIC2	NaN		0	0.267673986576963		0	NaN	NaN	NaN
 YJR077C		MIR1	NaN		0	0.267673986576963		0	NaN	NaN	NaN
-YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.260070239600099	subOpt_isoenz	0	0	1.58380614001244e-06	0
+YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.260070239600099	subOpt_isoenz	0	0	1.58380613858409e-06	0
 YOR375C	P07262	GDH1	49.56931	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.260070239600099	essential	0	8.48033652142321e-07	2.43234782344105e-06	2.43183978977023e-06
 YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	0	0.259995241640132	subOpt_isoenz	0	0	1.66039242211874e-09	0
 YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.258243795078413	subOpt_isoenz	0	0	4.74874412889724e-07	0

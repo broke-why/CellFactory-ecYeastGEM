@@ -202,8 +202,14 @@ candidates = candidates(candidates.priority>0,:);
 candidates = sortrows(candidates,'priority','ascend');
 disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t','QuoteStrings',false);
+% 5.- Add flux leak targets
+step = step+1;
+disp('  ')
+disp([num2str(step) '.-  **** Find flux leak targets to block ****'])
+candidates = block_leaks(candidates,targetIndx,tempModel);
+disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 
-% 5.- Mechanistic validations of FSEOF results
+% 6.- Mechanistic validations of FSEOF results
 step = step+1;
 disp('  ')
 disp([num2str(step) '.-  **** Mechanistic validation of results ****'])
@@ -230,7 +236,7 @@ disp([' * ' num2str(height(candidates)) ' gene targets remain'])
 disp('  ')
 writetable(candidates,[resultsFolder '/candidates_mech_validated.txt'],'Delimiter','\t','QuoteStrings',false);
 
-% 6.- Find compatible combinations
+% 7.- Find compatible combinations
 step = step+1;
 disp([num2str(step) '.-  **** Find compatible combinations ****'])
 disp('  ')

@@ -38,7 +38,7 @@ YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyru
 YHR002W		LEU5	NaN		0	0.27783		0	NaN	NaN	NaN
 YJR095W		SFC1	NaN		0	0.27783		0	NaN	NaN	NaN
 YKL085W	P17505	MDH1	35.64959	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.275766200905332	essential	0	7.85116700204719e-08	8.11708226281543e-08	7.86329398289155e-08
-YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	0	0.270705610062366	tightly_const	0	4.0992824718207e-07	4.11949611405705e-07	4.10899859728873e-07
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	0	0.270705610062366	tightly_const	0	4.09947647859376e-07	4.11949611405705e-07	4.10899859728873e-07
 YOR222W		ODC2	NaN		0	0.261179255644999		0	NaN	NaN	NaN
 YPL134C		ODC1	NaN		0	0.261179255644999		0	NaN	NaN	NaN
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040243	subOpt_isoenz	0	0	3.67362254439888e-08	0

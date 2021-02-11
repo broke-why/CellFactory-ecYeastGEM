@@ -22,7 +22,7 @@ r_1054No1	triose-phosphate isomerase (No1)	1.20142418112645	YDR050C	dihydroxyace
 r_0887No1	phosphofructokinase (s7p) (No1)	1.1947319478214	YMR205C	7.7809e-07 prot_P16862[c] + pmet_r_0887[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
 r_0990	sedoheptulose 1,7-bisphosphate D-glyceraldehyde-3-phosphate-lyase (No1)	1.1947319478214	YKL060C	sedoheptulose 1,7-bisphosphate[c] => D-erythrose 4-phosphate[c] + dihydroxyacetone phosphate[c]
 r_1115	ammonia transport	1.18958264745654	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00037205188726	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
+r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00037205189276	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
 r_2362No1	PA phosphatase (1-16:1, 2-16:1), Golgi membrane (No1)	0.328756847525878	YDR503C	H2O[gm] + phosphatidate (1-16:1, 2-16:1)[gm] + 2.8735e-06 prot_Q04396[c] => phosphate[gm] + diglyceride (1-16:1, 2-16:1)[gm]
 arm_r_2378	diacylglycerol acyltransferase (1-16:1, 2-16:1, 3-16:1), ER membrane (arm)	0.328756847525878	YCR048W or YNR019W or YOR245C	palmitoleoyl-CoA(4-)[erm] + diglyceride (1-16:1, 2-16:1)[erm] => pmet_r_2378[erm]
 r_2378No1	diacylglycerol acyltransferase (1-16:1, 2-16:1, 3-16:1), ER membrane (No1)	0.328756847525878	YCR048W	2.69e-08 prot_P25628[c] + pmet_r_2378[erm] => coenzyme A[erm] + triglyceride (1-16:1, 2-16:1, 3-16:1)[erm]

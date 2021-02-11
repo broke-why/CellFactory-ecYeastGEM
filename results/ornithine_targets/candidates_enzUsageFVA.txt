@@ -28,7 +28,7 @@ YDR384C		ATO3	NaN		1	2.60913926709857		2	NaN	NaN	NaN
 YGR121C		MEP1	NaN		1	2.60913926709857		2	NaN	NaN	NaN
 YNL142W		MEP2	NaN		1	2.60913926709857		2	NaN	NaN	NaN
 YPR138C		MEP3	NaN		1	2.60913926709857		2	NaN	NaN	NaN
-YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.4513863597038	essential	2	3.55166204616154e-06	0.00182786571595692	3.55229726814757e-06
+YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.4513863597038	essential	2	3.55166204616154e-06	0.00182786567276429	3.55229726814757e-06
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.16150938779075	opt_isoenz_tight	2	0	1.62387851918526e-06	1.62385999280941e-06
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	2.02606920307142	opt_isoenz	2	0	0.00110282358448112	1.67175212931533e-06
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	2.02606920307142	opt_isoenz	2	0	0.00196984918945885	4.61588407430795e-07

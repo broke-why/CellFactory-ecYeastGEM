@@ -8,7 +8,7 @@ r_0355No1	dimethylallyltranstransferase (No1)	28.8648868225642	YJL167W	isopenten
 r_0462No1	geranyltranstransferase (No1)	28.8648868225642	YJL167W	geranyl diphosphate[c] + isopentenyl diphosphate[c] + 0.00025253 prot_P08524[c] => farnesyl diphosphate[c] + diphosphate[c]
 r_0667No1	isopentenyl-diphosphate D-isomerase (No1)	28.8648868225642	YPL117C	isopentenyl diphosphate[c] + 9.2902e-09 prot_P15496[c] => prenyl diphosphate(3-)[c]
 r_1129	coenzyme A transport	28.8596334231279	YHR002W	coenzyme A[c] => coenzyme A[m]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	13.6408936575416	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	13.6408938517468	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0961No1	pyruvate dehydrogenase (No1)	6.95126132947649	YBR221C and YER178W and YFL018C and YGR193C and YNL071W	coenzyme A[m] + NAD[m] + pyruvate[m] + 3.9739e-06 prot_P09624[c] + 3.9739e-06 prot_P32473[c] + 3.9739e-06 prot_P16387[c] + 3.9739e-06 prot_P16451[c] + 3.9739e-06 prot_P12695[c] => acetyl-CoA[m] + carbon dioxide[m] + NADH[m]
 r_2034	pyruvate transport	4.746797273368	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
 r_0962No1	pyruvate kinase (No1)	2.35571603911256	YAL038W	pmet_r_0962[c] + 1.1973e-06 prot_P00549[c] => ATP[c] + pyruvate[c]

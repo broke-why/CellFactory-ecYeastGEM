@@ -11,7 +11,7 @@ r_1048_REVNo2	transaldolase (reversible) (No2)	1.29902432517222	YLR354C	3.7037e-
 r_0887No1	phosphofructokinase (s7p) (No1)	1.24609750965711	YMR205C	7.7809e-07 prot_P16862[c] + pmet_r_0887[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
 r_0990	sedoheptulose 1,7-bisphosphate D-glyceraldehyde-3-phosphate-lyase (No1)	1.24609750965711	YKL060C	sedoheptulose 1,7-bisphosphate[c] => D-erythrose 4-phosphate[c] + dihydroxyacetone phosphate[c]
 r_0467No1	glucose-6-phosphate isomerase (No1)	1.23864072183855	YBR196C	D-glucose 6-phosphate[c] + 4.0552e-07 prot_P12709[c] => D-fructose 6-phosphate[c]
-r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.0003496249687	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
+r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00034962496872	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
 r_0280No1	cis-aconitate(3-) to isocitrate (No1)	0.397566750872328	YLR304C	cis-aconitate[m] + H2O[m] + 1.9384e-06 prot_P19414[c] => isocitrate[m]
 r_0302No1	citrate to cis-aconitate(3-) (No1)	0.397566750872328	YLR304C	citrate[m] + 1.9384e-06 prot_P19414[c] => cis-aconitate[m] + H2O[m]
 r_2362No1	PA phosphatase (1-16:1, 2-16:1), Golgi membrane (No1)	0.328756845555231	YDR503C	H2O[gm] + phosphatidate (1-16:1, 2-16:1)[gm] + 2.8735e-06 prot_Q04396[c] => phosphate[gm] + diglyceride (1-16:1, 2-16:1)[gm]

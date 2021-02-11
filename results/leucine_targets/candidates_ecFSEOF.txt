@@ -34,7 +34,7 @@ YDR384C		ATO3	NaN		1	1.18958264745654
 YGR121C		MEP1	NaN		1	1.18958264745654
 YNL142W		MEP2	NaN		1	1.18958264745654
 YPR138C		MEP3	NaN		1	1.18958264745654
-YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00037205188726
+YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00037205189276
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.286273031163947
 YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	0	0.286273031163947
 YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.272846907680051

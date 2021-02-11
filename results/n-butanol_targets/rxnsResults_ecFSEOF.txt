@@ -3,7 +3,7 @@ newRxn5	newRxn5	1000	LEU4m	2-oxobutanoate[m] + acetyl-CoA[m] + H2O[m] + 1.0072e-
 newRxn6	newRxn6	1000	LEU1m	1.4983e-05 prot_P07264ly[c] + s_4336[m] => s_4337[m]
 newRxn7	newRxn7	1000	LEU2m	NAD[m] + 1.5347e-05 prot_P04173ly[c] + s_4337[m] => H+[m] + NADH[m] + s_4338[m]
 newRxn8	newRxn8	1000	LEU2m	H+[m] + 1.5347e-05 prot_P04173ly[c] + s_4338[m] => carbon dioxide[m] + s_4339[m]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	93.5466408801751	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	93.5467226369868	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0984No1	ribulose 5-phosphate 3-epimerase (No1)	39.6423272248192	YJL121C	D-ribulose 5-phosphate[c] + 2.4474e-06 prot_P46969[c] => D-xylulose 5-phosphate[c]
 r_0693No1	L-threonine deaminase (No1)	24.2962720245778	YER086W	L-threonine[m] + 9.6787e-07 prot_P00927[c] => 2-oxobutanoate[m] + ammonium[m]
 r_0215No1	aspartate kinase (No1)	13.7306357229624	YER052C	ATP[c] + L-aspartate[c] + 1.2237e-06 prot_P10869[c] => 4-phospho-L-aspartate[c] + ADP[c]

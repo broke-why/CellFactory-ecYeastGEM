@@ -23,7 +23,7 @@ YML075C	P12683	HMG1	115.62448	sce00900  Terpenoid backbone biosynthesis sce01110
 YPL023C	P46151	MET12	73.94088	sce00670  One carbon pool by folate sce01200  Carbon metabolism	0	0.293884450454312	subOpt_isoenz	0	0	1.4093216735833e-08	0	0	6	1	2
 YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293827460547136	subOpt_isoenz	0	0	2.09035570233142e-09	0	0	7	2	2
 YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.292271886118829	subOpt_isoenz	0	0	5.14598211607928e-07	0	0	8	3	2
-YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040242	subOpt_isoenz	0	0	3.6743653966917e-08	0	0	12	5	2
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040242	subOpt_isoenz	0	0	3.6758727373386e-08	0	0	12	5	2
 YDR231C	Q04935	COX20	23.75778	sce00NNN  None	0	0.225405631438596	subOpt_isoenz	0	0	3.38426768803927e-10	0	0	7	8	2
 YGR062C	P53239	COX18	35.64994	sce00NNN  None	0	0.225405631438596	subOpt_isoenz	0	0	3.38426768803927e-10	0	0	7	8	2
 YHR116W	P38824	COX23	17.31758	sce00NNN  None	0	0.225405631438596	subOpt_isoenz	0	0	3.38426768803927e-10	0	0	7	8	2

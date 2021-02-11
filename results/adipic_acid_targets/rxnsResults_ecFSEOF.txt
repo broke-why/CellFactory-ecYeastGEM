@@ -11,7 +11,7 @@ r_0982No1	ribose-5-phosphate isomerase (No1)	3.38852503177872	YOR095C	D-ribulose
 r_0467No1	glucose-6-phosphate isomerase (No1)	1.23579911665922	YBR196C	D-glucose 6-phosphate[c] + 4.0552e-07 prot_P12709[c] => D-fructose 6-phosphate[c]
 r_0366No2	enolase (No2)	1.01209160507006	YGR254W	pmet_r_0366[c] + 1.2077e-06 prot_P00924[c] => H2O[c] + phosphoenolpyruvate[c]
 r_0893No1	phosphoglycerate mutase (No1)	1.01209160507006	YOR283W	pmet_r_0893[c] + 3.3347e-07 prot_Q12040[c] => 2-phospho-D-glyceric acid[c]
-r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00036896843388	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
+r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00036896845799	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
 r_0280No1	cis-aconitate(3-) to isocitrate (No1)	0.397562806644902	YLR304C	cis-aconitate[m] + H2O[m] + 1.9384e-06 prot_P19414[c] => isocitrate[m]
 r_0302No1	citrate to cis-aconitate(3-) (No1)	0.397562806644902	YLR304C	citrate[m] + 1.9384e-06 prot_P19414[c] => cis-aconitate[m] + H2O[m]
 r_2362No1	PA phosphatase (1-16:1, 2-16:1), Golgi membrane (No1)	0.328756846644723	YDR503C	H2O[gm] + phosphatidate (1-16:1, 2-16:1)[gm] + 2.8735e-06 prot_Q04396[c] => phosphate[gm] + diglyceride (1-16:1, 2-16:1)[gm]

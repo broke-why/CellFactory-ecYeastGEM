@@ -3,6 +3,6 @@ r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoa
 r_1129	coenzyme A transport	0.27783	YHR002W	coenzyme A[c] => coenzyme A[m]
 r_2132	oxoglutarate/malate exchange	0.236730611945933	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
 r_1194	L-glutamate transport	0.188206271058759	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1245	phosphate transport	0.15362183331233	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1245	phosphate transport	0.153621833312311	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
 r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
-r_1277_REV	water diffusion (reversible)	0.292546211489984	YLL052C or YPR192W	H2O[c] => H2O[e]
+r_1277_REV	water diffusion (reversible)	0.292546211489906	YLL052C or YPR192W	H2O[c] => H2O[e]

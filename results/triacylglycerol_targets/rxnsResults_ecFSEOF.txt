@@ -43,7 +43,7 @@ r_0491No1	glycerol-3-phosphate dehydrogenase (NAD) (No1)	1.00349675259829	YDL022
 r_0961No1	pyruvate dehydrogenase (No1)	1.00239161496549	YBR221C and YER178W and YFL018C and YGR193C and YNL071W	coenzyme A[m] + NAD[m] + pyruvate[m] + 3.9739e-06 prot_P09624[c] + 3.9739e-06 prot_P32473[c] + 3.9739e-06 prot_P16387[c] + 3.9739e-06 prot_P16451[c] + 3.9739e-06 prot_P12695[c] => acetyl-CoA[m] + carbon dioxide[m] + NADH[m]
 r_2034	pyruvate transport	1.00191576116111	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
 r_1244	phosphate transport	1.00187735864945	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.00140546386762	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.00140339206172	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0962No1	pyruvate kinase (No1)	1.00039991019361	YAL038W	pmet_r_0962[c] + 1.1973e-06 prot_P00549[c] => ATP[c] + pyruvate[c]
 r_0366No2	enolase (No2)	1.00033534565322	YGR254W	pmet_r_0366[c] + 1.2077e-06 prot_P00924[c] => H2O[c] + phosphoenolpyruvate[c]
 r_0893No1	phosphoglycerate mutase (No1)	1.00033534565322	YOR283W	pmet_r_0893[c] + 3.3347e-07 prot_Q12040[c] => 2-phospho-D-glyceric acid[c]

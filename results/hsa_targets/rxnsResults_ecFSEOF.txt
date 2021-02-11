@@ -120,7 +120,7 @@ r_0569No1	inorganic diphosphatase (No1)	1.2538292234569	YMR267W	diphosphate[m] +
 r_1277_REV	water diffusion (reversible)	1.08922683311972	YLL052C or YPR192W	H2O[c] => H2O[e]
 r_0486No2	glyceraldehyde-3-phosphate dehydrogenase (No2)	1.03359345116264	YJL052W	pmet_r_0486[c] + 9.5785e-06 prot_P00360[c] => 1,3-bisphospho-D-glycerate[c] + H+[c] + NADH[c]
 r_0892No1	phosphoglycerate kinase (No1)	1.03359345116264	YCR012W	1,3-bisphospho-D-glycerate[c] + ADP[c] + 5.1757e-07 prot_P00560[c] => 3-phosphonato-D-glycerate(3-)[c] + ATP[c]
-r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00018651710999	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
+r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00018651712918	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
 r_2362No1	PA phosphatase (1-16:1, 2-16:1), Golgi membrane (No1)	0.32875684615582	YDR503C	H2O[gm] + phosphatidate (1-16:1, 2-16:1)[gm] + 2.8735e-06 prot_Q04396[c] => phosphate[gm] + diglyceride (1-16:1, 2-16:1)[gm]
 arm_r_2378	diacylglycerol acyltransferase (1-16:1, 2-16:1, 3-16:1), ER membrane (arm)	0.32875684615582	YCR048W or YNR019W or YOR245C	palmitoleoyl-CoA(4-)[erm] + diglyceride (1-16:1, 2-16:1)[erm] => pmet_r_2378[erm]
 r_2378No1	diacylglycerol acyltransferase (1-16:1, 2-16:1, 3-16:1), ER membrane (No1)	0.32875684615582	YCR048W	2.69e-08 prot_P25628[c] + pmet_r_2378[erm] => coenzyme A[erm] + triglyceride (1-16:1, 2-16:1, 3-16:1)[erm]

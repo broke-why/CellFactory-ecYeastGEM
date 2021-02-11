@@ -36,7 +36,7 @@ r_0982No1	ribose-5-phosphate isomerase (No1)	5.2327084986467	YOR095C	D-ribulose 
 r_0080No1	5,10-methylenetetrahydrofolate reductase (NADPH) (No1)	4.63161202215219	YGL125W	pmet_r_0080[c] + 1.7361e-06 prot_P53128[c] => 5-methyltetrahydrofolate[c] + NADP(+)[c]
 r_0727No1	methionine synthase (No1)	4.63161202215219	YER091C	5-methyltetrahydrofolate[c] + L-homocysteine[c] + 7.9365e-05 prot_P05694[c] => H+[c] + L-methionine[c] + THF[c]
 r_2034	pyruvate transport	4.10035030385733	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	2.66516094492188	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	2.66516093022564	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0962No1	pyruvate kinase (No1)	2.06688245113483	YAL038W	pmet_r_0962[c] + 1.1973e-06 prot_P00549[c] => ATP[c] + pyruvate[c]
 r_0366No2	enolase (No2)	1.93830502697613	YGR254W	pmet_r_0366[c] + 1.2077e-06 prot_P00924[c] => H2O[c] + phosphoenolpyruvate[c]
 r_0893No1	phosphoglycerate mutase (No1)	1.93830502697613	YOR283W	pmet_r_0893[c] + 3.3347e-07 prot_Q12040[c] => 2-phospho-D-glyceric acid[c]

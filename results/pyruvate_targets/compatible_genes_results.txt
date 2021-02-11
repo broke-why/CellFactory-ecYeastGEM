@@ -9,3 +9,11 @@ YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	OE	1000	opt_isoen
 YMR083W	P07246	ADH3	40.36903	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00350  Tyrosine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.111381942928883	subOpt_isoenz	0	0	0.00037296515041967	0	0	21	10	2	0.999999999999997	0.999999999999973	0
 YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	subOpt_isoenz	0	0	1.93628299393865e-06	0	1	4	0	2	1	1.00000000000001	0
 YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	subOpt_isoenz	0	0	0.000625646723267944	0	1	4	0	2	0.999999999999999	0.999999999999998	0
+YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	flux_leak	0	0	0	0	0	0	13	2	1.0042083567741	1.03788939477974	0
+YGR087C	P26263	PDC6	61.57964	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1.00000000000001	0
+YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1	0
+YLR134W	P16467	PDC5	61.91138	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	0.999999999999997	0.999999999999973	0
+YJL060W	P47039	BNA3	50.08168	sce00380  Tryptophan metabolism	KO	0	flux_leak	0	0	0	0	1	0	0	1	0.999999999999999	0.999999999999995	0
+YER010C	P40011	YER010C	25.56305	sce00NNN  None	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1	0
+YDR111C	P52892	ALT2	56.76921	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KO	0	flux_leak	0	0	0	0	1	0	0	1	0.999999999999999	0.999999999999994	0
+YGL196W	P53095	DSD1	47.82728	sce00260  Glycine, serine and threonine metabolism	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1.00000000000001	0

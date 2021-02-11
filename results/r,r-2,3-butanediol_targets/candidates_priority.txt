@@ -26,7 +26,7 @@ YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Bi
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	2.27985048990315	opt_isoenz	2	0	0.00190844500808987	1.88737530919783e-06	1	5	0	3
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	2.27985048990315	opt_isoenz	2	0	0.00341036057814431	5.21124243193653e-07	1	4	0	3
 YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.24312105172912	opt_isoenz	2	0	0.00241297999111651	2.97678522765796e-06	1	6	0	3
-YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.2270714253939	opt_isoenz	2	0	0.00251326171260604	1.65445601566961e-05	1	8	0	3
+YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.2270714253939	opt_isoenz	2	0	0.00251326166280889	1.65445601566961e-05	1	8	0	3
 YGL080W		MPC1	NaN		0	0.258766718999403		0	NaN	NaN	NaN	0	4	3	3
 YGR243W		MPC3	NaN		0	0.258766718999403		0	NaN	NaN	NaN	0	4	3	3
 YHR162W		MPC2	NaN		0	0.258766718999403		0	NaN	NaN	NaN	0	4	3	3

@@ -1,4 +1,4 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
 DDS	Q08IT1	DDS	88.343		OE	1000	tightly_const	2	0.000627095693345425	0.000627095693346679	0.000627095693345425	1	3	0	1	1.44116564394119	1.441194300015	0.610541085398974
 PPDS	H2DH16	PPDS	55.356		OE	1000	tightly_const	2	0.000627095693345425	0.000627095693346679	0.000627095693345425	1	7	0	1	1.2373388204359	1.23735205636802	0.381734408301741
-YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0.028439043963247	subOpt_isoenz	0	0	2.9833603257971e-08	0	0	6	14	2	1.00000001678873	1.00000001678948	0
+YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0.0284390439618469	subOpt_isoenz	0	0	2.9833603257971e-08	0	0	6	14	2	1.00000001678873	1.00000001678948	0

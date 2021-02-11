@@ -1,7 +1,7 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage
 YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	subOpt_isoenz	2	0	1.57446601733965e-09	0
 YBL098W	P38169	BNA4	52.42905	sce00380  Tryptophan metabolism	2	1000	tightly_const	2	8.72050788355749e-08	8.72050818458249e-08	8.72050788355782e-08
-YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10180321676931e-07	2.10436514492746e-07	2.10188074822914e-07
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10047357929943e-07	2.10436514492746e-07	2.10188074822914e-07
 YDR428C	Q04066	BNA7	29.99102	sce00380  Tryptophan metabolism sce00630  Glyoxylate and dicarboxylate metabolism	2	1000	tightly_const	2	1.09954645464197e-09	1.09975602716381e-09	1.09954645464197e-09
 YEL041W	P32622	YEF1	55.87302	sce00NNN  None	2	1000	essential	2	1.06950233275073e-08	1.25977760185818e-08	1.09954645464197e-08
 YER170W	P26364	ADK2	25.19373	sce00230  Purine metabolism sce00730  Thiamine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	1	1000	subOpt_isoenz	2	0	3.73225249650816e-09	0
