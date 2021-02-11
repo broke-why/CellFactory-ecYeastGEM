@@ -104,3 +104,17 @@ protopanaxadiol 	C30H52O3	C20715Ê	75950	1	heterologous	terpene	ecProtopanaxadiol
 Santalene 	C15H24	C19736		1	heterologous	terpene	ecSantalene.mat
 _-Amyrin 	C30H50O	C08616	10352	1	heterologous	terpene	ecbeta_Amyrin.mat
 _-ionone 	C13H20O	C12287	32325	1	heterologous	terpene	ecbeta_Ionone.mat
+fucosyllactose				1	heterologous	other	ec2_fucosyllactose.mat
+caffeicacid						organic acid	eccaffeic_acid.mat
+cinnamoyltropine						alkaloid	eccinnamoyltropine.mat
+ergothioneine						amino acid	ecergothioneine.mat
+glycyrrhetinic_acid						terpene	ecglycyrrhetinic_acid.mat
+lycopene						terpene	eclycopene.mat
+miltiradiene						terpene	ecmiltiradiene.mat
+nootkatone						terpene	ecnootkatone.mat
+s-adenosyl-l-methionine						other	ecs-adenosyl-l-methionine.mat
+squalene						terpene	ecsqualene.mat
+succinate 						organic acid	ecsuccinate.mat
+taxadien_5alpha_yl_acetate						terpene	ectaxadien_5alpha_yl_acetate.mat
+vitamin_a						other	ecvitamin_a.mat
+valencene						terpene	ecvalencene.mat
