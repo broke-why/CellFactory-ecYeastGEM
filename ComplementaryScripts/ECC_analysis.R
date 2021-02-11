@@ -14,10 +14,10 @@ if (exists("RStudio.Version")){
 # merge all the ECC result together
 # datafile
 ECC_dir <- "../results/ECC/"
-all_strain <- list.files(ECC_dir)
+all_product <- list.files(ECC_dir)
 All_gene <- vector()
 
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -36,7 +36,7 @@ All_gene_unique <- unique(All_gene)
 # creat a dataframe
 # low ECC
 ECC_low_df <- data.frame(gene=All_gene_unique, stringsAsFactors = FALSE)
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -54,7 +54,7 @@ for (x in all_strain){
 
 # High ECC
 ECC_high_df <- data.frame(gene=All_gene_unique, stringsAsFactors = FALSE)
-for (x in all_strain){
+for (x in all_product){
   print(x)
   #x <- "serine_ECCs.txt"
   ss0 <- paste(ECC_dir, x, sep = "")
@@ -64,40 +64,58 @@ for (x in all_strain){
   ECC1 <- filter(ECC0, CC_lowGlc !=0 | CC_highGlc !=0)
   # product name
   pp <- str_replace(x, "_ECCs.txt", "")
-  ECC_high_df[[pp]] <- getSingleReactionFormula(ECC1$CC_lowGlc, ECC1$genes, ECC_high_df$gene)
+  ECC_high_df[[pp]] <- getSingleReactionFormula(ECC1$CC_highGlc, ECC1$genes, ECC_high_df$gene)
   ECC_high_df[[pp]] <- as.numeric(ECC_high_df[[pp]])
 }
 
 
-# cluster analysis
-ECC_low_df1 <- as.data.frame(t(ECC_low_df), stringsAsFactors = FALSE)
-colnames(ECC_low_df1) <- ECC_low_df1[1,]
-ECC_low_df1 <-  ECC_low_df1[-c(1),]
-ECC_low_df1[] <- sapply(ECC_low_df1, as.numeric)
-ECC_low_df1[is.na(ECC_low_df1)] <- 0
+## choose the glucose uptake rate used for the ECC analysis
+ECC_input_df <- ECC_high_df
+cut_off0 <- 24 #for high glucose uptake rate
+
+# or choose:
+# ECC_input_df <- ECC_low_df
+# cut_off0 <- 52 #for low glucose uptake rate;  
+
+
+## start analysis
+ECC_input_df1 <- as.data.frame(t(ECC_input_df), stringsAsFactors = FALSE)
+colnames(ECC_input_df1) <- ECC_input_df1[1,]
+ECC_input_df1 <-  ECC_input_df1[-c(1),]
+ECC_input_df1[] <- sapply(ECC_input_df1, as.numeric)
+ECC_input_df1[is.na(ECC_input_df1)] <- 0
 # add product annotation information
-product_df <- data.frame(product=rownames(ECC_low_df1), stringsAsFactors = FALSE)
+product_df <- data.frame(product=rownames(ECC_input_df1), stringsAsFactors = FALSE)
 chemicals_info <- read_excel("../ComplementaryData/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
 
-product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
+# product classification by Iven
+filename <- paste('../results/targets_summary.txt',sep='')
+targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
+targets_summary$name0 <- str_replace_all(targets_summary$models, "^ec", "")
+
+#product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
+product_df$class <- getSingleReactionFormula(targets_summary$chemClass,targets_summary$name0,product_df$product)
+
+
+
 # it is found some products are not grouped
 # also need a unique name of product
-ECC_low_df2 <- ECC_low_df1
-ECC_low_df2$product <- product_df$product
-ECC_low_df2$class <- product_df$class
+ECC_input_df2 <- ECC_input_df1
+ECC_input_df2$product <- product_df$product
+ECC_input_df2$class <- product_df$class
 
 # PCA analysis
 # it seems there is no good classification based on product families?
 library(ggfortify)
 # firstly remove genes with no ECCs in all products
-sum_result <- mapply(sum,ECC_low_df1[,])
+sum_result <- mapply(sum,ECC_input_df1[,])
 sum_result1 <- sum_result[which(sum_result >0)]
-ECC_low_df10 <- ECC_low_df1[, names(sum_result1)]
+ECC_input_df10 <- ECC_input_df1[, names(sum_result1)]
 
-autoplot(prcomp(ECC_low_df10), data = ECC_low_df2, colour = 'class') +
+autoplot(prcomp(ECC_input_df10), data = ECC_input_df2, colour = 'class') +
   theme(axis.text=element_text(size=20, family="Arial"),
         axis.title=element_text(size=20, family="Arial") ) +
   ggtitle('') +
@@ -106,31 +124,30 @@ autoplot(prcomp(ECC_low_df10), data = ECC_low_df2, colour = 'class') +
         legend.title =element_text(size=15))
 
 
-
 # other statistical analysis
 InfluencedProducts <- c()
 for ( gene in All_gene_unique ){
   print(gene)
-  product_info <- ECC_low_df2[, gene]
+  product_info <- ECC_input_df2[, gene]
   product_info <- product_info[product_info > 0 | product_info < 0]
   product_num <- length(product_info)
   InfluencedProducts <- c(InfluencedProducts, product_num)
 }
 
 product_num_gene <- data.frame(gene=All_gene_unique, products=InfluencedProducts, stringsAsFactors = FALSE)
-
-
-
-
-
 # plot
 # choose the top 10 genes which could affect most products in ECC analysis
-product_num_gene_top_10 <- product_num_gene[product_num_gene$products > 52,]
-Factor <- product_num_gene_top_10
-Factor <- Factor[order(Factor$products,decreasing = TRUE),]
-product_num_gene_top_10$gene <-factor(product_num_gene_top_10$gene, levels=Factor$gene)
+product_num_gene_top_15 <- product_num_gene[product_num_gene$products > cut_off0,]  # cut_off0 <- 52 for low glucose uptake rate;  cut_off0 <- 24 for high glucose uptake rate
 
-ggplot(data=product_num_gene_top_10, aes(x=gene, y=products)) +
+
+
+
+
+Factor <- product_num_gene_top_15
+Factor <- Factor[order(Factor$products,decreasing = TRUE),]
+product_num_gene_top_15$gene <-factor(product_num_gene_top_15$gene, levels=Factor$gene)
+
+ggplot(data=product_num_gene_top_15, aes(x=gene, y=products)) +
   geom_bar(stat="identity") +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
   theme(legend.position = c(0.85, 0.2)) +
@@ -140,6 +157,73 @@ ggplot(data=product_num_gene_top_10, aes(x=gene, y=products)) +
   ggtitle('') #+
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
 
+
+
+# build a dataframe of top 15 genes which affect the most products with product families information
+gene_product_family <- data.frame()
+for (x in product_num_gene_top_15$gene){
+  print(x)
+  ss0 <- ECC_input_df2[,c(x, 'class')]
+  # remove the zero ECCs
+  ss0 <- ss0[ss0[[x]] > 0,]
+  new_df <- as.data.frame(table(ss0$class), stringsAsFactors = FALSE)
+  new_df$gene <- x
+  gene_product_family <- rbind.data.frame(gene_product_family, new_df)
+}
+colnames(gene_product_family) <- c("class","num","gene")
+gene_product_family$gene <- factor(gene_product_family$gene, levels=Factor$gene)
+# Stacked
+ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
+  geom_bar(position="stack", stat="identity")+
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('') #+
+
+# Stacked + percent
+ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
+  geom_bar(position="fill", stat="identity")+
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('') #+
+
+
+
+
+# check the ECC distribution of each gene across all products that this gene has effect
+all_ECC <- vector()
+all_ECC_gene <- vector()
+
+for (x in colnames(ECC_input_df1)){
+  print(x)
+  ecc0 <- ECC_input_df1[[x]]
+  if(sum(ecc0)>0){
+    all_ECC <- c(all_ECC, ecc0)
+    ecc_gene0 <- rep(x,each=length(ecc0))
+    all_ECC_gene <- c(all_ECC_gene, ecc_gene0)
+  }
+}
+
+ECC_gene_df_input <- data.frame(ECC=all_ECC, gene = all_ECC_gene, stringsAsFactors = FALSE)
+# still choose the top 15 genes
+ECC_gene_df_input1 <- ECC_gene_df_input[which(ECC_gene_df_input$gene %in% product_num_gene_top_15$gene),]
+# plot the box plot
+ECC_gene_df_input1$gene <- factor(ECC_gene_df_input1$gene, levels=Factor$gene)
+#ECC_gene_df_input1$gene <- as.factor(ECC_gene_df_input1$gene)
+ggplot(ECC_gene_df_input1, aes(x=gene, y=ECC)) + 
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(legend.position = c(0.85, 0.2)) +
+  theme(axis.text=element_text(size=10, family="Arial"),
+        axis.title=element_text(size=12,family="Arial"),
+        legend.text = element_text(size=10, family="Arial")) +
+  ggtitle('')
+
+
+
 # general analysis
 product_num_gene$group <- NA
 product_num_gene$group[product_num_gene$products==1] <- "a. 1 product"
@@ -147,12 +231,15 @@ product_num_gene$group[product_num_gene$products > 1 &  product_num_gene$product
 product_num_gene$group[product_num_gene$products > 3 &  product_num_gene$products <=5] <- "c. 4-5 products"
 product_num_gene$group[product_num_gene$products > 5 &  product_num_gene$products <=11] <- "d. 6-11 products"
 product_num_gene$group[product_num_gene$products > 11 &  product_num_gene$products <= 19] <- "e. 12-19 products"
-product_num_gene$group[product_num_gene$products > 19] <- "over 20 products"
+product_num_gene$group[product_num_gene$products > 19] <- "f. over 20 products"
 
 product_num_gene1 <- product_num_gene[!is.na(product_num_gene$group),]
-
 product_num_df <- as.data.frame(table(product_num_gene1$group), stringsAsFactors = FALSE)
+# add a new row
+product_num_df[nrow(product_num_df) + 1,] = c("g. over 60 products", length(which(product_num_gene$products > 60)))
+product_num_df$Freq <- as.numeric(product_num_df$Freq)
 colnames(product_num_df) <- c("Group", "Number")
+# plot
 ggplot(data=product_num_df, aes(x=Group, y=Number)) +
   geom_bar(stat="identity") +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
@@ -164,13 +251,13 @@ ggplot(data=product_num_df, aes(x=Group, y=Number)) +
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
 
 # heatmap
-# choose the top 10 genes and prepare a heatmap
-top_10_genes <- as.character(product_num_gene_top_10$gene)
-ECC_low_df1_top10 <- ECC_low_df1[, top_10_genes]
-# randome choose 20 products
-ECC_low_df1_top10_20products <- ECC_low_df1_top10[sample(nrow(ECC_low_df1_top10), 40), ]
+# choose the top 15 genes and prepare a heatmap
+top_15_genes <- as.character(product_num_gene_top_15$gene)
+ECC_input_df1_top15 <- ECC_input_df1[, top_15_genes]
+# randome choose 40 products
+ECC_input_df1_top15_20products <- ECC_input_df1_top15[sample(nrow(ECC_input_df1_top15), 40), ]
 library(pheatmap)
-pheatmap(ECC_low_df1_top10_20products,
+pheatmap(ECC_input_df1_top15_20products,
          method = c("pearson"),
          clustering_method = "complete",
          treeheight_row = 40,
@@ -182,6 +269,65 @@ pheatmap(ECC_low_df1_top10_20products,
          legend = T,
          fontsize = 12,
          color = colorRampPalette(c("white", "SandyBrown", "firebrick3"))(100))
+
+
+
+
+# tSNE plot
+
+library(Rtsne) # Load package
+library(plotly)
+ECC_input_tsne <- ECC_input_df10[!duplicated(ECC_input_df10[,1:ncol(ECC_input_df10)]),]
+metadata <- data.frame(sample_id = rownames(ECC_input_tsne),
+                       colour = NA)
+metadata$colour <- getSingleReactionFormula(targets_summary$chemClass,targets_summary$name0, metadata$sample_id)
+
+
+data <- as.matrix(ECC_input_tsne)
+set.seed(1)
+tsne <- Rtsne(data)
+df <- data.frame(x = tsne$Y[,1],
+                 y = tsne$Y[,2],
+                 colour = metadata$colour)
+# 2D
+ggplot(df, aes(x, y, colour = colour)) +
+  geom_point()
+
+# 3D
+set.seed(8)
+tsne_out <- Rtsne(data, dims=3, perplexity=10,check_duplicates=FALSE) # perplexity <- 10 seems good!
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
+colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
+plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)
+
+
+
+
+
+
+
+
+
+
+
+# one Rtsne example
+'library(Rtsne) # Load package
+library(plotly)
+experiment <- iris[!duplicated(iris[,1:4]),]
+metadata <- data.frame(sample_id = rownames(experiment),
+                       colour = experiment$Species)
+data <- as.matrix(experiment[,1:4])
+set.seed(1)
+tsne <- Rtsne(data)
+df <- data.frame(x = tsne$Y[,1],
+                 y = tsne$Y[,2],
+                 colour = metadata$colour)
+ggplot(df, aes(x, y, colour = colour)) +
+  geom_point()
+tsne_out <- Rtsne(data, dims=3, perplexity=30,check_duplicates=FALSE)
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
+colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
+plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)'
 
 
 
