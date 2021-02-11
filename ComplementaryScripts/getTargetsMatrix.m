@@ -30,17 +30,19 @@ for i=1:length(nameFolders)
             class = 0;
         end
         idx    = find(strcmpi(comp_classes,class));
-        newStr = [chemical '_del_' comp_classes{class}];
+        %if ~isempty(idx)
+        newStr = [chemical '_del_' comp_classes{idx}];
         newStr = strrep(newStr,' ','_');
-        disp(newStr)
+        %disp(newStr)
         %create new column for chemical
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])
         %Open targets file
         try
-            candidates = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
-            OEs =candidates.genes(strcmpi(candidates.actions,'OE'));
-            OEs =candidates.genes(candidates.actions>0);
+            %candidates = readtable(['../results/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            candidates = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
 
+            OEs=candidates.genes(candidates.k_scores>1);
             [~,iB]=ismember(OEs,genesTable.genes);
             eval(['genesTable.' newStr '(iB(iB>0)) = 3;'])
             dels=candidates.genes(candidates.k_scores<=0.05);
@@ -50,8 +52,9 @@ for i=1:length(nameFolders)
             [~,iA]=ismember(dRegs,genesTable.genes);
             eval(['genesTable.' newStr '(iA(iA>0)) = 2;'])
         catch
-            %disp(chemical)
+            disp(chemical)
         end
+        %end
     end
 end
-writetable(genesTable,'../results/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+writetable(genesTable,'../results/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
