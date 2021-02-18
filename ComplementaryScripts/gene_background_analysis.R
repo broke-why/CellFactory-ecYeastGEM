@@ -7,6 +7,7 @@ library(viridis)
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
+  path <- dirname(rstudioapi::getActiveDocumentContext()$path)
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 } else {
   setwd(getSrcDirectory()[1])
@@ -94,4 +95,16 @@ for (i in 1:nrow(gene_background0)) {
   gene_background0$common_KO_KD[i] <- common_KO_KD
 }
 # save the analysis result
-write.table(gene_background0, "../results/Compare_predicted_targets_with_gene_background.txt", sep = "\t", row.names = FALSE)
+df <- gene_background0
+write.table(df, "../results/Compare_predicted_targets_with_gene_background.txt", sep = "\t", row.names = FALSE)
+gene_background0$sum <- rowSums(gene_background0[,((ncol(gene_background0)-1):ncol(gene_background0))])
+gene_background0 <- gene_background0[gene_background0$sum>0,]
+temp <- data.frame(gene_background0[,((ncol(gene_background0)-2):(ncol(gene_background0)-1))])
+rownames(temp) <- gsub('.mat','',gene_background0$ecModel)
+rownames(temp) <- substring(rownames(temp),3)
+colnames(temp) <- c('OE','KD_KO')
+fileName <- '../results/plots/intersect_exp_pred_targets.png'
+png(fileName,width=800, height=750)
+p <- pheatmap(temp,color = cividis(11),cluster_cols = F,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 20)
+dev.off()
+
