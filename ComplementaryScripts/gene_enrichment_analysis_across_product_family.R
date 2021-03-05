@@ -16,19 +16,11 @@ if (exists("RStudio.Version")){
 # input the predicted genes targets without background information
 # ecFSEOF
 input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# mech-validated
-# input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# compatible
-# input_prediction <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-
-
 # product family information
 chemicals_info <- read_excel("../ComplementaryData/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
-
-
 # unique product families
 product_families <- unique(chemicals_info$class)
 
@@ -131,8 +123,8 @@ find_common_gene_target <- function(product_class, input_prediction0 = input_pre
   # check which metaboite does not have result
   all_product <- colnames(input_prediction0)[-(c(1:4))]
   metabolite_need_check <- setdiff(products_one_family, all_product)
-  print("metabolite name need check:---")
-  print(metabolite_need_check)
+  #print("metabolite name need check:---")
+  #print(metabolite_need_check)
   metabolite_with_gene_targes <- intersect(products_one_family, all_product)
   colnames <- c("genes", metabolite_with_gene_targes)
   gene_target <- input_prediction0[, colnames]
@@ -156,7 +148,7 @@ find_common_gene_target <- function(product_class, input_prediction0 = input_pre
   gene_top_rank$KO_occurance <- NA
   gene_top_rank$products_num <- length(metabolite_with_gene_targes)
   for (i in 1:nrow(gene_top_rank)) {
-    print(gene_top_rank$genes[i])
+    #print(gene_top_rank$genes[i])
     ss <- gene_target[i, ]
     OE_num <- length(which(ss == 3))
     KD_num <- length(which(ss == 2))
@@ -165,78 +157,45 @@ find_common_gene_target <- function(product_class, input_prediction0 = input_pre
     gene_top_rank$KD_occurance[i] <- KD_num
     gene_top_rank$KO_occurance[i] <- KO_num
   }
-
   # for the enrichment analysis
   gene_select_OE <- filter(gene_top_rank, OE_occurance >= length(metabolite_with_gene_targes) * 0.5) # only choose the gene targets overexpressed in more than half of products in one families
   gene_select_KD <- filter(gene_top_rank, KD_occurance >= length(metabolite_with_gene_targes) * 0.5) # only choose the gene targets overexpressed in more than half of products in one families
   gene_select_KO <- filter(gene_top_rank, KO_occurance >= length(metabolite_with_gene_targes) * 0.5) # only choose the gene targets overexpressed in more than half of products in one families
-
   return(list(gene_select_OE, gene_select_KD, gene_select_KO))
-
 }
 
-
-
-
-# test
-# ecFSEOF
 input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# mech-validated
-# input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# compatible
-# input_prediction <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-output00 <- find_common_gene_target(product_class = "amino acid", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
+newDF <- data.frame()
+families <- unique(chemicals_info$class)
+for (family in families){
+  output00 <- find_common_gene_target(product_class = family, input_prediction0 = input_prediction)
+  OE_out <- output00[[1]]
+  KD_out <- output00[[2]]
+  KO_out <- output00[[3]]
+  newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
+}
+write.table(newDF,'../results/targetsOverlap_FSEOF.txt',sep='\t',quote=FALSE,row.names =FALSE)
 
+input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+newDF <- data.frame()
+families <- unique(chemicals_info$class)
+for (family in families){
+  output00 <- find_common_gene_target(product_class = family, input_prediction0 = input_prediction)
+  OE_out <- output00[[1]]
+  KD_out <- output00[[2]]
+  KO_out <- output00[[3]]
+  newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
+}
+write.table(newDF,'../results/targetsOverlap_mechVal.txt',sep='\t',quote=FALSE,row.names =FALSE)
 
-output00 <- find_common_gene_target(product_class = "fatty acids and lipids", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-output00 <- find_common_gene_target(product_class = "protein", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-output00 <- find_common_gene_target(product_class = "organic acid", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-
-
-# ecFSEOF
-# input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# mech-validated
-# input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-# compatible
 input_prediction <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-output00 <- find_common_gene_target(product_class = "amino acid", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-output00 <- find_common_gene_target(product_class = "fatty acids and lipids", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-output00 <- find_common_gene_target(product_class = "protein", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
-
-output00 <- find_common_gene_target(product_class = "organic acid", input_prediction0 = input_prediction)
-OE_out <- output00[[1]]
-KD_out <- output00[[2]]
-KO_out <- output00[[3]]
-
+newDF <- data.frame()
+families <- unique(chemicals_info$class)
+for (family in families){
+  output00 <- find_common_gene_target(product_class = family, input_prediction0 = input_prediction)
+  OE_out <- output00[[1]]
+  KD_out <- output00[[2]]
+  KO_out <- output00[[3]]
+  newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
+}
+write.table(newDF,'../results/targetsOverlap_compatible.txt',sep='\t',quote=FALSE,row.names =FALSE)
