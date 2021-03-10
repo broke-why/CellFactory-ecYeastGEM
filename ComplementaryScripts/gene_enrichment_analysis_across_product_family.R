@@ -174,7 +174,10 @@ for (family in families){
   KO_out <- output00[[3]]
   newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
 }
+colnames(newDF) <- c("family","OE","KD","KO")
 write.table(newDF,'../results/targetsOverlap_FSEOF.txt',sep='\t',quote=FALSE,row.names =FALSE)
+
+
 
 input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 newDF <- data.frame()
@@ -186,6 +189,7 @@ for (family in families){
   KO_out <- output00[[3]]
   newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
 }
+colnames(newDF) <- c("family","OE","KD","KO")
 write.table(newDF,'../results/targetsOverlap_mechVal.txt',sep='\t',quote=FALSE,row.names =FALSE)
 
 input_prediction <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
@@ -198,4 +202,107 @@ for (family in families){
   KO_out <- output00[[3]]
   newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
 }
+colnames(newDF) <- c("family","OE","KD","KO")
 write.table(newDF,'../results/targetsOverlap_compatible.txt',sep='\t',quote=FALSE,row.names =FALSE)
+
+
+# here maybe we use the targetsMatrix_mech_validated to do the enrichment analysis
+# also only focus on the over expressed gene targets
+input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+newDF <- data.frame()
+families <- unique(chemicals_info$class)
+
+out_gene_list = data.frame(families=families, stringsAsFactors = FALSE)
+gene_list_OE= c()
+for (family in families){
+  output00 <- find_common_gene_target(product_class = family, input_prediction0 = input_prediction)
+  OE_out <- output00[[1]]
+  gene_list <- paste0(OE_out$genes, collapse = ",")
+  print(family)
+  print(gene_list)
+  gene_list_OE <- c(gene_list_OE, gene_list)
+}
+out_gene_list$families <- families
+out_gene_list$OE_genelist <- gene_list_OE
+write.table(out_gene_list, "../results/targetsMatrix_mech_validated_OE_geneList.txt", row.names = FALSE, sep = "\t")
+
+
+
+
+# do the enrichment analysis manually based on online toobox- DAVID https://david.ncifcrf.gov/summary.jsp
+# analyze the result
+result_dir <- "../results/gene_enrichment_analysis_for_overexpressed_genes"
+subfile <- list.files(result_dir)
+
+families1 <-families[families!="other"]
+
+
+for (file0 in families1){
+  print(file0)
+  
+  # for the test
+  file0 <- "fatty acids and lipids"
+  
+  file1 <- paste(file0, ".txt", sep = "")
+  file_input <- paste(result_dir, file1, sep = "/")
+  result_analysis <- readLines(file(file_input))
+  result_analysis <-  result_analysis[!str_detect(result_analysis, "Enrichment Score")]
+  result_analysis <-  result_analysis[str_detect(result_analysis, "\t")]
+  file00 <- paste("update_", file1, sep = "")
+  write_lines(result_analysis, paste(result_dir, file00, sep = "/"))
+  
+  newfile <- read.table(paste(result_dir, file00, sep = "/"), header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+  newfile$Count <- as.numeric(newfile$Count)
+  newfile$PValue <- as.numeric(newfile$PValue)
+  newfile <- newfile[newfile$Category != "Category",]
+  
+  # plot the bar plot
+  # plot
+  # initial filteration
+  newfile <- filter(newfile, Count >=4 & PValue <= 0.05)
+  # remove duplicated term
+  newfile <- newfile[!duplicated(newfile$Term),]
+  # order
+  Factor <-  newfile[order(newfile$Count,decreasing = TRUE),]
+  newfile$Term <-factor(newfile$Term, levels=Factor$Term)
+  
+  # based on keggg
+  newfile_kegg <- newfile[str_detect(newfile$Term,"sce"),] # for the kegg pathway maybe remove some very general pathways
+  newfile_go <- newfile[str_detect(newfile$Term,"GO:"),]
+  # plot
+  ggplot(data=newfile_kegg , aes(x=Term, y=Count)) +
+    geom_bar(stat="identity") +
+    theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+    theme(legend.position = c(0.85, 0.2)) +
+    theme(axis.text=element_text(size=10, family="Arial"),
+          axis.title=element_text(size=12,family="Arial"),
+          legend.text = element_text(size=10, family="Arial")) +
+    ggtitle(file0) #+
+  
+  ggplot(data=newfile_go , aes(x=Term, y=Count)) +
+    geom_bar(stat="identity") +
+    theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+    theme(legend.position = c(0.85, 0.2)) +
+    theme(axis.text=element_text(size=10, family="Arial"),
+          axis.title=element_text(size=12,family="Arial"),
+          legend.text = element_text(size=10, family="Arial")) +
+    ggtitle(file0) #+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
