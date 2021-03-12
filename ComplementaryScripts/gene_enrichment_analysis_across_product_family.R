@@ -241,7 +241,7 @@ for (file0 in families1){
   print(file0)
   
   # for the test
-  file0 <- "fatty acids and lipids"
+  #file0 <- "fatty acids and lipids"
   
   file1 <- paste(file0, ".txt", sep = "")
   file_input <- paste(result_dir, file1, sep = "/")
@@ -253,7 +253,7 @@ for (file0 in families1){
   
   newfile <- read.table(paste(result_dir, file00, sep = "/"), header = TRUE, sep = "\t", stringsAsFactors = FALSE)
   newfile$Count <- as.numeric(newfile$Count)
-  newfile$PValue <- as.numeric(newfile$PValue)
+  newfile$PValue <- as.numeric(newfile$Benjamini)
   newfile <- newfile[newfile$Category != "Category",]
   
   # plot the bar plot
@@ -270,7 +270,9 @@ for (file0 in families1){
   newfile_kegg <- newfile[str_detect(newfile$Term,"sce"),] # for the kegg pathway maybe remove some very general pathways
   newfile_go <- newfile[str_detect(newfile$Term,"GO:"),]
   # plot
-  ggplot(data=newfile_kegg , aes(x=Term, y=Count)) +
+  fileName <- paste('../results/plots/geneSet_KEGG_enrichment_OE_',file0,'.png',sep='')
+  png(fileName,width=700, height=600)
+  p1 <- ggplot(data=newfile_kegg , aes(x=Term, y=Count)) +
     geom_bar(stat="identity") +
     theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
     theme(legend.position = c(0.85, 0.2)) +
@@ -278,8 +280,12 @@ for (file0 in families1){
           axis.title=element_text(size=12,family="Arial"),
           legend.text = element_text(size=10, family="Arial")) +
     ggtitle(file0) #+
+  plot(p1)
+  dev.off()
   
-  ggplot(data=newfile_go , aes(x=Term, y=Count)) +
+  fileName <- paste('../results/plots/geneSet_GO_enrichment_OE_',file0,'.png',sep='')
+  png(fileName,width=700, height=600)
+  p2 <- ggplot(data=newfile_go , aes(x=Term, y=Count)) +
     geom_bar(stat="identity") +
     theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
     theme(legend.position = c(0.85, 0.2)) +
@@ -287,7 +293,8 @@ for (file0 in families1){
           axis.title=element_text(size=12,family="Arial"),
           legend.text = element_text(size=10, family="Arial")) +
     ggtitle(file0) #+
-  
+  plot(p2)
+  dev.off()
 }
 
 
