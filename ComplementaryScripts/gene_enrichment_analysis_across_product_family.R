@@ -320,7 +320,7 @@ for (file0 in families1){
 
 
 
-# 2 analyze the result from OE
+# 2 analyze the result from KD + KO
 result_dir <- "../results/gene_enrichment_analysis_for_KD_KO_genes"
 subfile <- list.files(result_dir)
 subfile0 <- str_replace_all(subfile, ".txt", "")
