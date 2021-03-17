@@ -1,8 +1,8 @@
 function candidates = block_leaks(candidates,targetIdx,model)
 %assuming that all models have an exchange reaction as objective
 met    = model.metNames(find(model.S(:,targetIdx)));
-cytIdx = find(strcmp(model.compNames,'cytoplasm'));
-exIdx  = find(strcmp(model.compNames,'extracellular'));
+cytIdx = find(strcmpi(model.compNames,'cytoplasm'));
+exIdx  = find(strcmpi(model.compNames,'extracellular'));
 
 disp([' Target molecule: ' met{1}])
 metIdx = find(strcmpi(model.metNames,met) & model.metComps==cytIdx);

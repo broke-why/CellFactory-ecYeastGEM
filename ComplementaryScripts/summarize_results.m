@@ -84,12 +84,13 @@ for i=1:length(nameFolds)
         end
               
         try
-            cand_3 = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
+            cand_3 = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            %cand_3 = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
             %cand_3 = cand_3(cand_3.k_scores>=2 | cand_3.k_scores<=0.05,:);
             %cand_3 = cand_3(cand_3.priority==1,:);
             
             cand_3_total   = [cand_3_total;height(cand_3)];
-            idxs           = find(contains(cand_3.actions,'deletion') & cand_3.k_scores<=0.05);
+            idxs           = find(cand_3.k_scores<=0.05);
             cand_3_del     = [cand_3_del;length(idxs)];
             deletions      = cand_3.enzymes(idxs);
             subSystems_del = [subSystems_del;mapEnzymeSubSystems(deletions,ecModel_batch)];
@@ -111,8 +112,8 @@ for i=1:length(nameFolds)
             chem_class_dR  = [chem_class_dR;temp];
             chem_comp_dR   = [chem_comp_dR;tempComp];
             
-            cand_3_OE     = [cand_3_OE;sum(contains(cand_3.actions,'OE'))];
-            idxs          = find(contains(cand_3.actions,'OE') & cand_3.k_scores>=2);
+            cand_3_OE     = [cand_3_OE;sum(cand_3.k_scores>1)];
+            idxs          = find(cand_3.k_scores>=2);
             OE_genes      = [OE_genes;cand_3.genes(idxs)];
             OE_targets    = [OE_targets;cand_3.shortNames(idxs)];
             temp          = repelem(class,length(idxs),1);

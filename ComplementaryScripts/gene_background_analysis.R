@@ -23,6 +23,8 @@ gene_background0 <- filter(gene_background, !(overexpression=="" & downregulatio
 # input the predicted genes targets without background information
 # ecFSEOF
 ecFSEOF <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+ecFSEOF <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+
 # mech-validated
 mech_validated <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # compatible
@@ -103,8 +105,8 @@ temp <- data.frame(gene_background0[,((ncol(gene_background0)-2):(ncol(gene_back
 rownames(temp) <- gsub('.mat','',gene_background0$ecModel)
 rownames(temp) <- substring(rownames(temp),3)
 colnames(temp) <- c('OE','KD_KO')
-fileName <- '../results/plots/intersect_exp_pred_targets.png'
-png(fileName,width=800, height=750)
+fileName <- '../results/plots/intersect_exp_pred_mech_targets.png'
+png(fileName,width=800, height=(nrow(temp)/22)*750)
 p <- pheatmap(temp,color = cividis(11),cluster_cols = F,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 20)
 dev.off()
 
