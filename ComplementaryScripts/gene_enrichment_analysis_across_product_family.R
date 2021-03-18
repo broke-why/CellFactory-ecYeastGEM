@@ -11,6 +11,7 @@ if (exists("RStudio.Version")){
 } else {
   setwd(getSrcDirectory()[1])
 }
+colors <- cividis(11)
 # input the predicted genes targets without background information
 # ecFSEOF
 input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
@@ -183,12 +184,14 @@ for (directionality in analysisType){
     for (dataSource in sources){
       if (dataSource=='KEGG'){dataF <- newfile_kegg}
       else{dataF <- newfile_go}
+      if (directionality=='OE'){colour <- colors[11]}
+      else{colour <- colors[3]}
       dataF$Count <- as.numeric(dataF$Count)/as.numeric(dataF$List.Total)
       
       fileName <- paste('../results/plots/geneSet_',dataSource, '_enrichment_',directionality,'_',file0,'.png',sep='')
       png(fileName,width=700, height=600)
       p1 <- ggplot(data=dataF , aes(x=Term, y=Count)) +
-        geom_bar(stat="identity") +
+        geom_bar(stat="identity",fill=colour) +
         theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
         theme(panel.background = element_rect(fill = "NA")) +
         theme(panel.grid.major = element_line(colour = "grey90")) +

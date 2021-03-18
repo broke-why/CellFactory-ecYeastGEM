@@ -2,7 +2,7 @@ library(ggplot2)
 library(tidyverse)
 #library(hongR)
 library(readxl)
-
+library(viridis)
 
 getSingleReactionFormula <- function(description, reaction, ko) {
   index <- vector()
@@ -93,12 +93,9 @@ for (x in all_product){
 ## choose the glucose uptake rate used for the ECC analysis
 ECC_input_df <- ECC_high_df
 cut_off0 <- 24 #for high glucose uptake rate
-
 # or choose:
 # ECC_input_df <- ECC_low_df
 # cut_off0 <- 52 #for low glucose uptake rate;  
-
-
 ## start analysis
 ECC_input_df1 <- as.data.frame(t(ECC_input_df), stringsAsFactors = FALSE)
 colnames(ECC_input_df1) <- ECC_input_df1[1,]
@@ -111,23 +108,17 @@ chemicals_info <- read_excel("../ComplementaryData/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
-
 # product classification by Iven
 filename <- paste('../results/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 targets_summary$name0 <- str_replace_all(targets_summary$models, "^ec", "")
-
 #product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)
 product_df$class <- getSingleReactionFormula(targets_summary$chemClass,targets_summary$name0,product_df$product)
-
-
-
 # it is found some products are not grouped
 # also need a unique name of product
 ECC_input_df2 <- ECC_input_df1
 ECC_input_df2$product <- product_df$product
 ECC_input_df2$class <- product_df$class
-
 # PCA analysis
 # it seems there is no good classification based on product families?
 library(ggfortify)
@@ -143,8 +134,6 @@ autoplot(prcomp(ECC_input_df10), data = ECC_input_df2, colour = 'class') +
   theme(panel.background = element_rect(fill = "white", color="black", size = 1)) +
   theme(legend.text=element_text(size=15),
         legend.title =element_text(size=15))
-
-
 # other statistical analysis
 InfluencedProducts <- c()
 for ( gene in All_gene_unique ){
@@ -158,27 +147,32 @@ for ( gene in All_gene_unique ){
 product_num_gene <- data.frame(gene=All_gene_unique, products=InfluencedProducts, stringsAsFactors = FALSE)
 # plot
 # choose the top 10 genes which could affect most products in ECC analysis
-product_num_gene_top_15 <- product_num_gene[product_num_gene$products > cut_off0,]  # cut_off0 <- 52 for low glucose uptake rate;  cut_off0 <- 24 for high glucose uptake rate
-
-
-
-
+product_num_gene_top_15 <- product_num_gene[product_num_gene$products > 24,]  # cut_off0 <- 52 for low glucose uptake rate;  cut_off0 <- 24 for high glucose uptake rate
 
 Factor <- product_num_gene_top_15
 Factor <- Factor[order(Factor$products,decreasing = TRUE),]
 product_num_gene_top_15$gene <-factor(product_num_gene_top_15$gene, levels=Factor$gene)
 
-ggplot(data=product_num_gene_top_15, aes(x=gene, y=products)) +
-  geom_bar(stat="identity") +
+fileName <- paste('../results/plots/top15_controlGenes_histogram.png',sep='')
+png(fileName,width=700, height=600)
+colores <- cividis(11)
+colour <- colores[6]
+p <- ggplot(data=product_num_gene_top_15, aes(x=gene, y=products)) +
+  geom_bar(stat="identity",fill=colour) +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
+  theme(panel.background = element_rect(fill = "NA")) +
+  theme(panel.grid.major = element_line(colour = "grey90")) +
+  theme(axis.line = element_line(size = 1, colour = "black")) +
   theme(legend.position = c(0.85, 0.2)) +
-  theme(axis.text=element_text(size=10, family="Arial"),
-        axis.title=element_text(size=12,family="Arial"),
-        legend.text = element_text(size=10, family="Arial")) +
+  theme(axis.text.y=element_text(size=18, family="Arial"),
+        axis.text.x=element_text(size=12, family="Arial"),
+        axis.title=element_blank(),
+        legend.text = element_text(size=10, family="Arial"),
+        plot.title = element_text(size=18, family="Arial")) +
   ggtitle('') #+
+plot(p)
+dev.off()
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
-
-
 
 # build a dataframe of top 15 genes which affect the most products with product families information
 gene_product_family <- data.frame()
@@ -203,13 +197,22 @@ ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) +
   ggtitle('') #+
 
 # Stacked + percent
-ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
+fileName <- paste('../results/plots/top15_controlGenes_pathway.png',sep='')
+png(fileName,width=900, height=600)
+p <- ggplot(gene_product_family, aes(fill=class, y=num, x=gene)) + 
   geom_bar(position="fill", stat="identity")+
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
-  theme(axis.text=element_text(size=10, family="Arial"),
-        axis.title=element_text(size=12,family="Arial"),
-        legend.text = element_text(size=10, family="Arial")) +
+  theme(panel.background = element_rect(fill = "NA")) +
+  theme(panel.grid.major = element_line(colour = "grey90")) +
+  theme(axis.line = element_line(size = 1, colour = "black")) +
+  theme(axis.text.y=element_text(size=18, family="Arial"),
+        axis.text.x=element_text(size=12, family="Arial"),
+        axis.title=element_blank(),
+        legend.text = element_text(size=12, family="Arial"),
+        plot.title = element_text(size=18, family="Arial")) +
   ggtitle('') #+
+plot(p)
+dev.off()
 
 
 
@@ -234,15 +237,23 @@ ECC_gene_df_input1 <- ECC_gene_df_input[which(ECC_gene_df_input$gene %in% produc
 # plot the box plot
 ECC_gene_df_input1$gene <- factor(ECC_gene_df_input1$gene, levels=Factor$gene)
 #ECC_gene_df_input1$gene <- as.factor(ECC_gene_df_input1$gene)
-ggplot(ECC_gene_df_input1, aes(x=gene, y=ECC)) + 
-  geom_boxplot() +
+fileName <- paste('../results/plots/top15_controlGenes_FCC_boxPlots.png',sep='')
+png(fileName,width=700, height=600)
+p <- ggplot(ECC_gene_df_input1, aes(x=gene, y=ECC)) + 
+  geom_boxplot(fill='light blue') +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
-  theme(legend.position = c(0.85, 0.2)) +
-  theme(axis.text=element_text(size=10, family="Arial"),
-        axis.title=element_text(size=12,family="Arial"),
-        legend.text = element_text(size=10, family="Arial")) +
+  theme(panel.background = element_rect(fill = "NA")) +
+  theme(panel.grid.major = element_line(colour = "grey90")) +
+  theme(axis.text.y=element_text(size=18, family="Arial"),
+        axis.text.x=element_text(size=12, family="Arial"),
+        axis.title.x =element_blank(),
+        axis.title.y =element_text(size=18, family="Arial"),
+        legend.text = element_text(size=12, family="Arial"),
+        plot.title = element_text(size=18, family="Arial")) +
+  ylab('Flux control coefficient') +
   ggtitle('')
-
+plot(p)
+dev.off()
 
 
 # general analysis
@@ -261,14 +272,23 @@ product_num_df[nrow(product_num_df) + 1,] = c("g. over 60 products", length(whic
 product_num_df$Freq <- as.numeric(product_num_df$Freq)
 colnames(product_num_df) <- c("Group", "Number")
 # plot
-ggplot(data=product_num_df, aes(x=Group, y=Number)) +
-  geom_bar(stat="identity") +
+fileName <- paste('../results/plots/FCC_product_specificity.png',sep='')
+png(fileName,width=700, height=600)
+p <- ggplot(data=product_num_df, aes(x=Group, y=Number)) +
+  geom_bar(stat="identity",fill = colour) +
   theme(axis.text.x = element_text(angle = 75, hjust = 1)) +
-  theme(legend.position = c(0.85, 0.2)) +
-  theme(axis.text=element_text(size=10, family="Arial"),
-        axis.title=element_text(size=12,family="Arial"),
-        legend.text = element_text(size=10, family="Arial")) +
+  theme(panel.background = element_rect(fill = "NA")) +
+  theme(panel.grid.major = element_line(colour = "grey90")) +
+  theme(axis.text.y=element_text(size=18, family="Arial"),
+        axis.text.x=element_text(size=18, family="Arial"),
+        axis.title.x =element_blank(),
+        axis.title.y =element_text(size=18, family="Arial"),
+        legend.text = element_text(size=12, family="Arial"),
+        plot.title = element_text(size=18, family="Arial")) +
+  ylab('Enzymes with FCC>0') +
   ggtitle('') #+
+plot(p)
+dev.off()
 #theme(panel.background = element_rect(fill = "white", color="black", size = 1)) 
 
 # heatmap
@@ -320,35 +340,3 @@ tsne_out <- Rtsne(data, dims=3, perplexity=10,check_duplicates=FALSE) # perplexi
 tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
 colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
 plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)
-
-
-
-
-
-
-
-
-
-
-
-# one Rtsne example
-'library(Rtsne) # Load package
-library(plotly)
-experiment <- iris[!duplicated(iris[,1:4]),]
-metadata <- data.frame(sample_id = rownames(experiment),
-                       colour = experiment$Species)
-data <- as.matrix(experiment[,1:4])
-set.seed(1)
-tsne <- Rtsne(data)
-df <- data.frame(x = tsne$Y[,1],
-                 y = tsne$Y[,2],
-                 colour = metadata$colour)
-ggplot(df, aes(x, y, colour = colour)) +
-  geom_point()
-tsne_out <- Rtsne(data, dims=3, perplexity=30,check_duplicates=FALSE)
-tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],metadata$sample_id,metadata$colour)
-colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
-plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$metadata.sample_id)'
-
-
-
