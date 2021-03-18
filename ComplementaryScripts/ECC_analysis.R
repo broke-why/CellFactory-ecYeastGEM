@@ -1,7 +1,28 @@
 library(ggplot2)
 library(tidyverse)
-library(hongR)
+#library(hongR)
 library(readxl)
+
+
+getSingleReactionFormula <- function(description, reaction, ko) {
+  index <- vector()
+  result <- vector()
+  tt <- vector()
+  for (i in 1:length(ko)){
+    if(length(match(ko[i],reaction))){
+      index <- match(ko[i],reaction)
+      tt <- description[index]
+      result[i] <- paste0(tt, collapse = ";")
+    } else{
+      
+      result[i] <- NA
+    }
+  }
+  return(result)
+}
+
+
+
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
