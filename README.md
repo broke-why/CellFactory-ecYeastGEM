@@ -10,7 +10,7 @@ This repository contains the data and script for _in silico_ strain with protein
 
 **GEM Category:** Species; **Utilisation:** predictive simulation, multi-omics integrative analysis, _in silico_ strain design; **Field:** cell factory _in silico_ design; **Model Source:** [Yeast 8.3](https://github.com/SysBioChalmers/yeast-GEM); **Taxonomy:** _Saccharomyces cerevisiae_; **Metabolic System:** General Metabolism; **Condition:** aerobic, glucose-limited, defined media, maximization of growth.
 
-* Last update: 2018-12-01
+* Last update: 2021-03-21
 
 * Main Model Descriptors:
 
