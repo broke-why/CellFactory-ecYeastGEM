@@ -4,5 +4,5 @@ r_1115	ammonia transport	3.82009213710191	YDR384C or YGR121C or YNL142W or YPR13
 r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
 r_2132	oxoglutarate/malate exchange	0.293320500996095	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
 r_1194	L-glutamate transport	0.292005596794941	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1237	ornithine transport	0.291194720368651	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1237	ornithine transport	0.29119472036865	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
 r_1277_REV	water diffusion (reversible)	1.12722799609012	YLL052C or YPR192W	H2O[c] => H2O[e]

@@ -33,7 +33,7 @@ YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  P
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.287343385505403	subOpt_isoenz	0	0	4.15289004629081e-08	0	0	12	5	2
 YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.264997074046741	subOpt_isoenz	0	0	4.87266676407606e-07	0	0	24	6	2
 YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.264997074046741	subOpt_isoenz	0	0	4.87266676408736e-07	0	0	24	6	2
-YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.264997074046741	subOpt_isoenz	0	0	4.87266676408397e-07	0	0	24	6	2
+YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.264997074046741	subOpt_isoenz	0	0	4.87266676408779e-07	0	0	24	6	2
 YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.207585615361544	subOpt_isoenz	0	0	0.000541213982547176	0	1	84	0	2
 YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	0	0.164378423042316	subOpt_isoenz	0	0	1.01733999374133e-07	0	1	122	0	2
 YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.0617486488756686	subOpt_isoenz	0	0	1.79064612485011e-06	0	0	8	8	2

@@ -11,17 +11,17 @@ crtYB	Q7Z859	crtYB	74.736		2	1000	tightly_const	2	1.39074672179632e-06	1.3907459
 crtI	Q7Z858	crtI	65.066		2	1000	tightly_const	2	0.000651231842352261	0.000651233224431051	0.000651231842352261
 bkt	Q39982	bkt	35.989		2	1000	tightly_const	2	0.000703330389740442	0.000703330389741848	0.000703330389740442
 crtZ	A0A0K0P8J8	crtZ	32.017		2	1000	tightly_const	2	0.000703330389740442	0.000703330389741848	0.000703330389740442
-YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	2	12.2781164736219	essential	2	7.9028236765068e-07	8.28843513912977e-07	7.90730710013632e-07
-YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.45484379813269	essential	2	1.89802041222435e-06	2.04058711652219e-06	2.03754721281089e-06
-YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	2.29812973275246	essential	2	1.90540890505632e-06	2.09356493311393e-06	2.08903611873536e-06
-YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	2	2.29812973275246	essential	2	5.70805966566006e-07	5.81051688146199e-07	5.7680492113827e-07
-YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.26509230092445	tightly_const	2	3.24170143456841e-06	3.26122811675971e-06	3.24172171525796e-06
-YKL060C	P14540	FBA1	39.62024	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.22854636605783	opt_isoenz	2	0	3.91493729423558e-09	1.34738839227406e-09
-YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	1.22854636605783	tightly_const	2	6.8698120475e-07	6.90242826661558e-07	6.88267318327547e-07
-YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22748430454087	essential	2	2.82771852262059e-08	3.17932154675465e-08	2.82785731065175e-08
-YCR012W	P00560	PGK1	44.73787	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22645067711912	tightly_const	2	9.12491078092279e-07	9.15690564148248e-07	9.12513578391537e-07
-YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22645067711912	tightly_const	2	1.68865498765175e-05	1.69122562908255e-05	1.68877936556236e-05
-YBR196C	P12709	PGI1	61.29832	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.19262137133509	essential	2	3.68239318735377e-07	3.72411518597762e-07	3.68292205954825e-07
+YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	2	12.2781164736221	essential	2	7.9028236765068e-07	8.28843513912977e-07	7.90730710013632e-07
+YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.45484379813273	essential	2	1.89802041222435e-06	2.04058711652219e-06	2.03754721281089e-06
+YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	2	2.2981297327525	essential	2	5.70805966566006e-07	5.81051688146199e-07	5.7680492113827e-07
+YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	2.2981297327525	essential	2	1.90540890505632e-06	2.09356493311393e-06	2.08903611873536e-06
+YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.26509230092453	tightly_const	2	3.24170143456841e-06	3.26122811675971e-06	3.24172171525796e-06
+YKL060C	P14540	FBA1	39.62024	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.22854636605787	opt_isoenz	2	0	3.91493729423558e-09	1.34738839227406e-09
+YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	1.22854636605787	tightly_const	2	6.8698120475e-07	6.90242826661558e-07	6.88267318327547e-07
+YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22748430454091	essential	2	2.82771852262059e-08	3.17932154675465e-08	2.82785731065175e-08
+YCR012W	P00560	PGK1	44.73787	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22645067711914	tightly_const	2	9.12491078092279e-07	9.15690564148248e-07	9.12513578391537e-07
+YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22645067711914	tightly_const	2	1.68865498765175e-05	1.69122562908255e-05	1.68877936556236e-05
+YBR196C	P12709	PGI1	61.29832	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.1926213713352	essential	2	3.68239318735377e-07	3.72411518597762e-07	3.68292205954825e-07
 YGL125W	P53128	MET13	68.55958	sce00670  One carbon pool by folate sce01200  Carbon metabolism	0	0.29388445045431	opt_isoenz_tight	0	0	1.40942589337297e-08	1.4092433644586e-08
 YPL023C	P46151	MET12	73.94088	sce00670  One carbon pool by folate sce01200  Carbon metabolism	0	0.29388445045431	subOpt_isoenz	0	0	1.40933238649025e-08	0
 YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293884450454309	tightly_const	0	6.4418996131891e-07	6.44443552175281e-07	6.44226117841574e-07
@@ -30,8 +30,8 @@ YLR180W	P10659	SAM1	41.81793	sce00270  Cysteine and methionine metabolism sce011
 YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	0	0.293827460547136	tightly_const	0	1.9108831176765e-06	1.91164164157223e-06	1.91105956507182e-06
 YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	0	0.293827460547136	essential	0	5.9094931460961e-08	5.97803692296441e-08	5.92051978551671e-08
 YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	0	0.286620240588634	opt_isoenz	0	0	3.72006599070968e-09	5.02516968738897e-11
-YLL052C		AQY2	NaN		0	0.285446395574642		0	NaN	NaN	NaN
-YPR192W		AQY1	NaN		0	0.285446395574642		0	NaN	NaN	NaN
+YLL052C		AQY2	NaN		0	0.285446395574619		0	NaN	NaN	NaN
+YPR192W		AQY1	NaN		0	0.285446395574619		0	NaN	NaN	NaN
 YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.282987457510794	subOpt_isoenz	0	0	5.146109012742e-07	0
 YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.282987457510794	opt_isoenz_tight	0	0	5.14840759239915e-07	5.14265994470609e-07
 YJR095W		SFC1	NaN		0	0.27783		0	NaN	NaN	NaN
@@ -42,65 +42,65 @@ YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	0	0.25877605572
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040243	subOpt_isoenz	0	0	3.67608191342371e-08	0
 YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	0	0.258201785040243	opt_isoenz	0	0	3.67860587440182e-08	3.63823566410981e-08
 YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	0	0.25578	tightly_const	0	3.9418232762009e-07	3.96310946486782e-07	3.95411741460679e-07
-YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.252533868071953	essential	0	1.43558624115442e-09	3.70498675972843e-09	1.43577083588763e-09
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.252533868071954	essential	0	1.43558624115442e-09	3.70498675972843e-09	1.43577083588763e-09
 YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	0	0.217434412172269	essential	0	1.76516569326684e-08	1.7907974577388e-08	1.76556702474977e-08
-YDL085W	Q07500	NDE2	61.65854	sce00NNN  None	0	0.211181885207113	essential	0	8.95135525928185e-07	9.81890453142688e-07	9.79022763068481e-07
-YMR145C	P40215	NDE1	62.77345	sce00NNN  None	0	0.211181885207113	subOpt_isoenz	0	0	8.29462269798727e-08	0
+YDL085W	Q07500	NDE2	61.65854	sce00NNN  None	0	0.21118188520706	essential	0	8.95135525928185e-07	9.81890453142688e-07	9.79022763068481e-07
+YMR145C	P40215	NDE1	62.77345	sce00NNN  None	0	0.21118188520706	subOpt_isoenz	0	0	8.29462269798727e-08	0
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.207961799968617	essential	0	9.37957076868403e-10	9.81018130079512e-10	9.53795898879539e-10
-YLR395C	P04039	COX8	8.90656	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	3.12900221535702e-06	3.13226737263752e-06	3.13221461819422e-06
-Q0045	P00401	COX1	58.79755	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
-Q0250	P00410	COX2	28.5669	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
-Q0275	P00420	COX3	30.35941	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
-YDL067C	P07255	COX9	6.96313	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
-YGL187C	P04037	COX4	17.1424	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-YGL191W	P32799	COX13	15.02097	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-YHR051W	P00427	COX6	17.34139	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-YIL111W	P00425	COX5B	17.1965	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-YLR038C	Q01519	COX12	9.78778	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	0	0.189608006508331	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
-Q0105	P00163	COB	43.65549	sce00190  Oxidative phosphorylation	0	0.188259840370004	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YBL045C	P07256	COR1	50.22724	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YDR529C	P00128	QCR7	14.56466	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YEL024W	P08067	RIP1	23.36479	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YFR033C	P00127	QCR6	17.25682	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YGR183C	P22289	QCR9	7.47622	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YHR001W-A	P37299	QCR10	8.59285	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YJL166W	P08525	QCR8	10.97437	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YOR065W	P07143	CYT1	34.05423	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
-YPR191W	P07257	QCR2	40.47764	sce00190  Oxidative phosphorylation	0	0.188259840370001	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+Q0045	P00401	COX1	58.79755	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
+Q0250	P00410	COX2	28.5669	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
+Q0275	P00420	COX3	30.35941	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
+YDL067C	P07255	COX9	6.96313	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449813031474e-06	1.56622247701251e-06	1.56610926407004e-06
+YGL187C	P04037	COX4	17.1424	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+YGL191W	P32799	COX13	15.02097	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+YHR051W	P00427	COX6	17.34139	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+YIL111W	P00425	COX5B	17.1965	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+YLR038C	Q01519	COX12	9.78778	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+YLR395C	P04039	COX8	8.90656	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	3.12900221535702e-06	3.13226737263752e-06	3.13221461819422e-06
+YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	0	0.18960800650829	tightly_const	0	1.56449327703138e-06	1.56613414007926e-06	1.56610926407004e-06
+Q0105	P00163	COB	43.65549	sce00190  Oxidative phosphorylation	0	0.188259840369963	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YBL045C	P07256	COR1	50.22724	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YDR529C	P00128	QCR7	14.56466	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YEL024W	P08067	RIP1	23.36479	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YFR033C	P00127	QCR6	17.25682	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YGR183C	P22289	QCR9	7.47622	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YHR001W-A	P37299	QCR10	8.59285	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YJL166W	P08525	QCR8	10.97437	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YOR065W	P07143	CYT1	34.05423	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
+YPR191W	P07257	QCR2	40.47764	sce00190  Oxidative phosphorylation	0	0.18825984036996	tightly_const	0	4.93173220724016e-06	4.93687417437796e-06	4.93679539014701e-06
 YPR021C		AGC1	NaN		0	0.188206271058758		0	NaN	NaN	NaN
-YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-Q0080	P00856	ATP8	5.82221	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-Q0085	P00854	ATP6	29.09876	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-Q0130	P61829	OLI1	7.75937	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99235767621569e-05	5.99835269704979e-05	5.99826990773347e-05
-YBL099W	P07251	ATP1	58.60746	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	1.8438182267708e-06	1.84591856268306e-06	1.8456260946052e-06
-YBR039W	P38077	ATP3	34.35021	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YDL004W	Q12165	ATP16	17.02022	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YDR298C	P09457	ATP5	22.81414	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YDR322C-A	P81449	TIM11	10.87534	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YDR377W	Q06405	ATP17	11.312	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YJR121W	P00830	ATP2	54.7932	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	1.8438182267708e-06	1.84591856268306e-06	1.8456260946052e-06
-YKL016C	P30902	ATP7	19.80938	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YML081C-A	P81450	ATP18	6.68769	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YPL078C	P05626	ATP4	26.92481	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YPL271W	P21306	ATP15	6.7425	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YPR020W	Q12233	ATP20	12.92094	sce00190  Oxidative phosphorylation	0	0.180501592274242	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YLR295C	Q12349	ATP14	14.12765	sce00190  Oxidative phosphorylation	0	0.180501592274234	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
-YER053C		PIC2	NaN		0	0.150846776783217		0	NaN	NaN	NaN
-YJR077C		MIR1	NaN		0	0.150846776783217		0	NaN	NaN	NaN
+Q0080	P00856	ATP8	5.82221	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+Q0085	P00854	ATP6	29.09876	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+Q0130	P61829	OLI1	7.75937	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99235767621569e-05	5.99835269704979e-05	5.99826990773347e-05
+YBL099W	P07251	ATP1	58.60746	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	1.8438182267708e-06	1.84591856268306e-06	1.8456260946052e-06
+YBR039W	P38077	ATP3	34.35021	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YDL004W	Q12165	ATP16	17.02022	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YDR298C	P09457	ATP5	22.81414	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YDR322C-A	P81449	TIM11	10.87534	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YDR377W	Q06405	ATP17	11.312	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YJR121W	P00830	ATP2	54.7932	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	1.8438182267708e-06	1.84591856268306e-06	1.8456260946052e-06
+YKL016C	P30902	ATP7	19.80938	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YML081C-A	P81450	ATP18	6.68769	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YPL078C	P05626	ATP4	26.92481	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YPL271W	P21306	ATP15	6.7425	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YPR020W	Q12233	ATP20	12.92094	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	0	0.180501592274266	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YLR295C	Q12349	ATP14	14.12765	sce00190  Oxidative phosphorylation	0	0.180501592274259	tightly_const	0	5.99237798838771e-06	5.9983526970498e-06	5.99826990773347e-06
+YER053C		PIC2	NaN		0	0.150846776783251		0	NaN	NaN	NaN
+YJR077C		MIR1	NaN		0	0.150846776783251		0	NaN	NaN	NaN
 YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	tightly_const	0	6.13386334976688e-07	6.13797355963856e-07	6.13386334976688e-07
 YMR062C	Q04728	ARG7	47.84821	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	essential	0	1.34604081816388e-07	1.36533741099384e-07	1.34604081816388e-07
 YOR130C		ORT1	NaN		0	0.145193082637183		0	NaN	NaN	NaN
 YOL140W	P18544	ARG8	46.68082	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	0	0.145193082637183	tightly_const	0	1.52357004126829e-06	1.52460952927574e-06	1.52357004126829e-06
-YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.12543462952123	subOpt_isoenz	0	0	1.34297643521373e-06	0
-YOR375C	P07262	GDH1	49.56931	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.12543462952123	opt_isoenz_tight	0	0	1.34334365691695e-06	1.34291103085369e-06
+YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.125434629521075	subOpt_isoenz	0	0	1.34297643521373e-06	0
+YOR375C	P07262	GDH1	49.56931	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.125434629521075	opt_isoenz_tight	0	0	1.34333594398173e-06	1.34291103085369e-06
 YML120C	P32340	NDI1	57.24915	sce00NNN  None	0	0.111619220995377	essential	0	1.03264018881102e-07	1.08011957604882e-07	1.07074177736791e-07
 YFL018C	P09624	LPD1	54.00934	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00260  Glycine, serine and threonine metabolism sce00280  Valine, leucine and isoleucine degradation sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00640  Propanoate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.0870739624343935	tightly_const	0	4.72360322269456e-07	4.73026104627146e-07	4.72576044589116e-07
-YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958383	tightly_const	0	1.15271367906999e-08	1.15380953081191e-08	1.1527530489937e-08
-YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958383	tightly_const	0	3.71826766239476e-06	3.72627701518139e-06	3.72212830537606e-06
-YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958383	subOpt_isoenz	0	0	2.9833816477934e-08	0
-YIL074C	P40510	SER33	51.18777	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958383	opt_isoenz_tight	0	0	2.98326300209778e-08	2.98010494301798e-08
-YLR058C	P37291	SHM2	52.21793	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.00910672758922344	tightly_const	0	3.67824790905277e-07	3.70579950665776e-07	3.688440313183e-07
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958381	tightly_const	0	1.15271367906999e-08	1.15380953081191e-08	1.1527530489937e-08
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958381	tightly_const	0	3.71826766239476e-06	3.72627701518139e-06	3.72212830537606e-06
+YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958381	subOpt_isoenz	0	0	2.9833816477934e-08	0
+YIL074C	P40510	SER33	51.18777	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390433958381	opt_isoenz_tight	0	0	2.98326300209778e-08	2.98010494301798e-08
+YLR058C	P37291	SHM2	52.21793	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.00910672758922335	tightly_const	0	3.67824790905277e-07	3.70579950665776e-07	3.688440313183e-07
 YDR148C	P19262	KGD2	50.43011	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0	opt_isoenz	0	0	3.94662297968579e-10	6.7739880555648e-12
 YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.21874435752379e-10	0
 YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	2.39048759541497e-09	0

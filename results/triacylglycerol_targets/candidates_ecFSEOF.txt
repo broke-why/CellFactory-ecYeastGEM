@@ -46,7 +46,7 @@ YCR037C		PHO87	NaN		1	1.00187735864945
 YJL198W		PHO90	NaN		1	1.00187735864945
 YML123C		PHO84	NaN		1	1.00187735864945
 YNR013C		PHO91	NaN		1	1.00187735864945
-YFR053C	P04806	HXK1	53.73784	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00140339206172
+YFR053C	P04806	HXK1	53.73784	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00140546386762
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.00039991019361
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	1.00033534565322
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	1.00033534565322

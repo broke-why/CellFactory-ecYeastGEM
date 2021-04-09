@@ -11,7 +11,7 @@ YHR163W	P38858	SOL3	27.78417	sce00030  Pentose phosphate pathway sce01110  Biosy
 YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	3.88038584084812	opt_isoenz_tight	2	0	5.19815249558833e-06	5.19760474590773e-06	1	8	0	2
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.03456383209816	opt_isoenz_tight	2	0	1.56647966841807e-06	1.56646056282599e-06	1	6	0	2
 YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0.287540810214532	subOpt_isoenz	0	0	0.00107419585132029	0	1	52	0	2
-YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.276354137706574	subOpt_isoenz	0	0	4.15321584683009e-08	0	0	12	3	2
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.276354137706574	subOpt_isoenz	0	0	4.1532158467693e-08	0	0	12	3	2
 YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.245693275580922	subOpt_isoenz	0	0	4.87270370374074e-07	0	0	24	4	2
 YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.245693275580922	subOpt_isoenz	0	0	4.87270370369603e-07	0	0	24	4	2
 YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.245693275580922	subOpt_isoenz	0	0	4.87270370375231e-07	0	0	24	4	2

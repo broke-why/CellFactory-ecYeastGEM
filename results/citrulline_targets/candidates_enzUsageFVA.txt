@@ -11,7 +11,7 @@ YJL198W		PHO90	NaN		1	17.840965815913		2	NaN	NaN	NaN
 YML123C		PHO84	NaN		1	17.840965815913		2	NaN	NaN	NaN
 YNR013C		PHO91	NaN		1	17.840965815913		2	NaN	NaN	NaN
 YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	2	17.1297060019125	tightly_const	2	9.3937046108819e-07	9.3963775681013e-07	9.39401005300455e-07
-YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	2	17.0544167582124	tightly_const	2	3.26937937500577e-05	3.26997891865614e-05	3.2694856845438e-05
+YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	2	17.0544167582124	tightly_const	2	3.26937937500161e-05	3.26997891865614e-05	3.2694856845438e-05
 YMR062C	Q04728	ARG7	47.84821	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	1	17.0544167582124	essential	2	7.17446385398875e-06	0.00157264131716792	7.17469714411829e-06
 YOL140W	P18544	ARG8	46.68082	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	2	17.0544167582124	tightly_const	2	8.12070335653719e-05	8.1221925431909e-05	8.12096741528452e-05
 YOR130C		ORT1	NaN		1	17.0544167582124		2	NaN	NaN	NaN

@@ -1,5 +1,5 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage
-YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	subOpt_isoenz	2	0	1.51686333745238e-09	0
+YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	subOpt_isoenz	2	0	1.49052034534658e-09	0
 YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10050635743842e-07	2.10396663368993e-07	2.10188074822914e-07
 YER170W	P26364	ADK2	25.19373	sce00230  Purine metabolism sce00730  Thiamine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	1	1000	subOpt_isoenz	2	0	3.54178237778259e-09	0
 YOL086C	P00330	ADH1	36.84874	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00350  Tyrosine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	1	1000	subOpt_isoenz	2	0	3.32821482692813e-10	0
@@ -28,7 +28,7 @@ YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Bi
 YGL080W		MPC1	NaN		1	3.46917013128646		2	NaN	NaN	NaN
 YGR243W		MPC3	NaN		1	3.46917013128646		2	NaN	NaN	NaN
 YHR162W		MPC2	NaN		1	3.46917013128646		2	NaN	NaN	NaN
-YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.79104241101665	tightly_const	2	4.87393680345289e-06	4.88135362967398e-06	4.87509603786682e-06
+YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.79104241101665	tightly_const	2	4.87394176519341e-06	4.88135362967398e-06	4.87509603786682e-06
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.27207779773629	essential	2	1.73213284227253e-06	1.87165917726466e-06	1.87142604959451e-06
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	2	2.12861874553015	essential	2	1.73886721038758e-06	1.92353023979018e-06	1.92147062876498e-06
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	2	2.12861874553015	essential	2	5.2399009305026e-07	5.34000752571156e-07	5.30538320785583e-07

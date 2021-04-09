@@ -19,7 +19,7 @@ r_0466No1	glucose 6-phosphate dehydrogenase (No1)	2.06464244303956	YNL241C	D-glu
 r_0889No2	phosphogluconate dehydrogenase (No2)	2.06464244303956	YHR183W	pmet_r_0889[c] + 7.6313e-06 prot_P38720[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
 r_0366No2	enolase (No2)	1.26735372734276	YGR254W	pmet_r_0366[c] + 1.2077e-06 prot_P00924[c] => H2O[c] + phosphoenolpyruvate[c]
 r_0893No1	phosphoglycerate mutase (No1)	1.26735372734276	YOR283W	pmet_r_0893[c] + 3.3347e-07 prot_Q12040[c] => 2-phospho-D-glyceric acid[c]
-r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00026365405022	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
+r_4235No1	ATP:D-glucose 6-phosphotransferase (No1)	1.00026365406121	YDR516C	ATP[c] + D-glucose[c] + 1.8618e-07 prot_Q04409[c] => ADP[c] + D-glucose 6-phosphate[c]
 r_0280No1	cis-aconitate(3-) to isocitrate (No1)	0.397564085491732	YLR304C	cis-aconitate[m] + H2O[m] + 1.9384e-06 prot_P19414[c] => isocitrate[m]
 r_0302No1	citrate to cis-aconitate(3-) (No1)	0.397564085491732	YLR304C	citrate[m] + 1.9384e-06 prot_P19414[c] => cis-aconitate[m] + H2O[m]
 r_2434No1	CDP-diacylglycerol synthase (1-18:0, 2-16:1), ER membrane (No1)	0.330136655932343	YBR029C	H+[erm] + phosphatidate (1-18:0, 2-16:1)[erm] + CTP[erm] + 3.1141e-05 prot_P38221[c] => diphosphate[erm] + CDP-diacylglycerol (1-18:0, 2-16:1)[erm]

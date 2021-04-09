@@ -1,6 +1,6 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority
 YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10052947664041e-07	2.10441778853348e-07	2.10188074822914e-07	1	4	0	1
-YKL184W	P08432	SPE1	52.28467	sce00330  Arginine and proline metabolism sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	2	1000	tightly_const	2	3.17274823691789e-08	3.19483575737807e-08	3.17274962182995e-08	1	4	0	1
+YKL184W	P08432	SPE1	52.28467	sce00330  Arginine and proline metabolism sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	2	1000	tightly_const	2	3.17274823691789e-08	3.19402084258351e-08	3.17274962182995e-08	1	4	0	1
 YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.72281493609922e-08	2.72614792627227e-08	2.72466152002226e-08	1	6	0	1
 YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.42184208074016e-11	4.33446712736914e-09	1.5728024228112e-10	1	16	0	1
 DsPMT1	Q70EW6	DsPMT1	37.727		2	1000	tightly_const	2	2.59251781887325e-08	2.59251781887844e-08	2.59251781887325e-08	1	4	0	1

@@ -49,7 +49,7 @@ YBR029C	P38221	CDS1	51.82218	sce00564  Glycerophospholipid metabolism sce01110  
 YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.248076642115473	essential	0	1.55725496644588e-08	2.22004438549941e-08	2.2172052349836e-08
 YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	0	0.22000361389705	opt_isoenz	0	0	0.000992574492119695	1.9670167838932e-11
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.207961866233193	opt_isoenz	0	0	1.03912279448619e-09	9.53795898879539e-10
-YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.20758567986993	subOpt_isoenz	0	0	0.000960261055303961	0
+YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.20758567986993	subOpt_isoenz	0	0	0.000960261079867234	0
 YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.207479944352194	subOpt_isoenz	0	0	2.97212475195748e-06	0
 YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0.176399984739415	opt_isoenz	0	0	0.000920123038695668	1.79591573705148e-07
 YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	0	0.164378519804895	subOpt_isoenz	0	0	1.01707733589124e-07	0

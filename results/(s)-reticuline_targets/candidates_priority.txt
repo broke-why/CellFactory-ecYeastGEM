@@ -19,7 +19,7 @@ YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fr
 YCR012W	P00560	PGK1	44.73787	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22428025104854	tightly_const	2	9.14878288057938e-07	9.16957147664199e-07	9.14971193425773e-07	1	4	0	1
 YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22428025104854	tightly_const	2	1.69298563970734e-05	1.69371095696986e-05	1.69332764808285e-05	1	8	0	1
 YBR196C	P12709	PGI1	61.29832	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.19153095156714	tightly_const	2	3.77369883297346e-07	3.79064895412658e-07	3.77588104605655e-07	1	2	0	1
-YDR380W	Q06408	ARO10	71.38357	sce00360  Phenylalanine metabolism	2	1000	opt_isoenz_tight	2	0	2.73960150244334e-08	2.73941269192603e-08	1	6	0	2
+YDR380W	Q06408	ARO10	71.38357	sce00360  Phenylalanine metabolism	2	1000	opt_isoenz_tight	2	0	2.73959931867586e-08	2.73941269192603e-08	1	6	0	2
 YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.276085731371175	subOpt_isoenz	0	0	5.04488308155778e-07	0	0	8	3	2
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040242	subOpt_isoenz	0	0	3.67362254671625e-08	0	0	12	5	2
 YMR145C	P40215	NDE1	62.77345	sce00NNN  None	0	0.214751277082991	subOpt_isoenz	0	0	8.13217807778773e-08	0	0	6	6	2
@@ -37,6 +37,6 @@ YOR222W		ODC2	NaN		0	0.259548077725633		0	NaN	NaN	NaN	0	6	4	3
 YPL134C		ODC1	NaN		0	0.259548077725633		0	NaN	NaN	NaN	0	6	4	3
 YER053C		PIC2	NaN		0	0.152927481197754		0	NaN	NaN	NaN	0	4	11	3
 YJR077C		MIR1	NaN		0	0.152927481197754		0	NaN	NaN	NaN	0	4	11	3
-YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.22701096587434e-10	0	0	24	15	3
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.22481596333352e-10	0	0	24	15	3
 YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	2.34877792846252e-09	0	0	24	15	3
 YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.42151006067382e-10	0	0	24	15	3

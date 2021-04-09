@@ -29,7 +29,7 @@ YGR121C		MEP1	NaN		1	1.58541510381853		2	NaN	NaN	NaN
 YNL142W		MEP2	NaN		1	1.58541510381853		2	NaN	NaN	NaN
 YPR138C		MEP3	NaN		1	1.58541510381853		2	NaN	NaN	NaN
 YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.38818365162294	tightly_const	2	3.14046341267119e-07	3.14055484107093e-07	3.1404634126711e-07
-YIL074C	P40510	SER33	51.18777	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.38818365162294	opt_isoenz_tight	2	0	8.1189834528289e-07	8.11874715719743e-07
+YIL074C	P40510	SER33	51.18777	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.38818365162294	opt_isoenz_tight	2	0	8.11898351851209e-07	8.11874715719743e-07
 YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.38818365162294	tightly_const	2	0.00010140253170881	0.000101405483843574	0.000101402531708809
 YLL052C		AQY2	NaN		1	1.1645232213689		2	NaN	NaN	NaN
 YPR192W		AQY1	NaN		1	1.1645232213689		2	NaN	NaN	NaN

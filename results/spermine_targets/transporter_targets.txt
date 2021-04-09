@@ -1,8 +1,8 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1262_REV	spermine transport (reversible)	1000	YGR138C or YLL028W or YOR273C or YPR156C	H+[e] + spermine[c] => H+[c] + spermine[e]
 r_1244	phosphate transport	85.6801466182723	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
-r_1237	ornithine transport	6.31144098680613	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
-r_1194	L-glutamate transport	4.58874730421029	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1237	ornithine transport	6.31144098680571	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1194	L-glutamate transport	4.58874730420999	YPR021C	L-glutamate[c] => L-glutamate[m]
 r_1115	ammonia transport	1.73103960597183	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_2034	pyruvate transport	0.252979922511345	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_2034	pyruvate transport	0.25297992251139	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
 r_1129	coenzyme A transport	0.24255	YHR002W	coenzyme A[c] => coenzyme A[m]
