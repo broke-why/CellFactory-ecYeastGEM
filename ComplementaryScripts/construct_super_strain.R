@@ -39,9 +39,10 @@ allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t'
 #Discard down-regulations (as they're not generalizable)
 allTargetsMat[allTargetsMat == 2] <- 0
 
-
+chass_strain_chem <- list()
 actions <- c('OE','KO')
 colors    <- cividis(11) 
+counter <- 0
 #Get target matrix for OEs and KOs for all genes that are predicted to work for more than one product
 for (action in actions){
   matrix <- allTargetsMat
@@ -92,6 +93,8 @@ for (i in 1:modNumber){
     KOs_idx   <- KOs_idx+1
   }
   prodNumber <- c(prodNumber,length(remaining))
+  counter <- counter +1
+  chass_strain_chem[[counter]] <- colnames(matrix)[remaining]
   #Get a pie chart with the product families distribution for the remaining 
   #product targets aimed by the chassis_strain
   if (length(remaining)>=1){
