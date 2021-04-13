@@ -68,17 +68,20 @@ pie <- pie + labs(fill = 'Chemical families')
 png('../results/plots/chemicalFamilies.png',width = 800, height = 800)
 plot(pie)
 dev.off()
+
+
 #Get heatmap for targets matrix
 allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-allTargetsMat <- read.csv('../results/targetsMatrix_mechValidated.txt',sep='\t',stringsAsFactors = TRUE)
+#allTargetsMat <- read.csv('../results/targetsMatrix_mechValidated.txt',sep='\t',stringsAsFactors = TRUE)
 
 targetsMat    <- allTargetsMat
 targetsMat[targetsMat == 2] <- 0
-targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
 targetsMat[targetsMat == 1] <- 0
 targetsMat[targetsMat == 3] <- 1
+targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
 
-plotTitle <- paste('../results/plots/targetsMatrix.png',sep='')
+
+plotTitle <- paste('../results/plots/targetsMatrix_OE.png',sep='')
 png(plotTitle,width = 5000, height = 13000)
 rownames(targetsMat) <- targetsMat$shortNames
 pheatmap(targetsMat[,5:ncol(targetsMat)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
@@ -89,7 +92,7 @@ newDF <- targetsMat[,5:ncol(targetsMat)]
 newDF <- newDF[rowSums(newDF)>0,]
 newDF <- as.data.frame(t(newDF))
 newDF$extra <- rownames(newDF)
-newDF<- newDF %>% separate(extra, c("chemical", "family"), "_del_")
+newDF<- newDF %>% separate(extra, c("chemical", "family"), "_fam_")
 #newDF$family <- factor(newDF$family)
 idxs <- which(!duplicated(newDF[,1:(ncol(newDF)-3)]))
 newDF <- newDF[idxs,]
@@ -100,9 +103,9 @@ famLvls <- (unique(factor(newDF$family)))
 famLvls <- famLvls[order(famLvls)]
 newDF$family <- factor(newDF$family,levels = famLvls)
 
-#PCAdata  <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
-#p        <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
-#p
+PCAdata  <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
+p        <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
+p
 
 set.seed(18) # Set a seed if you want reproducible results
 tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=5)#nrow(newDF)/length(famLvls)) # Run TSNE
