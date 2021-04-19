@@ -82,9 +82,14 @@ for (fam in families){
       fam_str <- paste('_fam_',fam,sep='')
       matrix  <- matrix[,grep(fam_str,colnames(matrix))]
     }
-    matrix <- matrix[rowSums(matrix)>0,]
-    #Keep those genes that are targets
-    matrix$suma <- rowSums(matrix)
+    if (is.numeric(matrix)){
+      matrix <- matrix[matrix>0] 
+      matrix <- data.frame(matrix,suma=matrix)
+    } else{
+      matrix <- matrix[rowSums(matrix)>0,]
+      #Keep those genes that are targets
+      matrix$suma <- rowSums(matrix)
+    }
     matrix <- matrix[order(matrix$suma,decreasing=TRUE),]
     top10  <- matrix[1:threshold,]
     sumas  <- colSums(top10)
