@@ -14,7 +14,7 @@ genesTable.subSystems(presence) = subSystems(iB(iB~=0));
 %retrieve chemical classes info
 chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
 comp_classes   = unique(chemicals_info.class);
-class_short    = {'alc' 'alk' 'AAs' 'aro' 'bio' 'FAL' 'fla' 'nuc' 'oAc' 'other' 'pro' 'ter'};
+class_short    = {'alc' 'alk' 'AAs' 'aro' 'bio' 'FAL' 'fla' 'oAc' 'stb' 'ter'};
 %Iterate through all chemical compounds
 d = dir('../results');
 isub = [d(:).isdir]; %# returns logical vector
