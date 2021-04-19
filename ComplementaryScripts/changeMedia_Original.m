@@ -1,4 +1,4 @@
-function model = changeMedia_Original(model,dummy1,dummy2,flux)
+function model = changeMedia_Original(model,AA,dummy2,flux)
 % change Y6 model media to minimal - ammonium, glucose, oxygen,
 % phosphate, sulphate
 % Bicarbonate production is blocked to get rid of conflict due to bicarbonate and carbon dioxide
@@ -51,5 +51,7 @@ model.lb(glucoseExchangeIndex) = -flux;
 
 model.lb(BlockedRxnIndex) = 0;
 model.ub(BlockedRxnIndex) = 0;
-
+if AA
+    model = setParam(model,'lb','r_1654',-1);
+end
 end

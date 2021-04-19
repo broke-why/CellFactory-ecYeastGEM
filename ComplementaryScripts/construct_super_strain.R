@@ -74,7 +74,7 @@ remaining <- 1:nrow(chemicals)
 geneTargets   <- c()
 modifications <- c()
 prodNumber    <- c()
-
+remChems      <- list()
 for (i in 1:modNumber){
   idxs_OE_i <- which(OE_mat[OEs_idx,]>0)
   idxs_KO_i <- which(KO_mat[KOs_idx,]>0)
@@ -98,14 +98,15 @@ for (i in 1:modNumber){
   #Get a pie chart with the product families distribution for the remaining 
   #product targets aimed by the chassis_strain
   if (length(remaining)>=1){
-  newTable   <- chemicals[remaining,]
-  #Get pie chart for families of chemicals
-  classes <- unique(newTable$family)
-  counts  <- c()
-  for (j in 1:length(classes))
-  {
-    counts <- c(counts,sum(newTable$family==classes[j]))
-  }
+    newTable   <- chemicals[remaining,]
+    remChems[[i]] <- (chemicals[remaining,])
+    #Get pie chart for families of chemicals
+    classes <- unique(newTable$family)
+    counts  <- c()
+    for (j in 1:length(classes))
+    {
+      counts <- c(counts,sum(newTable$family==classes[j]))
+    }
   #Get data frame for plotting
   df <- data.frame(classes,counts)
   df <- df[order(-counts),]
@@ -125,6 +126,7 @@ for (i in 1:modNumber){
   png(paste('../results/plots/chassis_strain/products_chassis_strain_',i,'.png',sep=''),width = 650, height = 600)
   plot(pie)
   dev.off()
+  write.table(remChems[[i]],paste('../results/chassis_strain_',i,'_chemicals.txt',sep=''),sep='\t',quote = F,row.names = F)
   }
 }
 chassis_strain <- data.frame(geneTargets,modifications,prodNumber)

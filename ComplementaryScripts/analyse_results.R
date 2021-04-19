@@ -10,6 +10,10 @@ library(tidyr)
 library(cluster)
 library(ggfortify)
 library(plotly)
+library(htmlwidgets)
+library(qgraph)
+library(reshape2)
+
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -70,56 +74,114 @@ plot(pie)
 dev.off()
 
 
-#Get heatmap for targets matrix
+#Analyse targets matrix
 allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-#allTargetsMat <- read.csv('../results/targetsMatrix_mechValidated.txt',sep='\t',stringsAsFactors = TRUE)
-
+allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat    <- allTargetsMat
-targetsMat[targetsMat == 2] <- 0
-targetsMat[targetsMat == 1] <- 0
-targetsMat[targetsMat == 3] <- 1
 targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
-
-
-plotTitle <- paste('../results/plots/targetsMatrix_OE.png',sep='')
+#substitute values in matrix
+targetsMat[targetsMat == 2] <- 20
+targetsMat[targetsMat == 1] <- 10
+targetsMat[targetsMat == 3] <- 30
+targetsMat[targetsMat == 0] <- 1
+targetsMat[targetsMat == 20] <- 0.5
+targetsMat[targetsMat == 10] <- 0
+targetsMat[targetsMat == 30] <- 2
+targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
+#hclust heatmap
+plotTitle <- paste('../results/plots/targetsMatrix_ALL.png',sep='')
 png(plotTitle,width = 5000, height = 13000)
 rownames(targetsMat) <- targetsMat$shortNames
 pheatmap(targetsMat[,5:ncol(targetsMat)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
 dev.off()
+#Distance matrix
+x <- targetsMat[,5:ncol(targetsMat)]
+colnames(x) <- colnames( targetsMat[,5:ncol(targetsMat)])
+x <- t(x)
+distMat <- dist(x, method = "euclidean", diag = FALSE, upper = FALSE)
+distMat <- as.data.frame(as.matrix(distMat))
+rownames(distMat) <- rownames(x)
+#var1 <- rownames(distMat)
+dd <- as.dist(distMat)
+hc <- hclust(dd)
+distMat <-distMat[hc$order, hc$order]
+var1 <- rownames(distMat)
+# Melt the distance matrix
+melted_distMat <- melt(distMat)
+melted_distMat <- cbind(var1,melted_distMat)
+#Rearrange for plotting
+melted_distMat$var1 <- gsub('_fam_','_',melted_distMat$var1)
+melted_distMat$variable <- gsub('_fam_','_',melted_distMat$variable)
+melted_distMat$var1 <- factor(melted_distMat$var1,levels = unique(melted_distMat$var1))
+melted_distMat$variable <- factor(melted_distMat$variable,levels = unique(melted_distMat$variable))
+#melted_distMat$value <- melted_distMat$value/max(melted_distMat$value)
+#melted_distMat <- as.data.frame(apply(melted_distMat, 2, rev))
+temp <- melted_distMat
+temp$value <- temp$value/max(temp$value)
+temp$value <- 1-temp$value
+p <- ggplot(data = temp, aes(variable, var1, fill = value))+
+  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
+p <- p+theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+                                   size = 28, hjust = 1),
+        axis.text.y = element_text(size = 28))
+plotTitle <- paste('../results/plots/targets_ALL_distMat.png',sep='')
+png(plotTitle,width = 6000, height = 6000)
+plot(p)
+dev.off()
+#Plot histogram of distances
+p <- ggplot(temp, aes(x=value)) + geom_histogram(binwidth=0.1,fill='grey')
+p <-  p + theme_bw(base_size = 2*12)+xlab('Number of products') + ylab('Number of gene targets')
+plotTitle <- paste('../results/plots/histogram_targetsSimilarity.png',sep='')
+png(plotTitle,width = 600, height = 600)
+plot(p)
+dev.off()
+#simplify distMat
+temp$value[temp$value<=0.3] <- 0
+temp$value[temp$value>0.3]  <- 1 
 
+p <- ggplot(data = temp, aes(variable, var1, fill = value))+
+  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
+p <- p+theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+                                   size = 28, hjust = 1),
+        axis.text.y = element_text(size = 28))
+plotTitle <- paste('../results/plots/targets_ALL_distMat_simp.png',sep='')
+png(plotTitle,width = 6000, height = 6000)
+plot(p)
+dev.off()
 #Dimensionality reduction
 newDF <- targetsMat[,5:ncol(targetsMat)]
-newDF <- newDF[rowSums(newDF)>0,]
+#newDF <- newDF[rowSums(newDF)>0,]
 newDF <- as.data.frame(t(newDF))
 newDF$extra <- rownames(newDF)
 newDF<- newDF %>% separate(extra, c("chemical", "family"), "_fam_")
 #newDF$family <- factor(newDF$family)
+#Remove duplicate vectors
 idxs <- which(!duplicated(newDF[,1:(ncol(newDF)-3)]))
 newDF <- newDF[idxs,]
+#Add product family info
 newDF <- newDF[order(newDF$family),]
 famLvls <- as.numeric(unique(factor(newDF$family)))
 famLvls <- (unique(factor(newDF$family)))
-
 famLvls <- famLvls[order(famLvls)]
 newDF$family <- factor(newDF$family,levels = famLvls)
-
+#PCA 
 PCAdata  <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
 p        <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
-p
-
+plotTitle <- paste('../results/plots/PCA_allTargets.png',sep='')
+png(plotTitle,width = 600, height = 600)
+plot(p)
+dev.off()
+#tSNE
 set.seed(18) # Set a seed if you want reproducible results
-tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=5)#nrow(newDF)/length(famLvls)) # Run TSNE
+tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=nrow(newDF)/length(famLvls)) # Run TSNE
 tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
 colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
-plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family)
-# fig <- fig %>% add_annotations(x = tsne_plot$x,
-#                                y = tsne_plot$y,
-#                                text = tsne_plot$newDF.chemical,
-#                                xref = "x",
-#                                yref = "y")
-# fig
-#ggplot(tsne_plot) + geom_point(aes(x=x, y=y,color=family))
-## Show the objects in the 2D tsne representation
+p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family)
+saveWidget(p, "../results/plots/tsne_ALL0.html", selfcontained = F, libdir = "lib")
+
+
 
 filename  <- paste('../results/targets_summary.txt',sep='')
 targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
@@ -229,53 +291,5 @@ for (j in 1:length(families)){
     png(plotTitle,width = 950, height = 600)
     plot(p)
     dev.off()
-    #Get Pathways DF
-    KOs <- c()
-    OEs <- c()
-    for (pathway in pathWays){
-      numero <- length(grep(pathway,all_deletions$subSystems_del))
-      KOs <- c(KOs,numero)
-      numero <- length(grep(pathway,all_OEs$subSystems_OE))
-      OEs <- c(OEs,numero)
-    }
-    uniqueChem <- unique(all_OEs$chem_comp_OE)
-    # counts  <- c()
-    # actions <- c()
-    # pathVec <- c()
-    # for (k in 1:length(pathWays)){
-    #   for (l in 1:length(uniqueChem)){
-    #     #isolate data for compound
-    #     idxs    <- grep(uniqueChem[l],all_OEs$chem_comp_OE)
-    #     tempOEs <- all_OEs[idxs,]
-    #     idxs    <- grep(uniqueChem[l],all_deletions$chem_comp_del)
-    #     tempDel <- all_deletions[idxs,]
-    #     #get specific targets
-    #     targetsOE  <- tempOEs$OE_targets
-    #     targetsDel <- tempDel$del_targets
-    #     numero <- length(grep(pathWays[l],tempOEs$subSystems_OE))/length(grep(pathWays[l],enzTable$subSystems))
-    #     counts  <- c(counts,numero) 
-    #     actions <- c(actions,'OEs')
-    #     
-    #     numero <- length(grep(pathWays[l],tempDel$subSystems_del))/length(grep(pathWays[l],enzTable$subSystems))
-    #     counts  <- c(counts,numero) 
-    #     actions <- c(actions,'KOs')
-    #   }
-    #   pathway <- rep(pathWays[k],length(uniqueChem))
-    #   pathVec <- c(pathVec,pathway)
-    # }
-    # pathDF  <- data.frame(counts,actions,pathVec)
-    # pathCodes <- c('OxPhos','Glyc','TCA','PPP')
-    # for (i in 1:length(pathWays)){
-    #   pathDF$pathVec <- gsub(pathWays[i],pathCodes[i],pathDF$pathVec)
-    # }
-   # p<-ggplot(pathDF, aes(x=pathVec, y=counts, fill=actions)) +
-    #   geom_boxplot()
-    # p <- p+theme_bw(base_size = 2*12) + xlab('') +
-    #   labs(fill = 'Modification')+
-    #   ylab('Genes fraction (targets)')+ylim(c(0,0.15))
-    # plotTitle <- paste('../results/plots/PathwayEnrichment_',famCode,'.png',sep='')
-    # png(plotTitle,width = 600, height = 600)
-    # plot(p)
-    # dev.off()
   } 
 }
