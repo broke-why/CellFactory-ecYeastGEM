@@ -35,14 +35,20 @@ for i=1:length(nameFolds)
             index_ec = find(strcmpi(ecModel_batch.rxnNames,str));
             index    = find(strcmpi(model.rxnNames,str));
             if ~isempty(index_ec)
-                c_source = 'D-glucose exchange';
-                ecModel  = setParam(ecModel_batch,'obj',index_ec,1);
-                ecModel  = changeMedia_batch(ecModel,[c_source ' (reversible)'],'Min',false,1);
-                sol1 = solveLP(ecModel);
-                obj1 = -sol1.f;
+                %c_source = 'D-glucose exchange';
+                if startsWith(compound,'L-')
+                    AA = true;
+                else 
+                    AA = false;
+                end
+                ecModel = changeMedia_batch(ecModel_batch,'D-glucose exchange (reversible)','Min',AA);
+                sol1    = solveLP(ecModel);
+                obj1    = -sol1.f;
+                if obj1>0
+                    disp(compound)
                 %Get biomass and product yields for low glucose
                 %consumption
-                [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,1,MWeight);
+                [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,2,MWeight);
                 [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,100,MWeight);
                 if any(yield_ec_l>1) | any(yield_ec_h>1)
                     disp(['Yield > 1 for : ' met ' (ecModel)'])
@@ -58,12 +64,9 @@ for i=1:length(nameFolds)
                 ylabel(yStr)
                 xlim([0 1])
                 ylim([0 1])
-                
-                
                 index    = find(strcmpi(model.rxnNames,str));
                 if ~isempty(index)
-                    model = setParam(model,'obj',index,1);
-                    model = changeMedia_Original(model,1,1,1);
+                    model = changeMedia_Original(model,AA,1,1000);
                     sol2  = solveLP(model);
                     obj2  = -sol2.f;
                     FC    = obj2/obj1;
@@ -83,6 +86,7 @@ for i=1:length(nameFolds)
                 saveas(gcf,['../results/yieldPlots/'  met '_yieldPlot.jpg'])
                 hold off
                 close all
+                end
             end
         end
     else
