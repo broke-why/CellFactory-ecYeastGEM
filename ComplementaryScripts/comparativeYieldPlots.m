@@ -1,96 +1,134 @@
 clear
 current = pwd;
-%subSystems_model = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
+%subSystems_GEM = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
 chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
-nameFolds = {d(isub).name}';
 load('../ModelFiles/mat/ecYeastGEM_batch.mat')
 load('../ModelFiles/mat/yeastGEM.mat')
-model = ravenCobraWrapper(model);
-subSystems_model = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
-models = [];
+GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
-maxYield = table([],[],[],[]);
-%Loop through all maxYield folders
-mkdir(['../results/yieldPlots'])
-for i=1:length(nameFolds)
-    folder = nameFolds{i};
-    cd (current)
-    if contains(folder,'_targets')
-        compound  = strrep(folder,'_targets','');
-        models    = [models; {['ec' compound]}];
-        model_idx = find(strcmpi(chemicals_info.ecModel,['ec' strrep(folder,'_targets','') '.mat']));
-        if ~isempty(model_idx)
-            if strcmpi(chemicals_info.Group{model_idx},'native')
-                native = true;
+maxRate = table([],[],[],[]);
+%Loop through all maxRate folders
+mkdir('../results/yieldPlots')
+for i=1:10%height(chemicals_info)
+    compound = chemicals_info.Name{i};
+    model    = [];
+    %try to load GEM
+    modelStr = ['../ModelFiles/production_ecModels/' chemicals_info.ecModel{i}];
+    try
+        load(modelStr);
+    catch
+        modelStr = strrep(modelStr,'.mat','_WBG.mat');
+        load(modelStr);
+    end
+    
+    if ~isempty(model)
+        ecModel = model;
+        MWeight = chemicals_info.MW(i)/1000;
+        %Check presence of objective reaction
+        index_ec = find(model.c);
+        objRxn   = model.rxns(index_ec);
+        indexGEM = find(strcmpi(GEM.rxns,objRxn));
+        if ~isempty(index_ec)
+            %c_source = 'D-glucose exchange';
+            if startsWith(compound,'L-')
+                AA = true;
             else
-                native = false;
+                AA = false;
             end
-            met     = chemicals_info.Name{model_idx};
-            MWeight = chemicals_info.MW(model_idx)/1000;
-            index   = find(strcmpi(ecModel_batch.metNames,met));
-            %Check presence of exchange reaction
-            str      = [met ' exchange'];
-            index_ec = find(strcmpi(ecModel_batch.rxnNames,str));
-            index    = find(strcmpi(model.rxnNames,str));
-            if ~isempty(index_ec)
-                %c_source = 'D-glucose exchange';
-                if startsWith(compound,'L-')
-                    AA = true;
-                else 
-                    AA = false;
-                end
-                ecModel = changeMedia_batch(ecModel_batch,'D-glucose exchange (reversible)','Min',AA);
-                sol1    = solveLP(ecModel);
-                obj1    = -sol1.f;
-                if obj1>0
-                    disp(compound)
+            ecModel = changeMedia_batch(ecModel,'D-glucose exchange (reversible)','Min',AA);
+            %unconstrain growth
+            ecModel = setParam(ecModel,'lb',find(strcmpi(ecModel.rxnNames,'growth')),0);
+            %Check growth capabilities
+            temp = setParam(ecModel,'obj',find(strcmpi(ecModel.rxnNames,'growth')),1);
+            sol1 = solveLP(temp);
+            gRate = -sol1.f>0;
+            %check flux
+            sol1    = solveLP(ecModel);
+            obj1    = -sol1.f;
+            flux_ec = obj1>=1E-6;
+
+            if ~flux_ec | ~gRate
+                ecModel = changeMedia_batch(ecModel,'D-glucose exchange (reversible)','YEP',AA);
+                %check flux
+                sol1    = solveLP(ecModel,1);
+                flux_ec = (-sol1.f)>0;
+            end
+            
+            if flux_ec
+                disp(['Generating yield plots for: ' compound])
                 %Get biomass and product yields for low glucose
                 %consumption
-                [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,2,MWeight);
-                [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,100,MWeight);
+                temp = setParam(ecModel,'obj','r_2111',1);
+                [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,1,MWeight);
+                [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,18,MWeight);
                 if any(yield_ec_l>1) | any(yield_ec_h>1)
-                    disp(['Yield > 1 for : ' met ' (ecModel)'])
+                    disp(['Yield > 1 for : ' compound ' (ecModel)'])
                 end
                 %Plot results for ecModel
+                ylimit = 1;
+                if max(yield_ec_l)<= 0.1
+                    ylimit = 0.1;
+                    if max(yield_ec_l)<= 0.01
+                        ylimit = 0.01;
+                        if max(yield_ec_l)<= 0.001
+                            ylimit = 0.001;
+                            if max(yield_ec_l)<= 0.0001
+                                ylimit = 0.0001;
+                                if max(yield_ec_l)<= 0.00001
+                                    ylimit = 0.00001;
+                                end
+                            end
+                        end
+                    end
+                end  
                 figure
                 hold on
                 xStr = 'Biomass yield [g_{biomass}/g_{glucose}]';
                 yStr = 'Product yield [g_{product}/g_{glucose}]';
-                plot(BioYield_ec_l,yield_ec_l,'-','LineWidth',5)%,'Color','red')
-                plot(BioYield_ec_h,yield_ec_h,'-','LineWidth',5)%,'Color','purple')
+                plot(BioYield_ec_l,yield_ec_l,'-','LineWidth',4)%,'Color','red')
+                plot(BioYield_ec_h,yield_ec_h,'-','LineWidth',4)%,'Color','purple')
                 xlabel(xStr)
                 ylabel(yStr)
                 xlim([0 1])
-                ylim([0 1])
-                index    = find(strcmpi(model.rxnNames,str));
-                if ~isempty(index)
-                    model = changeMedia_Original(model,AA,1,1000);
-                    sol2  = solveLP(model);
+                ylim([0 ylimit])
+                %If objective reaction is also present in GEM, then add GEM
+                %yields to plot
+                if ~isempty(indexGEM)
+                    GEM = changeMedia_Original(GEM,AA,1,1000);
+                    GEM = setParam(GEM,'obj',indexGEM,1);
+                    sol2  = solveLP(GEM);
                     obj2  = -sol2.f;
                     FC    = obj2/obj1;
-                    maxYield = [maxYield;{met} {-sol1.f} {-sol2.f} {FC}];
-                    [BioYield_l,yield_l] = getYieldPlot(model,index,1,MWeight);
-                    [BioYield_h,yield_h] = getYieldPlot(model,index,20,MWeight);
-                    plot(BioYield_l,yield_l,'-.','LineWidth',5)%,'Color','blue')'
-                    plot(BioYield_h,yield_h,'-.','LineWidth',5)%,'Color','yellow')
-                    legend({'ecModel low' 'ecModel high' 'GEM low' 'GEM high'})
-                    if any(yield_l>1) | any(yield_h>1)
-                        disp(['Yield > 1 for : ' met ' (GEM)'])
+                    if obj2>0
+                        maxRate = [maxRate;{compound} {-sol1.f} {-sol2.f} {FC}];
+                        [BioYield_l,yield_l] = getYieldPlot(GEM,indexGEM,1,MWeight);
+                        [BioYield_h,yield_h] = getYieldPlot(GEM,indexGEM,18,MWeight);
+                        plot(BioYield_l,yield_l,'-.','LineWidth',4)%,'Color','blue')'
+                        plot(BioYield_h,yield_h,'-.','LineWidth',4)%,'Color','yellow')
+                        legend({'ecModel low' 'ecModel high' 'GEM low' 'GEM high'})
+                        if any(yield_l>1) | any(yield_h>1)
+                            disp(['Yield > 1 for : ' compound ' (GEM)'])
+                        end
+                        %redefine plot limits (if needed)
+                        if ylimit<max(yield_l)
+                            ylimit = ceil(log10(max(yield_l)));
+                            ylimit = 10^(ylimit);
+                            ylim([0 ylimit])
+                        end
                     end
                 else
                     legend({'ecModel low' 'ecModel high'})
                 end
+                %save plot file a jpg
                 set(gca,'FontSize',22)
-                saveas(gcf,['../results/yieldPlots/'  met '_yieldPlot.jpg'])
+                saveas(gcf,['../results/yieldPlots/'  compound '_yieldPlot.jpg'])
                 hold off
                 close all
-                end
             end
         end
     else
-        disp(folder)
-        class = {''};
+        sprintf(['GEM file for: ' compound ' not found.\n'])
     end
 end
