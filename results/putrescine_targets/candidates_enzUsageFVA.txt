@@ -27,7 +27,7 @@ YDR384C		ATO3	NaN		1	2.6091392671006		2	NaN	NaN	NaN
 YGR121C		MEP1	NaN		1	2.6091392671006		2	NaN	NaN	NaN
 YNL142W		MEP2	NaN		1	2.6091392671006		2	NaN	NaN	NaN
 YPR138C		MEP3	NaN		1	2.6091392671006		2	NaN	NaN	NaN
-YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.45138635970788	essential	2	3.55166204616731e-06	0.00264795329396502	3.55229726814785e-06
+YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.45138635970788	essential	2	3.55166204616731e-06	0.0026479532507711	3.55229726814785e-06
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	2.16150938779077	opt_isoenz_tight	2	0	1.62387850794995e-06	1.62385999280942e-06
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	2.02606920307144	opt_isoenz	2	0	0.00159782676209313	1.67175212931534e-06
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	2.02606920307144	opt_isoenz	2	0	0.00285515228012225	4.61588407430798e-07
@@ -59,7 +59,7 @@ YAL044C	P39726	GCV3	18.79276	sce00260  Glycine, serine and threonine metabolism 
 YDR019C	P48015	GCV1	44.46849	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.212844055477294	essential	0	4.15272643695414e-08	2.22668966155464e-07	4.15280290773433e-08
 YMR189W	P49095	GCV2	114.45033	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	0	0.212844055477294	essential	0	4.15272643695414e-08	2.22668966155464e-07	4.15280290773433e-08
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.207961799923787	opt_isoenz	0	0	9.79789711049314e-10	9.53795898879539e-10
-YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.207585615438607	subOpt_isoenz	0	0	0.00100949658116614	0
+YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.207585615438607	subOpt_isoenz	0	0	0.00100949656416355	0
 YMR145C	P40215	NDE1	62.77345	sce00NNN  None	0	0.188436602462482	subOpt_isoenz	0	0	6.71632045187276e-05	0
 YDL085W	Q07500	NDE2	61.65854	sce00NNN  None	0	0.188436602462482	opt_isoenz	0	0	6.72291117611194e-05	7.74325188433977e-07
 YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.171194904597011	subOpt_isoenz	0	0	2.49119239871191e-07	0

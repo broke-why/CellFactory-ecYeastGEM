@@ -7,7 +7,7 @@ YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332 
 YDR508C		GNP1	NaN		1	1000		2	NaN	NaN	NaN
 YKR039W		GAP1	NaN		1	1000		2	NaN	NaN	NaN
 YOL020W		TAT2	NaN		1	1000		2	NaN	NaN	NaN
-YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz	2	0	2.41928947530629e-10	1.95853079647883e-10
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz	2	0	2.41928948134615e-10	1.95853079647883e-10
 YGR155W	P32582	CYS4	56.02121	sce00260  Glycine, serine and threonine metabolism sce00270  Cysteine and methionine metabolism sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	958.116802935996	tightly_const	2	7.19783338041898e-06	7.19800421451267e-06	7.19791334531442e-06
 YPR074C	P23254	TKL1	73.80488	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	131.705537558047	opt_isoenz	2	0	0.00103383962369878	3.78974553782345e-06
 YJR137C	P47169	MET5	161.21721	sce00920  Sulfur metabolism	2	123.169624575219	tightly_const	2	9.96797626357715e-07	9.96799683094776e-07	9.96797626357715e-07

@@ -34,7 +34,7 @@ YGR087C	P26263	PDC6	61.57964	sce00010  Glycolysis / Gluconeogenesis sce01110  Bi
 YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	0	0.272851308105621	opt_isoenz_tight	0	0	1.00151565218256e-07	1.00133049712258e-07
 YLR134W	P16467	PDC5	61.91138	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	0	0.272851308105621	subOpt_isoenz	0	0	2.34225460080182e-07	0
 YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.271485130053718	opt_isoenz	0	0	4.87266676416486e-07	3.49441155285163e-07
-YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.261421264321267	essential	0	1.55725788277493e-08	2.21992190169413e-08	2.2172052349836e-08
+YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.261421264321267	essential	0	1.55725788277493e-08	2.21992329365172e-08	2.2172052349836e-08
 YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.232638258405811	subOpt_isoenz	0	0	2.97211162848398e-06	0
 YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	0	0.220003558835902	opt_isoenz	0	0	0.000874792784115064	1.9670167838932e-11
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	0	0.20796180055543	opt_isoenz	0	0	9.79789711364507e-10	9.53795898879539e-10

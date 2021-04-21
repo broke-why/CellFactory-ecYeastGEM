@@ -20,7 +20,7 @@ YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycero
 YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	0	0.207585615367876	subOpt_isoenz	0	0	0.00102702888226656	0	1	84	0	2
 YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	0	0.164378423051814	subOpt_isoenz	0	0	1.01733999394769e-07	0	1	122	0	2
 YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz	2	0	1.86630813466405e-09	1.51086589863797e-09	1	4	0	3
-YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz	2	0	2.41928947530629e-10	1.95853079647883e-10	1	6	0	3
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	opt_isoenz	2	0	2.41928948134615e-10	1.95853079647883e-10	1	6	0	3
 YPR074C	P23254	TKL1	73.80488	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	131.705537558047	opt_isoenz	2	0	0.00103383962369878	3.78974553782345e-06	1	10	0	3
 YOR222W		ODC2	NaN		0	0.293666280488747		0	NaN	NaN	NaN	0	6	5	3
 YPL134C		ODC1	NaN		0	0.293666280488747		0	NaN	NaN	NaN	0	6	5	3

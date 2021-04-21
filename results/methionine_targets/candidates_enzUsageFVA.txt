@@ -41,7 +41,7 @@ YPR138C		MEP3	NaN		1	1.07787382194042		2	NaN	NaN	NaN
 YOR375C	P07262	GDH1	49.56931	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	2	1.02712861416735	opt_isoenz_tight	2	0	6.21535934462758e-06	6.21518354973806e-06
 YLL052C		AQY2	NaN		1	1.00685496775486		2	NaN	NaN	NaN
 YPR192W		AQY1	NaN		1	1.00685496775486		2	NaN	NaN	NaN
-YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.00016734306466	opt_isoenz_tight	2	0	1.8617944038522e-07	1.86076589502098e-07
+YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	1.00016734312906	opt_isoenz_tight	2	0	1.8617944038522e-07	1.86076589502098e-07
 YOR222W		ODC2	NaN		0	0.293666280487029		0	NaN	NaN	NaN
 YPL134C		ODC1	NaN		0	0.293666280487029		0	NaN	NaN	NaN
 YKL067W	P36010	YNK1	17.16647	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0.293491461314026	essential	0	9.97227239327663e-08	0.00441669454931165	9.97227571552528e-08

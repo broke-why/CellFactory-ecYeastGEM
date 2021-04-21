@@ -1,24 +1,19 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate
-YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10052904648753e-07	2.10441292982086e-07	2.10188074822914e-07	1	4	0	1	1.00042942908563	1.00042970994854
-YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.72281510404943e-08	2.72801056516875e-08	2.72466152002226e-08	1	6	0	1	1.00005871004655	1.0000587484309
-YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.41923283090578e-11	4.33404029638117e-09	1.5728024228112e-10	1	16	0	1	1.00000015052823	1.00000015062663
-LUP	A0A3B1EU92	LUP	86.705		2	1000	tightly_const	2	0.00103659710308703	0.00103659710308911	0.00103659710308703	1	2	0	1	1.98530011568887	1.98657976478114
-YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22859273217398	essential	2	2.82401540213626e-08	3.17857200051599e-08	2.82416049776263e-08	1	2	0	1	1.00007017102698	1.000070216905
-YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22781626506446	tightly_const	2	1.68763176152409e-05	1.69122527034981e-05	1.68767510256894e-05	1	8	0	1	0.987368194808429	1.06137177945946
-YPL023C	P46151	MET12	73.94088	sce00670  One carbon pool by folate sce01200  Carbon metabolism	0	0.293884450454309	subOpt_isoenz	0	0	1.40933166263107e-08	0	0	6	1	2	1.00000000037841	1.00000000037865
-YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	0	0.293827460547136	subOpt_isoenz	0	0	2.18408823375538e-09	0	0	7	2	2	1.0000000022426	1.00000000224407
-YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040243	subOpt_isoenz	0	0	3.67524923012287e-08	0	0	12	6	2	1.00000000000001	1
-YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.125471265456122	subOpt_isoenz	0	0	1.3429841541983e-06	0	0	8	13	2	0.999999999999998	1
-YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390442277282	subOpt_isoenz	0	0	2.98341936309959e-08	0	0	6	14	2	1.00000000173171	1.00000000173284
-YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0	subOpt_isoenz	0	0	1.25772294801203e-09	0	1	52	0	2	1.00000000224264	1.00000000224409
-YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	opt_isoenz	2	0	1.55184685389661e-09	1.2969475940736e-11	1	7	0	3	1.00000003298678	1.00000003300835
-YDR452W	Q04119	PPN1	78.34335	sce00NNN  None	1	1000	opt_isoenz	2	0	1.17943505235456e-09	1.59461388661699e-12	1	11	0	3	1.00000000541191	1.00000000541545
-YLL052C		AQY2	NaN		0	0.287620088968157		0	NaN	NaN	NaN	0	2	3	3	1	1
-YPR192W		AQY1	NaN		0	0.287620088968157		0	NaN	NaN	NaN	0	2	3	3	1	1
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.10052904648753e-07	2.10441292982086e-07	2.10188074822914e-07	1	4	0	1	1.00015391271775	1.00015418395522
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.72281510404943e-08	2.72801056516875e-08	2.72466152002226e-08	1	6	0	1	1.00002104240967	1.00002107948738
+YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.41923283090578e-11	4.33404029638117e-09	1.5728024228112e-10	1	16	0	1	1.00000005395119	1.00000005404625
+LUP	A0A3B1EU92	LUP	86.705		2	1000	tightly_const	2	0.00103659710308703	0.00103659710308911	0.00103659710308703	1	2	0	1	1.98313840453074	1.9865797548478
+YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	2	1.22859273217414	essential	2	2.82401540213626e-08	3.17857200051599e-08	2.82416049776263e-08	1	2	0	1	1.00002610843203	1.00002615443654
+YPL023C	P46151	MET12	73.94088	sce00670  One carbon pool by folate sce01200  Carbon metabolism	0	0.293884450454322	subOpt_isoenz	0	0	1.40933166263107e-08	0	0	6	1	2	0.999999999331833	0.999999999330655
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.258201785040243	subOpt_isoenz	0	0	3.67524923012287e-08	0	0	12	6	2	0.9999999991962	0.999999999194789
+YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	0	0.125471265456163	subOpt_isoenz	0	0	1.3429841541983e-06	0	0	8	13	2	0.999999999196208	0.999999999194789
+YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	0	0.0284390442277432	subOpt_isoenz	0	0	2.98341936309959e-08	0	0	6	14	2	0.999999999331828	0.999999999330655
+YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	0	0	subOpt_isoenz	0	0	1.25772294801203e-09	0	1	52	0	2	0.999999999999992	0.999999999999999
+YBL015W	P32316	ACH1	58.71137	sce00620  Pyruvate metabolism	1	1000	opt_isoenz	2	0	1.55184685389661e-09	1.2969475940736e-11	1	7	0	3	1.00000001182287	1.0000000118437
+YDR452W	Q04119	PPN1	78.34335	sce00NNN  None	1	1000	opt_isoenz	2	0	1.17943505235456e-09	1.59461388661699e-12	1	11	0	3	1.00000000193969	1.00000000194311
+YLL052C		AQY2	NaN		0	0.287620088968219		0	NaN	NaN	NaN	0	2	3	3	1	1
+YPR192W		AQY1	NaN		0	0.287620088968219		0	NaN	NaN	NaN	0	2	3	3	1	1
 YOR222W		ODC2	NaN		0	0.26526130671434		0	NaN	NaN	NaN	0	6	5	3	1	1
 YPL134C		ODC1	NaN		0	0.26526130671434		0	NaN	NaN	NaN	0	6	5	3	1	1
-YER053C		PIC2	NaN		0	0.151931148139918		0	NaN	NaN	NaN	0	4	12	3	1	1
-YJR077C		MIR1	NaN		0	0.151931148139918		0	NaN	NaN	NaN	0	4	12	3	1	1
-YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.38369287290444e-10	0	0	24	16	3	1.0000035333249	0.999999832997072
-YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	2.38528771380649e-09	0	0	24	16	3	1.00000353380986	0.999999832997097
-YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0	subOpt_isoenz	0	0	9.58355723440873e-10	0	0	24	16	3	1.00000353332212	0.999999832997097
+YER053C		PIC2	NaN		0	0.151931148139921		0	NaN	NaN	NaN	0	4	12	3	1	1
+YJR077C		MIR1	NaN		0	0.151931148139921		0	NaN	NaN	NaN	0	4	12	3	1	1

@@ -45,7 +45,7 @@ r_1115	ammonia transport	2.30895600694306	YDR384C or YGR121C or YNL142W or YPR13
 r_0216_REVNo1	aspartate transaminase (reversible) (No1)	1.97723127611371	YLR027C	L-glutamate[c] + oxaloacetate[c] + 4.8393e-07 prot_P23542[c] => 2-oxoglutarate[c] + L-aspartate[c]
 r_0471No2	glutamate dehydrogenase (NADP) (No2)	1.33364566462339	YOR375C	pmet_r_0471[c] + 5.2087e-06 prot_P07262[c] => H2O[c] + L-glutamate[c] + NADP(+)[c]
 r_1277_REV	water diffusion (reversible)	1.30663282645459	YLL052C or YPR192W	H2O[c] => H2O[e]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.30279284508581	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.30279282774189	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0891No2	phosphoglycerate dehydrogenase (No2)	1.16758907689728	YIL074C	pmet_r_0891[c] + 8.9318e-07 prot_P40510[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
 r_0917No1	phosphoserine phosphatase (L-serine) (No1)	1.16758907689728	YGR208W	3-phospho-serine[c] + H2O[c] + 3.4549e-07 prot_P42941[c] => L-serine[c] + phosphate[c]
 r_0918No1	phosphoserine transaminase (No1)	1.16758907689728	YOR184W	3-phospho-hydroxypyruvate[c] + L-glutamate[c] + 0.00011156 prot_P33330[c] => 2-oxoglutarate[c] + 3-phospho-serine[c]

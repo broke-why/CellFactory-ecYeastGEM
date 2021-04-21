@@ -17,7 +17,7 @@ r_0962No1	pyruvate kinase (No1)	1.90388094349282	YAL038W	pmet_r_0962[c] + 1.1973
 r_0366No2	enolase (No2)	1.78712509324122	YGR254W	pmet_r_0366[c] + 1.2077e-06 prot_P00924[c] => H2O[c] + phosphoenolpyruvate[c]
 r_0893No1	phosphoglycerate mutase (No1)	1.78712509324122	YOR283W	pmet_r_0893[c] + 3.3347e-07 prot_Q12040[c] => 2-phospho-D-glyceric acid[c]
 r_0569No1	inorganic diphosphatase (No1)	1.57833949226933	YMR267W	diphosphate[m] + H2O[m] + 1.0684e-06 prot_P28239[c] => H+[m] + 2 phosphate[m]
-r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.21808082231029	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
+r_0534No3	hexokinase (D-glucose:ATP) (No3)	1.21808081225609	YFR053C	1.0138e-06 prot_P04806[c] + pmet_r_0534[c] => ADP[c] + D-glucose 6-phosphate[c] + H+[c]
 r_0486No2	glyceraldehyde-3-phosphate dehydrogenase (No2)	1.14239140583946	YJL052W	pmet_r_0486[c] + 9.5785e-06 prot_P00360[c] => 1,3-bisphospho-D-glycerate[c] + H+[c] + NADH[c]
 r_0892No1	phosphoglycerate kinase (No1)	1.14239140583946	YCR012W	1,3-bisphospho-D-glycerate[c] + ADP[c] + 5.1757e-07 prot_P00560[c] => 3-phosphonato-D-glycerate(3-)[c] + ATP[c]
 r_1054No1	triose-phosphate isomerase (No1)	1.05560487361788	YDR050C	dihydroxyacetone phosphate[c] + 3.2067e-08 prot_P00942[c] => glyceraldehyde 3-phosphate[c]

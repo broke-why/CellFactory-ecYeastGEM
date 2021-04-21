@@ -32,7 +32,7 @@ YBR221C	P32473	PDB1	40.0532	sce00010  Glycolysis / Gluconeogenesis sce00020  Cit
 YER178W	P16387	PDA1	46.34261	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	3.24093078138632	tightly_const	2	2.54373537888847e-06	2.54392909176002e-06	2.54386836713192e-06
 YGR193C	P16451	PDX1	45.36125	sce00NNN  None	2	3.24093078138632	tightly_const	2	2.54373537888847e-06	2.54392909176002e-06	2.54386836713192e-06
 YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	2	3.24093078138632	tightly_const	2	2.54373537888847e-06	2.54392909176002e-06	2.54386836713192e-06
-YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.96177848371834	essential	2	3.60113681758929e-06	0.000667107464392565	3.60158126606402e-06
+YOR095C	Q12189	RKI1	28.25777	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	2.96177848371834	essential	2	3.60113681758929e-06	0.000667107392636452	3.60158126606402e-06
 YGL080W		MPC1	NaN		1	2.46127112770307		2	NaN	NaN	NaN
 YGR243W		MPC3	NaN		1	2.46127112770307		2	NaN	NaN	NaN
 YHR162W		MPC2	NaN		1	2.46127112770307		2	NaN	NaN	NaN

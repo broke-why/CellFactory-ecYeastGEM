@@ -1,7 +1,6 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
-PTS	Q49SP3	PTS	64.199		OE	1000	tightly_const	2	0.00140313340146243	0.00140313340146523	0.00140313340146243	1	4	0	1	1.98963587247116	1.99097025015428	0.995520341700842
-YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293827460547136	subOpt_isoenz	0	0	2.14489866631064e-09	0	0	7	2	2	0.999999999514111	0.999999999999989	0
-YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KO	0	subOpt_isoenz	0	0	1.5801464321155e-09	0	1	4	0	2	0.999999999511628	1.00000000000002	0
-YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.03205352788306e-10	0	0	24	16	3	0.999999999514333	0.999999999999985	0
-YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	2.34242014591753e-09	0	0	24	16	3	0.999999999999192	1.00000000000002	0
-YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.22595668165685e-10	0	0	24	16	3	0.999999999512057	1.00000000000002	0
+PTS	Q49SP3	PTS	64.199		OE	1000	tightly_const	2	0.00140313340146243	0.00140313340146523	0.00140313340146243	1	4	0	1	1.98739337154864	1.99097005312151	0.995520341700842
+YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293827460547136	subOpt_isoenz	0	0	2.14489866631064e-09	0	0	7	2	2	1.00000000000218	0.99999999999999	0
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.03205352788306e-10	0	0	24	16	3	1.00000000000478	0.99999999999998	0
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	2.34242014591753e-09	0	0	24	16	3	1.00000000000734	0.99999999999997	0
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.22595668165685e-10	0	0	24	16	3	0.999999999985033	1.00000000000006	0

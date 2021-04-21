@@ -16,14 +16,14 @@ YHR163W	P38858	SOL3	27.78417	sce00030  Pentose phosphate pathway sce01110  Biosy
 YHR183W	P38720	GND1	53.54274	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	2.06464244303956
 YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	1	1.26735372734276
 YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	1	1.26735372734276
-YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00026365406121
+YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.00026365406321
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.289455471178714
 YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	0	0.289455471178714
 YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.281559049383155
 YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.281559049383155
 YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.281559049383155
 YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	0	0.279620762900785
-YBR029C	P38221	CDS1	51.82218	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04070  Phosphatidylinositol signaling system	0	0.270058198042084
+YBR029C	P38221	CDS1	51.82218	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04070  Phosphatidylinositol signaling system	0	0.270058198042083
 YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	0	0.265663263830357
 YOR222W		ODC2	NaN		0	0.258481354611056
 YPL134C		ODC1	NaN		0	0.258481354611056

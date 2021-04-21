@@ -1,18 +1,19 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
-YGL187C	P04037	COX4	17.1424	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00013610861914	1.00479010090899	0.011000817435629
-YGL191W	P32799	COX13	15.02097	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00011924837983	1.00419431703704	0
-YHR051W	P00427	COX6	17.34139	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00013769045083	1.00484603273966	0.0111273757050494
-YIL111W	P00425	COX5B	17.1965	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.0001365386507	1.00480530575398	0.0110352234446463
-YLR038C	Q01519	COX12	9.78778	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00007767637869	1.0027282318444	0
-YLR395C	P04039	COX8	8.90656	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	1.94420336444094e-06	1.94419780432591e-06	0	7	3	2	1.00014144009536	1.00497864022189	0.011427363235817
-YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00005500484072	1.00193044481458	0
-YMR083W	P07246	ADH3	40.36903	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00350  Tyrosine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.111381942928883	subOpt_isoenz	0	0	0.00037296515041967	0	0	21	10	2	1	1.00000000000001	0
-YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	subOpt_isoenz	0	0	0.000625646723267944	0	1	4	0	2	1	1.00000000000001	0
-YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	flux_leak	0	0	0	0	0	0	13	2	1.00024306631857	1.00858568254543	0
-YGR087C	P26263	PDC6	61.57964	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1.00000000000001	0
-YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1.00000000000001	0
-YLR134W	P16467	PDC5	61.91138	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1.00000000000001	0
-YJL060W	P47039	BNA3	50.08168	sce00380  Tryptophan metabolism	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1.00000000000001	0
-YER010C	P40011	YER010C	25.56305	sce00NNN  None	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1.00000000000001	0
+YGL187C	P04037	COX4	17.1424	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00005638061502	1.0054094829741	0.011000817435629
+YGL191W	P32799	COX13	15.02097	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00004940081316	1.004736661509	0
+YHR051W	P00427	COX6	17.34139	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00005703539997	1.00547264704756	0.0111273757050494
+YIL111W	P00425	COX5B	17.1965	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00005655862375	1.00542665387545	0.0110352234446463
+YLR038C	Q01519	COX12	9.78778	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00003218569444	1.00308100476212	0
+YLR395C	P04039	COX8	8.90656	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	1.94420336444094e-06	1.94419780432591e-06	0	7	3	2	1.00005858748918	1.00562240128677	0.011427363235817
+YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	OE	1000	opt_isoenz_tight	2	0	9.72102893139957e-07	9.72100115634742e-07	0	7	3	2	1.00002279424287	1.00218006020235	0
+YMR083W	P07246	ADH3	40.36903	sce00010  Glycolysis / Gluconeogenesis sce00071  Fatty acid degradation sce00350  Tyrosine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.111381942928883	subOpt_isoenz	0	0	0.00037296515041967	0	0	21	10	2	1	1	0
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	subOpt_isoenz	0	0	1.93628299393865e-06	0	1	4	0	2	1	1	0
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	subOpt_isoenz	0	0	0.000625646723267944	0	1	4	0	2	1	1	0
+YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0	flux_leak	0	0	0	0	0	0	13	2	1.00003232002861	1.00309390339118	0
+YGR087C	P26263	PDC6	61.57964	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1	0
+YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1	0
+YLR134W	P16467	PDC5	61.91138	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	KO	0	flux_leak	0	0	0	0	0	0	14	2	1	1	0
+YJL060W	P47039	BNA3	50.08168	sce00380  Tryptophan metabolism	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1	0
+YER010C	P40011	YER010C	25.56305	sce00NNN  None	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1	0
 YDR111C	P52892	ALT2	56.76921	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1	0
 YGL196W	P53095	DSD1	47.82728	sce00260  Glycine, serine and threonine metabolism	KO	0	flux_leak	0	0	0	0	1	0	0	1	1	1	0

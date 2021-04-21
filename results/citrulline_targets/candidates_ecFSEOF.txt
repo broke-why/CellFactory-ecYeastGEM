@@ -5,11 +5,11 @@ YJL088W	P05150	ARG3	37.84479	sce00220  Arginine biosynthesis sce01110  Biosynthe
 YJR109C	P03965	CPA2	123.91392	sce00240  Pyrimidine metabolism sce00250  Alanine, aspartate and glutamate metabolism	1	22.4123271737292
 YOR303W	P07258	CPA1	45.36103	sce00240  Pyrimidine metabolism sce00250  Alanine, aspartate and glutamate metabolism	1	22.4123271737143
 YLR174W	P41939	IDP2	46.56172	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	1	20.9576313745379
-YBR296C		PHO89	NaN		1	17.840965815913
-YCR037C		PHO87	NaN		1	17.840965815913
-YJL198W		PHO90	NaN		1	17.840965815913
-YML123C		PHO84	NaN		1	17.840965815913
-YNR013C		PHO91	NaN		1	17.840965815913
+YBR296C		PHO89	NaN		1	17.8409658138262
+YCR037C		PHO87	NaN		1	17.8409658138262
+YJL198W		PHO90	NaN		1	17.8409658138262
+YML123C		PHO84	NaN		1	17.8409658138262
+YNR013C		PHO91	NaN		1	17.8409658138262
 YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	1	17.1297060019125
 YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	1	17.0544167582124
 YMR062C	Q04728	ARG7	47.84821	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	1	17.0544167582124
@@ -47,7 +47,7 @@ YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fr
 YLL052C		AQY2	NaN		1	1.1015433550486
 YPR192W		AQY1	NaN		1	1.1015433550486
 YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	1	1.06595973127096
-YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.02845614844892
+YDR516C	Q04409	EMI2	55.92028	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	1	1.02845614842545
 YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	0	0.28864299743082
 YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	0	0.281828606913683
 YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	0	0.281828606913683

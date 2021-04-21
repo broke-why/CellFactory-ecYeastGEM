@@ -5,8 +5,8 @@ YGL125W	P53128	MET13	68.55958	sce00670  One carbon pool by folate sce01200  Carb
 YLR017W	Q07938	MEU1	37.85618	sce00270  Cysteine and methionine metabolism	2	1000	tightly_const	2	8.07243921276898e-06	8.07355776700822e-06	8.07243921276898e-06	1	8	0	1
 YLR209C	Q05788	PNP1	33.7546	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00760  Nicotinate and nicotinamide metabolism sce01110  Biosynthesis of secondary metabolites	2	1000	essential	2	1.65193544629181e-08	1.92078325641153e-08	1.65262184048229e-08	1	13	0	1
 YMR009W	Q03677	ADI1	20.8791	sce00270  Cysteine and methionine metabolism	2	1000	tightly_const	2	1.77866728400184e-07	1.77891917917283e-07	1.77866728400184e-07	0	6	1	1
-YNL141W	P53909	AAH1	39.63458	sce00230  Purine metabolism	2	1000	tightly_const	2	3.81446625874287e-07	3.82117869174394e-07	3.81605186997902e-07	1	9	0	1
-YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.72290628743647e-08	2.72787960654317e-08	2.72466152002226e-08	1	6	0	1
+YNL141W	P53909	AAH1	39.63458	sce00230  Purine metabolism	2	1000	tightly_const	2	3.81446625874287e-07	3.82137918053866e-07	3.81605186997902e-07	1	9	0	1
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	2	1000	tightly_const	2	2.7229062874298e-08	2.72787960654317e-08	2.72466152002226e-08	1	6	0	1
 YJR024C	P47095	MDE1	27.42662	sce00270  Cysteine and methionine metabolism	2	1000	tightly_const	2	1.27201477140124e-07	1.27219466642677e-07	1.27201477140124e-07	1	3	0	1
 YPR118W	Q06489	MRI1	45.01983	sce00270  Cysteine and methionine metabolism	1	1000	essential	2	1.25678232840068e-10	2.13543434802993e-09	1.25678232840068e-10	1	2	0	1
 YJR069C	P47119	HAM1	22.09268	sce00230  Purine metabolism	1	1000	essential	2	2.68220811181713e-11	4.25269721568686e-09	1.5728024228112e-10	1	16	0	1

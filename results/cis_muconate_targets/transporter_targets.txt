@@ -1,6 +1,6 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1112_REV	AKG transporter, mitochonrial (reversible)	1000	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
-r_1244	phosphate transport	17.8598985440877	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_1244	phosphate transport	17.8598985446481	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
 r_1194	L-glutamate transport	6.14968719093945	YPR021C	L-glutamate[c] => L-glutamate[m]
 r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
 r_2034	pyruvate transport	0.27199930410542	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
