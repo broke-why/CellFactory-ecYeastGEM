@@ -10,7 +10,7 @@ chassis_mod = readtable('../results/chassis_strains_modifications.txt','Delimite
 chemicals_info.Name = strtrim(chemicals_info.Name);
 maxMod = 6;
 cd  (current)
-fileStr = '../results/chassis_strain_6_chemicals.txt';
+fileStr = '../results/chassis_strain_7_chemicals.txt';
 results = table();
 chemicals = readtable(fileStr,'Delimiter','\t');
 chemicals.product = strrep(chemicals.product,'coumaricacid','p-coumaric acid');
@@ -30,16 +30,16 @@ for j=1:height(chemicals)
     figure
     for i=1:maxMod
         chem  = chemicals.product(j);
-        index = find(contains(chemicals_info.Name,chem));
+        index = find(contains(chemicals_info.Name,chem),1);
         if ~isempty(index)
             modelStr = chemicals_info.ecModel{index};
             MWeight  = chemicals_info.MW(index);
             model = [];
             try
-                disp(modelStr)
+                %disp(modelStr)
                 load(['../ModelFiles/production_ecModels/' modelStr])
             catch
-                disp(modelStr)
+                %disp(modelStr)
                 modelStr = strrep(modelStr,'.mat','_WBG.mat');
                 load(['../ModelFiles/production_ecModels/' modelStr])
             end
@@ -71,13 +71,14 @@ for j=1:height(chemicals)
             MWeight = MWeight/1000;
             %
             objIndx = find(model.c);
-            disp(model.rxnNames(objIndx))
             if i==1
-                [BioYield_WT,yield_WT] = getYieldPlot(model,objIndx,2,MWeight);
+                disp(modelStr)
+                printModel(model,objIndx)
+                [BioYield_WT,yield_WT,oxygen,EtOH] = getYieldPlot(model,objIndx,1,MWeight);
                 hold on
                 xStr = 'Biomass yield [g_{biomass}/g_{glucose}]';
                 yStr = 'Product yield [g_{product}/g_{glucose}]';
-                plot(BioYield_WT,yield_WT,'-','LineWidth',2)%,'Color','red')
+                plot(BioYield_WT,yield_WT,'-','LineWidth',5)%,'Color','red')
                 xlabel(xStr)
                 ylabel(yStr)
                 xlim([0 1])
@@ -85,7 +86,7 @@ for j=1:height(chemicals)
                 legendStr = {'WT'};
                 
             end
-            [BioYield_i,yield_i] = getYieldPlot(mutant,objIndx,2,MWeight);
+            [BioYield_i,yield_i] = getYieldPlot(mutant,objIndx,1,MWeight);
             plot(BioYield_i,yield_i,'-.','LineWidth',2)%,'Color','blue')'
             %legend({'ecModel low' 'ecModel high' 'GEM low' 'GEM high'})
         else
@@ -96,8 +97,13 @@ for j=1:height(chemicals)
         disp(' ')
     end
     legend(legendStr)
+    set(gca,'FontSize',22)
+    modelStr = strrep(modelStr,'.mat','');
+    saveas(gcf,['../results/plots/chassis_strain/'  modelStr '_yieldPlot.jpg'])
+    hold off
+    close all
     %hold off
-    pause
+    %pause
     %close all
 end
 results.Properties.VariableNames = {'chemicals' 'mod_number' 'FC_bY' 'FC_pY' 'FC_pR'};

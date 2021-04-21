@@ -281,7 +281,7 @@ tempModel = setParam(tempModel,'obj',growth_indx,1);
 %Get WT solutions
 [WTsol,~] = solveECmodel(tempModel,tempModel,'pFBA',minIndex);
 maxGrowth = WTsol(growth_indx);
-tempModel = setParam(tempModel,'lb',growth_indx,0.5*maxGrowth);
+tempModel = setParam(tempModel,'lb',growth_indx,0.1);
 tempModel = setParam(tempModel,'obj',targetIndx,1);
 [WTsol,~] = solveECmodel(tempModel,tempModel,'pFBA',minIndex);
 prodWT    = WTsol(targetIndx);

@@ -11,7 +11,7 @@ tempModel = setParam(tempModel,'obj',growth_indx,1);
 %Get WT solutions
 [WTsol,~] = solveECmodel(tempModel,tempModel,'pFBA',prot_index);
 maxGrowth = WTsol(growth_indx);
-tempModel = setParam(tempModel,'lb',growth_indx,0.1*maxGrowth);
+tempModel = setParam(tempModel,'lb',growth_indx,0.1);
 tempModel = setParam(tempModel,'obj',targetIndex,1);
 %Get WT yield
 [WTsol,flag] = solveECmodel(tempModel,tempModel,'pFBA',prot_index);
