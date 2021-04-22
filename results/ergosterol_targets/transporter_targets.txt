@@ -1,0 +1,5 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1147_REV	ergosterol transport (reversible)	1000	YIL013C or YOR011W	ergosterol[c] => ergosterol[e]
+r_1129	coenzyme A transport	24.6937390029487	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_2034	pyruvate transport	4.10035030385733	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1237	ornithine transport	0.293629976057907	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]

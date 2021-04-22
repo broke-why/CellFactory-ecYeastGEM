@@ -42,10 +42,9 @@ end
 %Avoid enzyme usage reactions and pseudometabolites
 MetsIndxs = find(~contains(model.metNames,'prot_'));
 rxnIndxs  = find(~contains(model.rxnNames,'draw_prot_') | ~contains(model.rxns,'_REV'));
-
-Smat      = model.S(MetsIndxs,rxnIndxs);
-RGmat      = rxnGeneMat(rxnIndxs,genes);
 %Get metGenesMatrix
+Smat  = model.S(MetsIndxs,rxnIndxs);
+RGmat = rxnGeneMat(rxnIndxs,genes);
 GeneMetMatrix = abs(sign(Smat))*RGmat;
 GeneMetMatrix = full(GeneMetMatrix);
 %Calculate row and column sums

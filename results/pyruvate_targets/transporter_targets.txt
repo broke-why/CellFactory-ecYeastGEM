@@ -1,0 +1,9 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1254_REV	pyruvate transport (reversible)	1000	YKL217W	H+[c] + pyruvate[c] => H+[e] + pyruvate[e]
+r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
+r_2132	oxoglutarate/malate exchange	0.261096936671453	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1110	ADP/ATP transporter	0.242909857040238	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
+r_1245	phosphate transport	0.215352522156273	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_2034	pyruvate transport	0.167480769579176	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1112_REV	AKG transporter, mitochonrial (reversible)	0.130196194500623	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
+r_1129	coenzyme A transport	0.000206761296945512	YHR002W	coenzyme A[c] => coenzyme A[m]

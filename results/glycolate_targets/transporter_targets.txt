@@ -1,0 +1,7 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1265	succinate-fumarate transport	201.770690168888	YJR095W	fumarate[m] + succinate[c] => fumarate[c] + succinate[m]
+r_1244	phosphate transport	85.2419160229148	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_2034	pyruvate transport	3.71577329545478	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1245	phosphate transport	1.07054260285667	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1129	coenzyme A transport	0	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_1120	carnithine-acetylcarnithine carrier	1000	YOR100C	(R)-carnitine[m] + O-acetylcarnitine[c] => (R)-carnitine[c] + O-acetylcarnitine[m]

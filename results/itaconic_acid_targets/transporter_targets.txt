@@ -1,0 +1,4 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1244	phosphate transport	54.1265740791941	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_1237	ornithine transport	0.293881279402024	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1129	coenzyme A transport	0.0536965400920647	YHR002W	coenzyme A[c] => coenzyme A[m]

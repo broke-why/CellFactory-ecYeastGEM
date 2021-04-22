@@ -46,6 +46,12 @@ Thumbs.db
 *.mlappinstall 
 *.mltbx
 helpsearch*/
+*.mat
+
+# R generated files #
+##########################
+*.RData
+*.Rhistory
 
 # Non-complying tables #
 ########################
@@ -55,10 +61,10 @@ helpsearch*/
 *.png
 *.jpg
 *.tiff
-*.pdf
-*.js
-*.css
-*.mat
-*.map
 *.html
 *.jpeg
+*.mat
+*fluxLeak_targets.txt
+*.js
+*.map
+*.css

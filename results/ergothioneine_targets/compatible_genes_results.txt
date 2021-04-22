@@ -1,0 +1,6 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
+Egt1	Q7RX33	Egt1	99.025		OE	1000	tightly_const	2	1.75265776645047e-05	1.75265776645398e-05	1.75265776645047e-05	1	9	0	1	1.00964122492601	1.00968627623263	0.0191003659160781
+YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.284121554409123	subOpt_isoenz	0	0	5.14446266696015e-07	0	0	8	3	2	1.00000000046838	1	0
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	KD	0.258201785040243	subOpt_isoenz	0	0	3.67194451555144e-08	0	0	12	5	2	1.00000000047012	0.999999999999997	0
+YMR145C	P40215	NDE1	62.77345	sce00NNN  None	KD	0.219756704015282	subOpt_isoenz	0	0	8.13410047473956e-08	0	0	6	6	2	1.00000000000015	0.999999999999999	0
+YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	subOpt_isoenz	0	0	1.24673765785514e-09	0	1	52	0	2	1.00000000046761	1.00000000000001	0
