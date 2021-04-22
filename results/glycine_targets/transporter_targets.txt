@@ -1,0 +1,7 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1173_REV	glycine transport (reversible)	1000	YCL025C or YKR039W or YOL020W or YOR348C or YPL265W	H+[c] + L-glycine[c] => H+[e] + L-glycine[e]
+r_1265	succinate-fumarate transport	41.4404462397676	YJR095W	fumarate[m] + succinate[c] => fumarate[c] + succinate[m]
+r_1115	ammonia transport	3.82268238578439	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_2034	pyruvate transport	0.0225101664654932	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1129	coenzyme A transport	0	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_1120	carnithine-acetylcarnithine carrier	1000	YOR100C	(R)-carnitine[m] + O-acetylcarnitine[c] => (R)-carnitine[c] + O-acetylcarnitine[m]

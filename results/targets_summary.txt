@@ -1,103 +1,104 @@
-models	chemClass	cand_1_total	cand_1_OE	cand_1_del	cand_2_total	cand_2_OE	cand_2_del	cand_3_total	cand_3_OE	cand_3_del
-ec2-phenylethanol	alcohol	123	43	80	116	43	73	60	24	36
-ec3-methylbutanol	alcohol	132	103	29	105	84	21	67	50	17
-ecglycerol	alcohol	123	52	71	119	52	67	70	23	47
-ecisobutanol	alcohol	0	0	0	0	0	0	0	0	0
-ecl_pac	alcohol	182	44	138	178	44	134	76	3	73
-ecn-butanol	alcohol	156	87	69	147	86	61	71	40	31
-"ecr,r-2,3-butanediol"	alcohol	127	50	77	114	50	64	55	22	33
-ec(s)-reticuline	alkaloid	200	36	164	149	36	113	82	20	62
-eccholine	alkaloid	137	42	95	126	42	84	74	20	54
-echypoxanthine	alkaloid	224	153	71	219	153	66	92	49	43
-ecpsilocybin	alkaloid	197	33	164	146	33	113	77	18	59
-ecxanthine	alkaloid	215	138	77	209	138	71	80	45	35
-ecalanine	amino acid	146	61	85	131	60	71	64	26	38
-ecarginine	amino acid	142	86	56	140	85	55	66	35	31
-ecasparagine	amino acid	144	71	73	135	70	65	72	33	39
-ecaspartate	amino acid	160	76	84	154	75	79	56	13	43
-eccitrulline	amino acid	153	99	54	148	98	50	67	38	29
-eccysteine	amino acid	129	55	74	120	55	65	72	32	40
-ecglutamate	amino acid	148	85	63	141	85	56	64	36	28
-ecglutamine	amino acid	145	81	64	136	80	56	64	35	29
-ecglutathione	amino acid	140	74	66	135	74	61	63	34	29
-ecglycine	amino acid	140	75	65	134	75	59	68	38	30
-echistidine	amino acid	151	76	75	144	76	68	85	38	47
-echomoserine	amino acid	132	61	71	123	60	63	66	30	36
-ecisoleucine	amino acid	132	81	51	123	81	42	64	40	24
-ecleucine	amino acid	138	81	57	127	81	46	64	38	26
-eclysine	amino acid	138	78	60	126	78	48	58	34	24
-ecmethionine	amino acid	126	60	66	114	60	54	67	33	34
-ecnicotianamine	amino acid	207	41	166	156	41	115	87	22	65
-ecornithine	amino acid	121	67	54	111	67	44	51	31	20
-ecphenylalanine	amino acid	119	50	69	107	50	57	61	27	34
-ecproline	amino acid	126	63	63	112	63	49	53	30	23
-ecserine	amino acid	125	54	71	114	54	60	66	31	35
-ecthreonine	amino acid	123	62	61	113	62	51	61	31	30
-ectryptophan	amino acid	139	78	61	131	78	53	67	35	32
-ectyrosine	amino acid	121	56	65	110	56	54	60	29	31
-ecvaline	amino acid	161	57	104	137	57	80	62	25	37
-ec4-hydroxymandelic_acid	aromatic	114	51	63	106	51	55	58	25	33
-eccinnamate	aromatic	124	54	70	114	54	60	67	28	39
-ecmandelic_acid	aromatic	150	73	77	147	73	74	83	33	50
-ecputrescine	bioamine	140	68	72	131	68	63	69	31	38
-ecspermine	bioamine	165	104	61	158	104	54	76	42	34
-ecara	fatty acid	200	44	156	149	44	105	82	26	56
-ecdha	fatty acid	201	45	156	150	45	105	85	27	58
-ecepa	fatty acid	201	45	156	150	45	105	83	27	56
-ecffas	fatty acid	122	64	58	119	64	55	62	30	32
-eclaurate	fatty acid	145	76	69	135	76	59	75	44	31
-ecoleate	fatty acid	129	67	62	124	67	57	66	31	35
-ecpalmitoleate	fatty acid	132	66	66	125	66	59	67	31	36
-ecsuc-retca	fatty acid	170	94	76	164	93	71	83	42	41
-ecdocosanol	fatty alcohol	185	30	155	134	30	104	75	15	60
-eccatechin	flavonoid	194	38	156	143	38	105	84	23	61
-ecgenistein	flavonoid	199	35	164	148	35	113	83	20	63
-eckaempferol	flavonoid	192	36	156	141	36	105	82	21	61
-ecquercetin	flavonoid	193	37	156	142	37	105	83	22	61
-ectriacylglycerol	lipid	74	74	0	74	74	0	37	37	0
-ecastaxanthin	natural pigment	189	34	155	139	34	105	79	19	60
-ecbeta_carotene	natural pigment	189	34	155	139	34	105	79	18	61
-ecbetaxanthin	natural pigment	138	34	104	131	34	97	80	21	59
-ecguanine	nucleic acid	225	141	84	218	141	77	84	44	40
-ecthymidine	nucleic acid	225	137	88	223	137	86	109	48	61
-ecacetate	organic acid	159	83	76	147	82	65	78	37	41
-ecadipic_acid	organic acid	105	27	78	102	27	75	50	18	32
-eccis_muconate	organic acid	123	37	86	114	37	77	60	20	40
-eccitrate	organic acid	134	58	76	122	57	65	64	24	40
-ecfumaric_acid	organic acid	109	48	61	107	48	59	48	13	35
-ecglycolate	organic acid	156	93	63	152	92	60	73	38	35
-echexanoate	organic acid	158	49	109	152	49	103	92	31	61
-ecitaconic_acid	organic acid	138	69	69	130	69	61	66	30	36
-eclactate	organic acid	182	91	91	170	91	79	88	37	51
-ecmalate	organic acid	138	71	67	133	71	62	71	30	41
-ecoxoglutarate	organic acid	148	83	65	142	82	60	71	35	36
-ecpyruvate	organic acid	184	77	107	164	77	87	48	9	39
-ecacetaldehyde	other	145	67	78	132	67	65	74	34	40
-ecethylene	other	144	79	65	138	79	59	68	36	32
-ecurea	other	157	124	33	134	107	27	56	42	14
-ecxanthone	polyphenolic	196	32	164	145	32	113	80	17	63
-ecalpha_amylase	protein	136	95	41	124	94	30	74	53	21
-ecglucagon	protein	151	112	39	140	111	29	81	62	19
-echemoglobin	protein	155	76	79	143	76	67	79	48	31
-echsa	protein	151	106	45	141	106	35	82	59	23
-eclactase	protein	137	97	40	130	96	34	72	51	21
-ecergosterol	steroid	163	96	67	156	96	60	88	54	34
-ecresveratrol	stilbenoid	181	34	147	126	34	92	71	20	51
-ecamorphadiene	terpene	156	88	68	149	88	61	75	40	35
-ecbeta_amyrin	terpene	160	86	74	151	86	65	82	42	40
-ecbeta_ionone	terpene	188	33	155	137	32	105	79	18	61
-ecfarnesene	terpene	129	46	83	126	46	80	62	25	37
-ecgeraniol	terpene	157	83	74	146	83	63	78	39	39
-eclimonene	terpene	157	81	76	148	81	67	82	38	44
-eclinalool	terpene	168	58	110	158	58	100	80	24	56
-eclupeol	terpene	187	32	155	137	32	105	77	16	61
-ecoleanolate	terpene	184	33	151	138	33	105	78	17	61
-ecpatchoulol	terpene	187	32	155	137	32	105	77	16	61
-ecprotopanaxadiol	terpene	186	31	155	136	31	105	77	16	61
-ecsantalene	terpene	136	69	67	130	69	61	69	37	32
-ec3hp-asp	organic acid	185	92	93	171	91	80	89	38	51
-ec3hp-malcoa	organic acid	133	64	69	127	63	64	72	31	41
-ecartemisinic_acid	terpene	154	81	73	143	81	62	79	39	40
-eccoumaric_acid	aromatic	200	41	159	149	41	108	79	22	57
-ecnarinrenin	aromatic	191	33	158	140	33	107	76	18	58
-ecvanillin_beta_glucoside	aromatic	195	34	161	144	34	110	82	19	63
+models	chemClass	cand_1_total	cand_1_OE	cand_1_dR	cand_1_del	cand_2_total	cand_2_OE	cand_2_dR	cand_2_del	cand_3_total	cand_3_OE	cand_3_dR	cand_3_del
+ec(s)-reticuline	alkaloid	117	19	72	19	20	12	6	0	5	5	0	0
+ec2-phenylethanol	alcohol	41	15	21	2	29	13	10	3	19	8	8	3
+ec3-methylbutanol	alcohol	57	22	17	11	32	13	8	9	24	8	8	8
+ec3hp-asp	organic acid	72	18	45	4	32	12	13	4	19	7	8	4
+ec3hp-malcoa	organic acid	47	15	24	0	30	15	9	0	17	10	7	0
+ec4-hydroxymandelic_acid	aromatic	42	10	23	2	26	8	11	1	17	7	9	1
+ecacetate	organic acid	83	24	34	18	54	17	12	18	22	4	7	11
+ecadipic_acid	organic acid	38	9	18	7	23	7	9	3	16	6	7	3
+ecalanine	amino acid	87	21	49	14	34	6	15	11	16	1	7	8
+ecamorphadiene	terpene	56	21	16	15	24	11	9	2	21	10	9	2
+ecara	fatty acids and lipids	136	24	86	19	26	17	8	0	6	4	2	0
+ecarginine	amino acid	62	41	6	4	44	29	2	9	20	13	2	5
+ecartemisinic_acid	terpene	68	28	22	15	33	21	9	2	25	14	9	2
+ecasparagine	amino acid	56	23	18	4	28	13	5	6	13	5	3	5
+ecaspartate	amino acid	105	23	65	11	34	10	9	13	23	6	7	10
+ecastaxanthin	terpene	116	16	74	19	21	9	9	1	8	4	3	1
+ecbeta_amyrin	terpene	60	23	19	15	27	16	8	2	23	13	8	2
+ecbeta_carotene	terpene	114	14	74	19	31	8	12	10	17	2	6	9
+ecbeta_ionone	aromatic	115	15	74	19	30	8	12	8	17	3	6	8
+ecbetaxanthin	terpene	125	13	79	26	30	6	10	13	18	2	6	10
+eccaffeic_acid	organic acid	118	13	79	19	24	6	9	7	11	1	3	7
+eccatechin	flavonoid	118	20	72	19	22	12	7	2	6	3	1	2
+eccholine	alkaloid	51	18	17	8	28	14	4	7	17	8	2	7
+eccinnamate	aromatic	37	14	18	2	25	12	9	1	15	7	7	1
+eccinnamoyltropine	alkaloid	126	21	79	19	30	12	9	7	13	3	3	7
+eccis_muconate	organic acid	60	13	37	6	28	6	13	5	18	5	8	5
+eccitrate	organic acid	68	25	24	15	35	14	9	9	21	7	7	7
+eccitrulline	amino acid	73	36	20	4	41	23	9	4	23	13	6	4
+eccoumaric_acid	aromatic	91	13	51	20	35	10	11	12	21	4	6	11
+eccysteine	amino acid	55	25	21	0	32	16	6	7	22	13	4	5
+ecdha	fatty acids and lipids	131	25	80	19	36	18	10	7	18	5	6	7
+ecdocosanol	alcohol	116	12	78	19	25	5	12	7	14	1	6	7
+ecepa	fatty acids and lipids	138	25	87	19	28	18	8	1	8	5	2	1
+ecergosterol	fatty acids and lipids	72	39	20	10	42	32	7	2	30	22	7	1
+ecergothioneine	amino acid	112	14	72	19	17	6	9	1	5	1	3	1
+ecfarnesene	terpene	52	22	13	15	21	12	7	2	19	10	7	2
+ecffas	fatty acids and lipids	44	18	17	0	26	18	5	0	14	11	3	0
+ecfumaric_acid	organic acid	45	11	20	8	28	6	9	7	17	4	6	7
+ecgenistein	flavonoid	121	17	78	19	21	10	8	2	7	3	2	2
+ecgeraniol	terpene	52	20	13	15	22	10	8	2	19	9	8	2
+ecglutamate	amino acid	73	22	28	13	50	15	10	19	35	8	10	17
+ecglutamine	amino acid	83	27	32	17	53	13	10	25	38	8	9	21
+ecglutathione	amino acid	76	22	32	1	52	19	9	17	39	17	9	13
+ecglycerol	alcohol	55	10	29	11	35	7	12	12	18	3	8	7
+ecglycine	amino acid	93	39	14	30	68	25	7	26	38	11	7	20
+ecglycolate	organic acid	95	46	15	25	65	32	7	19	29	8	6	15
+ecglycyrrhetinic_acid	terpene	122	14	75	26	15	7	6	0	2	2	0	0
+echexanoate	organic acid	90	28	25	29	51	22	7	18	27	7	4	16
+echistidine	amino acid	56	28	16	6	41	20	4	13	19	9	4	6
+echomoserine	amino acid	62	14	37	0	34	14	15	1	21	10	10	1
+echypoxanthine	alkaloid	118	29	30	6	78	17	10	6	48	35	7	6
+ecisobutanol	alcohol	108	15	85	0	42	11	22	2	18	4	12	2
+ecisoleucine	amino acid	54	23	16	0	27	17	4	2	10	8	2	0
+ecitaconic_acid	organic acid	60	19	18	17	23	9	6	5	18	7	6	5
+eckaempferol	flavonoid	116	18	72	19	23	11	8	2	7	3	2	2
+ecl_pac	alcohol	90	12	50	21	25	2	11	12	2	0	0	2
+eclactate	organic acid	133	12	101	12	53	7	27	12	27	4	12	11
+eclaurate	fatty acids and lipids	75	35	24	7	50	30	9	7	21	12	6	3
+ecleucine	amino acid	64	25	16	12	28	11	9	5	18	7	9	2
+eclimonene	terpene	55	21	16	15	23	11	9	2	20	9	9	2
+eclinalool	terpene	78	33	23	19	36	22	6	7	25	14	4	7
+eclupeol	terpene	112	12	74	19	18	6	9	2	6	1	3	2
+eclycopene	terpene	115	15	74	19	18	7	6	3	5	2	0	3
+eclysine	amino acid	74	36	18	13	45	24	10	10	26	13	10	3
+ecmalate	organic acid	45	11	20	8	28	6	9	7	16	4	6	6
+ecmandelic_acid	aromatic	37	13	19	2	24	11	9	1	15	7	7	1
+ecmethionine	amino acid	58	34	15	0	35	25	4	3	24	19	2	3
+ecmiltiradiene	terpene	114	14	74	19	17	7	8	0	4	2	2	0
+ecn-butanol	alcohol	65	28	30	1	33	22	8	1	25	16	8	1
+ecnaringenin	flavonoid	117	15	76	19	20	8	6	5	10	3	2	5
+ecnicotianamine	amino acid	123	20	75	21	27	13	8	5	9	2	2	5
+ecnootkatone	terpene	128	21	79	21	30	14	9	6	14	4	5	5
+ecoleanolate	terpene	113	13	74	19	26	7	12	6	14	2	6	6
+ecoleate	fatty acids and lipids	44	14	20	0	23	13	6	0	10	6	4	0
+ecornithine	amino acid	69	33	28	0	36	22	8	2	20	13	5	2
+ecoxoglutarate	organic acid	95	37	27	22	70	22	9	30	37	8	9	20
+ecpalmitoleate	fatty acids and lipids	45	15	20	0	24	14	6	0	10	6	4	0
+ecpatchoulol	terpene	112	12	74	19	17	6	7	3	5	1	1	3
+ecphenylalanine	amino acid	41	18	18	2	24	11	9	1	14	6	7	1
+ecproline	amino acid	70	29	30	0	36	22	11	0	17	9	8	0
+ecprotopanaxadiol	terpene	114	13	74	20	22	6	8	6	10	2	2	6
+ecpsilocybin	alkaloid	113	15	72	19	16	8	6	0	3	3	0	0
+ecputrescine	bioamine	71	32	31	0	38	20	11	3	22	13	8	1
+ecpyruvate	organic acid	82	24	43	5	56	23	11	13	18	7	1	10
+ecquercetin	flavonoid	117	19	72	19	34	12	12	8	17	3	6	8
+ecr,r-2,3-butanediol	alcohol	104	5	89	2	38	5	26	0	15	3	12	0
+ecresveratrol	stilbenoids	123	12	81	21	46	8	22	12	22	2	9	11
+ecrosmarinic_acid	aromatic	65	17	25	15	30	14	5	9	19	6	5	8
+ecsantalene	terpene	53	22	13	15	22	12	7	2	19	10	7	2
+ecserine	amino acid	59	19	24	13	31	9	10	11	21	5	7	9
+ecspermine	bioamine	78	39	23	5	55	27	10	11	34	21	7	6
+ecsqualene	terpene	52	19	15	15	21	12	6	2	18	10	6	2
+ecsuccinate	organic acid	89	32	25	21	65	20	11	24	27	5	6	16
+ectaxadien_5alpha_yl_acetate	terpene	121	16	78	20	26	9	11	5	11	2	4	5
+ecthreonine	amino acid	55	21	23	0	32	16	8	3	19	11	6	2
+ectriacylglycerol	fatty acids and lipids	58	2	1	4	37	2	0	1	11	10	0	1
+ectryptophan	amino acid	49	22	17	3	27	14	9	3	19	9	7	3
+ectyrosine	amino acid	44	18	21	2	29	10	10	6	17	7	8	2
+ectyrosol	aromatic	161	11	76	69	55	9	8	35	31	5	4	22
+ecvalencene	terpene	124	19	79	19	36	12	16	7	18	4	7	7
+ecvaline	amino acid	99	22	67	0	31	10	19	0	17	4	13	0
+ecvanillin_beta_glucoside	aromatic	118	15	77	19	29	8	11	8	14	1	5	8
+ecxanthine	alkaloid	105	32	19	5	74	19	6	6	39	27	6	6

@@ -1,0 +1,7 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1129	coenzyme A transport	20.6350122312195	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_2034	pyruvate transport	3.46917013128646	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
+r_1194	L-glutamate transport	0.188206271058758	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_2132	oxoglutarate/malate exchange	0.125227803407479	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
