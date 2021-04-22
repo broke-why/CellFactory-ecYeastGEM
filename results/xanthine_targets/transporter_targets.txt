@@ -1,0 +1,7 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1244	phosphate transport	91.0011982491898	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_1115	ammonia transport	4.69675133720879	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_1245	phosphate transport	1.89417694584369	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1110	ADP/ATP transporter	1.54683726609692	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
+r_1237	ornithine transport	0.202032690518946	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1277_REV	water diffusion (reversible)	2.2591767519837	YLL052C or YPR192W	H2O[c] => H2O[e]

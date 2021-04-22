@@ -1,0 +1,4 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1110	ADP/ATP transporter	0.293255801125883	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
+r_1245	phosphate transport	0.267673986576963	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]

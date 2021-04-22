@@ -1,6 +1,19 @@
 library(ggplot2)
 library(scales)
 library(viridis)
+library(reshape)
+library(RColorBrewer)
+library(pheatmap)
+library(Rtsne)
+library(dplyr)
+library(tidyr)
+library(cluster)
+library(ggfortify)
+library(plotly)
+library(htmlwidgets)
+library(qgraph)
+library(reshape2)
+
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -8,23 +21,33 @@ if (exists("RStudio.Version")){
 } else {
   setwd(getSrcDirectory()[1])
 }
-families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acid','natural pigment','flavonoid','aromatic','bioamine')
-codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_nPg','_fla','_aro','_bioAm')
-#Get pie chart for families of chemicals
-filename <- paste('../results/targets_summary.txt',sep='')
+families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acids and lipids','flavonoid','aromatic','bioamine')
+codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
+pathWays <- c('Oxidative phosphorylation','Glycolysis','TCA cycle','Pentose phosphate pathway')
+#load enzyme info
+filename <- paste('../complementaryData/enzymeTable.txt',sep='')
+enzTable <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
+#load KEGG pathways info
+filename <- paste('../complementaryData/keggPathways.txt',sep='')
+keggDF <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
+#Load targets summary
+filename        <- paste('../results/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-
+#Get pie chart for families of chemicals
 classes <- unique(targets_summary$chemClass)
 counts  <- c()
 for (i in 1:length(classes))
 {
   counts <- c(counts,sum(targets_summary$chemClass==classes[i]))
 }
-
+#Get data frame for plotting
 df <- data.frame(classes,counts)
 df <- df[order(-counts),]
 df$classes <- factor(df$classes,levels<-df$classes) 
 df$perc <- round(df$counts*100/sum(df$counts),digits=1)
+#Get pallete of colors
+getPalette <- colorRampPalette(brewer.pal(5, "Set1"))
+colourCount <- length(unique(df$classes))
 
 blank_theme <- theme_minimal()+
   theme(
@@ -33,99 +56,240 @@ blank_theme <- theme_minimal()+
     panel.border = element_blank(),
     panel.grid=element_blank(),
     axis.ticks = element_blank(),
-    plot.title=element_text(size=26, face="bold")
+    panel.grid.major = element_blank(),    #strip major gridlines
+    panel.grid.minor = element_blank(),    #strip minor gridlines
+    plot.title=element_text(size=26, face="bold"),
+    legend.title = element_text(size=24,face="bold"),
+    legend.text = element_text(size=18)
   )
   
 p <- ggplot(df, aes(x='',y=perc,fill=classes))+
   geom_bar(width = 1, stat = 'identity')
 pie <- p + coord_polar("y", start=0,direction=1)
-pie <- pie + blank_theme + theme(axis.text.x=element_blank())#+
-      #geom_text(aes(y = perc + c(0, cumsum(perc)[-length(perc)]), 
-      #          label = perc), size=5)
-pie <- pie +scale_fill_viridis(discrete = T, option = "E")
+pie <- pie + blank_theme 
+pie <- pie +scale_fill_manual(values = getPalette(colourCount))#scale_fill_viridis(discrete = T, option = "E")
 pie <- pie + labs(fill = 'Chemical families')
-pie
+png('../results/plots/chemicalFamilies.png',width = 800, height = 800)
+plot(pie)
+dev.off()
 
 
-filename    <- paste('../results/targets_summary.txt',sep='')
-targetsSummary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-for (j in 1:length(families)){
-  chemClass <- families[j] 
-  famCode   <- codes[j]
-  targets_summary <- targetsSummary
-if (nchar(chemClass)>1){
-  targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
-}
-nCompounds <- nrow(targets_summary)
-vector1 <- c()
-vector2 <- c()
-vector3 <- c()
-vector1 <- c(targets_summary$cand_1_OE,targets_summary$cand_2_OE,targets_summary$cand_3_OE)
-vector2 <- c(rep('step1',nrow(targets_summary)),rep('step2',nrow(targets_summary)),rep('step3',nrow(targets_summary)))
-vector3 <- c(rep('OE',length(vector1)))
-df <- data.frame(vector1,vector2,vector3)
-vector1 <- c(targets_summary$cand_1_del,targets_summary$cand_2_del,targets_summary$cand_3_del)
-vector2 <- c(rep('step1',nrow(targets_summary)),rep('step2',nrow(targets_summary)),rep('step3',nrow(targets_summary)))
-vector3 <- c(rep('deletions',length(vector1)))
-df2 <- data.frame(vector1,vector2,vector3)
-df <- rbind(df,df2)
-#colnames(df) <- c('chemicals','step1','step2','step3')
-p<-ggplot(df, aes(x=vector2, y=vector1, fill=vector3)) +
-  geom_boxplot()
-p <- p+theme_bw(base_size = 2*12) + xlab('') +
-  ylab('# of targets')+ylim(c(0,150))+labs(fill = 'Modification')
-plotTitle <- paste('../results/plots/allTargets',famCode,'.png',sep='')
+#Analyse targets matrix
+allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+targetsMat    <- allTargetsMat
+targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
+#substitute values in matrix
+targetsMat[targetsMat == 2] <- 20
+targetsMat[targetsMat == 1] <- 10
+targetsMat[targetsMat == 3] <- 30
+targetsMat[targetsMat == 0] <- 1
+targetsMat[targetsMat == 20] <- 0.5
+targetsMat[targetsMat == 10] <- 0
+targetsMat[targetsMat == 30] <- 2
+targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
+#hclust heatmap
+plotTitle <- paste('../results/plots/targetsMatrix_ALL.png',sep='')
+png(plotTitle,width = 5000, height = 13000)
+rownames(targetsMat) <- targetsMat$shortNames
+pheatmap(targetsMat[,5:ncol(targetsMat)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
+dev.off()
+#Distance matrix
+x <- targetsMat[,5:ncol(targetsMat)]
+colnames(x) <- colnames( targetsMat[,5:ncol(targetsMat)])
+x <- t(x)
+distMat <- dist(x, method = "euclidean", diag = FALSE, upper = FALSE)
+distMat <- as.data.frame(as.matrix(distMat))
+rownames(distMat) <- rownames(x)
+#var1 <- rownames(distMat)
+dd <- as.dist(distMat)
+hc <- hclust(dd)
+distMat <-distMat[hc$order, hc$order]
+var1 <- rownames(distMat)
+# Melt the distance matrix
+melted_distMat <- melt(distMat)
+melted_distMat <- cbind(var1,melted_distMat)
+#Rearrange for plotting
+melted_distMat$var1 <- gsub('_fam_','_',melted_distMat$var1)
+melted_distMat$variable <- gsub('_fam_','_',melted_distMat$variable)
+melted_distMat$var1 <- factor(melted_distMat$var1,levels = unique(melted_distMat$var1))
+melted_distMat$variable <- factor(melted_distMat$variable,levels = unique(melted_distMat$variable))
+#melted_distMat$value <- melted_distMat$value/max(melted_distMat$value)
+#melted_distMat <- as.data.frame(apply(melted_distMat, 2, rev))
+temp <- melted_distMat
+temp$value <- temp$value/max(temp$value)
+temp$value <- 1-temp$value
+p <- ggplot(data = temp, aes(variable, var1, fill = value))+
+  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
+p <- p+theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+                                   size = 28, hjust = 1),
+        axis.text.y = element_text(size = 28))
+plotTitle <- paste('../results/plots/targets_ALL_distMat.png',sep='')
+png(plotTitle,width = 6000, height = 6000)
+plot(p)
+dev.off()
+#Plot histogram of distances
+p <- ggplot(temp, aes(x=value)) + geom_histogram(binwidth=0.1,fill='grey')
+p <-  p + theme_bw(base_size = 2*12)+xlab('Number of products') + ylab('Number of gene targets')
+plotTitle <- paste('../results/plots/histogram_targetsSimilarity.png',sep='')
 png(plotTitle,width = 600, height = 600)
 plot(p)
 dev.off()
+#simplify distMat
+temp$value[temp$value<=0.3] <- 0
+temp$value[temp$value>0.3]  <- 1 
 
-filename    <- paste('../results/all_deletions.txt',sep='')
-all_deletions <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-if (nchar(chemClass)>1){
-  all_deletions <- all_deletions[all_deletions$chem_class_del==chemClass,]
-}
-uniqueDels <- unique(all_deletions$del_targets)
-counts <- c()
-for (i in 1:length(uniqueDels))
-{
-  counts <- c(counts,sum(all_deletions$del_targets==uniqueDels[i]))
-}
-df <- data.frame(uniqueDels,counts,stringsAsFactors = FALSE)
-df$counts <- df$counts/nCompounds
-dt <- df[order(-counts),]
-dt$uniqueDels <- factor(dt$uniqueDel, levels<- dt$uniqueDel)
-dt <- dt[1:10,]
-
-p <- ggplot(data=dt, aes(x=uniqueDels,y=(counts))) + geom_bar(stat='identity',fill='#00bfc4')+ 
-  theme_bw(base_size = 2*12)+xlab('Gene targets') +
-  ylab('Relative frequency')#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
-plotTitle <- paste('../results/plots/topDeletions',famCode,'.png',sep='')
-png(plotTitle,width = 950, height = 600)
+p <- ggplot(data = temp, aes(variable, var1, fill = value))+
+  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
+p <- p+theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+                                   size = 28, hjust = 1),
+        axis.text.y = element_text(size = 28))
+plotTitle <- paste('../results/plots/targets_ALL_distMat_simp.png',sep='')
+png(plotTitle,width = 6000, height = 6000)
 plot(p)
 dev.off()
-
-filename    <- paste('../results/all_OEs.txt',sep='')
-all_OEs <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-if (nchar(chemClass)>1){
-  all_OEs <- all_OEs[all_OEs$chem_class_OE==chemClass,]
-}
-uniqueOEs <- unique(all_OEs$OE_targets)
-counts <- c()
-for (i in 1:length(uniqueOEs))
-{
-  counts <- c(counts,sum(all_OEs$OE_targets==uniqueOEs[i]))
-}
-df <- data.frame(uniqueOEs,counts,stringsAsFactors = FALSE)
-df$counts <- df$counts/nCompounds
-dt <- df[order(-counts),]
-dt$uniqueOEs <- factor(dt$uniqueOEs, levels<- dt$uniqueOEs)
-dt <- dt[1:10,]
-
-p <- ggplot(data=dt, aes(x=uniqueOEs,y=(counts))) + geom_bar(stat='identity',fill='#f8766d')+ 
-  theme_bw(base_size = 2*12)+xlab('Gene targets') +
-  ylab('Relative frequency')#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
-plotTitle <-paste('../results/plots/topOEs',famCode,'.png',sep='')
-png(plotTitle,width = 950, height = 600)
+#Dimensionality reduction
+newDF <- targetsMat[,5:ncol(targetsMat)]
+#newDF <- newDF[rowSums(newDF)>0,]
+newDF <- as.data.frame(t(newDF))
+newDF$extra <- rownames(newDF)
+newDF<- newDF %>% separate(extra, c("chemical", "family"), "_fam_")
+#newDF$family <- factor(newDF$family)
+#Remove duplicate vectors
+idxs <- which(!duplicated(newDF[,1:(ncol(newDF)-3)]))
+newDF <- newDF[idxs,]
+#Add product family info
+newDF <- newDF[order(newDF$family),]
+famLvls <- as.numeric(unique(factor(newDF$family)))
+famLvls <- (unique(factor(newDF$family)))
+famLvls <- famLvls[order(famLvls)]
+newDF$family <- factor(newDF$family,levels = famLvls)
+#PCA 
+PCAdata  <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
+p        <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
+plotTitle <- paste('../results/plots/PCA_allTargets.png',sep='')
+png(plotTitle,width = 600, height = 600)
 plot(p)
 dev.off()
+#tSNE
+set.seed(18) # Set a seed if you want reproducible results
+tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=nrow(newDF)/length(famLvls)) # Run TSNE
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
+colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
+p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family)
+saveWidget(p, "../results/plots/tsne_ALL0.html", selfcontained = F, libdir = "lib")
+
+
+
+filename  <- paste('../results/targets_summary.txt',sep='')
+targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
+for (j in 1:length(families)){
+  chemClass <- families[j] 
+  famCode   <- codes[j]
+  targets_summary <- targetsDF
+  if (nchar(chemClass)>1){
+    targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
+  }
+  nCompounds <- nrow(targets_summary)
+  if (nCompounds>=4){
+    vector1 <- c(targets_summary$cand_1_OE,targets_summary$cand_2_OE,targets_summary$cand_3_OE)
+    vector2 <- c(rep('step1',nCompounds),rep('step2',nCompounds),rep('step3',nCompounds))
+    vector3 <- c(rep('OE',length(vector1)))
+    df <- data.frame(vector1,vector2,vector3)
+    
+    vector1 <- c(targets_summary$cand_1_dR,targets_summary$cand_2_dR,targets_summary$cand_3_dR)
+    vector2 <- c(rep('step1',nCompounds),rep('step2',nCompounds),rep('step3',nCompounds))
+    vector3 <- c(rep('KD',length(vector1)))
+    df2 <- data.frame(vector1,vector2,vector3)
+    
+    vector1 <- c(targets_summary$cand_1_del,targets_summary$cand_2_del,targets_summary$cand_3_del)
+    vector2 <- c(rep('step1',nCompounds),rep('step2',nCompounds),rep('step3',nCompounds))
+    vector3 <- c(rep('KO',length(vector1)))
+    df3 <- data.frame(vector1,vector2,vector3)
+    
+    df <- rbind(df,df2,df3)
+    colors <- cividis(11)
+    #Generate box plots with all targets (KOs, KDs and OEs)
+    p <-ggplot(df, aes(x=vector2, y=vector1, fill=vector3)) + geom_boxplot()
+    p <- p + theme_bw(base_size = 2*12) + xlab('') +
+    ylab('# of targets')+ylim(c(0,100))+labs(fill = 'Modification') +
+    scale_fill_manual(values = c(colors[11],colors[6],colors[3]))
+    plotTitle <- paste('../results/plots/allTargets',famCode,'.png',sep='')
+    png(plotTitle,width = 600, height = 600)
+    plot(p)
+    dev.off()
+    
+    #Get all deletion targets for chemical family
+    filename    <- paste('../results/all_deletions.txt',sep='')
+    all_deletions <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
+    if (nchar(chemClass)>1){
+      all_deletions <- all_deletions[all_deletions$chem_class_del==chemClass,]
+    }
+    uniqueDels <- unique(all_deletions$del_targets)
+    counts <- c()
+    for (i in 1:length(uniqueDels)){counts <- c(counts,sum(all_deletions$del_targets==uniqueDels[i]))}
+    df <- data.frame(uniqueDels,counts,stringsAsFactors = FALSE)
+    df$counts <- df$counts/nCompounds
+    dt <- df[order(-counts),]
+    dt$uniqueDels <- factor(dt$uniqueDel, levels<- dt$uniqueDel)
+    dt <- dt[1:10,]
+    #Plot top targets for deletions as barplot
+    p <- ggplot(data=dt, aes(x=uniqueDels,y=(counts))) + geom_bar(stat='identity',fill=colors[2])+ 
+      theme_bw(base_size = 2*12)+xlab('Gene targets') +
+      ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
+    plotTitle <- paste('../results/plots/topKOs',famCode,'.png',sep='')
+    png(plotTitle,width = 950, height = 600)
+    plot(p)
+    dev.off()
+    
+    #Get all deletion targets for chemical family
+    filename      <- paste('../results/all_downRegs.txt',sep='')
+    all_deletions <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
+    if (nchar(chemClass)>1){
+      all_deletions <- all_deletions[all_deletions$chem_class_dR==chemClass,]
+    }
+    if (nrow(all_deletions)>0){
+      uniqueDels <- unique(all_deletions$dR_targets)
+      counts <- c()
+      for (i in 1:length(uniqueDels)){counts <- c(counts,sum(all_deletions$dR_targets==uniqueDels[i]))}
+      df <- data.frame(uniqueDels,counts,stringsAsFactors = FALSE)
+      df$counts <- df$counts/nCompounds
+      dt <- df[order(-counts),]
+      dt$uniqueDels <- factor(dt$uniqueDel, levels<- dt$uniqueDel)
+      dt <- dt[1:10,]
+      #Plot top targets for deletions as barplot
+      p <- ggplot(data=dt, aes(x=uniqueDels,y=(counts))) + geom_bar(stat='identity',fill=colors[6])+ 
+        theme_bw(base_size = 2*12)+xlab('Gene targets') +
+        ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
+      plotTitle <- paste('../results/plots/topKDs',famCode,'.png',sep='')
+      png(plotTitle,width = 950, height = 600)
+      plot(p)
+      dev.off()
+    }
+    
+    #repeat for OE targets
+    filename    <- paste('../results/all_OEs.txt',sep='')
+    all_OEs <- read.delim(filename,sep='\t',stringsAsFactors = FALSE)
+    if (nchar(chemClass)>1){
+      all_OEs <- all_OEs[all_OEs$chem_class_OE==chemClass,]
+    }
+    uniqueOEs <- unique(all_OEs$OE_targets)
+    counts <- c()
+    for (i in 1:length(uniqueOEs)){counts <- c(counts,sum(all_OEs$OE_targets==uniqueOEs[i]))}
+    df <- data.frame(uniqueOEs,counts,stringsAsFactors = FALSE)
+    df$counts <- df$counts/nCompounds
+    dt <- df[order(-counts),]
+    dt$uniqueOEs <- factor(dt$uniqueOEs, levels<- dt$uniqueOEs)
+    dt <- dt[1:10,]
+    
+    p <- ggplot(data=dt, aes(x=uniqueOEs,y=(counts))) + geom_bar(stat='identity',fill=colors[10])+ 
+      theme_bw(base_size = 2*12)+xlab('Gene targets') +
+      ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
+    plotTitle <-paste('../results/plots/topOEs',famCode,'.png',sep='')
+    png(plotTitle,width = 950, height = 600)
+    plot(p)
+    dev.off()
+  } 
 }

@@ -1,0 +1,6 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_1251_REV	putrescine transport (reversible)	1000	YLL028W or YOR273C	H+[e] + putrescine[c] => H+[c] + putrescine[e]
+r_1237	ornithine transport	19.6894702199783	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1194	L-glutamate transport	14.10193444228	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1115	ammonia transport	2.6091392671006	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_2034	pyruvate transport	0.288661975381453	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]

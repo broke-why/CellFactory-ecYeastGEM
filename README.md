@@ -10,8 +10,7 @@ This repository contains the data and scripts necessary for _in silico_ strain d
 
 * Last update: 2021-04-21
 
-
-* Product list:
+## Product list:
 
 | Name | Formula | KEGG ID | CHEBI ID | Group | class | Gene target |
 |:-------:|:--------------:|:---------:|:----------:|:-----:|:-----:|:-----:|

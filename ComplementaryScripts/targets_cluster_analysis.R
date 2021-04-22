@@ -82,10 +82,10 @@ rownames(targetsMat) <- targetsMat$shortNames
 pheatmap(targetsMat[,5:ncol(targetsMat)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
 dev.off()
 #Dimensionality reduction (tSNE)
-#for (i in 1:1){
+targetType <- c('KO','KD','OE')
+for (i in 1:3){
   #Isolate targets group 
-  i <- 3
-  allTargetsMat               <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = FALSE)
+  allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = FALSE)
   targetsMat <-(allTargetsMat[,5:ncol(allTargetsMat)])
   targetsMat <- as.matrix(targetsMat)
   targetsMat[targetsMat != i] <- 0
@@ -106,4 +106,6 @@ dev.off()
   tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
   colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
   plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z, type="scatter3d", mode="markers", color=tsne_plot$family,text = tsne_plot$newDF.chemical)
-#}
+  #str <- paste('../results/plots/tsne_',targetType[i],'.html',sep='')
+  #htmlwidgets::saveWidget(as_widget(p),str)
+}

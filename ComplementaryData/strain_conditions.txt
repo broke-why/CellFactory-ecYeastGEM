@@ -42,3 +42,8 @@ _-Amylase	0.2			Min	D-glucose
 _-Amyrin	0.1			YEP	D-glucose	
 _-Carotene	0.1			YEP	D-glucose	
 _-ionone	0.106			YEP	D-glucose	"YDR284C,YDR503C"
+Isobutanol	0.1			YEP	D-glucose	"YPL061W,YHR208W"
+mandelic_acid				YEP	D-glucose	"YBR166C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"
+Tyrosol	0.1			YEP	D-glucose	"YNL316C,YLR044C,YKL211C"
+Docosanol	0.1			Min	D-glucose	
+Docosanol_EtOH	0.1			Min	ethanol	
