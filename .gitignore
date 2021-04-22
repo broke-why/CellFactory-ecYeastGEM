@@ -49,8 +49,16 @@ helpsearch*/
 
 # Non-complying tables #
 ########################
-# *.xls
+*.xls
+*.xlsx
 *.tab
 *.png
 *.jpg
 *.tiff
+*.pdf
+*.js
+*.css
+*.mat
+*.map
+*.html
+*.jpeg
