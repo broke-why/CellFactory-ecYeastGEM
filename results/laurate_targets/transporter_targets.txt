@@ -1,0 +1,7 @@
+rxn_IDs	rxnNames	K_score	grRules	rxn_formula
+r_2221	fatty acyl-CoA transport via ABC system (C16:0)	1000	YKL188C and YPL147W	ATP[c] + H2O[c] + palmitoyl-CoA[c] => ADP[c] + H+[c] + palmitoyl-CoA[p] + phosphate[c]
+r_1112_REV	AKG transporter, mitochonrial (reversible)	1000	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
+r_1127_REV	citrate transport (reversible)	0.294	YBR291C	citrate[m] + phosphoenolpyruvate[c] => citrate[c] + phosphoenolpyruvate[m]
+r_2034	pyruvate transport	0.0892967877844474	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1126_REV	citrate transport (reversible)	0	YBR291C	(S)-malate[c] + citrate[m] => (S)-malate[m] + citrate[c]
+r_1120	carnithine-acetylcarnithine carrier	1000	YOR100C	(R)-carnitine[m] + O-acetylcarnitine[c] => (R)-carnitine[c] + O-acetylcarnitine[m]

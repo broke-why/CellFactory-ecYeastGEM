@@ -1,4 +1,4 @@
-function [model,pos] = changeMedia_batch(model,c_source,media,anox,flux)
+function [model,pos] = changeMedia_batch(model,c_source,media,AA,flux)
 %
 %changeMedia_batch
 % 
@@ -19,7 +19,7 @@ function [model,pos] = changeMedia_batch(model,c_source,media,anox,flux)
 % Ivan Domenzain        2020-01-17
 
 if nargin<4
-    anox = false;
+    AA = false;
     if nargin<3
         media = 'Min';
     end
@@ -74,27 +74,48 @@ for i = 1:N
     model.ub(pos(i)) = flux(i);
 end
 %Allow uptake of essential components
-model = setParam(model, 'ub', 'r_1654_REV', Inf); % 'ammonium exchange';
-model = setParam(model, 'ub', 'r_2100_REV', Inf); % 'water exchange' ;
-model = setParam(model, 'ub', 'r_1861_REV', Inf); % 'iron(2+) exchange';
-model = setParam(model, 'ub', 'r_1992_REV', Inf); % 'oxygen exchange';
-model = setParam(model, 'ub', 'r_2005_REV', Inf); % 'phosphate exchange';
-model = setParam(model, 'ub', 'r_2060_REV', Inf); % 'sulphate exchange';
-model = setParam(model, 'ub', 'r_1832_REV', Inf); % 'H+ exchange' ;
-model = setParam(model, 'ub', 'r_4593_REV', Inf); % 'chloride exchange' ;
-model = setParam(model, 'ub', 'r_4595_REV', Inf); % Mn(2+) exchange
-model = setParam(model, 'ub', 'r_4596_REV', Inf); % Zn(2+ exchange
-model = setParam(model, 'ub', 'r_4597_REV', Inf); % Mg(2+) exchange
-model = setParam(model, 'ub', 'r_2049_REV', Inf); % sodium exchange
-model = setParam(model, 'ub', 'r_4594_REV', Inf); % Cu(2+) exchange
-model = setParam(model, 'ub', 'r_4600_REV', Inf); % Ca(2+) exchange
-model = setParam(model, 'ub', 'r_2020_REV', Inf); % potassium exchange
+model = setParam(model, 'ub', 'r_1654_REV', 1000); % 'ammonium exchange';
+if AA
+    model = setParam(model, 'ub', 'r_1654_REV', 1); % 'ammonium exchange';
+end
+model = setParam(model, 'ub', 'r_2100_REV', 1000); % 'water exchange' ;
+model = setParam(model, 'ub', 'r_1861_REV', 1000); % 'iron(2+) exchange';
+model = setParam(model, 'ub', 'r_1992_REV', 1000); % 'oxygen exchange';
+model = setParam(model, 'ub', 'r_2005_REV', 1000); % 'phosphate exchange';
+model = setParam(model, 'ub', 'r_2060_REV', 1000); % 'sulphate exchange';
+model = setParam(model, 'ub', 'r_1832_REV', 1000); % 'H+ exchange' ;
+if any(strcmpi(model.rxns,'r_4593_REV'))
+    model = setParam(model, 'ub', 'r_4593_REV', 1000); % 'chloride exchange' ;
+end
+
+if any(strcmpi(model.rxns,'r_4595_REV'))
+    model = setParam(model, 'ub', 'r_4595_REV', 1000); % Mn(2+) exchange
+end
+
+if any(strcmpi(model.rxns,'r_4596_REV'))
+    model = setParam(model, 'ub', 'r_4596_REV', 1000); % Zn(2+ exchange
+end
+
+if any(strcmpi(model.rxns,'r_4597_REV'))
+    model = setParam(model, 'ub', 'r_4597_REV', 1000); % Mg(2+) exchange
+end
+
+model = setParam(model, 'ub', 'r_2049_REV', 1000); % sodium exchange
+
+if any(strcmpi(model.rxns,'r_4594_REV'))
+    model = setParam(model, 'ub', 'r_4594_REV', 1000); % Cu(2+) exchange
+end
+
+if any(strcmpi(model.rxns,'r_4594_REV'))
+    model = setParam(model, 'ub', 'r_4600_REV', 1000); % Ca(2+) exchange
+end
+model = setParam(model, 'ub', 'r_2020_REV', 1000); % potassium exchange
 %Block some production fluxes
-model = setParam(model, 'ub', 'r_1663', 0); % bicarbonate exchange
-model = setParam(model, 'ub', 'r_4062', 0); % lipid backbone exchange
-model = setParam(model, 'ub', 'r_4064', 0); % lipid chain exchange
+%model = setParam(model, 'ub', 'r_1663', 0); % bicarbonate exchange
+%model = setParam(model, 'ub', 'r_4062', 0); % lipid backbone exchange
+%model = setParam(model, 'ub', 'r_4064', 0); % lipid chain exchange
 %Allow biomass production 
-model = setParam(model, 'ub', 'r_2111', Inf); % growth
+model = setParam(model, 'ub', 'r_2111', 1000); % growth
 if ~strcmpi(media,'Min')
     model = setParam(model, 'ub', 'r_1654', 0); % 'ammonium exchange';
     model = setParam(model, 'ub', 'r_2091', 0); % 'ammonium exchange';

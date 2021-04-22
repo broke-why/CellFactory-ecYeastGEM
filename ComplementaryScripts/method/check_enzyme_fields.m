@@ -16,6 +16,13 @@ if isfield(model,'enzNames')
             model.rxnNames{rxnIdx} = rxnName;   
             %Assign new enzymes to cytoplasm
             model.metComps(metIdx) = cytIdx;
+            %Add missing molecular weights with average MW
+            if length(model.enzymes)>length(model.MWs)
+                model.MWs(j) = mean(model.MWs);
+            end
+             if length(model.enzymes)>length(model.pathways)
+                model.pathways{j} = '';
+            end
         end
     end
 end
