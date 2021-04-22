@@ -59,3 +59,4 @@ for i=1:length(nameFolders)
     end
 end
 writetable(genesTable,'../results/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)

@@ -98,7 +98,7 @@ for i=1:length(fileNames)
                 catch
                    disp('The model is not suitable for ECC analysis')
                 end 
-                resultsFolder = ['../../results/' modelName '_YEP_targets'];
+                resultsFolder = ['../../results/' modelName '_targets'];
                 mkdir(resultsFolder)
                 WT_yield = 0.48; %WT yield on glucose minimal media
                 expYield = 0.49*WT_yield;

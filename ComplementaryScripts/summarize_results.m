@@ -85,7 +85,7 @@ for i=1:length(nameFolds)
             
             try
                 cand_3 = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
-                %cand_3 = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
+                cand_3 = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
                 %cand_3 = cand_3(cand_3.k_scores>=2 | cand_3.k_scores<=0.05,:);
                 %cand_3 = cand_3(cand_3.priority==1,:);
                 
