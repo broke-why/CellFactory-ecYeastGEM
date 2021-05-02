@@ -23,13 +23,6 @@ if (exists("RStudio.Version")){
 }
 families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acids and lipids','flavonoid','aromatic','bioamine')
 codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
-pathWays <- c('Oxidative phosphorylation','Glycolysis','TCA cycle','Pentose phosphate pathway')
-#load enzyme info
-filename <- paste('../complementaryData/enzymeTable.txt',sep='')
-enzTable <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
-#load KEGG pathways info
-filename <- paste('../complementaryData/keggPathways.txt',sep='')
-keggDF <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 #Load targets summary
 filename        <- paste('../results/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
@@ -63,15 +56,15 @@ blank_theme <- theme_minimal()+
     legend.text = element_text(size=18)
   )
   
-p <- ggplot(df, aes(x='',y=perc,fill=classes))+
-  geom_bar(width = 1, stat = 'identity')
-pie <- p + coord_polar("y", start=0,direction=1)
-pie <- pie + blank_theme 
-pie <- pie +scale_fill_manual(values = getPalette(colourCount))#scale_fill_viridis(discrete = T, option = "E")
-pie <- pie + labs(fill = 'Chemical families')
-png('../results/plots/chemicalFamilies.png',width = 800, height = 800)
-plot(pie)
-dev.off()
+p <- ggplot(df, aes(x='',y=perc,fill=classes)) +
+     geom_bar(width = 1, stat = 'identity')
+     pie <- p + coord_polar("y", start=0,direction=1)
+     pie <- pie + blank_theme 
+     pie <- pie +scale_fill_manual(values = getPalette(colourCount))#scale_fill_viridis(discrete = T, option = "E")
+     pie <- pie + labs(fill = 'Chemical families')
+     png('../results/plots/chemicalFamilies.png',width = 800, height = 800)
+     plot(pie)
+     dev.off()
 
 
 #Analyse targets matrix
@@ -94,62 +87,7 @@ png(plotTitle,width = 5000, height = 13000)
 rownames(targetsMat) <- targetsMat$shortNames
 pheatmap(targetsMat[,5:ncol(targetsMat)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
 dev.off()
-#Distance matrix
-x <- targetsMat[,5:ncol(targetsMat)]
-colnames(x) <- colnames( targetsMat[,5:ncol(targetsMat)])
-x <- t(x)
-distMat <- dist(x, method = "euclidean", diag = FALSE, upper = FALSE)
-distMat <- as.data.frame(as.matrix(distMat))
-rownames(distMat) <- rownames(x)
-#var1 <- rownames(distMat)
-dd <- as.dist(distMat)
-hc <- hclust(dd)
-distMat <-distMat[hc$order, hc$order]
-var1 <- rownames(distMat)
-# Melt the distance matrix
-melted_distMat <- melt(distMat)
-melted_distMat <- cbind(var1,melted_distMat)
-#Rearrange for plotting
-melted_distMat$var1 <- gsub('_fam_','_',melted_distMat$var1)
-melted_distMat$variable <- gsub('_fam_','_',melted_distMat$variable)
-melted_distMat$var1 <- factor(melted_distMat$var1,levels = unique(melted_distMat$var1))
-melted_distMat$variable <- factor(melted_distMat$variable,levels = unique(melted_distMat$variable))
-#melted_distMat$value <- melted_distMat$value/max(melted_distMat$value)
-#melted_distMat <- as.data.frame(apply(melted_distMat, 2, rev))
-temp <- melted_distMat
-temp$value <- temp$value/max(temp$value)
-temp$value <- 1-temp$value
-p <- ggplot(data = temp, aes(variable, var1, fill = value))+
-  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
-p <- p+theme_minimal()+ 
-  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
-                                   size = 28, hjust = 1),
-        axis.text.y = element_text(size = 28))
-plotTitle <- paste('../results/plots/targets_ALL_distMat.png',sep='')
-png(plotTitle,width = 6000, height = 6000)
-plot(p)
-dev.off()
-#Plot histogram of distances
-p <- ggplot(temp, aes(x=value)) + geom_histogram(binwidth=0.1,fill='grey')
-p <-  p + theme_bw(base_size = 2*12)+xlab('Number of products') + ylab('Number of gene targets')
-plotTitle <- paste('../results/plots/histogram_targetsSimilarity.png',sep='')
-png(plotTitle,width = 600, height = 600)
-plot(p)
-dev.off()
-#simplify distMat
-temp$value[temp$value<=0.3] <- 0
-temp$value[temp$value>0.3]  <- 1 
 
-p <- ggplot(data = temp, aes(variable, var1, fill = value))+
-  geom_tile(color = "white") + scale_fill_viridis(discrete = F, option = "E")
-p <- p+theme_minimal()+ 
-  theme(axis.text.x = element_text(angle = 90, vjust = 1, 
-                                   size = 28, hjust = 1),
-        axis.text.y = element_text(size = 28))
-plotTitle <- paste('../results/plots/targets_ALL_distMat_simp.png',sep='')
-png(plotTitle,width = 6000, height = 6000)
-plot(p)
-dev.off()
 #Dimensionality reduction
 newDF <- targetsMat[,5:ncol(targetsMat)]
 #newDF <- newDF[rowSums(newDF)>0,]
@@ -167,19 +105,20 @@ famLvls <- (unique(factor(newDF$family)))
 famLvls <- famLvls[order(famLvls)]
 newDF$family <- factor(newDF$family,levels = famLvls)
 #PCA 
-PCAdata  <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
-p        <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
+PCAdata   <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
+p         <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
 plotTitle <- paste('../results/plots/PCA_allTargets.png',sep='')
 png(plotTitle,width = 600, height = 600)
 plot(p)
 dev.off()
 #tSNE
 set.seed(18) # Set a seed if you want reproducible results
-tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=nrow(newDF)/length(famLvls)) # Run TSNE
+perplxty <- nrow(newDF)/length(famLvls)
+tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=perplxty) # Run TSNE
 tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
 colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
 p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family)
-saveWidget(p, "../results/plots/tsne_ALL0.html", selfcontained = F, libdir = "lib")
+saveWidget(p, "../results/plots/tsne_ALL.html", selfcontained = F, libdir = "lib")
 
 
 

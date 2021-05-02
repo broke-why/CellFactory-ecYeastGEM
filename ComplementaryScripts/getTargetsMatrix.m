@@ -32,8 +32,12 @@ for i=1:length(nameFolders)
         %end
         idx    = find(strcmpi(comp_classes,class));
         %if ~isempty(idx)
-        newStr = [chemical '_fam_' class_short{class}];
+        newStr = [lower(chemical) '_fam_' class_short{class}];
         newStr = strrep(newStr,' ','_');
+        newStr = strrep(newStr,',','');
+        newStr = strrep(newStr,'(','');
+        newStr = strrep(newStr,')','');
+
         %disp(newStr)
         %create new column for chemical
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])

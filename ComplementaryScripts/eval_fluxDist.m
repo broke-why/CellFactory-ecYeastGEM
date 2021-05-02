@@ -78,10 +78,14 @@ for i=1:height(chemicals_info)
                     cost = fluxDist.flux(strcmpi(fluxDist.rxns,'prot_pool_exchange'))/cost;
                 end
                 str = strrep(chemicals_info.ecModel{i},'-','_');
+                str = str(3:(end-3));
+                str = regexprep(str,'[^a-zA-Z]','');
                 str = strrep(str,',','_');
                 str = strrep(str,'.mat','');
                 str = strrep(str,'(','');
                 str = strrep(str,')','');
+                str = lower(str);
+                              
                 eval(['fluxes.' str '=fluxDist.flux;'])
                 %now with GEM
                 if ~isempty(indexGEM)
@@ -109,8 +113,18 @@ for i=1:height(chemicals_info)
     end
 end
 %
+if biomass_prod
+    file1 = '../results/prodCapabilities_allChemicals_wBio.txt';
+    file2 = '../results/proteinLimitations_allChemicals_wBio.txt';
+    file3 = '../results/fluxDist_distance_allChemicals_wBio.txt';
+else
+    file1 = '../results/prodCapabilities_allChemicals.txt';
+    file2 = '../results/proteinLimitations_allChemicals.txt';
+    file3 = '../results/fluxDist_distance_allChemicals.txt';
+end
+    
 prod_capabilities.Properties.VariableNames = {'compound' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem'};
-writetable(prod_capabilities,'../results/prodCapabilities_allChemicals.txt','QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
+writetable(prod_capabilities,file1,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
 %
 FC = prod_capabilities.prodYield_ec./prod_capabilities.prodRate_ec;
 newTable = table(prod_capabilities.compound,FC,families);
@@ -118,7 +132,7 @@ newTable.Properties.VariableNames = {'compound' 'Prod_FC' 'family'};
 if ~isempty(Prot_cost)
     newTable.Prot_cost = Prot_cost;
 end
-writetable(newTable,'../results/proteinLimitations_allChemicals.txt','QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
+writetable(newTable,file2,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
 %calculate euclidean distance matrix (flux distributions)
 [m,n]   = size(fluxes);
 distMat = zeros(n-1,n-1);
@@ -132,5 +146,5 @@ end
 distMat = array2table(distMat);
 distMat.Properties.VariableNames = fluxes.Properties.VariableNames(2:end);
 distMat.Properties.RowNames = fluxes.Properties.VariableNames(2:end);
-writetable(distMat,'../results/fluxDist_distance_allChemicals.txt','QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
+writetable(distMat,file3,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
     
