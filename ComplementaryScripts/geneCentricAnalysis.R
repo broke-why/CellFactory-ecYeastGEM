@@ -11,6 +11,7 @@ library(tidyr)
 library(cluster)
 library(ggfortify)
 library(plotly)
+library(fmsb)
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -48,7 +49,11 @@ chemicals <- data.frame(product = colnames(allTargetsMat)[5:(ncol(allTargetsMat)
 chemicals <- chemicals %>% separate(product, c("product", "family"), "_fam_")
 families  <- unique(chemicals$family)
 families  <- c(families,'ALL')
+#families  <- families[1]
+commonTargets <- c()
+columns <- c()
 for (fam in families){
+  newCol <- c()
   for (action in direction){
     
     if (action=='OE'){
@@ -94,6 +99,9 @@ for (fam in families){
     top10  <- matrix[1:threshold,]
     sumas  <- colSums(top10)
     newDF  <- data.frame(genes = rownames(matrix),occurrence = matrix$suma)
+    nChems <- ncol(matrix)-1
+    panGenes_num <- length(which(newDF$occurrence==(nChems)))
+    newCol <- c(newCol,panGenes_num)
     newDF  <- newDF[1:threshold,]
     if (fam!='ALL'){
       newDF$occurrence <- newDF$occurrence/(ncol(matrix)-1)
@@ -149,4 +157,34 @@ for (fam in families){
       dev.off()
     }
   }
+  if (nChems>2 & fam!='ALL'){
+    commonTargets <- cbind(commonTargets,(newCol))
+    columns <- c(columns,fam)
+  }
 }
+rows <- c('OE','KD','KO')
+rownames(commonTargets) <- rows
+colnames(commonTargets) <- columns
+maxLim <- 8
+minLim <- 0
+commonTargets <- rbind(rep(maxLim,ncol(commonTargets)),rep(0,ncol(commonTargets)),commonTargets)
+commonTargets <- as.data.frame(commonTargets,stringsAsFactors = FALSE)
+
+#plot spider plot
+colors_border = c(rgb(0.8,0.6,0,0.8), rgb(0.4,0.4,0.40,0.8),rgb(0.1,0,0.8,0.8))
+colors_in     = c(rgb(0.8,0.6,0,0.2), rgb(0.4,0.4,0.40,0.2),rgb(0.1,0,0.8,0.2))
+plotName <- '../results/plots/gene_centric/n_panGenes_radarChart.png'
+png(plotName,width = 550, height = 500)
+radarchart( commonTargets , axistype=1 , 
+            #custom polygon
+            pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,
+            #custom the grid
+            cglcol="grey", cglty=1, axislabcol="black", caxislabels=seq(minLim,maxLim*100,(maxLim-minLim)/4), cglwd=1.5,
+            #custom labels
+            vlcex=2, calcex = 1.5)
+#plot(p)
+legend(x=1.1, y=1.1, legend = rows, bty = "n", pch=20 , col=colors_in , text.col = "black", cex=1.5, pt.cex=3)
+dev.off()
+
+
+
