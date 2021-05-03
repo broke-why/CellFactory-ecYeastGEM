@@ -1,10 +1,10 @@
 models	chemClass	cand_1_total	cand_1_OE	cand_1_dR	cand_1_del	cand_2_total	cand_2_OE	cand_2_dR	cand_2_del	cand_3_total	cand_3_OE	cand_3_dR	cand_3_del
-ec(s)-reticuline	alkaloid	117	19	72	19	20	12	6	0	5	5	0	0
 ec2-phenylethanol	alcohol	41	15	21	2	29	13	10	3	19	8	8	3
 ec3-methylbutanol	alcohol	57	22	17	11	32	13	8	9	24	8	8	8
 ec3hp-asp	organic acid	72	18	45	4	32	12	13	4	19	7	8	4
 ec3hp-malcoa	organic acid	47	15	24	0	30	15	9	0	17	10	7	0
 ec4-hydroxymandelic_acid	aromatic	42	10	23	2	26	8	11	1	17	7	9	1
+ecS_reticuline	alkaloid	117	19	72	19	20	12	6	0	5	5	0	0
 ecacetate	organic acid	83	24	34	18	54	17	12	18	22	4	7	11
 ecadipic_acid	organic acid	38	9	18	7	23	7	9	3	16	6	7	3
 ecalanine	amino acid	87	21	49	14	34	6	15	11	16	1	7	8
@@ -87,6 +87,7 @@ ecquercetin	flavonoid	117	19	72	19	34	12	12	8	17	3	6	8
 ecr,r-2,3-butanediol	alcohol	104	5	89	2	38	5	26	0	15	3	12	0
 ecresveratrol	stilbenoids	123	12	81	21	46	8	22	12	22	2	9	11
 ecrosmarinic_acid	aromatic	65	17	25	15	30	14	5	9	19	6	5	8
+ecsalidroside	aromatic	168	13	76	74	44	10	8	23	21	6	3	12
 ecsantalene	terpene	53	22	13	15	22	12	7	2	19	10	7	2
 ecserine	amino acid	59	19	24	13	31	9	10	11	21	5	7	9
 ecspermine	bioamine	78	39	23	5	55	27	10	11	34	21	7	6

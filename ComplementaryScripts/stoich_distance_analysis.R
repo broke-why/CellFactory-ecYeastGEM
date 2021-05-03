@@ -147,7 +147,7 @@ newMatrix$distStoich <- newMatrix$distStoich/max(newMatrix$distStoich)
 p <- ggplot(newMatrix, aes(x=distStoich, y=distTargets,color=related)) +
   geom_point(size=1) +scale_color_manual(values=c(rgb(0.65,0.65,0.65,0.3),rgb(0.7,0,0.3))) + 
   theme_bw(base_size = 32) +
-  xlab('stoich distance') + ylab('targets distance') +geom_smooth(aes(group = 1),se=TRUE, fullrange=TRUE)
+  xlab('Stoichiometric distance') + ylab('Gene targets distance') +geom_smooth(aes(group = 1),se=TRUE, fullrange=TRUE)
 plotName <- '../results/plots/distance_targets_stoich.png'
 png(plotName,width = 800, height = 600)
 plot(p)

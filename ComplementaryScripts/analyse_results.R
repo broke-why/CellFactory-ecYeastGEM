@@ -11,7 +11,7 @@ library(cluster)
 library(ggfortify)
 library(plotly)
 library(htmlwidgets)
-library(qgraph)
+#library(qgraph)
 library(reshape2)
 
 
@@ -39,8 +39,8 @@ df <- df[order(-counts),]
 df$classes <- factor(df$classes,levels<-df$classes) 
 df$perc <- round(df$counts*100/sum(df$counts),digits=1)
 #Get pallete of colors
-getPalette <- colorRampPalette(brewer.pal(5, "Set1"))
 colourCount <- length(unique(df$classes))
+getPalette <- colorRampPalette(brewer.pal(colourCount,"Paired"))
 
 blank_theme <- theme_minimal()+
   theme(
@@ -57,7 +57,7 @@ blank_theme <- theme_minimal()+
   )
   
 p <- ggplot(df, aes(x='',y=perc,fill=classes)) +
-     geom_bar(width = 1, stat = 'identity')
+     geom_bar(colour = 'black',width = 1, stat = 'identity')
      pie <- p + coord_polar("y", start=0,direction=1)
      pie <- pie + blank_theme 
      pie <- pie +scale_fill_manual(values = getPalette(colourCount))#scale_fill_viridis(discrete = T, option = "E")
@@ -114,13 +114,16 @@ dev.off()
 #tSNE
 set.seed(18) # Set a seed if you want reproducible results
 perplxty <- nrow(newDF)/length(famLvls)
+
 tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=perplxty) # Run TSNE
 tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
+#Define color palleter
+colourCount2 <- length(unique(tsne_plot$family))
+getPalette2  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
+
 colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
-p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family)
+p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family,colors = getPalette2(colourCount))
 saveWidget(p, "../results/plots/tsne_ALL.html", selfcontained = F, libdir = "lib")
-
-
 
 filename  <- paste('../results/targets_summary.txt',sep='')
 targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
@@ -147,7 +150,6 @@ for (j in 1:length(families)){
     vector2 <- c(rep('step1',nCompounds),rep('step2',nCompounds),rep('step3',nCompounds))
     vector3 <- c(rep('KO',length(vector1)))
     df3 <- data.frame(vector1,vector2,vector3)
-    
     df <- rbind(df,df2,df3)
     colors <- cividis(11)
     #Generate box plots with all targets (KOs, KDs and OEs)
@@ -157,77 +159,6 @@ for (j in 1:length(families)){
     scale_fill_manual(values = c(colors[11],colors[6],colors[3]))
     plotTitle <- paste('../results/plots/allTargets',famCode,'.png',sep='')
     png(plotTitle,width = 600, height = 600)
-    plot(p)
-    dev.off()
-    
-    #Get all deletion targets for chemical family
-    filename    <- paste('../results/all_deletions.txt',sep='')
-    all_deletions <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-    if (nchar(chemClass)>1){
-      all_deletions <- all_deletions[all_deletions$chem_class_del==chemClass,]
-    }
-    uniqueDels <- unique(all_deletions$del_targets)
-    counts <- c()
-    for (i in 1:length(uniqueDels)){counts <- c(counts,sum(all_deletions$del_targets==uniqueDels[i]))}
-    df <- data.frame(uniqueDels,counts,stringsAsFactors = FALSE)
-    df$counts <- df$counts/nCompounds
-    dt <- df[order(-counts),]
-    dt$uniqueDels <- factor(dt$uniqueDel, levels<- dt$uniqueDel)
-    dt <- dt[1:10,]
-    #Plot top targets for deletions as barplot
-    p <- ggplot(data=dt, aes(x=uniqueDels,y=(counts))) + geom_bar(stat='identity',fill=colors[2])+ 
-      theme_bw(base_size = 2*12)+xlab('Gene targets') +
-      ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
-    plotTitle <- paste('../results/plots/topKOs',famCode,'.png',sep='')
-    png(plotTitle,width = 950, height = 600)
-    plot(p)
-    dev.off()
-    
-    #Get all deletion targets for chemical family
-    filename      <- paste('../results/all_downRegs.txt',sep='')
-    all_deletions <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
-    if (nchar(chemClass)>1){
-      all_deletions <- all_deletions[all_deletions$chem_class_dR==chemClass,]
-    }
-    if (nrow(all_deletions)>0){
-      uniqueDels <- unique(all_deletions$dR_targets)
-      counts <- c()
-      for (i in 1:length(uniqueDels)){counts <- c(counts,sum(all_deletions$dR_targets==uniqueDels[i]))}
-      df <- data.frame(uniqueDels,counts,stringsAsFactors = FALSE)
-      df$counts <- df$counts/nCompounds
-      dt <- df[order(-counts),]
-      dt$uniqueDels <- factor(dt$uniqueDel, levels<- dt$uniqueDel)
-      dt <- dt[1:10,]
-      #Plot top targets for deletions as barplot
-      p <- ggplot(data=dt, aes(x=uniqueDels,y=(counts))) + geom_bar(stat='identity',fill=colors[6])+ 
-        theme_bw(base_size = 2*12)+xlab('Gene targets') +
-        ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
-      plotTitle <- paste('../results/plots/topKDs',famCode,'.png',sep='')
-      png(plotTitle,width = 950, height = 600)
-      plot(p)
-      dev.off()
-    }
-    
-    #repeat for OE targets
-    filename    <- paste('../results/all_OEs.txt',sep='')
-    all_OEs <- read.delim(filename,sep='\t',stringsAsFactors = FALSE)
-    if (nchar(chemClass)>1){
-      all_OEs <- all_OEs[all_OEs$chem_class_OE==chemClass,]
-    }
-    uniqueOEs <- unique(all_OEs$OE_targets)
-    counts <- c()
-    for (i in 1:length(uniqueOEs)){counts <- c(counts,sum(all_OEs$OE_targets==uniqueOEs[i]))}
-    df <- data.frame(uniqueOEs,counts,stringsAsFactors = FALSE)
-    df$counts <- df$counts/nCompounds
-    dt <- df[order(-counts),]
-    dt$uniqueOEs <- factor(dt$uniqueOEs, levels<- dt$uniqueOEs)
-    dt <- dt[1:10,]
-    
-    p <- ggplot(data=dt, aes(x=uniqueOEs,y=(counts))) + geom_bar(stat='identity',fill=colors[10])+ 
-      theme_bw(base_size = 2*12)+xlab('Gene targets') +
-      ylab('Relative frequency')+ylim(c(0,1))#+ scale_y_continuous(breaks = (seq(0,5,by = 0.5)))
-    plotTitle <-paste('../results/plots/topOEs',famCode,'.png',sep='')
-    png(plotTitle,width = 950, height = 600)
     plot(p)
     dev.off()
   } 

@@ -39,6 +39,7 @@ blank_theme <- theme_minimal()+
 #load matrix indicating the relation between gene targets and chemical products
 allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
 allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+#allTargetsMat <- read.csv('../results/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
 
 direction  <- c('OE','KD','KO')
 colors     <- cividis(11) 
@@ -100,7 +101,7 @@ for (fam in families){
     sumas  <- colSums(top10)
     newDF  <- data.frame(genes = rownames(matrix),occurrence = matrix$suma)
     nChems <- ncol(matrix)-1
-    panGenes_num <- length(which(newDF$occurrence==(nChems)))
+    panGenes_num <- length(which(newDF$occurrence>=(nChems)))
     newCol <- c(newCol,panGenes_num)
     newDF  <- newDF[1:threshold,]
     if (fam!='ALL'){
@@ -135,10 +136,10 @@ for (fam in families){
       topGenesDF <- data.frame(geneNames,Family=gene_fam,stringsAsFactors = TRUE)
       topGenesDF$geneNames <- factor(topGenesDF$geneNames,levels = rownames(top10),ordered = TRUE)
       #plot
-      getPalette  <- colorRampPalette(brewer.pal(5, "Set1"))
       colourCount <- length(unique(topGenesDF$Family))
+      getPalette  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
       p <- ggplot(topGenesDF, aes(fill=Family, x=(geneNames))) + 
-        geom_bar(position="stack", stat="count") + theme_bw(base_size = 2*12)+
+        geom_bar(colour = 'black',position="stack", stat="count") + theme_bw(base_size = 2*12)+
         xlab('') + ylab('Number of chemicals') + scale_fill_manual(values = getPalette(colourCount))
       png(paste('../results/plots/gene_centric/topGenes_chemFam_',action,'_',fam,'.png',sep=''),width = 920, height = 600)
       plot(p)
@@ -165,7 +166,7 @@ for (fam in families){
 rows <- c('OE','KD','KO')
 rownames(commonTargets) <- rows
 colnames(commonTargets) <- columns
-maxLim <- 8
+maxLim <- 20
 minLim <- 0
 commonTargets <- rbind(rep(maxLim,ncol(commonTargets)),rep(0,ncol(commonTargets)),commonTargets)
 commonTargets <- as.data.frame(commonTargets,stringsAsFactors = FALSE)
@@ -173,7 +174,7 @@ commonTargets <- as.data.frame(commonTargets,stringsAsFactors = FALSE)
 #plot spider plot
 colors_border = c(rgb(0.8,0.6,0,0.8), rgb(0.4,0.4,0.40,0.8),rgb(0.1,0,0.8,0.8))
 colors_in     = c(rgb(0.8,0.6,0,0.2), rgb(0.4,0.4,0.40,0.2),rgb(0.1,0,0.8,0.2))
-plotName <- '../results/plots/gene_centric/n_panGenes_radarChart.png'
+plotName <- '../results/plots/panGenes_by_chemFam.png'
 png(plotName,width = 550, height = 500)
 radarchart( commonTargets , axistype=1 , 
             #custom polygon
