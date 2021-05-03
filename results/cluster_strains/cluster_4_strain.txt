@@ -1,0 +1,4 @@
+genes	action
+GND1	OE
+ZWF1	OE
+RKI1	OE

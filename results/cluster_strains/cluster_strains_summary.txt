@@ -1,0 +1,17 @@
+cluster	n_prods	chemicals	KOs	KDs	OEs
+cluster_1	9	linalool // artemisinicacid // betaamyrin // geraniol // limonene // amorphadiene // santalene // squalene // farnesene	1	0	9
+cluster_2	2	triacylglycerol // ergosterol	0	0	30
+cluster_3	5	hpmalcoa // ffas // laurate // oleate // palmitoleate	0	3	14
+cluster_4	13	cysteine // alanine // asparagine // aspartate // histidine // homoserine // isoleucine // methionine // serine // threonine // valine // hpasp // nbutanol	0	0	3
+cluster_5	8	proline // glutathione // putrescine // spermine // ornithine // arginine // citrulline // lysine	0	2	12
+cluster_6	5	methylbutanol // leucine // itaconicacid // glutamate // glutamine	1	4	9
+cluster_7	8	fumaricacid // malate // citrate // succinate // oxoglutarate // acetate // glycolate // glycine	4	4	3
+cluster_8	4	adipicacid // cismuconate // glycerol // hydroxymandelicacid	1	7	3
+cluster_9	6	tryptophan // tyrosine // cinnamate // mandelicacid // phenylethanol // phenylalanine	1	9	7
+cluster_10	4	lactate // pyruvate // rrbutanediol // isobutanol	0	5	9
+cluster_11	12	psilocybin // catechin // genistein // kaempferol // astaxanthin // lupeol // patchoulol // glycyrrhetinicacid // lycopene // miltiradiene // sreticuline // ergothioneine	0	6	5
+cluster_12	16	betaxanthin // betacarotene // oleanolate // protopanaxadiol // nootkatone // taxadienalphaylacetate // valencene // naringenin // quercetin // vanillinbetaglucoside // betaionone // choline // cinnamoyltropine // nicotianamine // caffeicacid // docosanol	0	2	5
+cluster_13	5	lpac // hexanoate // coumaricacid // rosmarinicacid // resveratrol	8	3	2
+cluster_14	3	ara // dha // epa	0	5	14
+cluster_15	2	hypoxanthine // xanthine	5	4	57
+cluster_16	2	tyrosol // salidroside	21	6	10
