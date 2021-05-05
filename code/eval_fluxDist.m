@@ -8,15 +8,15 @@ load('../ModelFiles/mat/ecYeastGEM_batch.mat')
 load('../ModelFiles/mat/yeastGEM.mat')
 GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
-%prod_capabilities  = table();
+prod_capabilities  = table();
 rxns = ecModel_batch.rxns;
 fluxes = table(rxns);
-%families = [];
+families = [];
 biomass_prod = false;
-%Prot_cost =[]; 
+Prot_cost =[]; 
 %Loop through all maxRate folders
 mkdir('../results/yieldPlots')
-for i=12:height(chemicals_info)
+for i=1:height(chemicals_info)
     compound = chemicals_info.Name{i};
     model    = [];
     %try to load GEM
