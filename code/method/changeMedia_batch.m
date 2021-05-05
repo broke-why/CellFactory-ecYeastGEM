@@ -81,18 +81,18 @@ model = setParam(model, 'ub', 'r_1992_REV', +1000); % 'oxygen exchange';
 model = setParam(model, 'ub', 'r_2005_REV', +1000); % 'phosphate exchange';
 model = setParam(model, 'ub', 'r_2060_REV', +1000); % 'sulphate exchange';
 model = setParam(model, 'ub', 'r_1832_REV', +1000); % 'H+ exchange' ;
-%model = setParam(model, 'ub', 'r_4593_REV', +1000); % 'chloride exchange' ;
-%model = setParam(model, 'ub', 'r_4595_REV', +1000); % Mn(2+) exchange
-%model = setParam(model, 'ub', 'r_4596_REV', +1000); % Zn(2+ exchange
-%model = setParam(model, 'ub', 'r_4597_REV', +1000); % Mg(2+) exchange
+model = setParam(model, 'ub', 'r_4593_REV', +1000); % 'chloride exchange' ;
+model = setParam(model, 'ub', 'r_4595_REV', +1000); % Mn(2+) exchange
+model = setParam(model, 'ub', 'r_4596_REV', +1000); % Zn(2+ exchange
+model = setParam(model, 'ub', 'r_4597_REV', +1000); % Mg(2+) exchange
 model = setParam(model, 'ub', 'r_2049_REV', +1000); % sodium exchange
-%model = setParam(model, 'ub', 'r_4594_REV', +1000); % Cu(2+) exchange
-%model = setParam(model, 'ub', 'r_4600_REV', +1000); % Ca(2+) exchange
+model = setParam(model, 'ub', 'r_4594_REV', +1000); % Cu(2+) exchange
+model = setParam(model, 'ub', 'r_4600_REV', +1000); % Ca(2+) exchange
 model = setParam(model, 'ub', 'r_2020_REV', +1000); % potassium exchange
 %Block some production fluxes
-%model = setParam(model, 'ub', 'r_1663', 0); % bicarbonate exchange
-%model = setParam(model, 'ub', 'r_4062', 0); % lipid backbone exchange
-%model = setParam(model, 'ub', 'r_4064', 0); % lipid chain exchange
+model = setParam(model, 'ub', 'r_1663', 0); % bicarbonate exchange
+model = setParam(model, 'ub', 'r_4062', 0); % lipid backbone exchange
+model = setParam(model, 'ub', 'r_4064', 0); % lipid chain exchange
 %Allow biomass production 
 model = setParam(model, 'ub', 'r_2111', +1000); % growth
 if ~strcmpi(media,'Min')
