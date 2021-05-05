@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % model = addGeneNames(model)
 %
-% Benjamín J. Sánchez
+% Benjamï¿½n J. Sï¿½nchez
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function model = addGeneNames(model)
@@ -11,7 +11,7 @@ model.genes = strrep(model.genes,'_','-');
 
 %Load data:
 
-fid  = fopen('../../ComplementaryData/databases/swissprot.tsv','r');
+fid  = fopen('../../data/databases/swissprot.tsv','r');
 data = textscan(fid,'%s %s %s %s %f32 %s','Delimiter','\t','HeaderLines',1);
 fclose(fid);
 swiss.genes = data{3};

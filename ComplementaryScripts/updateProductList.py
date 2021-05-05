@@ -2,7 +2,7 @@
 
 import pandas as pd
 # read the product information
-chemical_info = pd.read_excel("ComplementaryData/chemicals_info.xlsx")
+chemical_info = pd.read_excel("data/chemicals_info.xlsx")
 
 # input readme file
 with open('README.md') as f:

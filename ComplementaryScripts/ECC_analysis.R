@@ -104,7 +104,7 @@ ECC_input_df1[] <- sapply(ECC_input_df1, as.numeric)
 ECC_input_df1[is.na(ECC_input_df1)] <- 0
 # add product annotation information
 product_df <- data.frame(product=rownames(ECC_input_df1), stringsAsFactors = FALSE)
-chemicals_info <- read_excel("../ComplementaryData/chemicals_info.xlsx")
+chemicals_info <- read_excel("../data/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)

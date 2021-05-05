@@ -25,7 +25,7 @@ dir.create('../results/cluster_strains')
 families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acids and lipids','flavonoid','aromatic','bioamine')
 codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
 #Load chemicals cluster info
-filename      <- '../ComplementaryData/product_clusters.txt'
+filename      <- '../data/product_clusters.txt'
 prod_clusters <- read_delim(filename,"\t", escape_double = FALSE, na = "NA",trim_ws = TRUE)
 clusters      <- unique(prod_clusters$cluster)
 #reformat

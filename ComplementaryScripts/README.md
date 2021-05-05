@@ -2,7 +2,7 @@
 
 # Instructions
 
-* All scripts are refered relative to their location inside of the subfolder `cellFactory-yeast-GEM/ComplementaryScrips`.
+* All scripts are refered relative to their location inside of the subfolder `cellFactory-yeast-GEM/code`.
 
 1. Run MATLAB script `eval_fluxDist.m` to evaluate biomass yield, product yield and product rate for each of the +100 chemicals using ecYeastGEM (wild-type). This script also produces a matrix of stoichiometric distances between optimal distributions for maximum production of each chemical.
 

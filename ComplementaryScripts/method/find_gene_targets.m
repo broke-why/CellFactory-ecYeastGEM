@@ -15,7 +15,7 @@ steps      = [];
 objIdx     = [];
 noFlux     = [];
 fileNames  = dir('../../ModelFiles/production_ecModels');
-strain_conditions = readtable('../../ComplementaryData/strain_conditions.txt','Delimiter','\t');
+strain_conditions = readtable('../../data/strain_conditions.txt','Delimiter','\t');
 mkdir('../../results/ECC')
 for i=1:length(fileNames)
     cd (current)

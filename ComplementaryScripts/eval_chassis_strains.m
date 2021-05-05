@@ -1,6 +1,6 @@
 current = pwd;
-chemicals_info    = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
-strain_conditions = readtable('../ComplementaryData/genetic_background.txt','Delimiter','\t');
+chemicals_info    = readtable('../data/chemicals_info.txt','Delimiter','\t');
+strain_conditions = readtable('../data/genetic_background.txt','Delimiter','\t');
 
 comp_classes = unique(chemicals_info.class);
 class_short  = {'alc' 'alk' 'AAs' 'aro' 'bio' 'FAL' 'fla' 'oAc' 'stb' 'ter'};

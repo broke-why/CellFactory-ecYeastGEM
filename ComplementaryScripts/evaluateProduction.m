@@ -4,7 +4,7 @@ current = pwd;
 clc
 
 fileNames  = dir('../ModelFiles/production_ecModels');
-strain_conditions = readtable('../ComplementaryData/genetic_background.txt','Delimiter','\t');
+strain_conditions = readtable('../data/genetic_background.txt','Delimiter','\t');
 models = [];
 objectives = [];
 objIdx = [];

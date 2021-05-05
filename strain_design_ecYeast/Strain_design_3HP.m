@@ -1,11 +1,11 @@
 % Pathway construction of 3HP in yeastGEM model
 
 % Add new reactions to the model
-cd ../ComplementaryScripts
+cd ../code
 model = loadYeastModel;
 
 % Load stoichiometry data:
-fid = fopen('../ComplementaryData/3HP/newpathway_newRxnMatrix.tsv');
+fid = fopen('../data/3HP/newpathway_newRxnMatrix.tsv');
 newreaction = textscan(fid,'%s %s %s %s %s','Delimiter','\t','HeaderLines',1);
 matrix.rxnIDs  = newreaction{1};
 matrix.metcoef = cellfun(@str2num, newreaction{2});
@@ -15,7 +15,7 @@ matrix.metcompartments = newreaction{5};
 fclose(fid);
 
 % Load rxn properties data:
-fid  = fopen('../ComplementaryData/3HP/newpathway_newRxnProp.tsv','r');
+fid  = fopen('../data/3HP/newpathway_newRxnProp.tsv','r');
 rev = textscan(fid,'%s %s %s %s %s %s %s','Delimiter','\t','HeaderLines',1);
 newrxn.ID  = rev{1};
 newrxn.Rev = cellfun(@str2num, rev{2});
@@ -78,7 +78,7 @@ for j = 1:length(matrix.metnames)
 end
 
 % Add metabolite data:
-fid = fopen('../../ComplementaryData/3HP/newpathway_newRxnMetAnnotation.tsv');
+fid = fopen('../../data/3HP/newpathway_newRxnMetAnnotation.tsv');
 newmet_annot         = textscan(fid,'%s %s %s %s %s %s %s','Delimiter','\t','HeaderLines',1);
 newmet.metNames      = newmet_annot{1};
 newmet.metFormulas   = newmet_annot{2};

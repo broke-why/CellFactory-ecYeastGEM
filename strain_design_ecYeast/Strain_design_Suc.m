@@ -1,7 +1,7 @@
 % The theoretical yield analysis of Suc
 
 % Set constraints (glyoxylate cycle) in yeastGEM model
-cd ../ComplementaryScripts
+cd ../code
 model = loadYeastModel;
 model=changeRxnBounds(model,'r_1714',-15.2,'l');
 model=changeRxnBounds(model,'r_1889',-1,'l');
@@ -41,7 +41,7 @@ model=changeRxnBounds(model,'r_2111',0.2,'l');
 FBAsolution=optimizeCbModel(model)
 
 % Set constraints (pathway link cell growth) in yeastGEM model
-cd ../../ComplementaryScripts
+cd ../../code
 model = loadYeastModel;
 model=changeRxnBounds(model,'r_1714',-15.2,'l');
 model=changeRxnBounds(model,'r_1810',-1,'l');
@@ -54,7 +54,7 @@ model=changeRxnBounds(model,'r_1021',11.36,'u');% partially inactive
 model=changeRxnBounds(model,'r_0891',0,'u');
 model=changeRxnBounds(model,'r_2111',0.22,'l');
 FBAsolution=optimizeCbModel(model)
-% For ?sdh3?ser3?ser33ICL¡ü strain
+% For ?sdh3?ser3?ser33ICLï¿½ï¿½ strain
 model=changeRxnBounds(model,'r_1021',11.36,'u');% partially inactive
 model=changeRxnBounds(model,'r_0891',0,'u');
 model=changeRxnBounds(model,'r_0662',12.71,'l');% The flux of reaction contains ICL doubled
@@ -76,7 +76,7 @@ model = removeGenes(model,'YER081W');
 model = removeGenes(model,'YIL074C');
 model=changeRxnBounds(model,'r_2111',0.22,'l');
 FBAsolution=optimizeCbModel(model)
-% For ?sdh3?ser3?ser33ICL¡ü strain
+% For ?sdh3?ser3?ser33ICLï¿½ï¿½ strain
 model=changeRxnBounds(model,'r_0662',0.22,'l');% The flux of reaction contains ICL doubled
 model=changeRxnBounds(model,'r_2111',0.12,'l');
 FBAsolution=optimizeCbModel(model)

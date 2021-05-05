@@ -17,16 +17,16 @@ if (exists("RStudio.Version")){
   setwd(getSrcDirectory()[1])
 }
 #load chemicals info
-filename <- paste('../complementaryData/chemicals_info.txt',sep='')
+filename <- paste('../data/chemicals_info.txt',sep='')
 chemicals <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 families <- unique(chemicals$class)
 codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
 pathWays <- c('Oxidative phosphorylation','Glycolysis','TCA cycle','Pentose phosphate pathway')
 #load enzyme info
-filename <- paste('../complementaryData/enzymeTable.txt',sep='')
+filename <- paste('../data/enzymeTable.txt',sep='')
 enzTable <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 #load KEGG pathways info
-filename <- paste('../complementaryData/keggPathways.txt',sep='')
+filename <- paste('../data/keggPathways.txt',sep='')
 keggDF <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 #Load targets summary
 filename        <- paste('../results/targets_summary.txt',sep='')

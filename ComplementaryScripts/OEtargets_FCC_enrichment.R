@@ -17,7 +17,7 @@ all_product <- list.files(ECC_dir)
 All_gene <- vector()
 dir.create('../results/OE_FCC_enrichment')
 df <- data.frame(stringsAsFactors = FALSE)
-chem_info <- read.table('../ComplementaryData/chemicals_info.txt', header = TRUE, sep='\t',stringsAsFactors = FALSE,quote="")
+chem_info <- read.table('../data/chemicals_info.txt', header = TRUE, sep='\t',stringsAsFactors = FALSE,quote="")
 chem_info$Name <- tolower(chem_info$Name)
 for (x in all_product){
   print(x)

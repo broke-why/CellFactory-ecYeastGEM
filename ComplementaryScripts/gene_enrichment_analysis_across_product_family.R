@@ -16,7 +16,7 @@ colors <- cividis(11)
 # ecFSEOF
 input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # product family information
-chemicals_info <- read_excel("../ComplementaryData/chemicals_info.xlsx")
+chemicals_info <- read_excel("../data/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)

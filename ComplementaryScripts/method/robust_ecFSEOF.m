@@ -6,7 +6,7 @@ OE           = 2;
 thresholds   = [0.5 1];
 delLimit     = 0.05;
 step         = 0;
-essential = readtable('../../ComplementaryData/Essential_ORFs.txt','Delimiter','\t');
+essential = readtable('../../data/Essential_ORFs.txt','Delimiter','\t');
 essential = strtrim(essential.Ids);
 
 cd GECKO

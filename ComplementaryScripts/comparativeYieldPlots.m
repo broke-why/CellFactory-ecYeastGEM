@@ -1,7 +1,7 @@
 clear
 current = pwd;
 %subSystems_GEM = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
-chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
+chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
 load('../ModelFiles/mat/ecYeastGEM_batch.mat')

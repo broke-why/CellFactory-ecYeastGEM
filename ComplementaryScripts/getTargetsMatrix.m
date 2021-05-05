@@ -12,7 +12,7 @@ subSystems(emptyCells) = {''};
 genesTable.enzymes(presence) = ecModel_batch.enzymes(iB(iB~=0));
 genesTable.subSystems(presence) = subSystems(iB(iB~=0));
 %retrieve chemical classes info
-chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
+chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 comp_classes   = unique(chemicals_info.class);
 class_short    = {'alc' 'alk' 'AAs' 'aro' 'bio' 'FAL' 'fla' 'oAc' 'stb' 'ter'};
 %Iterate through all chemical compounds
@@ -43,8 +43,8 @@ for i=1:length(nameFolders)
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])
         %Open targets file
         try
-            %candidates = readtable(['../results/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
-            candidates = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            candidates = readtable(['../results/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
             %candidates = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
 
             OEs=candidates.genes(candidates.k_scores>1);
@@ -62,5 +62,6 @@ for i=1:length(nameFolders)
         end
     end
 end
-writetable(genesTable,'../results/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
 %writetable(genesTable,'../results/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
+writetable(genesTable,'../results/targetsMatrix_ecFSEOF.txt','delimiter','\t','QuoteStrings',false)

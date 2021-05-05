@@ -42,7 +42,7 @@ isub = [d(:).isdir]; %# returns logical vector
 nameFolds = {d(isub).name}';
 load('../ModelFiles/mat/ecYeastGEM_batch.mat')
 subSystems_model = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
-chemicals_info = readtable('../ComplementaryData/chemicals_info.txt','Delimiter','\t');
+chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 for i=1:length(nameFolds)
     folder = nameFolds{i};
     cd (current)
