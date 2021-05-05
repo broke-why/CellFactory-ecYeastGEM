@@ -16,5 +16,14 @@
  	- A heatmap showing euclidian distances between all vectors of targets (for each product). In order to so, gene OEs are assigned a value=2, value=0 for KOs, value = 0.5 for KDs and 1 for unaffected genes.
  	- Boxplots, showing distribution of number of targets, per type, for all products and levels of the multi-step robust ecFSEOF (1. FSEOF, 2. mechanisctically validated individual targets, 3. optimal combination of targets).
 
+5. Run R script `geneCentricAnalysis.R` to perform analysis on the gene target profiles on a gene-centric manner. This will generate:
+ - Bar plots showing the top10 most represented targets (for KO, KD and OE) across +100 chemicals
+ - Bar plots showing the representation level of the top10 targets (for KO, KD and OE) within each the chemical families.
+ - Histograms showing the target specificity (how many products are related to each gene target)
+ 
+ 6. Run R script `stoich_distance_analysis.R`, to perform a correlation analysis between pairwise distances between gene target profile vectors and optimal flux distribution vectors.
+
+7. Run R script `geneTargets_by_prodCluster.R` for identification of common gene targets for all chemical within each cluster of products identified by t-SNE analysis.
+
  
 
