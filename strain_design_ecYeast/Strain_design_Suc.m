@@ -20,7 +20,7 @@ model=changeRxnBounds(model,'r_2111',0.2,'l');
 FBAsolution=optimizeCbModel(model)
 
 % Set constraints (glyoxylate cycle) in ecYeast model
-cd ../ModelFiles/mat
+cd ../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 model=changeRxnBounds(model,'r_1714_REV',15.2,'u');
@@ -62,7 +62,7 @@ model=changeRxnBounds(model,'r_2111',0.12,'l');
 FBAsolution=optimizeCbModel(model)
 
 % Set constraints (pathway link cell growth) in ecYeast model
-cd ../ModelFiles/mat
+cd ../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 model=changeRxnBounds(model,'r_1714_REV',15.2,'u');

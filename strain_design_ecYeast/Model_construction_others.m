@@ -1,7 +1,7 @@
 % Construct pathways of other chemicals in ecYeast Model
 
 % L-lactate
-cd ../ModelFiles/mat
+cd ../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=7.0146*3600;
@@ -40,7 +40,7 @@ cd ../result_ecYeast/ecModels
 save ecLactate.mat model
 
 % Malate
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.52*3600;
@@ -68,7 +68,7 @@ cd ../../result_ecYeast/ecModels
 save ecMalate.mat model
 
 % cis,cis-muconic acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=121.44*3600;
@@ -127,7 +127,7 @@ cd ../result_ecYeast/ecModels
 save eccis_Muconate.mat model
 
 % Resveratrol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.076*3600;
@@ -171,7 +171,7 @@ cd ../../result_ecYeast/ecModels
 save ecResveratrol.mat model
 
 % Flavonoids (genistein, kaempferol, quercetin)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=22*3600;
@@ -308,7 +308,7 @@ FBAsolution=optimizeCbModel(model)
 save ecGenistein.mat model
 
 % Trans-cinnamate
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=25.7*3600;
@@ -335,7 +335,7 @@ cd ../result_ecYeast/ecModels
 save ecCinnamate.mat model
 
 % p-coumaric acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.023*3600;
@@ -391,7 +391,7 @@ cd ../result_ecYeast/ecModels
 save ecCoumaric_acid.mat model
 
 % Artemisinic acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.186*3600;
@@ -433,8 +433,8 @@ FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/ecModels
 save ecArtemisinic_acid.mat model
 
-% ¦Â-Carotene
-cd ../../../ModelFiles/mat
+% ï¿½ï¿½-Carotene
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=8.4*3600;
@@ -489,7 +489,7 @@ cd ../result_ecYeast/ecModels
 save ecbeta_Carotene.mat model
 
 % Linalool + Limonene
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.55*3600;
@@ -532,7 +532,7 @@ FBAsolution=optimizeCbModel(model)
 save ecLimonene.mat model
 
 % 4-hydroxymandelic acid + mandelic acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=3.7*3600;
@@ -591,7 +591,7 @@ FBAsolution=optimizeCbModel(model)
 save ecmandelic_acid.mat model
 
 % Oleanolic acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.77*3600;
@@ -635,7 +635,7 @@ cd ../result_ecYeast/ecModels
 save ecOleanolate.mat model
 
 % Fumaric acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=24.0266*3600;
@@ -660,7 +660,7 @@ cd ../../result_ecYeast/ecModels
 save ecFumaric_acid.mat model
 
 % Pyruvate
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=57.4246*3600;
@@ -723,7 +723,7 @@ FBAsolution=optimizeCbModel(model)
 save ecAdipic_acid.mat model
 
 % Isobutanol + 3-Methyl-1-Butanol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=32.2*3600;
@@ -762,7 +762,7 @@ FBAsolution=optimizeCbModel(model)
 save ec3-methylbutanol.mat model
 
 % Naringenin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=1.8*3600;
@@ -848,7 +848,7 @@ cd ../../result_ecYeast/ecModels
 save ecNarinrenin.mat model
 
 % Catechin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=3.2*3600;
@@ -893,7 +893,7 @@ model=changeGeneAssociation(model,'newRxn2','C4H');
 model=changeGeneAssociation(model,'newRxn3','CHI');
 model=changeGeneAssociation(model,'newRxn4','CHS');
 model=changeGeneAssociation(model,'newRxn5','4CL2');
-model=changeGeneAssociation(model,'newRxn6','F3¡¯H');
+model=changeGeneAssociation(model,'newRxn6','F3ï¿½ï¿½H');
 model=changeGeneAssociation(model,'newRxn7','F3H');
 model=changeGeneAssociation(model,'newRxn8','DFR');
 model=changeGeneAssociation(model,'newRxn9','LAR');
@@ -902,7 +902,7 @@ model.geneShortNames(1129)={'C4H'};
 model.geneShortNames(1130)={'CHI'};
 model.geneShortNames(1131)={'CHS'};
 model.geneShortNames(1132)={'4CL2'};
-model.geneShortNames(1133)={'F3¡¯H'};
+model.geneShortNames(1133)={'F3ï¿½ï¿½H'};
 model.geneShortNames(1134)={'F3H'};
 model.geneShortNames(1135)={'DFR'};
 model.geneShortNames(1136)={'LAR'};
@@ -920,7 +920,7 @@ model.enzGenes(965)={'C4H'};
 model.enzGenes(966)={'CHI'};
 model.enzGenes(967)={'CHS'};
 model.enzGenes(968)={'4CL2'};
-model.enzGenes(969)={'F3¡¯H'};
+model.enzGenes(969)={'F3ï¿½ï¿½H'};
 model.enzGenes(970)={'F3H'};
 model.enzGenes(971)={'DFR'};
 model.enzGenes(972)={'LAR'};
@@ -951,7 +951,7 @@ cd ../../result_ecYeast/ecModels
 save ecCatechin.mat model
 
 % Amorphadiene
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.518*3600;
@@ -1008,7 +1008,7 @@ cd ../../result_ecYeast/ecModels
 save ecAmorphadiene.mat model
 
 % Ginsenosides (protopanaxadiol)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=88.343;
@@ -1051,7 +1051,7 @@ cd ../../result_ecYeast/ecModels
 save ecProtopanaxadiol.mat model
 
 % Monoterpenoids (geraniol)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=1*3600;
@@ -1087,7 +1087,7 @@ cd ../result_ecYeast/ecModels
 save ecGeraniol.mat model 
 
 % Sesquiterpenoids (patchoulol)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.00043*3600;
@@ -1125,7 +1125,7 @@ cd ../result_ecYeast/ecModels
 save ecPatchoulol.mat model 
 
 % Triterpenoids (lupeol)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=86.705;
@@ -1155,8 +1155,8 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
 save ecLupeol.mat model
 
-% ¦Â-Amyrin
-cd ../../../ModelFiles/mat
+% ï¿½ï¿½-Amyrin
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=87.516;
@@ -1244,7 +1244,7 @@ cd ../result_ecYeast/ecModels
 save ecAstaxanthin.mat model 
 
 % Farnesene + Santalene
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=66.183;
@@ -1297,7 +1297,7 @@ FBAsolution=optimizeCbModel(model)
 save ecSantalene.mat model
 
 % Lactase
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat2=0.6516; 
@@ -1338,7 +1338,7 @@ cd ../result_ecYeast/ecModels
 save ecLactase.mat model 
 
 % L-ornithine 
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=109.0489*3600;
@@ -1418,7 +1418,7 @@ cd ../../result_ecYeast/ecModels
 save ecOrnithine.mat model
 
 % (S)-reticuline
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=56.212;
@@ -1508,8 +1508,8 @@ FBAsolution=optimizeCbModel(model)
 cd ../result_ecYeast/ecModels
 save ec(S)-reticuline.mat model 
 
-% ¦Â-ionone
-cd ../../../ModelFiles/mat
+% ï¿½ï¿½-ionone
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.08346*3600;
@@ -1577,7 +1577,7 @@ cd ../result_ecYeast/ecModels
 save ecbeta_Ionone.mat model 
 
 % Xanthone
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=8*3600;
@@ -1630,7 +1630,7 @@ cd ../result_ecYeast/ecModels
 save ecXanthone.mat model 
 
 % tyrosine
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.0828*3600;
@@ -1675,7 +1675,7 @@ cd ../result_ecYeast/ecModels
 save ecTyrosine.mat model 
 
 % triacylglycerols
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=65.3426*3600;
@@ -1704,7 +1704,7 @@ cd ../../result_ecYeast/ecModels
 save ectriacylglycerol.mat model
 
 % very-long-chain polyunsaturated fatty acids (VLC-PUFAs)(ARA, EPA, DHA)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=50.809;
@@ -1808,7 +1808,7 @@ FBAsolution=optimizeCbModel(model)
 save ecDHA.mat model
 
 % n-Butanol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=18.6*3600;
@@ -1904,7 +1904,7 @@ cd ../result_ecYeast/ecModels
 save ecn-Butanol.mat model
 
 % ergosterol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 model=changeRxnBounds(model,'r_1714_REV',1000,'u');
@@ -1915,7 +1915,7 @@ cd ../../result_ecYeast/ecModels
 save ecErgosterol.mat model
 
 % 2-phenylethanol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.2153*3600;
@@ -1982,7 +1982,7 @@ cd ../../result_ecYeast/ecModels
 save ec2-phenylethanol.mat model
 
 % docosanol
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=55.481;
@@ -2047,7 +2047,7 @@ cd ../../result_ecYeast/ecModels
 save ecDocosanol.mat model
 
 % Itaconic acid
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.2428*3600;
@@ -2076,7 +2076,7 @@ cd ../result_ecYeast/ecModels
 save ecItaconic_acid.mat model
 
 % Glutathione
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=1167.65*3600;
@@ -2118,7 +2118,7 @@ cd ../result_ecYeast/ecModels
 save ecGlutathione.mat model
              
 % Ethylene
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.5*3600;
@@ -2143,7 +2143,7 @@ cd ../../result_ecYeast/ecModels
 save ecEthylene.mat model
 
 % Human Serum Albumin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.8928;
@@ -2181,8 +2181,8 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
 save ecHSA.mat model
 
-% ¦Á-Amylase
-cd ../../../ModelFiles/mat
+% ï¿½ï¿½-Amylase
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.7663; 
@@ -2220,7 +2220,7 @@ cd ../../result_ecYeast/ecModels
 save ecalpha_Amylase.mat model
 
 % Hemoglobin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=1.1532; 
@@ -2263,7 +2263,7 @@ cd ../../result_ecYeast/ecModels
 save ecHemoglobin.mat model
 
 % Glucagon
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.6223; 
@@ -2303,7 +2303,7 @@ cd ../result_ecYeast/ecModels
 save ecGlucagon.mat model 
 
 % l-phenylacetylcarbinol(L-PAC)
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=62*3600;
@@ -2349,7 +2349,7 @@ cd ../result_ecYeast/ecModels
 save ecL_PAC.mat model
 
 % Nicotianamine
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=0.0354*3600;
@@ -2391,7 +2391,7 @@ cd ../result_ecYeast/ecModels
 save ecNicotianamine.mat model
 
 % Psilocybin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=3.33*3600;
@@ -2459,8 +2459,8 @@ FBAsolution=optimizeCbModel(model)
 cd ../../result_ecYeast/ecModels
 save ecPsilocybin.mat model
 
-% vanillin-¦Â-glucoside
-cd ../../../ModelFiles/mat
+% vanillin-ï¿½ï¿½-glucoside
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 Kcat1=125.055*3600;
@@ -2520,7 +2520,7 @@ cd ../../result_ecYeast/ecModels
 save ecVanillin_beta_glucoside.mat model
 
 % Betaxanthin
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 MW1=56.212;

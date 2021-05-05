@@ -150,7 +150,7 @@ FBAsolution=optimizeCbModel(model)
 % Pathway construction of FFAs in ecYeast model
 
 % Add new reactions of asp pathway to the model
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 model=changeRxnBounds(model,'r_1714_REV',10,'u');

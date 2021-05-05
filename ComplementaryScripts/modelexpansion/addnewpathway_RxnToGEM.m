@@ -144,7 +144,7 @@ end
 
 % Save model:
 cd ..
-saveYeastModel(model)
+%saveYeastModel(model)
 cd modelexpansion/
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -163,7 +163,7 @@ FBAsolution=optimizeCbModel(model)
 % Pathway construction of 3HP in ecYeast model
 
 % Add new reactions of asp pathway to the model
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 
@@ -226,7 +226,7 @@ cd ../../result_ecYeast/3HP/Models
 save ec3HP-asp.mat model
 
 % Add new reactions of malcoa pathway to the model
-cd ../../../ModelFiles/mat
+cd ../../../ModelFiles
 load('ecYeastGEM_batch.mat');
 model = ecModel_batch;
 
