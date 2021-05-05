@@ -1,18 +1,18 @@
-Name	Formula	KEGG ID	CHEBI ID	MW	Group	class	ecModel
+Name	Formula	KEGG_ID	CHEBI_ID	MW	Group	class	ecModel
 "(R,R)-2,3-butanediol "	C4H10O2	C03044	16982	90.121	native	alcohol	"ecR,R-2,3-butanediol.mat"
 2-phenylethanol 	C8H10O	C05853	49000	122.1644	native	alcohol	ec2-phenylethanol.mat
 glycerol 	C3H8O3	C00116	17754	92.09382	native	alcohol	ecGlycerol.mat
 isoamylol 	C5H12O	C07328	15837	88.14818	native	alcohol	ec3-methylbutanol.mat
 isobutanol 	C4H10O	C14710	46645	74.1216	native	alcohol	ecIsobutanol.mat
-L-phenylacetylcarbinol 	C9H10O2			1	heterologous	alcohol	ecL_PAC.mat
+L-phenylacetylcarbinol 	C9H10O2	NA	NA	1	heterologous	alcohol	ecL_PAC.mat
 n-butanol 	C4H10O	C06142	28885	1	heterologous	alcohol	ecn-Butanol.mat
 docosanol 	C22H46O	D03884	31000	326.61	heterologous	alcohol	ecDocosanol.mat
 choline 	C5H14NO	C00114	15354	104.1708	native	alkaloid	ecCholine.mat
 hypoxanthine 	C5H4N4O	C00262	17368	136.11162	native	alkaloid	ecHypoxanthine.mat
 xanthine 	C5H4N4O2	C00385	17712	152.11102	native	alkaloid	ecXanthine.mat
-(S)-Reticuline 	C19H23NO4	C02105	16718	329.39	heterologous	alkaloid	ec(S)-reticuline.mat
+(S)-Reticuline 	C19H23NO4	C02105	16718	329.39	heterologous	alkaloid	ecS_reticuline.mat
 psilocybin 	C12H17N2O4P	C07576	8614	284.248101	heterologous	alkaloid	ecPsilocybin.mat
-cinnamoyltropine				307.82		alkaloid	eccinnamoyltropine.mat
+cinnamoyltropine		NA	NA	307.82	NA	alkaloid	eccinnamoyltropine.mat
 glutathione 	C10H17N3O6S	C00051	16856	307.32	native	amino acid	ecGlutathione.mat
 L-alanine 	C3H7NO2	C00041	16977	89.09322	native	amino acid	ecAlanine.mat
 L-arginine 	C6H14N4O2	C00062	16467	174.201	native	amino acid	ecArginine.mat
@@ -38,7 +38,7 @@ L-tyrosine 	C9H11NO3	C00082	17895	181.18858	native	amino acid	ecTyrosine.mat
 L-valine 	C5H11NO2	C00183	16414	117.14638	native	amino acid	ecValine.mat
 ornithine 	C5H13N2O2	C01602	46912	133.169	native	amino acid	ecOrnithine.mat
 Nicotianamine 	C12H21N3O6	C05324	17721	303.3116	heterologous	amino acid	ecNicotianamine.mat
-ergothioneine				229.3		amino acid	ecergothioneine.mat
+ergothioneine		NA	NA	229.3	NA	amino acid	ecergothioneine.mat
 4-hydroxymandelic 	C8H8O4	C11527	16388	1	heterologous	aromatic	ec4-hydroxymandelic_acid.mat
 cinnamate 	C9H8O2	C00423	15669Ê	1	heterologous	aromatic	ecCinnamate.mat
 mandelic 	C8H8O3	C01984	17756	1	heterologous	aromatic	ecmandelic_acid.mat
@@ -46,11 +46,11 @@ p-coumaric acid 	C9H8O3	C00811	32374	164.0473	heterologous	aromatic	ecCoumaric_a
 rosmarinate 	C18H16O8	C01850	50371	1	heterologous	aromatic	ecRosmarinic_acid.mat
 Salidroside 	C14H20O7	C06046	9009	1	heterologous	aromatic	ecSalidroside.mat
 Tyrosol 	C8H10O2	C06044	1879	1	heterologous	aromatic	ecTyrosol.mat
-vanillinbetaglucoside				314.29	heterologous	aromatic	ecvanillin_beta_glucoside.mat
+vanillinbetaglucoside		NA	NA	314.29	heterologous	aromatic	ecvanillin_beta_glucoside.mat
 _-ionone 	C13H20O	C12287	32325	192.3	heterologous	aromatic	ecbeta_Ionone.mat
 putrescine 	C4H14N2	C00134	326268	90.1674	native	bioamine	ecPutrescine.mat
 spermine 	C10H30N4	C00750	45725	206.372	native	bioamine	ecSpermine.mat
-Free fatty acids				396.64836	native	fatty acids and lipids	ecFFAs.mat
+Free fatty acids	NA	NA	NA	396.64836	native	fatty acids and lipids	ecFFAs.mat
 laurate 	C12H23O2	C02679	18262	199.31	native	fatty acids and lipids	ecLaurate.mat
 oleate 	C18H34O2	C00712	16196	282.4614	native	fatty acids and lipids	ecOleate.mat
 palmitoleate 	C16H29O2	C08362	32372	253.40026	native	fatty acids and lipids	ecPalmitoleate.mat
@@ -78,8 +78,8 @@ pyruvate 	C3H3O3	C00022	15361	87.05412	native	organic acid	ecPyruvate.mat
 Adipic acid 	C6H10O4	D08839Ê	30832	1	heterologous	organic acid	ecAdipic_acid.mat
 "cis,cis-muconate "	C6H6O4	C02480	16508	1	heterologous	organic acid	eccis_Muconate.mat
 Itaconic acid 	C5H6O4	C00490	17240	1	heterologous	organic acid	ecItaconic_acid.mat
-caffeicacid				180.16		organic acid	eccaffeic_acid.mat
-succinate 				118.09		organic acid	ecsuccinate.mat
+caffeicacid	NA	NA	NA	180.16	NA	organic acid	eccaffeic_acid.mat
+succinate 	NA	NA	NA	118.09	NA	organic acid	ecsuccinate.mat
 resveratrol 	C14H12O3	C03582	27881	228.25	heterologous	stilbenoids	ecResveratrol.mat
 astaxanthin 	C40H52O4	C08580	40968	596.841	heterologous	terpene	ecAstaxanthin.mat
 betaxanthin 	C18H18N2O7	C08565	8341	358.3	heterologous	terpene	ecBetaxanthin.mat
@@ -94,12 +94,12 @@ lupeol 	C30H50O	C08628	6570	426.72	heterologous	terpene	ecLupeol.mat
 Oleanolic acid 	C30H48O3	C17148	37659	1	heterologous	terpene	ecOleanolate.mat
 patchoulol 	C15H26O	C19755	7940	222.36	heterologous	terpene	ecPatchoulol.mat
 protopanaxadiol 	C30H52O3	C20715Ê	75950	460.73	heterologous	terpene	ecProtopanaxadiol.mat
-Santalene 	C15H24	C19736		204.35	heterologous	terpene	ecSantalene.mat
+Santalene 	C15H24	C19736	NA	204.35	heterologous	terpene	ecSantalene.mat
 _-Amyrin 	C30H50O	C08616	10352	1	heterologous	terpene	ecbeta_Amyrin.mat
-glycyrrhetinic_acid				470.7		terpene	ecglycyrrhetinic_acid.mat
-lycopene				536.873		terpene	eclycopene.mat
-miltiradiene				272.5		terpene	ecmiltiradiene.mat
-nootkatone				218.33		terpene	ecnootkatone.mat
-squalene				410.73		terpene	ecsqualene.mat
-taxadien_5alpha_yl_acetate				330.5		terpene	ectaxadien_5alpha_yl_acetate.mat
-valencene				204.35		terpene	ecvalencene.mat
+glycyrrhetinic_acid	NA	NA	NA	470.7	NA	terpene	ecglycyrrhetinic_acid.mat
+lycopene	NA	NA	NA	536.873	NA	terpene	eclycopene.mat
+miltiradiene	NA	NA	NA	272.5	NA	terpene	ecmiltiradiene.mat
+nootkatone	NA	NA	NA	218.33	NA	terpene	ecnootkatone.mat
+squalene	NA	NA	NA	410.73	NA	terpene	ecsqualene.mat
+taxadien_5alpha_yl_acetate	NA	NA	NA	330.5	NA	terpene	ectaxadien_5alpha_yl_acetate.mat
+valencene	NA	NA	NA	204.35	NA	terpene	ecvalencene.mat

@@ -1,0 +1,105 @@
+chemical	class	ecModel	original	cluster
+linalool 	terpene	ecLinalool.mat	c1	cluster_1
+artemisinic acid 		ecArtemisinic_acid.mat	c1	cluster_1
+_-Amyrin 		ecbeta_Amyrin.mat	c1	cluster_1
+Geraniol 	terpene	ecGeraniol.mat	c1	cluster_1
+Limonene 	terpene	ecLimonene.mat	c1	cluster_1
+amorphadiene 		ecAmorphadiene.mat	c1	cluster_1
+Santalene 	terpene	ecSantalene.mat	c1	cluster_1
+squalene	terpene	ecsqualene.mat	c1	cluster_1
+alpha-Farnesene 	terpene	ecFarnesene.mat	c1	cluster_1
+triacylglycerol 	fatty acids and lipids	ectriacylglycerol.mat	c2	cluster_2
+ergosterol 	fatty acids and lipids	ecErgosterol.mat	c2	cluster_2
+3-hydroxypropanoate 	organic acid	ec3HP-malcoa.mat	c3	cluster_3
+Free fatty acids	fatty acids and lipids	ecFFAs.mat	c3	cluster_3
+laurate 	fatty acids and lipids	ecLaurate.mat	c3	cluster_3
+oleate 	fatty acids and lipids	ecOleate.mat	c3	cluster_3
+palmitoleate 	fatty acids and lipids	ecPalmitoleate.mat	c3	cluster_3
+L-cysteine 	amino acid	ecCysteine.mat	c3	cluster_4
+L-alanine 	amino acid	ecAlanine.mat	c3	cluster_4
+L-asparagine 	amino acid	ecAsparagine.mat	c3	cluster_4
+L-aspartate 	amino acid	ecAspartate.mat	c3	cluster_4
+L-histidine 	amino acid	ecHistidine.mat	c3	cluster_4
+L-homoserine 	amino acid	ecHomoserine.mat	c3	cluster_4
+L-isoleucine 	amino acid	ecIsoleucine.mat	c3	cluster_4
+L-methionine 	amino acid	ecMethionine.mat	c3	cluster_4
+L-serine 	amino acid	ecSerine.mat	c3	cluster_4
+L-threonine 	amino acid	ecThreonine.mat	c3	cluster_4
+L-valine 	amino acid	ecValine.mat	c3	cluster_4
+3-hydroxypropanoate 	organic acid	ec3HP-asp.mat	c3	cluster_4
+n-butanol 	alcohol	ecn-Butanol.mat	c3	cluster_4
+L-proline 	amino acid	ecProline.mat	c4	cluster_5
+glutathione 	amino acid	ecGlutathione.mat	c4	cluster_5
+putrescine 	bioamine	ecPutrescine.mat	c4	cluster_5
+spermine 	bioamine	ecSpermine.mat	c4	cluster_5
+ornithine 	amino acid	ecOrnithine.mat	c4	cluster_5
+L-arginine 	amino acid	ecArginine.mat	c4	cluster_5
+L-citrulline 	amino acid	ecCitrulline.mat	c4	cluster_5
+L-lysine 		ecLysine.mat	c4	cluster_5
+isoamylol 		ec3-methylbutanol.mat	c5	cluster_6
+L-leucine 		ecLeucine.mat	c5	cluster_6
+Itaconic acid 		ecItaconic_acid.mat	c5	cluster_6
+L-glutamate 		ecGlutamate.mat	c5	cluster_6
+L-glutamine 		ecGlutamine.mat	c5	cluster_6
+fumarate 	organic acid	ecFumaric_acid.mat	c6	cluster_7
+(S)-malate 	organic acid	ecMalate.mat	c6	cluster_7
+citrate 	organic acid	ecCitrate.mat	c6	cluster_7
+succinate 	organic acid	ecsuccinate.mat	c6	cluster_7
+2-oxoglutarate 	organic acid	ecOxoglutarate.mat	c6	cluster_7
+acetate 	organic acid	ecAcetate.mat	c6	cluster_7
+glycolate 	organic acid	ecGlycolate.mat	c6	cluster_7
+L-glycine 	amino acid	ecGlycine.mat	c6	cluster_7
+Adipic acid 	organic acid	ecAdipic_acid.mat	c7	cluster_8
+"cis,cis-muconate "	organic acid	eccis_Muconate.mat	c7	cluster_8
+glycerol 	alcohol	ecGlycerol.mat	c7	cluster_8
+L-tryptophan 	amino acid	ecTryptophan.mat	c7	cluster_9
+L-tyrosine 	amino acid	ecTyrosine.mat	c7	cluster_9
+4-hydroxymandelic 	aromatic	ec4-hydroxymandelic_acid.mat	c7	cluster_8
+cinnamate 	aromatic	ecCinnamate.mat	c7	cluster_9
+mandelic 	aromatic	ecmandelic_acid.mat	c7	cluster_9
+2-phenylethanol 	alcohol	ec2-phenylethanol.mat	c7	cluster_9
+L-phenylalanine 	amino acid	ecPhenylalanine.mat	c7	cluster_9
+(S)-lactate 	organic acid	ecLactate.mat	c8	cluster_10
+pyruvate 	organic acid	ecPyruvate.mat	c8	cluster_10
+"(R,R)-2,3-butanediol "	alcohol	"ecR,R-2,3-butanediol.mat"	c8	cluster_10
+isobutanol 	alcohol	ecIsobutanol.mat	c8	cluster_10
+psilocybin 	alkaloid	ecPsilocybin.mat	c9	cluster_11
+catechin 	flavonoid	ecCatechin.mat	c9	cluster_11
+genistein 	flavonoid	ecGenistein.mat	c9	cluster_11
+kaempferol 	flavonoid	ecKaempferol.mat	c9	cluster_11
+astaxanthin 	terpene	ecAstaxanthin.mat	c9	cluster_11
+lupeol 	terpene	ecLupeol.mat	c9	cluster_11
+patchoulol 	terpene	ecPatchoulol.mat	c9	cluster_11
+glycyrrhetinic_acid	terpene	ecglycyrrhetinic_acid.mat	c9	cluster_11
+lycopene	terpene	eclycopene.mat	c9	cluster_11
+miltiradiene	terpene	ecmiltiradiene.mat	c9	cluster_11
+(S)-Reticuline 	alkaloid	ecS_reticuline.mat	c9	cluster_11
+ergothioneine	amino acid	ecergothioneine.mat	c9	cluster_11
+betaxanthin 	terpene	ecBetaxanthin.mat	c10	cluster_12
+_-carotene 	terpene	ecbeta_Carotene.mat	c10	cluster_12
+Oleanolic acid 	terpene	ecOleanolate.mat	c10	cluster_12
+protopanaxadiol 	terpene	ecProtopanaxadiol.mat	c10	cluster_12
+nootkatone	terpene	ecnootkatone.mat	c10	cluster_12
+taxadien_5alpha_yl_acetate	terpene	ectaxadien_5alpha_yl_acetate.mat	c10	cluster_12
+valencene	terpene	ecvalencene.mat	c10	cluster_12
+naringenin 	flavonoid	ecNaringenin.mat	c10	cluster_12
+quercetin 	flavonoid	ecQuercetin.mat	c10	cluster_12
+vanillinbetaglucoside	aromatic	ecvanillin_beta_glucoside.mat	c10	cluster_12
+_-ionone 	aromatic	ecbeta_Ionone.mat	c10	cluster_12
+choline 	alkaloid	ecCholine.mat	c10	cluster_12
+cinnamoyltropine	alkaloid	eccinnamoyltropine.mat	c10	cluster_12
+Nicotianamine 	amino acid	ecNicotianamine.mat	c10	cluster_12
+caffeicacid	organic acid	eccaffeic_acid.mat	c10	cluster_12
+docosanol 	alcohol	ecDocosanol.mat	c10	cluster_12
+L-phenylacetylcarbinol 	alcohol	ecL_PAC.mat	c11	cluster_13
+hexanoate 	organic acid	ecHexanoate.mat	c11	cluster_13
+p-coumaric acid 	aromatic	ecCoumaric_acid.mat	c11	cluster_13
+rosmarinate 	aromatic	ecRosmarinic_acid.mat	c11	cluster_13
+resveratrol 	stilbenoids	ecResveratrol.mat	c11	cluster_13
+ARA 	fatty acids and lipids	ecARA.mat	c12	cluster_14
+DHA 	fatty acids and lipids	ecDHA.mat	c12	cluster_14
+EPA 	fatty acids and lipids	ecEPA.mat	c12	cluster_14
+hypoxanthine 	alkaloid	ecHypoxanthine.mat	c13	cluster_15
+xanthine 	alkaloid	ecXanthine.mat	c13	cluster_15
+Tyrosol 	aromatic	ecTyrosol.mat	c14	cluster_16
+Salidroside 	aromatic	ecSalidroside.mat	c14	cluster_16

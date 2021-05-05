@@ -11,6 +11,7 @@ library(tidyr)
 library(cluster)
 library(ggfortify)
 library(plotly)
+library(fmsb)
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -38,6 +39,7 @@ blank_theme <- theme_minimal()+
 #load matrix indicating the relation between gene targets and chemical products
 allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
 allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+#allTargetsMat <- read.csv('../results/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
 
 direction  <- c('OE','KD','KO')
 colors     <- cividis(11) 
@@ -48,7 +50,11 @@ chemicals <- data.frame(product = colnames(allTargetsMat)[5:(ncol(allTargetsMat)
 chemicals <- chemicals %>% separate(product, c("product", "family"), "_fam_")
 families  <- unique(chemicals$family)
 families  <- c(families,'ALL')
+#families  <- families[1]
+commonTargets <- c()
+columns <- c()
 for (fam in families){
+  newCol <- c()
   for (action in direction){
     
     if (action=='OE'){
@@ -94,6 +100,9 @@ for (fam in families){
     top10  <- matrix[1:threshold,]
     sumas  <- colSums(top10)
     newDF  <- data.frame(genes = rownames(matrix),occurrence = matrix$suma)
+    nChems <- ncol(matrix)-1
+    panGenes_num <- length(which(newDF$occurrence>=(nChems)))
+    newCol <- c(newCol,panGenes_num)
     newDF  <- newDF[1:threshold,]
     if (fam!='ALL'){
       newDF$occurrence <- newDF$occurrence/(ncol(matrix)-1)
@@ -127,10 +136,10 @@ for (fam in families){
       topGenesDF <- data.frame(geneNames,Family=gene_fam,stringsAsFactors = TRUE)
       topGenesDF$geneNames <- factor(topGenesDF$geneNames,levels = rownames(top10),ordered = TRUE)
       #plot
-      getPalette  <- colorRampPalette(brewer.pal(5, "Set1"))
       colourCount <- length(unique(topGenesDF$Family))
+      getPalette  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
       p <- ggplot(topGenesDF, aes(fill=Family, x=(geneNames))) + 
-        geom_bar(position="stack", stat="count") + theme_bw(base_size = 2*12)+
+        geom_bar(colour = 'black',position="stack", stat="count") + theme_bw(base_size = 2*12)+
         xlab('') + ylab('Number of chemicals') + scale_fill_manual(values = getPalette(colourCount))
       png(paste('../results/plots/gene_centric/topGenes_chemFam_',action,'_',fam,'.png',sep=''),width = 920, height = 600)
       plot(p)
@@ -149,4 +158,34 @@ for (fam in families){
       dev.off()
     }
   }
+  if (nChems>2 & fam!='ALL'){
+    commonTargets <- cbind(commonTargets,(newCol))
+    columns <- c(columns,fam)
+  }
 }
+rows <- c('OE','KD','KO')
+rownames(commonTargets) <- rows
+colnames(commonTargets) <- columns
+maxLim <- 20
+minLim <- 0
+commonTargets <- rbind(rep(maxLim,ncol(commonTargets)),rep(0,ncol(commonTargets)),commonTargets)
+commonTargets <- as.data.frame(commonTargets,stringsAsFactors = FALSE)
+
+#plot spider plot
+colors_border = c(rgb(0.8,0.6,0,0.8), rgb(0.4,0.4,0.40,0.8),rgb(0.1,0,0.8,0.8))
+colors_in     = c(rgb(0.8,0.6,0,0.2), rgb(0.4,0.4,0.40,0.2),rgb(0.1,0,0.8,0.2))
+plotName <- '../results/plots/panGenes_by_chemFam.png'
+png(plotName,width = 550, height = 500)
+radarchart( commonTargets , axistype=1 , 
+            #custom polygon
+            pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,
+            #custom the grid
+            cglcol="grey", cglty=1, axislabcol="black", caxislabels=seq(minLim,maxLim*100,(maxLim-minLim)/4), cglwd=1.5,
+            #custom labels
+            vlcex=2, calcex = 1.5)
+#plot(p)
+legend(x=1.1, y=1.1, legend = rows, bty = "n", pch=20 , col=colors_in , text.col = "black", cex=1.5, pt.cex=3)
+dev.off()
+
+
+
