@@ -10,7 +10,7 @@ GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
 maxRate = table([],[],[],[]);
 %Loop through all maxRate folders
-mkdir('../results/yieldPlots')
+mkdir('../results/production_capabilities/yieldPlots')
 for i=1:10%height(chemicals_info)
     compound = chemicals_info.Name{i};
     model    = [];
@@ -123,7 +123,7 @@ for i=1:10%height(chemicals_info)
                 end
                 %save plot file a jpg
                 set(gca,'FontSize',22)
-                saveas(gcf,['../results/yieldPlots/'  compound '_yieldPlot.jpg'])
+                saveas(gcf,['../results/production_capabilities/yieldPlots/'  compound '_yieldPlot.jpg'])
                 hold off
                 close all
             end
