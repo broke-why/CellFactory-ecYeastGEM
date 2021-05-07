@@ -19,7 +19,7 @@ if (exists("RStudio.Version")){
 } else {
   setwd(getSrcDirectory()[1])
 }
-dir.create('../results/plots/gene_centric')
+dir.create('../results/gene_centric')
 
 #Theme for plotting
 blank_theme <- theme_minimal()+
@@ -114,7 +114,7 @@ for (fam in families){
     if (fam!='ALL'){
       p <- p + ylim(c(0,1))
     }
-    plotTitle <- paste('../results/plots/gene_centric/top', action,'s_',fam,'.png',sep='')
+    plotTitle <- paste('../results/gene_centric/top', action,'s_',fam,'.png',sep='')
     png(plotTitle,width = 850, height = 600)
     plot(p)
     dev.off()
@@ -141,7 +141,7 @@ for (fam in families){
       p <- ggplot(topGenesDF, aes(fill=Family, x=(geneNames))) + 
         geom_bar(colour = 'black',position="stack", stat="count") + theme_bw(base_size = 2*12)+
         xlab('') + ylab('Number of chemicals') + scale_fill_manual(values = getPalette(colourCount))
-      png(paste('../results/plots/gene_centric/topGenes_chemFam_',action,'_',fam,'.png',sep=''),width = 920, height = 600)
+      png(paste('../results/gene_centric/topGenes_chemFam_',action,'_',fam,'.png',sep=''),width = 920, height = 600)
       plot(p)
       dev.off()
     }
@@ -153,7 +153,8 @@ for (fam in families){
       newDF <- data.frame(chemicals = rownames(matrix)[rowSums(matrix)>0],productNmr =sumas)
       p <- ggplot(newDF, aes(x=productNmr)) + geom_histogram(binwidth=1,fill=barColor)
       p <-  p + theme_bw(base_size = 2*12)+xlab('Number of products') + ylab('Number of gene targets')
-      png(paste('../results/plots/gene_centric/target_specificity_',action,'.png',sep=''),width = 650, height = 600)
+      #p <-  p + xlim(c(1,100))
+      png(paste('../results/gene_centric/target_specificity_',action,'.png',sep=''),width = 650, height = 600)
       plot(p)
       dev.off()
     }
