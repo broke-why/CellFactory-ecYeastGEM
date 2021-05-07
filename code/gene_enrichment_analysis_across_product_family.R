@@ -32,6 +32,7 @@ threshold <- 0.5
 # this function is used to run the above pipeline
 # this function could find the common gene targets used for OE, KD, KO over half of products in one family
 find_common_gene_target <- function(product_class, input_prediction0 = input_prediction,threshold) {
+  input_prediction0 <- fixColNames(input_prediction0)
   x <- product_class
   # calculation
   products_one_family <- chemicals_info$ecModel[chemicals_info$class == x]
@@ -40,17 +41,16 @@ find_common_gene_target <- function(product_class, input_prediction0 = input_pre
     str_replace_all(., "\\.mat", "") %>% str_replace_all(., "-", "") %>%
     str_replace_all(., "_", "") %>% str_replace_all(., ",", "") %>%
     str_replace_all(., "\\(", "") %>% str_replace_all(., "\\)", "") %>%
-    paste(., "_del_", sep = "") %>% # as the name of products need to be unified
     str_replace_all(., "^ec", "") %>%
     str_replace_all(., "[:digit:]", "") %>%
     str_to_lower(.) # remove the number at the start of string %>%
-  
+  #print(products_one_family)
   # extract gene target
   # check which metaboite does not have result
   all_product <- colnames(input_prediction0)[-(c(1:4))]
   metabolite_need_check <- setdiff(products_one_family, all_product)
   #print("metabolite name need check:---")
-  #print(metabolite_need_check)
+  print(metabolite_need_check)
   metabolite_with_gene_targes <- intersect(products_one_family, all_product)
   colnames <- c("genes", metabolite_with_gene_targes)
   gene_target <- input_prediction0[, colnames]
@@ -85,6 +85,17 @@ find_common_gene_target <- function(product_class, input_prediction0 = input_pre
   gene_select_KD <- filter(gene_top_rank, KD_occurance >= length(metabolite_with_gene_targes) * threshold) # only choose the gene targets overexpressed in more than half of products in one families
   gene_select_KO <- filter(gene_top_rank, KO_occurance >= length(metabolite_with_gene_targes) * threshold) # only choose the gene targets overexpressed in more than half of products in one families
   return(list(gene_select_OE, gene_select_KD, gene_select_KO))
+}
+
+fixColNames <- function(input_prediction){
+all_col <- colnames(input_prediction)
+prodNames <- all_col[5:length(all_col)]
+for (j in 1:length(prodNames)){
+  str <- substr(prodNames[j],1,(nchar(prodNames[j])-8))
+  prodNames[j] <- str
+}
+colnames(input_prediction)[5:length(input_prediction)] <- prodNames
+return(input_prediction)
 }
 
 targets_levels <- c('ecFSEOF','mech_validated','compatible')
@@ -188,7 +199,7 @@ for (directionality in analysisType){
       else{colour <- colors[3]}
       dataF$Count <- as.numeric(dataF$Count)/as.numeric(dataF$List.Total)
       
-      fileName <- paste('../results/plots/geneSet_',dataSource, '_enrichment_',directionality,'_',file0,'.png',sep='')
+      fileName <- paste('../results/gene_enrichment_',directionality,'_genes','/plots/geneSet_',dataSource, '_enrichment_',directionality,'_',file0,'.png',sep='')
       png(fileName,width=700, height=600)
       p1 <- ggplot(data=dataF , aes(x=Term, y=Count)) +
         geom_bar(stat="identity",fill=colour) +
