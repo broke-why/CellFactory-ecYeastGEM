@@ -4,8 +4,8 @@ current = pwd;
 chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
-load('../ModelFiles/mat/ecYeastGEM_batch.mat')
-load('../ModelFiles/mat/yeastGEM.mat')
+load('../ModelFiles/ecYeastGEM_batch.mat')
+load('../ModelFiles/yeastGEM.mat')
 GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
 maxRate = table([],[],[],[]);

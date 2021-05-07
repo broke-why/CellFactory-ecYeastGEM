@@ -109,7 +109,7 @@ chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$Name0, "^ec", "")
 chemicals_info$Name0 <- str_to_lower(chemicals_info$Name0)
 # product classification by Iven
-filename <- paste('../results/targets_summary.txt',sep='')
+filename <- paste('../results/production_targets/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 targets_summary$name0 <- str_replace_all(targets_summary$models, "^ec", "")
 #product_df$class <- getSingleReactionFormula(chemicals_info$class,chemicals_info$Name0,product_df$product)

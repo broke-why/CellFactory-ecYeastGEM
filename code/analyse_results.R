@@ -24,7 +24,7 @@ if (exists("RStudio.Version")){
 families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acids and lipids','flavonoid','aromatic','bioamine')
 codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
 #Load targets summary
-filename        <- paste('../results/targets_summary.txt',sep='')
+filename        <- paste('../results/production_targets/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 #Get pie chart for families of chemicals
 classes <- unique(targets_summary$chemClass)
@@ -125,7 +125,7 @@ colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
 p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family,colors = getPalette2(colourCount))
 saveWidget(p, "../results/plots/tsne_ALL.html", selfcontained = F, libdir = "lib")
 
-filename  <- paste('../results/targets_summary.txt',sep='')
+filename  <- paste('../results/production_targets/targets_summary.txt',sep='')
 targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 for (j in 1:length(families)){
   chemClass <- families[j] 
@@ -157,7 +157,7 @@ for (j in 1:length(families)){
     p <- p + theme_bw(base_size = 2*12) + xlab('') +
     ylab('# of targets')+ylim(c(0,100))+labs(fill = 'Modification') +
     scale_fill_manual(values = c(colors[11],colors[6],colors[3]))
-    plotTitle <- paste('../results/plots/allTargets',famCode,'.png',sep='')
+    plotTitle <- paste('../results/plots/targetDistributions',famCode,'.png',sep='')
     png(plotTitle,width = 600, height = 600)
     plot(p)
     dev.off()

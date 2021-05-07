@@ -1,5 +1,5 @@
 current = pwd;
-load('../ModelFiles/mat/ecYeastGEM_batch.mat')
+load('../ModelFiles/ecYeastGEM_batch.mat')
 [presence,iB] = ismember(ecModel_batch.genes,ecModel_batch.enzGenes);
 genesTable = table(ecModel_batch.genes,ecModel_batch.geneShortNames,'VariableNames',{'genes' 'shortNames'});
 genesTable.enzymes = cell(height(genesTable),1);
@@ -16,7 +16,7 @@ chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 comp_classes   = unique(chemicals_info.class);
 class_short    = {'alc' 'alk' 'AAs' 'aro' 'bio' 'FAL' 'fla' 'oAc' 'stb' 'ter'};
 %Iterate through all chemical compounds
-d = dir('../results');
+d = dir('../results/production_targets');
 isub = [d(:).isdir]; %# returns logical vector
 nameFolders = {d(isub).name}';
 for i=1:length(nameFolders)
@@ -43,9 +43,9 @@ for i=1:length(nameFolders)
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])
         %Open targets file
         try
-            candidates = readtable(['../results/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
-            %candidates = readtable(['../results/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
-            %candidates = readtable(['../results/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/production_targets/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            candidates = readtable(['../results/production_targets/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
 
             OEs=candidates.genes(candidates.k_scores>1);
             [~,iB]=ismember(OEs,genesTable.genes);
@@ -62,6 +62,6 @@ for i=1:length(nameFolders)
         end
     end
 end
-%writetable(genesTable,'../results/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
-%writetable(genesTable,'../results/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
-writetable(genesTable,'../results/targetsMatrix_ecFSEOF.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/production_targets/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+writetable(genesTable,'../results/production_targets/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/production_targets/targetsMatrix_FSEOF.txt','delimiter','\t','QuoteStrings',false)

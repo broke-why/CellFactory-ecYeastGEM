@@ -29,7 +29,7 @@ enzTable <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 filename <- paste('../data/keggPathways.txt',sep='')
 keggDF <- read.csv(filename,sep = '\t',stringsAsFactors = FALSE)
 #Load targets summary
-filename        <- paste('../results/targets_summary.txt',sep='')
+filename        <- paste('../results/production_targets/targets_summary.txt',sep='')
 targets_summary <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 #Get pie chart for families of chemicals
 classes <- unique(targets_summary$chemClass)
