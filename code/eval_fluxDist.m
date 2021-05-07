@@ -4,8 +4,8 @@ current = pwd;
 chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
-load('../ModelFiles/mat/ecYeastGEM_batch.mat')
-load('../ModelFiles/mat/yeastGEM.mat')
+load('../ModelFiles/ecYeastGEM_batch.mat')
+load('../ModelFiles/yeastGEM.mat')
 GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
 prod_capabilities  = table();
@@ -15,7 +15,7 @@ families = [];
 biomass_prod = false;
 Prot_cost =[]; 
 %Loop through all maxRate folders
-mkdir('../results/yieldPlots')
+mkdir('../results/production_capabilities/yieldPlots')
 for i=1:height(chemicals_info)
     compound = chemicals_info.Name{i};
     model    = [];
@@ -113,13 +113,14 @@ for i=1:height(chemicals_info)
     end
 end
 %
+mkdir('../results/production_capabilities')
 if biomass_prod
-    file1 = '../results/prodCapabilities_allChemicals_wBio.txt';
-    file2 = '../results/proteinLimitations_allChemicals_wBio.txt';
+    file1 = '../results/production_capabilities/prodCapabilities_allChemicals_wBio.txt';
+    file2 = '../results/production_capabilities/proteinLimitations_allChemicals_wBio.txt';
     file3 = '../results/fluxDist_distance_allChemicals_wBio.txt';
 else
-    file1 = '../results/prodCapabilities_allChemicals.txt';
-    file2 = '../results/proteinLimitations_allChemicals.txt';
+    file1 = '../results/production_capabilities/prodCapabilities_allChemicals.txt';
+    file2 = '../results/production_capabilities/proteinLimitations_allChemicals.txt';
     file3 = '../results/fluxDist_distance_allChemicals.txt';
 end
     

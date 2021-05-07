@@ -163,5 +163,6 @@ for i=1:length(fileNames)
 end
 varNames = {'chemical' 'bioY1' 'bioY2' 'bioY3' 'proY1' 'proY2' 'proY3' 'proR1' 'proR2' 'proR3'};
 newTable.Properties.VariableNames = varNames;
-writetable(newTable,'../results/production_capacity_comparison.txt','delimiter','\t','QuoteStrings',false)
+mkdir('../results/production_capabilities')
+writetable(newTable,'../results/production_capabilities/production_capacity_comparison.txt','delimiter','\t','QuoteStrings',false)
 
