@@ -68,8 +68,8 @@ p <- ggplot(df, aes(x='',y=perc,fill=classes)) +
 
 
 #Analyse targets matrix
-allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat    <- allTargetsMat
 targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
 #substitute values in matrix

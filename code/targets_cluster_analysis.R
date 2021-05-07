@@ -85,7 +85,7 @@ dev.off()
 targetType <- c('KO','KD','OE')
 for (i in 1:3){
   #Isolate targets group 
-  allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = FALSE)
+  allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = FALSE)
   targetsMat <-(allTargetsMat[,5:ncol(allTargetsMat)])
   targetsMat <- as.matrix(targetsMat)
   targetsMat[targetsMat != i] <- 0

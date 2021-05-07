@@ -36,7 +36,7 @@ prod_clusters$ecModel<- gsub('_','',prod_clusters$ecModel)
 prod_clusters$ecModel<-tolower(prod_clusters$ecModel)
 prod_clusters$ecModel<-gsub('[0-9]+', '', prod_clusters$ecModel)
 #
-allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat    <- allTargetsMat
 rownames(targetsMat) <- targetsMat$shortNames
 targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]

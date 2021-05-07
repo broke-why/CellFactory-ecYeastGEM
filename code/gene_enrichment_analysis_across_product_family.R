@@ -14,7 +14,7 @@ if (exists("RStudio.Version")){
 colors <- cividis(11)
 # input the predicted genes targets without background information
 # ecFSEOF
-input_prediction <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+input_prediction <- read.table("../results/production_targets/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # product family information
 chemicals_info <- read_excel("../data/chemicals_info.xlsx")
 chemicals_info$Name0 <- str_replace_all(chemicals_info$ecModel, ".mat", "")
@@ -102,7 +102,7 @@ targets_levels <- c('ecFSEOF','mech_validated','compatible')
 levels_abrv    <- c('FSEOF','mechVal','compatible')
 
 for (i in 1:length(targets_levels)){
-  inputName <- paste('../results/targetsMatrix_',targets_levels[i],'.txt',sep='')
+  inputName <- paste('../results/production_targets/targetsMatrix_',targets_levels[i],'.txt',sep='')
   input_prediction <- read.table(inputName, sep="\t", header = TRUE, stringsAsFactors = FALSE)
   newDF <- data.frame()
   families <- unique(chemicals_info$class)
@@ -119,7 +119,7 @@ for (i in 1:length(targets_levels)){
 }
 # here maybe we use the targetsMatrix_mech_validated to do the enrichment analysis
 # output over-expressed gene targets
-input_prediction <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+input_prediction <- read.table("../results/production_targets/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 #newDF <- data.frame()
 families <- unique(chemicals_info$class)
 
@@ -135,7 +135,7 @@ for (family in families){
 }
 out_gene_list$families <- families
 out_gene_list$OE_genelist <- gene_list_OE
-write.table(out_gene_list, "../results/targetsMatrix_mech_validated_OE_geneList.txt", row.names = FALSE, sep = "\t")
+write.table(out_gene_list, "../results/production_targets/targetsMatrix_mech_validated_OE_geneList.txt", row.names = FALSE, sep = "\t")
 # combine knock out and knock down together and then output the gene list
 out_gene_list2 = data.frame(families=families, stringsAsFactors = FALSE)
 gene_list_KD_KO= c()
@@ -153,7 +153,7 @@ for (family in families){
 }
 out_gene_list2$families <- families
 out_gene_list2$KO_KD_genelist <- gene_list_KD_KO
-write.table(out_gene_list2, "../results/targetsMatrix_mech_validated_KD_KO_geneList.txt", row.names = FALSE, sep = "\t")
+write.table(out_gene_list2, "../results/production_targets/targetsMatrix_mech_validated_KD_KO_geneList.txt", row.names = FALSE, sep = "\t")
 
 # do the enrichment analysis manually based on online toobox- DAVID https://david.ncifcrf.gov/summary.jsp
 analysisType <- c('OE','KD_KO')

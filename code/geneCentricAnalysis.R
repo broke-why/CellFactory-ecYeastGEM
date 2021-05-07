@@ -37,9 +37,9 @@ blank_theme <- theme_minimal()+
   )
 
 #load matrix indicating the relation between gene targets and chemical products
-allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
-#allTargetsMat <- read.csv('../results/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+#allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
 
 direction  <- c('OE','KD','KO')
 colors     <- cividis(11) 

@@ -22,13 +22,13 @@ gene_background0 <- filter(gene_background, !(overexpression=="" & downregulatio
 
 # input the predicted genes targets without background information
 # ecFSEOF
-ecFSEOF <- read.table("../results/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
-ecFSEOF <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+ecFSEOF <- read.table("../results/production_targets/targetsMatrix_ecFSEOF.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+ecFSEOF <- read.table("../results/production_targets/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 
 # mech-validated
-mech_validated <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+mech_validated <- read.table("../results/production_targets/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # compatible
-#compatible_gene <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+#compatible_gene <- read.table("../results/production_targets/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 
 find_common_gene <- function(s1, s2) {
   common <- vector()

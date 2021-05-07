@@ -34,8 +34,8 @@ blank_theme <- theme_minimal()+
 dir.create('../results/plots/chassis_strain')
 
 #Get heatmap for targets matrix
-allTargetsMat <- read.csv('../results/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-allTargetsMat <- read.csv('../results/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
 #Discard down-regulations (as they're not generalizable)
 allTargetsMat[allTargetsMat == 2] <- 0
 
