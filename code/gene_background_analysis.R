@@ -28,7 +28,7 @@ ecFSEOF <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", h
 # mech-validated
 mech_validated <- read.table("../results/targetsMatrix_mech_validated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # compatible
-compatible_gene <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+#compatible_gene <- read.table("../results/targetsMatrix_compatible.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 
 find_common_gene <- function(s1, s2) {
   common <- vector()
@@ -58,30 +58,39 @@ gene_background0$ovlp_KO_KD <- 0
 
 met_name_need_check <- vector()
 for (i in 1:nrow(gene_background0)) {
-  print(i)
   product0  <- gene_background0$results_folder[i]
   product00 <- str_replace(product0, "_targets", "")
   product00 <- product00 %>%
     str_replace_all(., "-", "") %>%
     str_replace_all(., "_", "")
-  product00 <- paste(product00, "_del_", sep = "")
+  product00 <- paste(product00, "_fam_", sep = "")
   # as the name of products need to be unified
   product00 <- str_replace(product00, "^[:digit:]", "") # remove the number at the start of string
   background_OE <- gene_background0$overexpression[i]
   #background_KD <- paste(gene_background0$downregulation[i],gene_background0$deletion[i])
   background_KO <- paste(gene_background0$downregulation[i],gene_background0$deletion[i],sep=',')
 
-  all_col      <- colnames(ecFSEOF)
+  all_col <- colnames(ecFSEOF)
+  prodNames <- all_col[5:length(all_col)]
+  for (j in 1:length(prodNames)){
+    str <- substr(prodNames[j],1,(nchar(prodNames[j])-3))
+    prodNames[j] <- str
+  }
+  all_col[5:length(all_col)] <- prodNames
   common_OE    <- NA
   common_KO_KD <- NA
-  if (product00 %in% all_col) {
+  presence <- grep(product00,all_col,fixed = TRUE)
+  if (length(presence)>=1) {
+    print(product00)
     # find the predicted genes based on the product name
-    col_select <- c(c("genes", "shortNames", "enzymes", "subSystems"), product00)
+    col_select <- c(1,2,3,4,presence) 
     predict_tagets <- ecFSEOF[, col_select]
-    predict_OE <- predict_tagets$genes[predict_tagets[[product00]] == 3]
-    predict_KO <- predict_tagets$genes[predict_tagets[[product00]] == 1 | predict_tagets[[product00]] == 2]
+    predict_OE <- predict_tagets$genes[predict_tagets[5] == 3]
+    predict_KO <- predict_tagets$genes[predict_tagets[5] == 1 | predict_tagets[5] == 2]
     #find intersect between predictions and data
     #OEs
+    print(predict_OE)
+    print(background_OE)
     temp       <- find_common_gene(background_OE, predict_OE)
     common_OE  <- temp[[1]]
     gene_background0$ovlp_OE[i] <- temp[[2]]
@@ -98,14 +107,15 @@ for (i in 1:nrow(gene_background0)) {
 }
 # save the analysis result
 df <- gene_background0
-write.table(df, "../results/Compare_predicted_targets_with_gene_background.txt", sep = "\t", row.names = FALSE)
+dir.create("../results/validation")
+write.table(df, "../results/validation/exp_validated_targets.txt", sep = "\t", row.names = FALSE)
 gene_background0$sum <- rowSums(gene_background0[,((ncol(gene_background0)-1):ncol(gene_background0))])
 gene_background0 <- gene_background0[gene_background0$sum>0,]
 temp <- data.frame(gene_background0[,((ncol(gene_background0)-2):(ncol(gene_background0)-1))])
 rownames(temp) <- gsub('.mat','',gene_background0$ecModel)
 rownames(temp) <- substring(rownames(temp),3)
 colnames(temp) <- c('OE','KD_KO')
-fileName <- '../results/plots/intersect_exp_pred_mech_targets.png'
+fileName <- '../results/validation/intersect_exp_pred_mech_targets.png'
 png(fileName,width=800, height=(nrow(temp)/22)*750)
 p <- pheatmap(temp,color = cividis(11),cluster_cols = F,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 20)
 dev.off()
