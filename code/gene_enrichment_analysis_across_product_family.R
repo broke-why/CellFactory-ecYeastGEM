@@ -114,7 +114,7 @@ for (i in 1:length(targets_levels)){
     newDF <- rbind(newDF,cbind(family,nrow(OE_out),nrow(KD_out),nrow(KO_out)))
   }
   colnames(newDF) <- c("family","OE","KD","KO")
-  outputName <- paste('../results/targetsOverlap_',levels_abrv[i],'.txt',sep='')
+  outputName <- paste('../results/validation/targetsOverlap_',levels_abrv[i],'.txt',sep='')
   write.table(newDF,outputName,sep='\t',quote=FALSE,row.names =FALSE)
 }
 # here maybe we use the targetsMatrix_mech_validated to do the enrichment analysis
