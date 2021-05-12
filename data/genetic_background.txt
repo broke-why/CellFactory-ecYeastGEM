@@ -13,7 +13,7 @@ _-Amylase	alpha_amylase_targets	ecalpha_Amylase.mat	Min	D-glucose
 Amorphadiene	amorphadiene_targets	ecAmorphadiene.mat	Min	D-glucose	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YNR043W,YJL167W,YPL117C"	YHR190W	"YBR020W,YBR018C,YBR019C"
 ARA	ara_targets	ecARA.mat	Min	D-glucose			
 Arginine	arginine_targets	ecArginine.mat	Min	D-glucose			
-Artemisinic acid	artemisinic_targets	ecArtemisinic.mat	YEP	D-glucose	"YML075C,YLR450W"	YHR190W	
+Artemisinic acid	artemisinic-acid_targets	ecArtemisinic.mat	YEP	D-glucose	"YML075C,YLR450W"	YHR190W	
 Asparagine	asparagine_targets	ecAsparagine.mat	Min	D-glucose			
 Aspartate	aspartate_targets	ecAspartate.mat	Min	D-glucose			
 Astaxanthin	astaxanthin_targets	ecAstaxanthin.mat	YEP	D-glucose	YML075C		
@@ -29,7 +29,7 @@ Trans-cinnamate	cinnamate_targets	ecCinnamate.mat	YEP	D-glucose
 Citrate	citrate_targets	ecCitrate.mat	Min	D-glucose			
 Citrulline	citrulline_targets	ecCitrulline.mat	Min	D-glucose			
 p-coumaric acid	coumaric_acid_targets	ecCoumaric_acid.mat	YEP	D-glucose			"YBR249C,YPR060C,YDR380W,YLR134W"
-p-coumaric acid	coumaric_acid_xylose_targets	ecCoumaric_acid_xylose.mat	Min	D-xylose			"YBR249C,YPR060C,YDR380W,YLR134W"
+p-coumaric acid	coumaric-acid_targets	ecCoumaric_acid_xylose.mat	Min	D-xylose			"YBR249C,YPR060C,YDR380W,YLR134W"
 Cysteine	cysteine_targets	ecCysteine.mat	Min	D-glucose			
 DHA	dha_targets	ecDHA.mat	Min	D-glucose			
 docosanol	docosanol_targets	ecDocosanol.mat	Min	D-glucose	"YJL196C,YCR034W,YNR016C"		"YCR048W,YOR245C,YNR019W,YNR008W,YGL205W,YLR372W,YBR020W"
@@ -98,7 +98,7 @@ Serine	serine_targets	ecSerine.mat	Min	D-glucose
 Spermine	spermine_targets	ecSpermine.mat	Min	D-glucose			
 Succinic acid	suc-retca_targets	ecSuc-reTCA.mat	Min	D-glucose			"YLR044C,YLR134W,YGR087C,YPL262W,YER065C,YNL117W"
 Succinic acid	suc_targets	ecSuc.mat	Min	D-glucose			
-"Taxa-4(20),11(12)-dien-6alpha-yl acetate"	taxadien_5alpha_yl_acetate_targets	ecTaxadien_5alpha_yl_acetate.mat	YEP	D-glucose	"YMR220W,YMR208W,YJL167W,YNR043W"		
+"Taxa-4(20),11(12)-dien-6alpha-yl acetate"	taxadien_alpha_yl_acetate_targets	ecTaxadien_5alpha_yl_acetate.mat	YEP	D-glucose	"YMR220W,YMR208W,YJL167W,YNR043W"		
 Threonine	threonine_targets	ecThreonine.mat	Min	D-glucose			
 Thymidine	thymidine_targets	ecThymidine.mat	Min	D-glucose			
 triacylglycerol	triacylglycerol_targets	ectriacylglycerol.mat	Min	D-glucose	"YNR016C,YMR165C"		"YMR313C,YKR089C,YOR081C,YPL147W"
@@ -108,7 +108,7 @@ Tyrosol	tyrosol_targets	ecTyrosol.mat	YEP	D-glucose			"YNL316C,YLR044C,YKL211C"
 Urea	urea_targets	ecUrea.mat	Min	D-glucose			
 Valencene	valencene_targets	ecValencene.mat	YEP	D-glucose	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YJL167W,YNR043W,YPL117C"	YHR190W	"YPL069C,YDR284C,YDR503C"
 Valine	valine_targets	ecValine.mat	Min	D-glucose			
-vanillin-_-glucoside	vanillin___glucoside_targets	ecVanillin___glucoside.mat	Min	D-glucose			"YMR318C,YLR300W"
+vanillin-_-glucoside	vanillinbetaglucoside_targets	ecVanillin___glucoside.mat	Min	D-glucose			"YMR318C,YLR300W"
 Vitamin A	vitamin_a_targets	ecVitamin_A.mat	Min	D-xylose			YPL061W
 Xanthine	xanthine_targets	ecXanthine.mat	Min	D-glucose			
 Xanthone	xanthone_targets	ecXanthone.mat	YEP	D-glucose		YJL167W	

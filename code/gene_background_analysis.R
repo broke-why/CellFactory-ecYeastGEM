@@ -15,7 +15,7 @@ if (exists("RStudio.Version")){
 
 # data preparation
 # input the genes from background strains
-gene_background <- read.table("../data/genetic_background_updated.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
+gene_background <- read.table("../data/genetic_background.txt", sep="\t", header = TRUE, stringsAsFactors = FALSE)
 # only keep products with gene background information
 # as a whole only 56 products have gene background information
 gene_background0 <- filter(gene_background, !(overexpression=="" & downregulation=="" & deletion==""))
