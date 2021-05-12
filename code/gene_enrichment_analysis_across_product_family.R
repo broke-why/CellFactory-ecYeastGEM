@@ -135,7 +135,7 @@ for (family in families){
 }
 out_gene_list$families <- families
 out_gene_list$OE_genelist <- gene_list_OE
-write.table(out_gene_list, "../results/production_targets/targetsMatrix_mech_validated_OE_geneList.txt", row.names = FALSE, sep = "\t")
+#write.table(out_gene_list, "../results/production_targets/targetsMatrix_mech_validated_OE_geneList.txt", row.names = FALSE, sep = "\t")
 # combine knock out and knock down together and then output the gene list
 out_gene_list2 = data.frame(families=families, stringsAsFactors = FALSE)
 gene_list_KD_KO= c()
@@ -153,7 +153,7 @@ for (family in families){
 }
 out_gene_list2$families <- families
 out_gene_list2$KO_KD_genelist <- gene_list_KD_KO
-write.table(out_gene_list2, "../results/production_targets/targetsMatrix_mech_validated_KD_KO_geneList.txt", row.names = FALSE, sep = "\t")
+#write.table(out_gene_list2, "../results/production_targets/targetsMatrix_mech_validated_KD_KO_geneList.txt", row.names = FALSE, sep = "\t")
 
 # do the enrichment analysis manually based on online toobox- DAVID https://david.ncifcrf.gov/summary.jsp
 analysisType <- c('OE','KD_KO')
