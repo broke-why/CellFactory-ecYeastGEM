@@ -35,13 +35,13 @@ Tryptophan	0.1			Min	D-glucose
 tyrosine	0.089			YEP	D-glucose	"YDR035W,YBR249C,YDR380W,Zwf1"
 Urea	0.1			Min	D-glucose	
 Valine	0.1			Min	D-glucose	
-vanillin-_-glucoside	0.3			Min	D-glucose	"YMR318C,YLR300W"
+vanillin-beta-glucoside	0.3			Min	D-glucose	"YMR318C,YLR300W"
 Xanthine	0.1			Min	D-glucose	
 Xanthone	0.1			YEP	D-glucose	
-_-Amylase	0.2			Min	D-glucose	
-_-Amyrin	0.1			YEP	D-glucose	
-_-Carotene	0.1			YEP	D-glucose	
-_-ionone	0.106			YEP	D-glucose	"YDR284C,YDR503C"
+alpha-Amylase	0.2			Min	D-glucose	
+beta-Amyrin	0.1			YEP	D-glucose	
+beta-Carotene	0.1			YEP	D-glucose	
+beta-ionone	0.106			YEP	D-glucose	"YDR284C,YDR503C"
 Isobutanol	0.1			YEP	D-glucose	"YPL061W,YHR208W"
 mandelic_acid				YEP	D-glucose	"YBR166C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"
 Tyrosol	0.1			YEP	D-glucose	"YNL316C,YLR044C,YKL211C"
