@@ -73,6 +73,18 @@ for i=1:length(fileNames)
             end
             WT_yield  = solution.x(growthPos)/(solution.x(CS_index)*CS_MW);
             disp(['The maximum biomass yield is ' num2str(WT_yield) '[g biomass/g carbon source]']);
+            %reformat chemical name
+            modelName = strrep(modelName,' ','_');
+            modelName = strrep(modelName,'-','_');
+            modelName = strrep(modelName,',','');
+            modelName = strrep(modelName,'(','');
+            modelName = strrep(modelName,')','');
+            modelName = regexprep(modelName,'[0-9]','');
+            modelName = strrep(modelName,'__','');
+            modelName = lower(modelName);
+            while startsWith(modelName,'_')
+                modelName = modelName(2:end);
+            end
             
             if flux & solution.x(growthPos)>0
                 %Run Enzyme sensitivity analysis

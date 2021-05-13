@@ -23,8 +23,9 @@ for i=1:length(nameFolders)
     folder = nameFolders{i};
     if contains(folder,'_targets')        
         chemical = strrep(folder,'_targets','');
-        chemical = regexprep(chemical,'[^a-zA-Z]','');
-        model_idx = find(strcmpi(chemicals_info.ecModel,['ec' strrep(folder,'_targets','') '.mat']));
+        %chemical = regexprep(chemical,'[^a-zA-Z]','');
+        str = strrep(folder,'_targets','');
+        model_idx = find(strcmpi(chemicals_info.internal_ids,str));
         if ~isempty(model_idx)
             class = find(strcmpi(comp_classes,chemicals_info.class(model_idx)));
         %else
@@ -34,18 +35,24 @@ for i=1:length(nameFolders)
         %if ~isempty(idx)
         newStr = [lower(chemical) '_fam_' class_short{class}];
         newStr = strrep(newStr,' ','_');
+        newStr = strrep(newStr,'-','_');
         newStr = strrep(newStr,',','');
         newStr = strrep(newStr,'(','');
         newStr = strrep(newStr,')','');
-
+        newStr = regexprep(newStr,'[0-9]','');
+        newStr = strrep(newStr,'__','');
+        while startsWith(newStr,'_')
+        	newStr = newStr(2:end);
+        end
+        
         %disp(newStr)
         %create new column for chemical
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])
         %Open targets file
         try
             %candidates = readtable(['../results/production_targets/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
-            %candidates = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
-            candidates = readtable(['../results/production_targets/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
+            candidates = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/production_targets/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
 
             OEs=candidates.genes(candidates.k_scores>1);
             [~,iB]=ismember(OEs,genesTable.genes);
@@ -62,6 +69,6 @@ for i=1:length(nameFolders)
         end
     end
 end
-%writetable(genesTable,'../results/production_targets/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
-writetable(genesTable,'../results/production_targets/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
+writetable(genesTable,'../results/production_targets/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/production_targets/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
 %writetable(genesTable,'../results/production_targets/targetsMatrix_FSEOF.txt','delimiter','\t','QuoteStrings',false)
