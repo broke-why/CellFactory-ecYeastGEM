@@ -50,8 +50,8 @@ for i=1:length(nameFolders)
         eval(['genesTable.' newStr '=zeros(height(genesTable),1);'])
         %Open targets file
         try
-            %candidates = readtable(['../results/production_targets/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
-            candidates = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+            candidates = readtable(['../results/production_targets/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
+            %candidates = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
             %candidates = readtable(['../results/production_targets/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
 
             OEs=candidates.genes(candidates.k_scores>1);
@@ -69,6 +69,6 @@ for i=1:length(nameFolders)
         end
     end
 end
-writetable(genesTable,'../results/production_targets/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
+%writetable(genesTable,'../results/production_targets/targetsMatrix_mech_validated.txt','delimiter','\t','QuoteStrings',false)
 %writetable(genesTable,'../results/production_targets/targetsMatrix_compatible.txt','delimiter','\t','QuoteStrings',false)
-%writetable(genesTable,'../results/production_targets/targetsMatrix_FSEOF.txt','delimiter','\t','QuoteStrings',false)
+writetable(genesTable,'../results/production_targets/targetsMatrix_FSEOF.txt','delimiter','\t','QuoteStrings',false)
