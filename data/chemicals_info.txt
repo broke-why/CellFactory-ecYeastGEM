@@ -1,6 +1,6 @@
 Name	Formula	KEGG_ID	CHEBI_ID	MW	Group	class	ecModel	internal_ids
-L-phenylacetylcarbinol 	C9H10O2	NA	NA	1	heterologous	alcohol	ecL_PAC.mat	l_pac
-n-butanol 	C4H10O	C06142	28885	1	heterologous	alcohol	ecn-Butanol.mat	n_butanol
+L-phenylacetylcarbinol 	C9H10O2	NA	NA	150.174	heterologous	alcohol	ecL_PAC.mat	l_pac
+n-butanol 	C4H10O	C06142	28885	74.23	heterologous	alcohol	ecn-Butanol.mat	n_butanol
 docosanol 	C22H46O	D03884	31000	326.61	heterologous	alcohol	ecDocosanol.mat	docosanol
 "(R,R)-2,3-butanediol "	C4H10O2	C03044	16982	90.121	native	alcohol	"ecR,R-2,3-butanediol.mat"	rrbutanediol
 2-phenylethanol 	C8H10O	C05853	49000	122.1644	native	alcohol	ec2-phenylethanol.mat	phenylethanol
@@ -39,13 +39,13 @@ L-tryptophan 	C11H12N2O2	C00078	16828	204.22526	native	amino acid	ecTryptophan.m
 L-tyrosine 	C9H11NO3	C00082	17895	181.18858	native	amino acid	ecTyrosine.mat	tyrosine
 L-valine 	C5H11NO2	C00183	16414	117.14638	native	amino acid	ecValine.mat	valine
 ornithine 	C5H13N2O2	C01602	46912	133.169	native	amino acid	ecOrnithine.mat	ornithine
-4-hydroxymandelic 	C8H8O4	C11527	16388	1	heterologous	aromatic	ec4-hydroxymandelic_acid.mat	hydroxymandelic_acid
-cinnamate 	C9H8O2	C00423	15669�	1	heterologous	aromatic	ecCinnamate.mat	cinnamate
-mandelic 	C8H8O3	C01984	17756	1	heterologous	aromatic	ecmandelic_acid.mat	mandelic_acid
+4-hydroxymandelic 	C8H8O4	C11527	16388	168.148	heterologous	aromatic	ec4-hydroxymandelic_acid.mat	hydroxymandelic_acid
+cinnamate 	C9H8O2	C00423	15669	148.1586	heterologous	aromatic	ecCinnamate.mat	cinnamate
+mandelic acid	C8H8O3	C01984	17756	152.1473	heterologous	aromatic	ecmandelic_acid.mat	mandelic_acid
 p-coumaric acid 	C9H8O3	C00811	32374	164.0473	heterologous	aromatic	ecCoumaric_acid.mat	coumaric_acid
-rosmarinate 	C18H16O8	C01850	50371	1	heterologous	aromatic	ecRosmarinic_acid.mat	rosmarinic_acid
-Salidroside 	C14H20O7	C06046	9009	1	heterologous	aromatic	ecSalidroside.mat	salidroside
-Tyrosol 	C8H10O2	C06044	1879	1	heterologous	aromatic	ecTyrosol.mat	tyrosol
+rosmarinate 	C18H16O8	C01850	50371	360.31	heterologous	aromatic	ecRosmarinic_acid.mat	rosmarinic_acid
+Salidroside 	C14H20O7	C06046	9009	300.307	heterologous	aromatic	ecSalidroside.mat	salidroside
+Tyrosol 	C8H10O2	C06044	1879	138.164	heterologous	aromatic	ecTyrosol.mat	tyrosol
 vanillinbetaglucoside		NA	NA	314.29	heterologous	aromatic	ecVanillin_beta_glucoside.mat	vanillin_beta_glucoside
 beta-ionone 	C13H20O	C12287	32325	192.3	heterologous	aromatic	ecbeta_Ionone.mat	beta_ionone
 putrescine 	C4H14N2	C00134	326268	90.1674	native	bioamine	ecPutrescine.mat	putrescine
@@ -65,9 +65,9 @@ kaempferol 	C15H10O6	C05903	28499	286.23	heterologous	flavonoid	ecKaempferol.mat
 naringenin 	C15H12O5	C00509	17846	272.257	heterologous	flavonoid	ecNaringenin.mat	naringenin
 quercetin 	C15H10O7	C00389	16243	302.236	heterologous	flavonoid	ecQuercetin.mat	quercetin
 3-hydroxypropanoate 	C3H6O3	C01013	16510	90.08	heterologous	organic acid	ec3HP-asp.mat	hp_asp
-Adipic acid 	C6H10O4	D08839�	30832	1	heterologous	organic acid	ecAdipic_acid.mat	adipic_acid
-"cis,cis-muconate "	C6H6O4	C02480	16508	1	heterologous	organic acid	eccis_Muconate.mat	cis_muconate
-Itaconic acid 	C5H6O4	C00490	17240	1	heterologous	organic acid	ecItaconic_acid.mat	itaconic_acid
+Adipic acid 	C6H10O4	D08839�	30832	146.14	heterologous	organic acid	ecAdipic_acid.mat	adipic_acid
+"cis,cis-muconate"	C6H6O4	C02480	16508	142.11	heterologous	organic acid	eccis_Muconate.mat	cis_muconate
+Itaconic acid 	C5H6O4	C00490	17240	130.1	heterologous	organic acid	ecItaconic_acid.mat	itaconic_acid
 caffeicacid	NA	NA	NA	180.16	heterologous	organic acid	ecCaffeic_acid.mat	caffeic_acid
 succinate 	NA	NA	NA	118.09	native	organic acid	ecSuccinate.mat	succinate
 (S)-lactate 	C3H6O3	C00186	16651	89.07	native	organic acid	ecLactate.mat	lactate
@@ -83,18 +83,18 @@ resveratrol 	C14H12O3	C03582	27881	228.25	heterologous	stilbenoids	ecResveratrol
 astaxanthin 	C40H52O4	C08580	40968	596.841	heterologous	terpene	ecAstaxanthin.mat	astaxanthin
 betaxanthin 	C18H18N2O7	C08565	8341	358.3	heterologous	terpene	ecBetaxanthin.mat	betaxanthin
 beta-carotene 	C40H56	C02094	17579	536.8726	heterologous	terpene	ecbeta_Carotene.mat	beta_carotene
-artemisinic acid 	C15H22O2	C20309	63749	1	heterologous	terpene	ecArtemisinic_acid.mat	artemisinic_acid
-alpha-Farnesene 	C15H24	C09665	10280	1	heterologous	terpene	ecFarnesene.mat	farnesene
+artemisinic acid 	C15H22O2	C20309	63749	234.33	heterologous	terpene	ecArtemisinic_acid.mat	artemisinic_acid
+alpha-Farnesene 	C15H24	C09665	10280	204.36	heterologous	terpene	ecFarnesene.mat	farnesene
 amorphadiene 	C15H24	C16028	52026	204.351	heterologous	terpene	ecAmorphadiene.mat	amorphadiene
-Geraniol 	C10H18O	C01500	17447	1	heterologous	terpene	ecGeraniol.mat	geraniol
-Limonene 	C10H16	C06078	15384	1	heterologous	terpene	ecLimonene.mat	limonene
-linalool 	C10H18O	C03985	17580	1	heterologous	terpene	ecLinalool.mat	linalool
+Geraniol 	C10H18O	C01500	17447	154.25	heterologous	terpene	ecGeraniol.mat	geraniol
+Limonene 	C10H16	C06078	15384	136.24	heterologous	terpene	ecLimonene.mat	limonene
+linalool 	C10H18O	C03985	17580	154.25	heterologous	terpene	ecLinalool.mat	linalool
 lupeol 	C30H50O	C08628	6570	426.72	heterologous	terpene	ecLupeol.mat	lupeol
-Oleanolic acid 	C30H48O3	C17148	37659	1	heterologous	terpene	ecOleanolate.mat	oleanolate
+Oleanolic acid 	C30H48O3	C17148	37659	456.7	heterologous	terpene	ecOleanolate.mat	oleanolate
 patchoulol 	C15H26O	C19755	7940	222.36	heterologous	terpene	ecPatchoulol.mat	patchoulol
 protopanaxadiol 	C30H52O3	C20715�	75950	460.73	heterologous	terpene	ecProtopanaxadiol.mat	protopanaxadiol
 Santalene 	C15H24	C19736	NA	204.35	heterologous	terpene	ecSantalene.mat	santalene
-beta-Amyrin 	C30H50O	C08616	10352	1	heterologous	terpene	ecbeta_Amyrin.mat	beta_amyrin
+beta-Amyrin 	C30H50O	C08616	10352	426.72	heterologous	terpene	ecbeta_Amyrin.mat	beta_amyrin
 glycyrrhetinic_acid	NA	NA	NA	470.7	heterologous	terpene	ecGlycyrrhetinic_acid.mat	glycyrrhetinic_acid
 lycopene	NA	NA	NA	536.873	heterologous	terpene	ecLycopene.mat	lycopene
 miltiradiene	NA	NA	NA	272.5	heterologous	terpene	ecMiltiradiene.mat	miltiradiene
