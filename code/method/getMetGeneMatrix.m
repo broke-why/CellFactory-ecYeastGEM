@@ -1,5 +1,5 @@
-function [GeneMetMatrix,metsConectivity,genesConectivity] = getGeneMetMatrix(model,genes)
-%getGeneMetMatrix
+function [GeneMetMatrix,metsConectivity,genesConectivity] = getMetGeneMatrix(model,genes)
+%getMetGeneMatrix
 %   
 %   Function that obtains a binary matrix in which rows represent
 %   metabolites and columns genes. Each non-zero coeffiecient represents
