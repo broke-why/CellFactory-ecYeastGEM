@@ -2,6 +2,8 @@ clear
 current = pwd;
 %subSystems_GEM = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
 chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
+pathways = readtable('../data/chemicals_info.txt','Delimiter','\t');
+
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
 load('../ModelFiles/ecYeastGEM_batch.mat')
@@ -33,6 +35,7 @@ for i=1:height(chemicals_info)
         ecModel = model;
         %Check presence of objective reaction
         index_ec = find(model.c);
+        indexProt= find(contains(model.rxnNames,'prot_pool_exchange'));
         objRxn   = model.rxns(index_ec);
         indexGEM = find(strcmpi(GEM.rxns,objRxn));
         if ~isempty(index_ec)
@@ -68,15 +71,12 @@ for i=1:height(chemicals_info)
                 %If objective reaction is also present in GEM, then add GEM
                 CS_index  = find(strcmpi(ecModel.rxnNames,'D-glucose exchange (reversible)'));
                 growthPos = find(strcmpi(ecModel.rxnNames,'growth'));
-                [bioY_ec,proY_ec,rate_ec,fluxDist] = calculate_potential(ecModel,growthPos,index_ec,CS_index,0.180,biomass_prod);
+                [bioY_ec,proY_ec,rate_ec,fluxDist,cFlux] = calculate_potential(ecModel,growthPos,index_ec,CS_index,0.180,biomass_prod);
                 %Get flux distribution
-                cost = fluxDist.flux(strcmpi(fluxDist.rxns,ecModel.rxns(index_ec)));
+                cost = fluxDist.flux(strcmpi(fluxDist.rxns,ecModel.rxns(indexProt)));
                 [presence,iB]   = ismember(fluxes.rxns,fluxDist.rxns);
                 fluxes = fluxes(presence,:);
                 fluxDist = fluxDist(iB(presence),:);
-                if ~biomass_prod
-                    cost = fluxDist.flux(strcmpi(fluxDist.rxns,'prot_pool_exchange'))/cost;
-                end
                 str = strrep(chemicals_info.ecModel{i},'-','_');
                 str = str(3:(end-3));
                 str = regexprep(str,'[^a-zA-Z]','');
@@ -102,7 +102,7 @@ for i=1:height(chemicals_info)
                 else
                     bioY =NaN;proY=NaN;rate=NaN;
                 end
-                newRow            = [{compound},bioY_ec,proY_ec,rate_ec,bioY,proY,rate];
+                newRow            = [{compound},chemicals_info.Group(i),chemicals_info.class(i),chemicals_info.MW(i),bioY,proY,rate,bioY_ec,proY_ec,rate_ec,cFlux,cost];
                 prod_capabilities = [prod_capabilities; newRow];
                 families = [families;chemicals_info.class(i)];
                 Prot_cost =[Prot_cost;cost]; 
@@ -124,16 +124,9 @@ else
     file3 = '../results/fluxDist_distance_allChemicals.txt';
 end
     
-prod_capabilities.Properties.VariableNames = {'compound' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem'};
+prod_capabilities.Properties.VariableNames = {'compound' 'type' 'family' 'MW' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'cFlux' 'Pburden'};
 writetable(prod_capabilities,file1,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
 %
-FC = prod_capabilities.prodYield_ec./prod_capabilities.prodRate_ec;
-newTable = table(prod_capabilities.compound,FC,families);
-newTable.Properties.VariableNames = {'compound' 'Prod_FC' 'family'};
-if ~isempty(Prot_cost)
-    newTable.Prot_cost = Prot_cost;
-end
-writetable(newTable,file2,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
 %calculate euclidean distance matrix (flux distributions)
 [m,n]   = size(fluxes);
 distMat = zeros(n-1,n-1);
@@ -147,5 +140,5 @@ end
 distMat = array2table(distMat);
 distMat.Properties.VariableNames = fluxes.Properties.VariableNames(2:end);
 distMat.Properties.RowNames = fluxes.Properties.VariableNames(2:end);
-writetable(distMat,file3,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
+%writetable(distMat,file3,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
     
