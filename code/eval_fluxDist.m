@@ -2,7 +2,6 @@ clear
 current = pwd;
 %subSystems_GEM = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
 chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');
-pathways = readtable('../data/chemicals_info.txt','Delimiter','\t');
 
 d         = dir('../results');
 isub      = [d(:).isdir]; %# returns logical vector
@@ -71,7 +70,10 @@ for i=1:height(chemicals_info)
                 %If objective reaction is also present in GEM, then add GEM
                 CS_index  = find(strcmpi(ecModel.rxnNames,'D-glucose exchange (reversible)'));
                 growthPos = find(strcmpi(ecModel.rxnNames,'growth'));
-                [bioY_ec,proY_ec,rate_ec,fluxDist,cFlux] = calculate_potential(ecModel,growthPos,index_ec,CS_index,0.180,biomass_prod);
+                [bioY_ec,proY_ec,rate_ec,fluxDist,cFlux_l,cFlux_h] = calculate_potential(ecModel,growthPos,index_ec,CS_index,0.180,biomass_prod);
+                enzUsages = fluxDist(contains(fluxDist.rxns,'prot_'),:);
+                %Get burden of CCM enzymes
+                CCMratio = get_CCM_enzBurden(fluxDist,ecModel);
                 %Get flux distribution
                 cost = fluxDist.flux(strcmpi(fluxDist.rxns,ecModel.rxns(indexProt)));
                 [presence,iB]   = ismember(fluxes.rxns,fluxDist.rxns);
@@ -102,7 +104,7 @@ for i=1:height(chemicals_info)
                 else
                     bioY =NaN;proY=NaN;rate=NaN;
                 end
-                newRow            = [{compound},chemicals_info.Group(i),chemicals_info.class(i),chemicals_info.MW(i),bioY,proY,rate,bioY_ec,proY_ec,rate_ec,cFlux,cost];
+                newRow            = [{compound},chemicals_info.Group(i),chemicals_info.class(i),chemicals_info.MW(i),bioY,proY,rate,bioY_ec,proY_ec,rate_ec,cFlux_l,cFlux_h,cost,CCMratio];
                 prod_capabilities = [prod_capabilities; newRow];
                 families = [families;chemicals_info.class(i)];
                 Prot_cost =[Prot_cost;cost]; 
@@ -124,7 +126,7 @@ else
     file3 = '../results/fluxDist_distance_allChemicals.txt';
 end
     
-prod_capabilities.Properties.VariableNames = {'compound' 'type' 'family' 'MW' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'cFlux' 'Pburden'};
+prod_capabilities.Properties.VariableNames = {'compound' 'type' 'family' 'MW' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'cFlux_l' 'cFlux_h' 'Pburden' 'CCMratio'};
 writetable(prod_capabilities,file1,'QuoteStrings',false,'WriteRowNames',true,'WriteVariableNames',true,'Delimiter','\t')
 %
 %calculate euclidean distance matrix (flux distributions)

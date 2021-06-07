@@ -12,14 +12,20 @@ yield       = [];
 oxygen      = [];
 EtOH        = [];
 iterations  = 10;
+if GUR>1
+    lower_uptk = 0;
+else 
+    lower_uptk = GUR;
+end
+
 if ~ecM
     glucIndex = find(strcmpi(model.rxnNames,'D-glucose exchange'));
     model = setParam(model,'lb',glucIndex,-1.000001*GUR);
-    model = setParam(model,'ub',glucIndex,-0.999999*GUR);
+    model = setParam(model,'ub',glucIndex,-0.999999*lower_uptk);
 else
     glucIndex = find(strcmpi(model.rxnNames,'D-glucose exchange (reversible)'));
     model     = setParam(model,'ub',glucIndex,1.000001*GUR);
-    model     = setParam(model,'lb',glucIndex,0.999999*GUR);
+    model     = setParam(model,'lb',glucIndex,0.999999*lower_uptk);
 end 
 model  = setParam(model,'ub',model.rxns(growthIndex),1000);
 model  = setParam(model,'lb',model.rxns(growthIndex),0);
@@ -41,7 +47,7 @@ for i=1:iterations+1
         % Calculate biomass yield (g biomass/g glucose)
         value    = Drate/abs(GURsim*0.180156);
         BioYield = [BioYield; value];
-        % Calculate 3HP yield [mmol product/mmol glucose]
+        % Calculate  yield [mmol product/mmol glucose]
         value = production*MW/abs(GURsim*0.180156);
         yield = [yield; value];
         oxygen = [oxygen;solution.x(oxIndex)];

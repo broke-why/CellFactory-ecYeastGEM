@@ -9,9 +9,10 @@ load('../ModelFiles/yeastGEM.mat')
 GEM  = ravenCobraWrapper(model);
 chemicals_info.Name = strtrim(chemicals_info.Name);
 maxRate = table([],[],[],[]);
+failed = [];
 %Loop through all maxRate folders
 mkdir('../results/production_capabilities/yieldPlots')
-for i=1:10%height(chemicals_info)
+for i=1:height(chemicals_info)
     compound = chemicals_info.Name{i};
     model    = [];
     %try to load GEM
@@ -32,7 +33,7 @@ for i=1:10%height(chemicals_info)
         indexGEM = find(strcmpi(GEM.rxns,objRxn));
         if ~isempty(index_ec)
             %c_source = 'D-glucose exchange';
-            if startsWith(compound,'L-')
+            if startsWith(compound,'L-') | contains(compound,'lutathione') 
                 AA = true;
             else
                 AA = false;
@@ -50,6 +51,7 @@ for i=1:10%height(chemicals_info)
             flux_ec = obj1>=1E-6;
 
             if ~flux_ec | ~gRate
+                pause
                 ecModel = changeMedia_batch(ecModel,'D-glucose exchange (reversible)','YEP',AA);
                 %check flux
                 sol1    = solveLP(ecModel,1);
@@ -62,7 +64,7 @@ for i=1:10%height(chemicals_info)
                 %consumption
                 temp = setParam(ecModel,'obj','r_2111',1);
                 [BioYield_ec_l,yield_ec_l] = getYieldPlot(ecModel,index_ec,1,MWeight);
-                [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,18,MWeight);
+                [BioYield_ec_h,yield_ec_h] = getYieldPlot(ecModel,index_ec,10,MWeight);
                 if any(yield_ec_l>1) | any(yield_ec_h>1)
                     disp(['Yield > 1 for : ' compound ' (ecModel)'])
                 end
@@ -104,7 +106,7 @@ for i=1:10%height(chemicals_info)
                     if obj2>0
                         maxRate = [maxRate;{compound} {-sol1.f} {-sol2.f} {FC}];
                         [BioYield_l,yield_l] = getYieldPlot(GEM,indexGEM,1,MWeight);
-                        [BioYield_h,yield_h] = getYieldPlot(GEM,indexGEM,18,MWeight);
+                        [BioYield_h,yield_h] = getYieldPlot(GEM,indexGEM,10,MWeight);
                         plot(BioYield_l,yield_l,'-.','LineWidth',4)%,'Color','blue')'
                         plot(BioYield_h,yield_h,'-.','LineWidth',4)%,'Color','yellow')
                         legend({'ecModel low' 'ecModel high' 'GEM low' 'GEM high'})
@@ -130,5 +132,6 @@ for i=1:10%height(chemicals_info)
         end
     else
         sprintf(['GEM file for: ' compound ' not found.\n'])
+        failed = [failed; {compound}];
     end
 end
