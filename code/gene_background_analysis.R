@@ -1,9 +1,19 @@
 # This script is used to compare the predicted genes from ecFSEOF and the genes used in the reference strains.
 library(ggplot2)
-library(tidyverse)
-library(readxl)
-library(pheatmap)
+library(scales)
 library(viridis)
+library(reshape)
+library(RColorBrewer)
+library(pheatmap)
+library(Rtsne)
+library(dplyr)
+library(tidyr)
+library(cluster)
+library(ggfortify)
+library(plotly)
+library(htmlwidgets)
+library(fmsb)
+library(reshape2)
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -115,8 +125,31 @@ temp <- data.frame(gene_background0[,((ncol(gene_background0)-2):(ncol(gene_back
 rownames(temp) <- gsub('.mat','',gene_background0$ecModel)
 rownames(temp) <- substring(rownames(temp),3)
 colnames(temp) <- c('OE','KD_KO')
-fileName <- '../results/validation/intersect_exp_pred_mech_targets.png'
-png(fileName,width=800, height=(nrow(temp)/22)*750)
-p <- pheatmap(temp,color = cividis(11),cluster_cols = F,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 20)
+#fileName <- '../results/validation/intersect_exp_pred_mech_targets.png'
+#png(fileName,width=800, height=(nrow(temp)/22)*750)
+#p <- pheatmap(temp,color = cividis(11),cluster_cols = F,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 20)
+#dev.off()
+
+shortNames <- c('2PE','Amo','Far','Ger','Glu','Mal','Mil','Orn','Pyr','San','Val','Ntk','Cnt','Sqn')
+newDF <- t(temp)
+maxLim <- 1# max(newDF)
+minLim <- 0
+newDF <- rbind(rep(maxLim,ncol(newDF)),rep(0,ncol(newDF)),newDF)
+newDF <- as.data.frame(newDF,stringsAsFactors = FALSE)
+colnames(newDF) <- shortNames
+colors_border = c(rgb(0.8,0.6,0,0.8), rgb(0.1,0,0.8,0.8),rgb(0.4,0.4,0.40,0.8))
+colors_in     = c(rgb(0.8,0.6,0,0.2), rgb(0.1,0,0.8,0.2),rgb(0.4,0.4,0.40,0.2))
+plotName <- '../results/validation/targets_consistency_score.pdf'
+pdf(plotName,width = 5.5, height = 5)
+radarchart( newDF , axistype=1 , 
+            #custom polygon
+            pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,
+            #custom the grid
+            cglcol="grey", cglty=1, axislabcol="black", caxislabels=seq(minLim,maxLim*100,(maxLim-minLim)/4), cglwd=1.5,
+            #custom labels
+            vlcex=2, calcex = 1.5)
+#plot(p)
+#legend(x=1.1, y=1.1, legend = c(''), bty = "n", pch=20 , col=colors_in , text.col = "black", cex=1.5, pt.cex=3)
 dev.off()
+
 

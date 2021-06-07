@@ -32,9 +32,13 @@ clusters      <- unique(prod_clusters$cluster)
 prod_clusters$ecModel<- gsub('-','_',prod_clusters$ecModel)
 prod_clusters$ecModel<- gsub(',','_',prod_clusters$ecModel)
 prod_clusters$ecModel<- substr(prod_clusters$ecModel,3,(nchar(prod_clusters$ecModel)-4))
-prod_clusters$ecModel<- gsub('_','',prod_clusters$ecModel)
+#prod_clusters$ecModel<- gsub('_','',prod_clusters$ecModel)
+prod_clusters$ecModel<- gsub('__','',prod_clusters$ecModel)
 prod_clusters$ecModel<-tolower(prod_clusters$ecModel)
 prod_clusters$ecModel<-gsub('[0-9]+', '', prod_clusters$ecModel)
+prod_clusters$ecModel[grep('butanediol',prod_clusters$ecModel)] <- 'rrbutanediol'
+idxs <- grep('_',substr(prod_clusters$ecModel,1,1))
+prod_clusters$ecModel[idxs] <- substr(prod_clusters$ecModel[idxs],2,nchar(prod_clusters$ecModel[idxs]))
 #
 allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat    <- allTargetsMat
