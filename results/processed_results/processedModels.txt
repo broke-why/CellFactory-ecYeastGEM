@@ -1,6 +1,0 @@
-models	passed
-betaxanthin	0
-l_pac	1
-nicotianamine	1
-psilocybin	1
-vanillin_beta_glucoside	1
