@@ -37,11 +37,15 @@ blank_theme <- theme_minimal()+
   )
 
 #load matrix indicating the relation between gene targets and chemical products
-allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_compatible.txt',sep='\t',stringsAsFactors = TRUE)
-allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_L3_discrete.txt',sep='\t',stringsAsFactors = TRUE)
+prot_lims <- read.csv('../results/production_capabilities/proteinLimitations_allChemicals.txt',sep='\t',stringsAsFactors = TRUE)
+#scatter plot for prot limitations
+p <- ggplot(prot_lims, aes(x=prot_lims$Prod_FC, y=prot_lims$Prot_cost)) +
+  geom_point(size=2, shape=23)
+plot(p)
 #allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
-
-direction  <- c('OE','KD','KO')
+targetsMat <- allTargetsMat
+direction  <- c('OE','KD')
 colors     <- cividis(11) 
 threshold <- 10
 
@@ -56,32 +60,28 @@ columns <- c()
 for (fam in families){
   newCol <- c()
   for (action in direction){
+    matrix <- targetsMat[,5:ncol(targetsMat)]
     
     if (action=='OE'){
-      targetsMat <- allTargetsMat
-      targetsMat[targetsMat == 1] <- 0
-      targetsMat[targetsMat == 2] <- 0
-      targetsMat[targetsMat == 3] <- 1
+      matrix[matrix != 4] <- 0
+      matrix[matrix == 4] <- 1
       barColor <- colors[10]
       j <- 1
     }  
     if (action=='KD'){
-      targetsMat <- allTargetsMat
-      targetsMat[targetsMat == 1] <- 0
-      targetsMat[targetsMat == 2] <- 1
-      targetsMat[targetsMat == 3] <- 0
+      matrix[matrix != 0.25] <- 0
+      matrix[matrix == 0.25] <- 1
       barColor <- colors[6]
       j <- 2
     }
     if (action=='KO'){
-      targetsMat <- allTargetsMat
-      targetsMat[targetsMat == 1] <- 1
-      targetsMat[targetsMat == 2] <- 0
-      targetsMat[targetsMat == 3] <- 0
+      matrix[matrix != 0] <- 100
+      matrix[matrix == 0] <- 1
+      matrix[matrix == 100] <- 0
       barColor <- colors[2]
       j <- 3
     }
-    matrix <- targetsMat[,5:ncol(targetsMat)]
+    targetsMat <- allTargetsMat
     rownames(matrix) <- targetsMat$shortNames
     colnames(matrix) <- colnames(targetsMat)[5:ncol(targetsMat)]
     if (fam!='ALL'){
@@ -102,6 +102,9 @@ for (fam in families){
     newDF  <- data.frame(genes = rownames(matrix),occurrence = matrix$suma)
     nChems <- ncol(matrix)-1
     panGenes_num <- length(which(newDF$occurrence>=(nChems)))
+    print(fam)
+    print(action)
+    print(newDF$genes[which(newDF$occurrence>=(nChems))])
     newCol <- c(newCol,panGenes_num)
     newDF  <- newDF[1:threshold,]
     if (fam!='ALL'){
@@ -147,8 +150,9 @@ for (fam in families){
     }
     #Get histogram for product-gene specificity
     if (fam=='ALL'){
-      matrix  <- targetsMat[,5:ncol(targetsMat)]
+      #matrix  <- targetsMat[,5:ncol(targetsMat)]
       sumas   <- rowSums(matrix)[rowSums(matrix)>0]
+    #  sumas   <- rowSums(matrix)#[rowSums(matrix)>0]
       geneNmr <- c()
       newDF <- data.frame(chemicals = rownames(matrix)[rowSums(matrix)>0],productNmr =sumas)
       p <- ggplot(newDF, aes(x=productNmr)) + geom_histogram(binwidth=1,fill=barColor)
@@ -184,7 +188,7 @@ radarchart( commonTargets , axistype=1 ,
             cglcol="grey", cglty=1, axislabcol="black", caxislabels=seq(minLim,maxLim*100,(maxLim-minLim)/4), cglwd=1.5,
             #custom labels
             vlcex=2, calcex = 1.5)
-#plot(p)
+plot(p)
 legend(x=1.1, y=1.1, legend = rows, bty = "n", pch=20 , col=colors_in , text.col = "black", cex=1.5, pt.cex=3)
 dev.off()
 

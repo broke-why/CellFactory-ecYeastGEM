@@ -55,72 +55,6 @@ blank_theme <- theme_minimal()+
     legend.title = element_text(size=24,face="bold"),
     legend.text = element_text(size=18)
   )
-#Analyse targets matrix
-allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_L3_discrete.txt',sep='\t',stringsAsFactors = TRUE)
-#allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
-targetsMat    <- allTargetsMat
-targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
-cases <- ncol(targetsMat) - 4
-idxs  <- which(rowSums(targetsMat[,5:ncol(targetsMat)])!=cases)
-reduced_matrix <- targetsMat[idxs,]
-#substitute values in matrix
-# targetsMat[targetsMat == 2] <- 20
-# targetsMat[targetsMat == 1] <- 10
-# targetsMat[targetsMat == 3] <- 30
-# targetsMat[targetsMat == 0] <- 1
-# targetsMat[targetsMat == 20] <- 0.5
-# targetsMat[targetsMat == 10] <- 0
-# targetsMat[targetsMat == 30] <- 2
-#hclust heatmap
-plotTitle <- paste('../results/plots/targetsMatrix_changing.png',sep='')
-png(plotTitle,width = 5000, height = 13000)
-rownames(reduced_matrix) <- reduced_matrix$shortNames
-pheatmap(reduced_matrix[,5:ncol(reduced_matrix)],cluster_cols = T,cluster_rows = T, show_rownames = TRUE,scale='none',fontsize = 28)
-dev.off()
-
-#Dimensionality reduction
-newDF <- targetsMat[,5:ncol(targetsMat)]
-genes <- targetsMat$shortNames
-idxs  <- which(rowSums(targetsMat[,5:ncol(targetsMat)])!=cases)
-#newDF <- newDF[rowSums(newDF)>0,]
-newDF <- newDF[idxs,]
-extra <- colnames(newDF)
-genes <- genes[idxs]
-rownames(newDF) <- genes
-newDF <- as.data.frame(t(newDF))
-newDF$extra <- extra
-newDF<- newDF %>% separate(extra, c("chemical", "family"), "_fam_")
-#Remove duplicate vectors
-idxs       <- which(!duplicated(newDF[,1:(ncol(newDF)-3)]))
-duplicates <- which(duplicated(newDF[,1:(ncol(newDF)-3)]))
-duplicates <- newDF[duplicates,]
-newDF <- newDF[idxs,]
-#Add product family info
-newDF <- newDF[order(newDF$family),]
-famLvls <- as.numeric(unique(factor(newDF$family)))
-famLvls <- (unique(factor(newDF$family)))
-famLvls <- famLvls[order(famLvls)]
-newDF$family <- factor(newDF$family,levels = famLvls)
-#PCA 
-PCAdata   <- prcomp(newDF[,1:(ncol(newDF)-3)], center = TRUE,scale = FALSE,retx=TRUE)
-p         <- autoplot(PCAdata,data = newDF,colour = 'family',size = 4)
-plotTitle <- paste('../results/plots/PCA_allTargets.png',sep='')
-png(plotTitle,width = 600, height = 600)
-plot(p)
-dev.off()
-#tSNE
-set.seed(18) # Set a seed if you want reproducible results
-perplxty <- nrow(newDF)/length(famLvls)
-
-tsne_out  <- Rtsne(newDF[,1:(ncol(newDF)-3)],dims=3,perplexity=perplxty) # Run TSNE
-tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],z = tsne_out$Y[,3],newDF$chemical,newDF$family)
-#Define color palleter
-colourCount2 <- length(unique(tsne_plot$family))
-getPalette2  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
-
-colnames(tsne_plot)[ncol(tsne_plot)]<- 'family'
-p <- plot_ly(x=tsne_plot$x, y=tsne_plot$y, z=tsne_plot$z,text =tsne_plot$newDF.chemical, type="scatter3d", mode="markers", color=tsne_plot$family,colors = getPalette2(colourCount))
-saveWidget(p, "../results/plots/tsne_ALL.html", selfcontained = F, libdir = "lib")
 
 filename  <- paste('../results/production_targets/targets_summary.txt',sep='')
 targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
@@ -130,7 +64,7 @@ for (j in 1:length(families)){
   famCode   <- 'ALL'#codes[j]
   targets_summary <- targetsDF
   #if (nchar(chemClass)>1){
-  #  targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
+  # targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
   #}
   nCompounds <- nrow(targets_summary)
   if (nCompounds>=1){
