@@ -1,5 +1,5 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1201_REV	L-histidine transport (reversible)	1000	YBR069C or YGR191W or YKR039W	H+[c] + L-histidine[c] => H+[e] + L-histidine[e]
 r_1115	ammonia transport	3.08671291024167	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_1237	ornithine transport	0.291186778823187	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1237	ornithine transport	0.291186778825768	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
 r_1277_REV	water diffusion (reversible)	1.40187021355311	YLL052C or YPR192W	H2O[c] => H2O[e]

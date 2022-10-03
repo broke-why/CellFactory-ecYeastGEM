@@ -9,7 +9,5 @@ YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Ci
 YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.253609778248059	1	19	0	biomass_coupled	down_distinct	1
 YML075C	P12683	HMG1	115.62448	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	29.1532409511568	1	7	0	production_opt_tight	up_subset	2
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	2.37030858770065	1	6	0	production_opt_tight	up_subset	2
-YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003558078939	1	96	0	biomass_coupled	down_subset	2
-YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.217911440423206	1	28	0	unnecessary_prod	down_subset	2
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961799652513	1	35	0	biomass_coupled	down_subset	2
 ClLIS1	Q8L5K3	ClLIS1	70.348		OE	1000	1	3	0	essential_tightly_const	none	3

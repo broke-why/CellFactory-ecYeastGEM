@@ -1,9 +1,7 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
 Q0045	P00401	COX1	58.79755	sce00190  Oxidative phosphorylation	OE	1000	0	7	1	production_opt	up_subset	2
-Q0105	P00163	COB	43.65549	sce00190  Oxidative phosphorylation	OE	1000	0	6	2	production_opt_tight	up_subset	2
 Q0250	P00410	COX2	28.5669	sce00190  Oxidative phosphorylation	OE	1000	0	7	1	production_opt	up_subset	2
 Q0275	P00420	COX3	30.35941	sce00190  Oxidative phosphorylation	OE	1000	0	7	1	production_opt	up_subset	2
-YBL045C	P07256	COR1	50.22724	sce00190  Oxidative phosphorylation	OE	1000	0	6	2	production_opt_tight	up_subset	2
 YDL067C	P07255	COX9	6.96313	sce00190  Oxidative phosphorylation	OE	1000	0	7	1	production_opt	up_subset	2
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.5072209724117	1	6	0	production_opt	up_subset	2
 YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	OE	1.37415676105117	1	9	0	essential	up_overlaped	2

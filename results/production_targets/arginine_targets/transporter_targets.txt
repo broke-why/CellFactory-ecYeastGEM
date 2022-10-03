@@ -1,6 +1,6 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1184_REV	L-arganine transport (reversible)	1000	YEL063C or YKR039W or YNL270C	H+[c] + L-arginine[c] => H+[e] + L-arginine[e]
-r_1237	ornithine transport	15.7727648459293	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
-r_1194	L-glutamate transport	11.2986408032471	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1237	ornithine transport	15.7727648459296	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1194	L-glutamate transport	11.2986408032473	YPR021C	L-glutamate[c] => L-glutamate[m]
 r_1115	ammonia transport	3.98949197123158	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
 r_1277_REV	water diffusion (reversible)	1.26259202337777	YLL052C or YPR192W	H2O[c] => H2O[e]

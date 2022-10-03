@@ -1,5 +1,4 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
-YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	OE	12.0836967996243	1	17	0	essential_tightly_const	up_distinct	1
 YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293884450439859	1	7	0	biomass_opt	down_distinct	1
 YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	KD	0.293827460525563	1	4	0	biomass_opt	down_distinct	1
 YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	KD	0.293827460525563	1	5	0	biomass_opt	down_distinct	1

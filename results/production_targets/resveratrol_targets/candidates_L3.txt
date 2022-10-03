@@ -1,5 +1,6 @@
 genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
 YBR166C	P20049	TYR1	50.92272	sce00400  Phenylalanine, tyrosine and tryptophan biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	2.33969499316787	1	5	0	essential_tightly_const	up_distinct	1
+YPR060C	P32178	ARO7	29.7468	sce00400  Phenylalanine, tyrosine and tryptophan biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1.1785453646797	1	2	0	essential_tightly_const	up_distinct	1
 YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293884450454309	1	7	0	biomass_opt	down_distinct	1
 YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	KD	0.293827460547136	1	4	0	biomass_opt	down_distinct	1
 YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	KD	0.293827460547136	1	5	0	biomass_opt	down_distinct	1

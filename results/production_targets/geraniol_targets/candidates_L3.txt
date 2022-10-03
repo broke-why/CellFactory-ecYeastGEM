@@ -9,13 +9,5 @@ YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Ci
 YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.264025092031895	1	19	0	biomass_coupled	down_distinct	1
 YML075C	P12683	HMG1	115.62448	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	29.1532409511486	1	7	0	production_opt_tight	up_subset	2
 YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	2.3703085877006	1	6	0	production_opt_tight	up_subset	2
-YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003613843085	1	96	0	biomass_coupled	down_subset	2
-YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KD	0.17639999295386	1	48	0	biomass_coupled	down_subset	2
-YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.16437851947834	1	122	0	unnecessary_prod	down_subset	2
 YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.155971399022443	1	35	0	biomass_coupled	down_subset	2
-YLR133W	P20485	CKI1	66.31602	sce00564  Glycerophospholipid metabolism	KO	0	1	8	0	unnecessary_prod	down_subset	2
-YML059C	Q04958	NTE1	187.13107	sce00564  Glycerophospholipid metabolism	KO	0	1	19	0	unnecessary_prod	down_subset	2
-YNL130C	P17898	CPT1	44.82898	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	27	0	unnecessary_prod	down_subset	2
-YNR008W	P40345	LRO1	75.39242	sce00561  Glycerolipid metabolism	KO	-0	1	48	0	unnecessary_prod	down_subset	2
-YPL110C	Q02979	GDE1	138.01285	sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
 GES	J9PZR5	GES	67.728		OE	1000	1	4	0	essential_tightly_const	none	3
