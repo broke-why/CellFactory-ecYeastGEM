@@ -65,6 +65,7 @@ kaempferol 	C15H10O6	C05903	28499	286.23	heterologous	flavonoid	ecKaempferol.mat
 naringenin 	C15H12O5	C00509	17846	272.257	heterologous	flavonoid	ecNaringenin.mat	naringenin
 quercetin 	C15H10O7	C00389	16243	302.236	heterologous	flavonoid	ecQuercetin.mat	quercetin
 3-hydroxypropanoate 	C3H6O3	C01013	16510	90.08	heterologous	organic acid	ec3HP-asp.mat	hp_asp
+3-hydroxypropanoate 	C3H6O3	C01013	16510	90.08	heterologous	organic acid	ec3HP-malcoa.mat	hp_malcoa
 Adipic acid 	C6H10O4	D08839�	30832	146.14	heterologous	organic acid	ecAdipic_acid.mat	adipic_acid
 "cis,cis-muconate"	C6H6O4	C02480	16508	142.11	heterologous	organic acid	eccis_Muconate.mat	cis_muconate
 Itaconic acid 	C5H6O4	C00490	17240	130.1	heterologous	organic acid	ecItaconic_acid.mat	itaconic_acid
