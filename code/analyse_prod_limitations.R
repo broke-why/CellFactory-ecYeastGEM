@@ -29,7 +29,7 @@ df$yield2 <- (df$prodRate_ec/df$cFlux_h)*(df$MW/180)
 df$prodYield_ec <- df$prodYield_ec*(df$MW/180)
 df[, "maxYield"] <- apply(df[, c(9,15)], 1, max)
 df$maxYield    <- 1/df$maxYield
-df$protYield <- df$Pburden/(df$prodRate_ec*df$MW)
+df$protYield <- df$Pburden/(df$prodRate_ec*(df$MW/1000))
 df$prodYield_ec <- 1/df$prodYield_ec
 #df$MW <- df$MW/max(df$MW)
 df$CCMratio <- 1-df$CCMratio
@@ -50,13 +50,11 @@ df$limitation <- FALSE
 df$limitation[df$Pburden==max(df$Pburden)] <- TRUE
 df$MW <-df$MW/180
 #df$limitation[df$Pburden==max(df$Pburden)] <- 'protein'
-
-
-p <- ggplot(df, aes(x=maxYield,y=protYield,shape=limitation,size=MW,color=family)) +
-  geom_point(alpha=0.7) + theme_bw(base_size = 2*12)+ scale_x_log10()  + scale_y_log10() +
-  scale_color_brewer(palette="Paired")+xlab('Substrate cost [g glucose/g product]') + ylab('Protein cost [g protein/g product]') +
-  scale_size_continuous(range = c(1, 12)) #+ scale_shape(aes(solid = limitation))
-pdf('../results/production_capabilities/plots/protCost_vs_subsCost2.pdf',width = 9, height = 8)
+p <- ggplot(df, aes(x=maxYield,y=protYield,shape=type,size=MW,color=family)) +
+     geom_point(alpha=0.7) + theme_bw(base_size = 2*12)+ scale_x_log10()  + scale_y_log10() +
+     scale_color_brewer(palette="Paired")+xlab('Substrate cost [g glucose/g product]') + ylab('Protein cost [g protein/g product]') +
+     scale_size_continuous(range = c(1, 12)) #+ scale_shape(aes(solid = limitation))
+pdf('../results/production_capabilities/plots/protCost_vs_subsCost.pdf',width = 9, height = 8)
 plot(p)
 dev.off()
 
