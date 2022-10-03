@@ -1,0 +1,25 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YGL012W	P25340	ERG4	56.03889	sce00100  Steroid biosynthesis sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	5	0	essential_tightly_const	up_distinct	1
+YGR060W	P53045	ERG25	36.47869	sce00100  Steroid biosynthesis sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	11	0	essential_tightly_const	up_distinct	1
+YGR175C	P32476	ERG1	55.12537	sce00100  Steroid biosynthesis sce00909  Sesquiterpenoid and triterpenoid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	9	0	essential_tightly_const	up_distinct	1
+YHR007C	P10614	ERG11	60.71959	sce00100  Steroid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	0	8	2	essential_tightly_const	up_distinct	1
+YHR042W	P16603	NCP1	76.77089	sce00NNN  None	OE	24.9179677588459	0	8	2	essential_tightly_const	up_distinct	1
+YHR072W	P38604	ERG7	83.45941	sce00100  Steroid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	2	0	essential_tightly_const	up_distinct	1
+YHR190W	P29704	ERG9	51.71933	sce00100  Steroid biosynthesis sce00909  Sesquiterpenoid and triterpenoid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	6	0	essential_tightly_const	up_distinct	1
+YNL280C	P32462	ERG24	50.61486	sce00100  Steroid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9179677588459	1	5	0	essential_tightly_const	up_distinct	1
+YJL167W	P08524	ERG20	40.48289	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9176030734929	1	5	0	essential_tightly_const	up_distinct	1
+YMR208W	P07277	ERG12	48.45901	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce04146  Peroxisome	OE	24.9176030734929	1	11	0	essential_tightly_const	up_distinct	1
+YMR220W	P24521	ERG8	50.45437	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9176030734929	1	4	0	essential_tightly_const	up_distinct	1
+YNR043W	P32377	MVD1	44.11544	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.9176030734929	1	6	0	essential_tightly_const	up_distinct	1
+YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	OE	6.77093499462174	1	4	0	essential_tightly_const	up_distinct	1
+YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	OE	6.77093499462174	1	5	0	essential_tightly_const	up_distinct	1
+YBR221C	P32473	PDB1	40.0532	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.97895671563223	0	6	3	essential_tightly_const	up_distinct	1
+YER178W	P16387	PDA1	46.34261	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.97895671563223	0	6	3	essential_tightly_const	up_distinct	1
+YGR193C	P16451	PDX1	45.36125	sce00NNN  None	OE	5.97895671563223	0	6	3	essential_tightly_const	up_distinct	1
+YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.97895671563223	0	6	3	essential_tightly_const	up_distinct	1
+YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	OE	4.6316120221644	1	7	0	essential_tightly_const	up_distinct	1
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	KD	0.0837899999999999	1	5	0	biomass_coupled	down_distinct	1
+YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003558540428	1	96	0	biomass_coupled	down_subset	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961800202984	1	35	0	biomass_coupled	down_subset	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378423564845	1	122	0	unnecessary_prod	down_subset	2
+YLR189C	Q06321	ATG26	136.05276	sce00NNN  None	KO	0	1	5	0	unusable	Equal	3

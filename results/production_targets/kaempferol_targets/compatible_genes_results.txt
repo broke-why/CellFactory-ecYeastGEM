@@ -1,8 +1,0 @@
-genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
-4CL	C0LUU7	4CL	60.994		OE	1000	tightly_const	2	5.51077875710473e-06	5.51077875711575e-06	5.51077875710473e-06	1	6	0	1	1.00185634179755	1.00186104603672	0
-CHS	Q6X0M9	CHS	42.488		OE	1000	tightly_const	2	9.33709614078777e-05	9.33709614080645e-05	9.33709614078777e-05	1	6	0	1	1.02235802987559	1.02241585080474	0.043533547158999
-F3H	Q53B69	F3H	42.673		OE	1000	tightly_const	2	0.00201681276641016	0.00201681276641419	0.00201681276641016	1	6	0	1	1.90269222452461	1.90704659087556	0.950895438317182
-YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293827460547136	subOpt_isoenz	0	0	2.14490696938338e-09	0	0	7	2	2	1	0.999999999999999	0
-YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.276571681727062	subOpt_isoenz	0	0	5.05195487734787e-07	0	0	8	4	2	1	0.999999999999999	0
-YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0.0284390330702756	subOpt_isoenz	0	0	2.98372944564328e-08	0	0	6	14	2	1.00000000000002	1.00000000000001	0
-YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	2.30354803035601e-09	0	0	24	16	3	1.00000000000001	1.00000000000001	0

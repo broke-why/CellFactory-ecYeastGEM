@@ -1,0 +1,15 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000	1	4	0	essential_tightly_const	up_distinct	1
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000	1	6	0	essential_tightly_const	up_distinct	1
+YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	OE	12.278084727678	1	17	0	essential	up_distinct	1
+YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	2.45484321066217	1	6	0	essential	up_distinct	1
+YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	OE	1.22854579107539	1	9	0	essential_tightly_const	up_distinct	1
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KD	0.258776055726153	1	4	0	biomass_opt	down_distinct	1
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KD	0.217434412172269	1	7	0	biomass_opt	down_distinct	1
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	KD	0.180501670241225	1	4	0	biomass_opt	down_distinct	1
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	17	unnecessary_prod	down_subset	2
+YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	48	0	unnecessary_prod	down_subset	2
+crtYB	Q7Z859	crtYB	74.736		OE	1000	1	5	0	essential_tightly_const	none	3
+crtI	Q7Z858	crtI	65.066		OE	1000	1	5	0	essential_tightly_const	none	3
+bkt	Q39982	bkt	35.989		OE	1000	1	5	0	essential_tightly_const	none	3
+crtZ	A0A0K0P8J8	crtZ	32.017		OE	1000	1	8	0	essential_tightly_const	none	3

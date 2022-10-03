@@ -1,5 +1,7 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1112_REV	AKG transporter, mitochonrial (reversible)	1000	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
-r_1194	L-glutamate transport	4.0643908591	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1194	L-glutamate transport	4.06439085910002	YPR021C	L-glutamate[c] => L-glutamate[m]
 r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
-r_2132	oxoglutarate/malate exchange	0.222962709222112	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_2132	oxoglutarate/malate exchange	0.222962709222105	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1116	AMP/ATP transporter	-0	YPR128C	AMP[p] + ATP[c] + H+[p] => AMP[c] + ATP[p] + H+[c]
+r_2220	fatty acyl-CoA transport via ABC system (C14:0)	0	YKL188C and YPL147W	ATP[c] + H2O[c] + myristoyl-CoA[c] => ADP[c] + H+[c] + myristoyl-CoA[p] + phosphate[c]

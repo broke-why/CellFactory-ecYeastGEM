@@ -1,4 +1,4 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1213_REV	L-lysine transport (reversible)	1000	YKR039W or YNL268W	H+[c] + L-lysine[c] => H+[e] + L-lysine[e]
-r_2034	pyruvate transport	3.16288559363573	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_1115	ammonia transport	1.95355006621319	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_2034	pyruvate transport	3.16288559363589	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1115	ammonia transport	1.95355006621285	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]

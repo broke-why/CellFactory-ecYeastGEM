@@ -1,0 +1,19 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YJL167W	P08524	ERG20	40.48289	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	27.5267988567776	1	5	0	essential_tightly_const	up_distinct	1
+YML126C	P54839	ERG13	55.01283	sce00072  Synthesis and degradation of ketone bodies sce00280  Valine, leucine and isoleucine degradation sce00650  Butanoate metabolism sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	27.5267988567776	1	12	0	essential_tightly_const	up_distinct	1
+YMR208W	P07277	ERG12	48.45901	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce04146  Peroxisome	OE	27.5267988567776	1	11	0	essential_tightly_const	up_distinct	1
+YMR220W	P24521	ERG8	50.45437	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	27.5267988567776	1	4	0	essential_tightly_const	up_distinct	1
+YNR043W	P32377	MVD1	44.11544	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	27.5267988567776	1	6	0	essential_tightly_const	up_distinct	1
+YBR221C	P32473	PDB1	40.0532	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	6.64161989066032	0	6	1	essential_tightly_const	up_distinct	1
+YER178W	P16387	PDA1	46.34261	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	6.64161989066032	0	6	1	essential_tightly_const	up_distinct	1
+YGR193C	P16451	PDX1	45.36125	sce00NNN  None	OE	6.64161989066032	0	6	1	essential_tightly_const	up_distinct	1
+YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	6.64161989066032	0	6	1	essential_tightly_const	up_distinct	1
+YNL241C	P11412	ZWF1	57.5209	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.49790850349145	1	5	0	essential_tightly_const	up_distinct	1
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.29377116918599	1	4	0	biomass_opt	down_distinct	1
+YML075C	P12683	HMG1	115.62448	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	27.5267988567776	1	7	0	production_opt_tight	up_subset	2
+YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003558682787	1	96	0	biomass_coupled	down_subset	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961800372792	1	35	0	biomass_coupled	down_subset	2
+YHR144C	P06773	DCD1	35.64574	sce00240  Pyrimidine metabolism	KD	0.207584571601025	1	7	0	biomass_coupled	down_overlaped	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378423812343	1	122	0	unnecessary_prod	down_subset	2
+ADS	Q9AR04	ADS	63.933		OE	1000	1	3	0	essential_tightly_const	none	3
+CYP71AV1	Q1PS23	CYP71AV1	55.725		OE	1000	1	7	0	essential_tightly_const	none	3

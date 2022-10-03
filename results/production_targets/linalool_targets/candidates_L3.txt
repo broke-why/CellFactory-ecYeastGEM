@@ -1,0 +1,20 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YML126C	P54839	ERG13	55.01283	sce00072  Synthesis and degradation of ketone bodies sce00280  Valine, leucine and isoleucine degradation sce00650  Butanoate metabolism sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	20.6350122312205	1	12	0	essential_tightly_const	up_distinct	1
+YMR208W	P07277	ERG12	48.45901	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce04146  Peroxisome	OE	20.6350122312205	1	11	0	essential_tightly_const	up_distinct	1
+YMR220W	P24521	ERG8	50.45437	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	20.6350122312205	1	4	0	essential_tightly_const	up_distinct	1
+YNR043W	P32377	MVD1	44.11544	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	20.6350122312205	1	6	0	essential_tightly_const	up_distinct	1
+YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293884450454309	1	7	0	biomass_opt	down_distinct	1
+YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	KD	0.293827460547137	1	4	0	biomass_opt	down_distinct	1
+YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	KD	0.293827460547137	1	5	0	biomass_opt	down_distinct	1
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KD	0.158340256589766	1	4	0	biomass_opt	down_distinct	1
+YKL085W	P17505	MDH1	35.64959	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.118981050486541	1	5	0	biomass_opt	down_distinct	1
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	KD	0.0573300000000001	1	5	0	biomass_coupled	down_distinct	1
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	1	4	0	unnecessary_prod	down_distinct	1
+YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KO	0	1	4	0	biomass_opt	down_distinct	1
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.245675420353194	1	5	0	biomass_opt	down_overlaped	2
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	11	unnecessary_prod	down_subset	2
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	11	unnecessary_prod	down_subset	2
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	11	unnecessary_prod	down_subset	2
+YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	48	0	unnecessary_prod	down_subset	2
+YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	52	0	unnecessary_prod	down_subset	2
+NES1	H9M5U5	NES1	65.381		OE	1000	1	4	0	essential_tightly_const	none	3

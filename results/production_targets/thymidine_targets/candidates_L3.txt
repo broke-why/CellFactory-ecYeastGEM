@@ -1,0 +1,18 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YOR236W	P07807	DFR1	24.26075	sce00670  One carbon pool by folate sce00790  Folate biosynthesis	OE	963.74100255779	1	10	0	essential_tightly_const	up_distinct	1
+YOR074C	P06785	CDC21	35.04694	sce00240  Pyrimidine metabolism sce00670  One carbon pool by folate	OE	963.74100255779	1	4	0	essential_tightly_const	up_distinct	1
+YKL024C	P15700	URA6	22.93296	sce00240  Pyrimidine metabolism	OE	79.5422370789611	1	12	0	essential_tightly_const	up_distinct	1
+YDR353W	P29509	TRR1	34.23767	sce00450  Selenocompound metabolism	OE	47.0394846887889	1	6	0	essential_tightly_const	up_distinct	1
+YKL216W	P28272	URA1	34.80045	sce00240  Pyrimidine metabolism	OE	36.7007740524604	1	4	0	essential_tightly_const	up_distinct	1
+YEL021W	P03962	URA3	29.23918	sce00240  Pyrimidine metabolism	OE	36.7007740524604	1	4	0	essential_tightly_const	up_distinct	1
+YJL130C	P07259	URA2	245.03829	sce00240  Pyrimidine metabolism sce00250  Alanine, aspartate and glutamate metabolism	OE	26.3389769089679	1	11	0	essential_tightly_const	up_distinct	1
+YJR109C	P03965	CPA2	123.91392	sce00240  Pyrimidine metabolism sce00250  Alanine, aspartate and glutamate metabolism	OE	12.9775663668829	0	9	1	essential_tightly_const	up_distinct	1
+YOR303W	P07258	CPA1	45.36103	sce00240  Pyrimidine metabolism sce00250  Alanine, aspartate and glutamate metabolism	OE	12.9775663668829	0	9	1	essential_tightly_const	up_distinct	1
+YNL241C	P11412	ZWF1	57.5209	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.91167402969686	1	5	0	essential_tightly_const	up_distinct	1
+YPR035W	P32288	GLN1	41.7656	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00910  Nitrogen metabolism sce01230  Biosynthesis of amino acids	OE	4.5171746225279	1	7	0	essential_tightly_const	up_distinct	1
+YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.242218027719975	1	19	0	biomass_coupled	down_distinct	1
+YER099C	P38620	PRS2	34.76468	sce00030  Pentose phosphate pathway sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	12.4390085894385	1	6	0	production_opt_tight	up_subset	2
+YKL181W	P32895	PRS1	47.04715	sce00030  Pentose phosphate pathway sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	12.4390085894385	1	6	0	production_opt_tight	up_subset	2
+YHR163W	P38858	SOL3	27.78417	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.91167402969686	1	5	0	production_opt_tight	up_subset	2
+YHR183W	P38720	GND1	53.54274	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	5.91167402969686	1	6	0	production_opt_tight	up_subset	2
+YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.6749967817944	1	8	0	production_opt_tight	up_subset	2

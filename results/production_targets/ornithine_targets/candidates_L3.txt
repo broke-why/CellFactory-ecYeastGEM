@@ -1,0 +1,23 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.289428220997484	1	4	0	biomass_opt	down_distinct	1
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	KD	0.271252224378473	1	5	0	biomass_coupled	down_distinct	1
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.17119490458864	1	4	0	biomass_opt	down_distinct	1
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.17119490458864	1	4	0	biomass_opt	down_distinct	1
+YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KD	0.158380499550867	1	4	0	biomass_opt	down_distinct	1
+YKL067W	P36010	YNK1	17.16647	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.293491458394147	1	22	0	biomass_coupled	down_overlaped	2
+YDL022W	Q00055	GPD1	42.8683	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04011  MAPK signaling pathway - yeast	KD	0.286582484926161	1	6	0	biomass_coupled	down_subset	2
+YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003613334066	1	96	0	biomass_coupled	down_subset	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378518671411	1	122	0	unnecessary_prod	down_subset	2
+YLR058C	P37291	SHM2	52.21793	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.162253789323694	1	5	0	biomass_opt	down_overlaped	2
+YBR263W	P37292	SHM1	53.68589	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.158148002225968	1	5	0	biomass_opt	down_overlaped	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.15597139876962	1	35	0	biomass_coupled	down_subset	2
+YGR202C	P13259	PCT1	49.40551	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YHR123W	P22140	EPT1	44.55926	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	1	36	0	unnecessary_prod	down_subset	2
+YLR133W	P20485	CKI1	66.31602	sce00564  Glycerophospholipid metabolism	KO	0	1	8	0	unnecessary_prod	down_subset	2
+YML059C	Q04958	NTE1	187.13107	sce00564  Glycerophospholipid metabolism	KO	0	1	19	0	unnecessary_prod	down_subset	2
+YNL130C	P17898	CPT1	44.82898	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	27	0	unnecessary_prod	down_subset	2
+YNR008W	P40345	LRO1	75.39242	sce00561  Glycerolipid metabolism	KO	-0	1	48	0	unnecessary_prod	down_subset	2
+YPL110C	Q02979	GDE1	138.01285	sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YPR140W	Q06510	TAZ1	44.1872	sce00564  Glycerophospholipid metabolism	KO	0	1	75	0	unnecessary_prod	down_subset	2
+YKL184W	P08432	SPE1	52.28467	sce00330  Arginine and proline metabolism sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	1	4	0	unnecessary_prod	down_subset	2
+ORT1	Q12375	ORT1	31.52		OE	19.6892484440769	1	4	0	essential_tightly_const	none	3

@@ -1,0 +1,32 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YJL167W	P08524	ERG20	40.48289	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	2.92299701554868	1	5	0	essential_tightly_const	up_distinct	1
+YMR208W	P07277	ERG12	48.45901	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce04146  Peroxisome	OE	2.92299701554868	1	11	0	essential_tightly_const	up_distinct	1
+YMR220W	P24521	ERG8	50.45437	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	2.92299701554868	1	4	0	essential_tightly_const	up_distinct	1
+YNR043W	P32377	MVD1	44.11544	sce00900  Terpenoid backbone biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	2.92299701554868	1	6	0	essential_tightly_const	up_distinct	1
+YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293884450440112	1	7	0	biomass_opt	down_distinct	1
+YER043C	P39954	SAH1	49.12498	sce00270  Cysteine and methionine metabolism	KD	0.293827460525941	1	4	0	biomass_opt	down_distinct	1
+YJR105W	P47143	ADO1	36.37191	sce00230  Purine metabolism	KD	0.293827460525941	1	5	0	biomass_opt	down_distinct	1
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KD	0.281985149181039	1	7	0	biomass_opt	down_distinct	1
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KD	0.281148355869563	1	4	0	biomass_opt	down_distinct	1
+YKL085W	P17505	MDH1	35.64959	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.253377292183902	1	5	0	biomass_opt	down_distinct	1
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	KD	0.234923423736891	1	5	0	biomass_coupled	down_distinct	1
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	KD	0.200908676406821	1	4	0	biomass_opt	down_distinct	1
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	1	4	0	unnecessary_prod	down_distinct	1
+YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KO	0	1	4	0	unnecessary_prod	down_distinct	1
+YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	KD	0.292841950921779	1	4	0	biomass_opt	down_subset	2
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.248792990588315	1	5	0	biomass_opt	down_overlaped	2
+YDR148C	P19262	KGD2	50.43011	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0	0	11	16	unnecessary_prod	down_subset	2
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	17	unnecessary_prod	down_subset	2
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	17	unnecessary_prod	down_subset	2
+YGR202C	P13259	PCT1	49.40551	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YHR123W	P22140	EPT1	44.55926	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	1	36	0	unnecessary_prod	down_subset	2
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	17	unnecessary_prod	down_subset	2
+YIL125W	P20967	KGD1	114.41496	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce00380  Tryptophan metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0	0	11	16	unnecessary_prod	down_subset	2
+YLR133W	P20485	CKI1	66.31602	sce00564  Glycerophospholipid metabolism	KO	0	1	8	0	unnecessary_prod	down_subset	2
+YML059C	Q04958	NTE1	187.13107	sce00564  Glycerophospholipid metabolism	KO	0	1	19	0	unusable	down_subset	2
+YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	48	0	unnecessary_prod	down_subset	2
+YNL130C	P17898	CPT1	44.82898	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	27	0	unnecessary_prod	down_subset	2
+YNR008W	P40345	LRO1	75.39242	sce00561  Glycerolipid metabolism	KO	-0	1	48	0	unnecessary_prod	down_subset	2
+YOR317W	P30624	FAA1	77.86529	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	52	0	unnecessary_prod	down_subset	2
+YPL110C	Q02979	GDE1	138.01285	sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
+VS	S4SC87	VS	69.219		OE	1000	1	3	0	essential_tightly_const	none	3

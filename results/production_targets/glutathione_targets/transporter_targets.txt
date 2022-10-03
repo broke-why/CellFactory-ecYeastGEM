@@ -1,6 +1,6 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
-r_1115	ammonia transport	1.96697813880488	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_2034	pyruvate transport	1.24811750391713	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_1237	ornithine transport	0.293192276489054	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
-r_1266	sulfate uniport	41.7664741522498	YBR294W or YLR092W	sulphate[e] => sulphate[c]
-r_1277_REV	water diffusion (reversible)	1.10777945129372	YLL052C or YPR192W	H2O[c] => H2O[e]
+r_1115	ammonia transport	1.96697813865573	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_2034	pyruvate transport	1.24811750391676	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1237	ornithine transport	0.293192276492777	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1266	sulfate uniport	41.7664741522518	YBR294W or YLR092W	sulphate[e] => sulphate[c]
+r_1277_REV	water diffusion (reversible)	1.10777945126858	YLL052C or YPR192W	H2O[c] => H2O[e]

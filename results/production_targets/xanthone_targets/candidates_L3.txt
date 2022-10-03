@@ -1,0 +1,19 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000	1	4	0	essential_tightly_const	up_distinct	1
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000	1	6	0	essential_tightly_const	up_distinct	1
+YLR044C	P06169	PDC1	61.49468	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites	OE	12.2055581813253	1	17	0	essential_tightly_const	up_distinct	1
+YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	2.45470518001447	1	6	0	essential	up_distinct	1
+YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	OE	1.22892571208272	1	9	0	essential_tightly_const	up_distinct	1
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KD	0.26204299302908	1	4	0	biomass_opt	down_distinct	1
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KD	0.21743441217227	1	7	0	biomass_opt	down_distinct	1
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	KD	0.181713712722164	1	4	0	biomass_opt	down_distinct	1
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	18	unnecessary_prod	down_subset	2
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	0	24	18	unnecessary_prod	down_subset	2
+YHR123W	P22140	EPT1	44.55926	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	1	36	0	unnecessary_prod	down_subset	2
+YMR246W	P47912	FAA4	77.26612	sce00061  Fatty acid biosynthesis sce00071  Fatty acid degradation sce01212  Fatty acid metabolism sce04146  Peroxisome	KO	0	1	48	0	unnecessary_prod	down_subset	2
+YNL130C	P17898	CPT1	44.82898	sce00440  Phosphonate and phosphinate metabolism sce00564  Glycerophospholipid metabolism	KO	0	1	27	0	unnecessary_prod	down_subset	2
+YNR008W	P40345	LRO1	75.39242	sce00561  Glycerolipid metabolism	KO	-0	1	48	0	unnecessary_prod	down_subset	2
+YPL110C	Q02979	GDE1	138.01285	sce00564  Glycerophospholipid metabolism	KO	0	1	5	0	unusable	down_subset	2
+BZL	Q53005	BZL	58.93		OE	1000	1	1	0	essential_tightly_const	none	3
+BPS	A4ZYX5	BPS	43.039		OE	1000	1	2	0	essential_tightly_const	none	3
+TXS	A0A161I263	TXS	57.849		OE	1000	1	6	0	essential_tightly_const	none	3

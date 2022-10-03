@@ -1,0 +1,8 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	KD	0.218456293565767	1	4	0	biomass_opt	down_distinct	1
+YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KO	0.000359456105593495	1	4	0	biomass_opt	down_distinct	1
+YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293884450454309	1	7	0	biomass_opt	overlaped	3
+YDL066W	P21954	IDP1	48.18986	sce00020  Citrate cycle (TCA cycle) sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids sce04146  Peroxisome	KD	0.131368997997831	1	5	0	biomass_opt	overlaped	3
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KD	0.107958855303989	1	4	0	biomass_opt	overlaped	3
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0.0233595553171138	1	4	0	unnecessary_prod	overlaped	3
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KO	0.0233595553171138	1	4	0	unnecessary_prod	overlaped	3

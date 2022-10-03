@@ -1,0 +1,129 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores
+YDR300C	P32264	PRO1	47.16164	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000
+YML054C	P00175	CYB2	65.53873	sce00620  Pyruvate metabolism	OE	1000
+YOR323C	P54885	PRO2	49.73991	sce00330  Arginine and proline metabolism sce00332  Carbapenem biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	1000
+LDHA	P19858	LDHA	36.598		OE	1000
+YBR296C		PHO89	NaN		OE	21.9099235494929
+YCR037C		PHO87	NaN		OE	21.9099235494929
+YJL198W		PHO90	NaN		OE	21.9099235494929
+YML123C		PHO84	NaN		OE	21.9099235494929
+YNR013C		PHO91	NaN		OE	21.9099235494929
+YAL038W	P00549	CDC19	54.54404	sce00010  Glycolysis / Gluconeogenesis sce00230  Purine metabolism sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	2.29906181815929
+YGR254W	P00924	ENO1	46.81564	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	OE	2.15364574494627
+YOR283W	Q12040	YOR283W	26.17622	sce00NNN  None	OE	2.15364574494627
+YLR354C	P15019	TAL1	37.0359	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.28625933668052
+YDR050C	P00942	TPI1	26.79508	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00562  Inositol phosphate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.24703148911687
+YKL060C	P14540	FBA1	39.62024	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.23976357903803
+YMR205C	P16862	PFK2	104.61673	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids sce03018  RNA degradation	OE	1.23976357903803
+YCR012W	P00560	PGK1	44.73787	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.23839035104095
+YJL052W	P00360	TDH1	35.74956	sce00010  Glycolysis / Gluconeogenesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.23839035104095
+YBR196C	P12709	PGI1	61.29832	sce00010  Glycolysis / Gluconeogenesis sce00030  Pentose phosphate pathway sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	1.21396282681179
+YDL141W	P48445	BPL1	76.36203	sce00780  Biotin metabolism	KD	0.293886038026317
+YNL036W	P53615	NCE103	24.85889	sce00910  Nitrogen metabolism	KD	0.293703096413729
+YOR222W		ODC2	NaN		KD	0.29359396295645
+YPL134C		ODC1	NaN		KD	0.29359396295645
+YBR218C	P32327	PYC2	130.16549	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.293573858312038
+YGL062W	P11154	PYC1	130.09827	sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.293573858312038
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.293159534906348
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KD	0.292245811608139
+YPR021C		AGC1	NaN		KD	0.292198927775985
+YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KD	0.290646377292905
+YMR062C	Q04728	ARG7	47.84821	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KD	0.290646377292905
+YOL140W	P18544	ARG8	46.68082	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KD	0.290646377292905
+YOR130C		ORT1	NaN		KD	0.290646377292905
+YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	KD	0.287735312382043
+YJR103W	P38627	URA8	64.50989	sce00240  Pyrimidine metabolism	KD	0.287735312382043
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.287374198637002
+YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KD	0.276850000000014
+YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KD	0.276850000000014
+YJL026W	P09938	RNR2	46.14681	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KD	0.276850000000014
+YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KD	0.2741780487805
+YGL080W		MPC1	NaN		KD	0.269577758082108
+YGR243W		MPC3	NaN		KD	0.269577758082108
+YHR162W		MPC2	NaN		KD	0.269577758082108
+YBR221C	P32473	PDB1	40.0532	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.255779935042777
+YER178W	P16387	PDA1	46.34261	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.255779935042777
+YGR193C	P16451	PDX1	45.36125	sce00NNN  None	KD	0.255779935042777
+YNL071W	P12695	LAT1	51.81762	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00620  Pyruvate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.255779935042777
+EutE	P77445	EutE	49.022		KD	0.253222818370569
+YDR148C	P19262	KGD2	50.43011	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.24255
+YIL125W	P20967	KGD1	114.41496	sce00020  Citrate cycle (TCA cycle) sce00310  Lysine degradation sce00380  Tryptophan metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.24255
+YDL022W	Q00055	GPD1	42.8683	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04011  MAPK signaling pathway - yeast	KD	0.242492872151885
+YFL018C	P09624	LPD1	54.00934	sce00010  Glycolysis / Gluconeogenesis sce00020  Citrate cycle (TCA cycle) sce00260  Glycine, serine and threonine metabolism sce00280  Valine, leucine and isoleucine degradation sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00640  Propanoate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.231315949845546
+YER053C		PIC2	NaN		KD	0.220978639398844
+YJR077C		MIR1	NaN		KD	0.220978639398844
+YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.22000355824266
+YAL062W	P39708	GDH3	49.62653	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	KD	0.218707712980056
+YOR375C	P07262	GDH1	49.56931	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00910  Nitrogen metabolism	KD	0.218707712980056
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961799847802
+YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	KD	0.207585615364775
+YMR189W	P49095	GCV2	114.45033	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.197912751743806
+YAL044C	P39726	GCV3	18.79276	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.197912751743805
+YDR019C	P48015	GCV1	44.46849	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.197912751743805
+Q0045	P00401	COX1	58.79755	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+Q0250	P00410	COX2	28.5669	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+Q0275	P00420	COX3	30.35941	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YDL067C	P07255	COX9	6.96313	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YEL039C	P00045	CYC7	12.53211	sce00NNN  None	KD	0.195342879613032
+YGL187C	P04037	COX4	17.1424	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YGL191W	P32799	COX13	15.02097	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YHR051W	P00427	COX6	17.34139	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YIL111W	P00425	COX5B	17.1965	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YLR038C	Q01519	COX12	9.78778	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YLR395C	P04039	COX8	8.90656	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YMR256C	P10174	COX7	6.9323	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YDR231C	Q04935	COX20	23.75778	sce00NNN  None	KD	0.195342879613032
+YGR062C	P53239	COX18	35.64994	sce00NNN  None	KD	0.195342879613032
+YHR116W	P38824	COX23	17.31758	sce00NNN  None	KD	0.195342879613032
+YJL003W	P47081	COX16	14.07686	sce00NNN  None	KD	0.195342879613032
+YLL018C-A	Q3E731	COX19	11.10542	sce00NNN  None	KD	0.195342879613032
+YPL132W	P19516	COX11	34.04384	sce00190  Oxidative phosphorylation	KD	0.195342879613032
+YML120C	P32340	NDI1	57.24915	sce00NNN  None	KD	0.175880395306307
+YOL077W-A	P81451	ATP19	7.53367	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+Q0080	P00856	ATP8	5.82221	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+Q0085	P00854	ATP6	29.09876	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+Q0130	P61829	OLI1	7.75937	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YBL099W	P07251	ATP1	58.60746	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YBR039W	P38077	ATP3	34.35021	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YDL004W	Q12165	ATP16	17.02022	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YDR298C	P09457	ATP5	22.81414	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YDR322C-A	P81449	TIM11	10.87534	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YDR377W	Q06405	ATP17	11.312	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YJR121W	P00830	ATP2	54.7932	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YKL016C	P30902	ATP7	19.80938	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YLR295C	Q12349	ATP14	14.12765	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YML081C-A	P81450	ATP18	6.68769	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YPL078C	P05626	ATP4	26.92481	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YPL271W	P21306	ATP15	6.7425	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YPR020W	Q12233	ATP20	12.92094	sce00190  Oxidative phosphorylation	KD	0.171642387786475
+YBL030C		PET9	NaN		KD	0.170929748706534
+YBR085W		AAC3	NaN		KD	0.170929748706534
+YMR056C		AAC1	NaN		KD	0.170929748706534
+YER081W	P40054	SER3	51.1927	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.167422071976168
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.167422071976168
+YIL074C	P40510	SER33	51.18777	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.167422071976168
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.167422071976168
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378423047162
+YLR058C	P37291	SHM2	52.21793	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.157742449233493
+YGR204W	P07245	ADE3	102.20412	sce00670  One carbon pool by folate	KD	0.154973444995977
+YOR388C	Q08911	FDH1	41.7138	sce00630  Glyoxylate and dicarboxylate metabolism sce01200  Carbon metabolism	KD	0.153528738718374
+YBR263W	P37292	SHM1	53.68589	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.153275410141292
+Q0105	P00163	COB	43.65549	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YBL045C	P07256	COR1	50.22724	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YDR529C	P00128	QCR7	14.56466	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YEL024W	P08067	RIP1	23.36479	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YFR033C	P00127	QCR6	17.25682	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YGR183C	P22289	QCR9	7.47622	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YHR001W-A	P37299	QCR10	8.59285	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YJL166W	P08525	QCR8	10.97437	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YOR065W	P07143	CYT1	34.05423	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YPR191W	P07257	QCR2	40.47764	sce00190  Oxidative phosphorylation	KD	0.146695613909576
+YDL085W	Q07500	NDE2	61.65854	sce00NNN  None	KD	0.139043072322837
+YMR145C	P40215	NDE1	62.77345	sce00NNN  None	KD	0.139043072322837
+YMR267W	P28239	PPA2	35.57213	sce00190  Oxidative phosphorylation	KO	0.0117034389186914
+YCL040W	P17709	GLK1	55.37689	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0
+YFR053C	P04806	HXK1	53.73784	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0
+YGL253W	P04807	HXK2	53.9419	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0
+YLR446W	Q06204	YLR446W	48.96875	sce00010  Glycolysis / Gluconeogenesis sce00051  Fructose and mannose metabolism sce00052  Galactose metabolism sce00500  Starch and sucrose metabolism sce00520  Amino sugar and nucleotide sugar metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0
+YKL217W			NaN		KO	0
+YJR048W	P00044	CYC1	12.18177	sce00NNN  None	KO	0

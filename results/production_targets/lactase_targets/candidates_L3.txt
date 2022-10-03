@@ -1,0 +1,9 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YGR264C	P00958	MES1	85.67702	sce00450  Selenocompound metabolism sce00970  Aminoacyl-tRNA biosynthesis	OE	1.14448281924872	1	6	0	essential_tightly_const	up_distinct	1
+YNL220W	P80210	ADE12	48.27868	sce00230  Purine metabolism sce00250  Alanine, aspartate and glutamate metabolism	OE	1.11648042323014	1	7	0	essential_tightly_const	up_distinct	1
+YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.269883707572982	1	19	0	biomass_coupled	down_distinct	1
+YDL052C	P33333	SLC1	33.88654	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.248592311220301	1	28	0	unnecessary_prod	down_subset	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961799166499	1	35	0	biomass_coupled	down_subset	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378422054152	1	122	0	unnecessary_prod	down_subset	2
+YBR263W	P37292	SHM1	53.68589	sce00260  Glycine, serine and threonine metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	KD	0.288189590910949	1	5	0	biomass_opt	overlaped	3
+YBR029C	P38221	CDS1	51.82218	sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites sce04070  Phosphatidylinositol signaling system	KD	0.281448448256204	1	34	0	biomass_coupled	overlaped	3

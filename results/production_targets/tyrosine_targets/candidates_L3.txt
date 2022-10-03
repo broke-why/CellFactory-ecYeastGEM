@@ -1,0 +1,7 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KO	0	1	7	0	unnecessary_prod	down_distinct	1
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961800000337	1	35	0	biomass_coupled	down_subset	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378423269483	1	122	0	unnecessary_prod	down_subset	2
+YDR403W	P21623	DIT1	61.39	sce00NNN  None	KO	0	1	8	0	unnecessary_prod	down_subset	2
+YHR144C	P06773	DCD1	35.64574	sce00240  Pyrimidine metabolism	KD	0.231795246842471	1	7	0	biomass_opt	overlaped	3
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KD	0.198439237489901	1	5	0	biomass_opt	overlaped	3

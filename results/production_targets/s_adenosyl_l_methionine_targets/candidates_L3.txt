@@ -1,0 +1,32 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YDR353W	P29509	TRR1	34.23767	sce00450  Selenocompound metabolism	OE	27.6611458130996	1	6	0	essential_tightly_const	up_distinct	1
+YAR015W	P27616	ADE1	34.60299	sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.0951747667685	1	7	0	essential_tightly_const	up_distinct	1
+YDR408C	P04161	ADE8	23.53994	sce00230  Purine metabolism sce00670  One carbon pool by folate sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.0951747667685	1	5	0	essential_tightly_const	up_distinct	1
+YMR300C	P04046	ADE4	56.71874	sce00230  Purine metabolism sce00250  Alanine, aspartate and glutamate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.0951747667685	1	6	0	essential_tightly_const	up_distinct	1
+YOR128C	P21264	ADE2	62.33875	sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites	OE	24.0951747667685	1	8	0	essential_tightly_const	up_distinct	1
+YGL234W	P07244	ADE5,7	86.06721	sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.0951747667685	1	9	0	essential_tightly_const	up_distinct	1
+YGR061C	P38972	ADE6	148.90358	sce00230  Purine metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	OE	24.0951747597834	1	9	0	essential_tightly_const	up_distinct	1
+YNL220W	P80210	ADE12	48.27868	sce00230  Purine metabolism sce00250  Alanine, aspartate and glutamate metabolism	OE	17.7584794557342	1	7	0	essential_tightly_const	up_distinct	1
+YER091C	P05694	MET6	85.85892	sce00270  Cysteine and methionine metabolism sce00450  Selenocompound metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	OE	12.2239485683895	1	7	0	essential_tightly_const	up_distinct	1
+YNL241C	P11412	ZWF1	57.5209	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	8.89195508297921	1	5	0	essential_tightly_const	up_distinct	1
+YPR035W	P32288	GLN1	41.7656	sce00220  Arginine biosynthesis sce00250  Alanine, aspartate and glutamate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce00910  Nitrogen metabolism sce01230  Biosynthesis of amino acids	OE	5.23876994291631	1	7	0	essential_tightly_const	up_distinct	1
+YCR053W	P16120	THR4	57.47349	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	OE	4.50564905496651	1	6	0	essential_tightly_const	up_distinct	1
+YHR025W	P17423	THR1	38.71215	sce00260  Glycine, serine and threonine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	OE	4.50564905496651	1	5	0	essential_tightly_const	up_distinct	1
+YJR139C	P31116	HOM6	38.50163	sce00260  Glycine, serine and threonine metabolism sce00270  Cysteine and methionine metabolism sce00300  Lysine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	4.50564905496651	1	7	0	essential_tightly_const	up_distinct	1
+YCR048W	P25628	ARE1	71.61215	sce00100  Steroid biosynthesis	KD	0.220003558552482	1	96	0	biomass_coupled	down_subset	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961800217362	1	35	0	biomass_coupled	down_subset	2
+YOR245C	Q08650	DGA1	47.71075	sce00561  Glycerolipid metabolism	KD	0.164378423585802	1	122	0	unnecessary_prod	down_subset	2
+YOL126C	P22133	MDH2	40.7305	sce00020  Citrate cycle (TCA cycle) sce00270  Cysteine and methionine metabolism sce00620  Pyruvate metabolism sce00630  Glyoxylate and dicarboxylate metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	KO	0	1	5	0	unnecessary_prod	down_overlaped	2
+YOL052C	P21182	SPE2	46.23173	sce00270  Cysteine and methionine metabolism sce00330  Arginine and proline metabolism	KO	0	1	4	0	unnecessary_prod	down_subset	2
+YNR058W	P50277	BIO3	53.70812	sce00780  Biotin metabolism	KO	0	1	4	0	unnecessary_prod	down_subset	2
+YLL062C	Q12525	MHT1	36.7144	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	0	6	5	unnecessary_prod	down_subset	2
+YPL273W	Q08985	SAM4	36.66815	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	0	6	5	unnecessary_prod	down_subset	2
+YML008C	P25087	ERG6	43.43021	sce00100  Steroid biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YHR109W	P38818	CTM1	68.2836	sce00310  Lysine degradation	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YDR410C	P32584	STE14	27.88729	sce00900  Terpenoid backbone biosynthesis sce01130  Biosynthesis of antibiotics	KO	0	1	4	0	unnecessary_prod	down_subset	2
+YNL092W	P53934	YNL092W	45.49635	sce00340  Histidine metabolism	KO	0	1	5	0	unnecessary_prod	down_subset	2
+YER175C	P32643	TMT1	34.76792	sce00NNN  None	KO	0	1	6	0	unusable	Equal	3
+YLR172C	P32469	DPH5	33.84702	sce00NNN  None	KO	0	1	5	0	unusable	Equal	3
+YBR034C	P38074	HMT1	39.78563	sce00NNN  None	KO	0	1	5	0	unusable	Equal	3
+YLR285W	Q05874	NNT1	29.63226	sce00NNN  None	KO	0	1	4	0	unusable	Equal	3
+YKR069W	P36150	MET1	66.12452	sce00860  Porphyrin and chlorophyll metabolism sce01110  Biosynthesis of secondary metabolites	KO	0	1	5	0	unusable	Equal	3

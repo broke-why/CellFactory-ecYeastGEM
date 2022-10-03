@@ -1,0 +1,2 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YNR019W	P53629	ARE2	74.022	sce00100  Steroid biosynthesis	KO	0	1	84	0	unnecessary_prod	down_subset	2

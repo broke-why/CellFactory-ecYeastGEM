@@ -1,8 +1,8 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1112_REV	AKG transporter, mitochonrial (reversible)	1000	YMR241W	2-oxoglutarate[m] + citrate[c] => 2-oxoglutarate[c] + citrate[m]
 r_1219_REV	L-tryptophan transport (reversible)	1000	YBR068C or YBR069C or YDR046C or YKR039W or YOL020W	H+[c] + L-tryptophan[c] => H+[e] + L-tryptophan[e]
-r_1194	L-glutamate transport	3.23375680302008	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1115	ammonia transport	1.31613160520593	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_1194	L-glutamate transport	3.23375680302001	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1115	ammonia transport	1.31613160520632	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
 r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
-r_2132	oxoglutarate/malate exchange	0.223665081549037	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
-r_1277_REV	water diffusion (reversible)	1.12856664878377	YLL052C or YPR192W	H2O[c] => H2O[e]
+r_2132	oxoglutarate/malate exchange	0.223665081547164	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1277_REV	water diffusion (reversible)	1.12856664878385	YLL052C or YPR192W	H2O[c] => H2O[e]
