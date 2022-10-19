@@ -61,11 +61,11 @@ targetsDF <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 medianTargets <- c()
 for (j in 1:length(families)){
   chemClass <- families[j] 
-  famCode   <- 'ALL'#codes[j]
+  famCode   <- codes[j]
   targets_summary <- targetsDF
-  #if (nchar(chemClass)>1){
-  # targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
-  #}
+  if (nchar(chemClass)>1){
+   targets_summary <- targets_summary[targets_summary$chemClass==chemClass,]
+  }
   nCompounds <- nrow(targets_summary)
   if (nCompounds>=1){
     
@@ -106,7 +106,7 @@ for (j in 1:length(families)){
     p <- p + theme_bw(base_size = 2*12) + xlab('') +
     ylab('# of targets')+ylim(c(0,100))+labs(fill = 'Modification') +
     scale_fill_manual(values = c(colors[11],colors[6],colors[3]))
-    plotTitle <- paste('../results/plots/targetDistributions',famCode,'.png',sep='')
+    plotTitle <- paste('../results/plots/targetsNumber/targetDistributions',famCode,'.png',sep='')
     png(plotTitle,width = 600, height = 600)
     plot(p)
     dev.off()
@@ -125,7 +125,7 @@ p <- ggplot(temp,aes(x=family,y=value,fill=factor(variable)))+
   geom_bar(stat="identity",position="dodge")+theme_bw(base_size = 2*12) +
   scale_fill_manual(name='',values = c(colors[10],colors[6],colors[3]))+
   xlab("Family")+ylab("Mean number of targets per product")
-plotTitle <- paste('../results/plots/meanTargets_AllFams',action,'.pdf',sep='')
+plotTitle <- paste('../results/plots/targetsNumber/meanTargets_AllFams',action,'.pdf',sep='')
 pdf(plotTitle,width = 8.5, height = 7)
 plot(p)
 dev.off()

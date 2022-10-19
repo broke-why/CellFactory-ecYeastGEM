@@ -45,7 +45,7 @@ p <- ggplot(prot_lims, aes(x=prot_lims$Prod_FC, y=prot_lims$Prot_cost)) +
 plot(p)
 #allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_ecFSEOF.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat <- allTargetsMat
-direction  <- c('OE','KD')
+direction  <- c('OE','KD','KO')
 colors     <- cividis(11) 
 threshold <- 10
 

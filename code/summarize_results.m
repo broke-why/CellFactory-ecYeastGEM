@@ -59,7 +59,7 @@ for i=1:length(nameFolds)
                 cand_1       = readtable(['../results/production_targets/' folder '/candidates_L1.txt'],'Delimiter','\t');
                 cand_1_del   = [cand_1_del;sum(cand_1.k_scores<=0.05)];
                 cand_1_dR    = [cand_1_dR;sum(cand_1.k_scores>0.05 & cand_1.k_scores<=0.5)];
-                cand_1_OE    = [cand_1_OE;sum(cand_1.k_scores>=2)];
+                cand_1_OE    = [cand_1_OE;sum(cand_1.k_scores>1)];
                 cand_1_total = [cand_1_total;height(cand_1)];
                 
             catch
@@ -74,7 +74,7 @@ for i=1:length(nameFolds)
                 cand_2_total = [cand_2_total;height(cand_2)];
                 cand_2_del   = [cand_2_del;sum(cand_2.k_scores<=0.05)];
                 cand_2_dR    = [cand_2_dR;sum(cand_2.k_scores>0.05 & cand_2.k_scores<=0.5)];
-                cand_2_OE    = [cand_2_OE;sum(cand_2.k_scores>=2)];
+                cand_2_OE    = [cand_2_OE;sum(cand_2.k_scores>1)];
             catch
                 cand_2_total = [cand_2_total;0];
                 cand_2_dR    = [cand_2_dR;0];
@@ -114,7 +114,7 @@ for i=1:length(nameFolds)
                 chem_comp_dR   = [chem_comp_dR;tempComp];
                 
                 cand_3_OE     = [cand_3_OE;sum(cand_3.k_scores>1)];
-                idxs          = find(cand_3.k_scores>=2);
+                idxs          = find(cand_3.k_scores>1);
                 OE_genes      = [OE_genes;cand_3.genes(idxs)];
                 OE_targets    = [OE_targets;cand_3.shortNames(idxs)];
                 temp          = repelem(class,length(idxs),1);

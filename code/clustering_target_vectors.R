@@ -16,6 +16,7 @@ library(htmlwidgets)
 #library(qgraph)
 library(reshape2)
 library(umap)
+
 if (!require("processx")) install.packages("processx")
 
 
@@ -136,27 +137,26 @@ plotTitle <- paste('../results/plots/PCA_allTargets.png',sep='')
 png(plotTitle,width = 600, height = 600)
 plot(p)
 dev.off()
-
-
 #tSNE
+
 for (i in 1:25)
 {
 set.seed(18) # Set a seed if you want reproducible results
 perplxty <- i
 tsne_out <- Rtsne(newDF[,1:(ncol(newDF)-4)],dims=2,perplexity=perplxty, max_iter = 10000,theta=0.1) # Run TSNE
-tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],newDF$chemical,newDF$family,newDF$origin,newDF$Plim)
+tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],newDF$chemical,newDF$family,newDF$origin,newDF$origin)
 #Define color pallete
 colourCount2 <- length(unique(tsne_plot$family))
 getPalette2  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
 colnames(tsne_plot)[(ncol(tsne_plot)-2)]<- 'family'
 colnames(tsne_plot)[(ncol(tsne_plot)-1)]<- 'Plim'
 colnames(tsne_plot)[(ncol(tsne_plot))]<- 'origin'
-p <- plot_ly(tsne_plot,x=~x, y=~y, text =~newDF.chemical, type="scatter", mode="markers", color=~family,colors = getPalette2(colourCount),symbol=~origin,symbols=c(8,20),size=Plim)%>% 
+p <- plot_ly(tsne_plot,x=~x, y=~y, text =~newDF.chemical, type="scatter", mode="markers", color=~family,colors = getPalette2(colourCount),symbol=~origin,symbols=c(8,20),size=8)%>% 
 layout(title= list(text = paste('tsne_',i,'_perplexity')))
-plotTitle <- paste('../results/plots/tSNE_allTargets_',i,'_plim.png',sep='')
-orca(p, plotTitle)
-#name <-paste("../results/plots/tsne_",i,".html",sep = '')
-#saveWidget(p, name, selfcontained = F, libdir = "lib")
+plotTitle <- paste('../results/plots/cluster_analysis/tSNE_allTargets_',i,'.pdf',sep='')
+#orca(p, plotTitle,width=900,height=600)
+name <-paste("../results/plots/tsne/tsne_",i,".html",sep = '')
+saveWidget(p, name, selfcontained = F, libdir = "lib")
 }
 idxs <- c()
 for (i in 1:nrow(metTurnover)){
@@ -171,7 +171,7 @@ colnames(metsDF)[2] <- 'compound'
 for (i in 1:25)
 {
   set.seed(18) # Set a seed if you want reproducible results
-  perplxty <- 18
+  perplxty <- i
   tsne_out  <- Rtsne(metTurnover,dims=2,perplexity=perplxty, max_iter = 1000,theta=0.1) # Run TSNE
   tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],metsDF$compound,metsDF$family)
   #Define color pallete
@@ -183,47 +183,6 @@ for (i in 1:25)
     layout(title= list(text = paste('tsne_',i,'_perplexity')))
   plotTitle <- paste('../results/plots/tSNE_metTO_',i,'.html',sep='')
   #orca(p, plotTitle)
-  name <-paste(plotTitle,sep = '')
-  saveWidget(p, name, selfcontained = F, libdir = "lib")
+  #name <-paste(plotTitle,sep = '')
+  saveWidget(p, plotTitle, selfcontained = F, libdir = "lib")
 }
-# #K-means
-# # Compute k-means with k = 4
-# newDF <- targetsMat[,5:ncol(targetsMat)]
-# genes <- targetsMat$shortNames
-# idxs  <- which(rowSums(targetsMat[,5:ncol(targetsMat)])!=cases)
-# #newDF <- newDF[rowSums(newDF)>0,]
-# newDF <- newDF[idxs,]
-# extra <- colnames(newDF)
-# genes <- genes[idxs]
-# #
-# rownames(newDF) <- genes
-# newDF <- as.data.frame(t(newDF))
-# newDF$extra <- extra
-# newDF<- newDF %>% separate(extra, c("chemical", "family"), "_fam_")
-# 
-# # 
-# set.seed(123)
-# km.res <- kmeans(newDF[,1:(ncol(newDF)-2)], 5, nstart = 2)
-# p <- fviz_cluster(km.res,newDF[,1:(ncol(newDF)-2)])
-# plot(p)
-# 
-# pamObj <- pam(newDF[,1:(ncol(newDF)-2)],k = 15,diss=FALSE,metric=('euclidean'))
-# p <- fviz_cluster(pamObj,newDF[,1:(ncol(newDF)-2)])
-# plot(p)
-# 
-# data.umap <- umap(as.matrix(newDF[,(ncol(newDF)-3)]),n_components = 2, random_state = 15)
-# nativeChem <- newDF$origin
-# layout <- data.umap[["layout"]]
-# layout <- data.frame(layout)
-# final <- cbind(layout, nativeChem)
-# 
-# fig <- plot_ly(final, x = ~X1, y = ~X2, color = ~nativeChem,  type = 'scatter', mode = 'markers')%>%
-#   layout(
-#     plot_bgcolor = "#e5ecf6",
-#     legend=list(title=list(text='family')),
-#     xaxis = list(
-#       title = "0"),
-#     yaxis = list(
-#       title = "1"))
-# fig
-# 
