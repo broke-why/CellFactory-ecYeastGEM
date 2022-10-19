@@ -1,3 +1,0 @@
-rxn_IDs	rxnNames	K_score	grRules	rxn_formula
-r_1194	L-glutamate transport	6.15295778290838	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_2034	pyruvate transport	3.18422983990044	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]

@@ -1,7 +1,5 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1178No1	iron (II) transport (No1)	1000	YMR319C	pmet_r_1178[e] + 2.3304e-08 prot_P40988[c] => iron(2+)[c]
-r_1129	coenzyme A transport	8.40268222482393	YHR002W	coenzyme A[c] => coenzyme A[m]
-r_1194	L-glutamate transport	4.10730224790412	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_2034	pyruvate transport	2.46127112770307	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_1116	AMP/ATP transporter	-0	YPR128C	AMP[p] + ATP[c] + H+[p] => AMP[c] + ATP[p] + H+[c]
-r_2222	fatty acyl-CoA transport via ABC system (C16:1)	0	YKL188C and YPL147W	ATP[c] + H2O[c] + palmitoleoyl-CoA(4-)[c] => ADP[c] + H+[c] + phosphate[c] + palmitoleoyl-CoA(4-)[p]
+r_1129	coenzyme A transport	8.40268222486102	YHR002W	coenzyme A[c] => coenzyme A[m]
+r_1194	L-glutamate transport	4.10730309958206	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_2034	pyruvate transport	2.46127111849761	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]

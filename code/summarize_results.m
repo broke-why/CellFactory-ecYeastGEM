@@ -22,16 +22,14 @@ OE_genes  = [];
 dR_genes  = [];
 
 subSystems_del = [];
-subSystems_OE  = [];
-subSystems_dR  = [];
-
 chem_class_del = [];
-chem_class_OE  = [];
-chem_class_dR  = [];
-
 chem_comp_del = [];
-chem_comp_OE  = [];
-chem_comp_dR  = [];
+subSystems_dR = [];
+chem_class_dR = [];
+chem_comp_dR = [];
+subSystems_OE = [];
+chem_class_OE = [];
+chem_comp_OE = [];
 
 models = [];
 chemClass = [];
@@ -48,7 +46,8 @@ for i=1:length(nameFolds)
     cd (current)
     if contains(folder,'_targets')
         compound  = strrep(folder,'_targets','');
-        model_idx = find(strcmpi(chemicals_info.ecModel,['ec' strrep(folder,'_targets','') '.mat']));
+        %model_idx = find(strcmpi(chemicals_info.ecModel,['ec' strrep(folder,'_targets','') '.mat']));
+        model_idx = find(strcmpi(chemicals_info.internal_ids,compound));
         if ~isempty(model_idx)
             models = [models; {['ec' compound]}];
             class  = chemicals_info.class(model_idx);
@@ -57,10 +56,10 @@ for i=1:length(nameFolds)
             %end
             chemClass = [chemClass; class];
             try
-                cand_1       = readtable(['../results/production_targets/' folder '/candidates_ecFSEOF.txt'],'Delimiter','\t');
+                cand_1       = readtable(['../results/production_targets/' folder '/candidates_L1.txt'],'Delimiter','\t');
                 cand_1_del   = [cand_1_del;sum(cand_1.k_scores<=0.05)];
                 cand_1_dR    = [cand_1_dR;sum(cand_1.k_scores>0.05 & cand_1.k_scores<=0.5)];
-                cand_1_OE    = [cand_1_OE;sum(cand_1.k_scores>=2)];
+                cand_1_OE    = [cand_1_OE;sum(cand_1.k_scores>1)];
                 cand_1_total = [cand_1_total;height(cand_1)];
                 
             catch
@@ -71,11 +70,11 @@ for i=1:length(nameFolds)
             end
             
             try
-                cand_2 = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+                cand_2 = readtable(['../results/production_targets/' folder '/candidates_L2.txt'],'Delimiter','\t');
                 cand_2_total = [cand_2_total;height(cand_2)];
                 cand_2_del   = [cand_2_del;sum(cand_2.k_scores<=0.05)];
                 cand_2_dR    = [cand_2_dR;sum(cand_2.k_scores>0.05 & cand_2.k_scores<=0.5)];
-                cand_2_OE    = [cand_2_OE;sum(cand_2.k_scores>=2)];
+                cand_2_OE    = [cand_2_OE;sum(cand_2.k_scores>1)];
             catch
                 cand_2_total = [cand_2_total;0];
                 cand_2_dR    = [cand_2_dR;0];
@@ -84,12 +83,14 @@ for i=1:length(nameFolds)
             end
             
             try
-                cand_3 = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
-                cand_3 = readtable(['../results/production_targets/' folder '/compatible_genes_results.txt'],'Delimiter','\t');
+                cand_3 = table();
+                %cand_3 = readtable(['../results/production_targets/' folder '/candidates_mech_validated.txt'],'Delimiter','\t');
+                cand_3 = readtable(['../results/production_targets/' folder '/candidates_L3.txt'],'Delimiter','\t');
                 %cand_3 = cand_3(cand_3.k_scores>=2 | cand_3.k_scores<=0.05,:);
                 %cand_3 = cand_3(cand_3.priority==1,:);
                 
                 cand_3_total   = [cand_3_total;height(cand_3)];
+                
                 idxs           = find(cand_3.k_scores<=0.05);
                 cand_3_del     = [cand_3_del;length(idxs)];
                 deletions      = cand_3.enzymes(idxs);
@@ -113,7 +114,7 @@ for i=1:length(nameFolds)
                 chem_comp_dR   = [chem_comp_dR;tempComp];
                 
                 cand_3_OE     = [cand_3_OE;sum(cand_3.k_scores>1)];
-                idxs          = find(cand_3.k_scores>=2);
+                idxs          = find(cand_3.k_scores>1);
                 OE_genes      = [OE_genes;cand_3.genes(idxs)];
                 OE_targets    = [OE_targets;cand_3.shortNames(idxs)];
                 temp          = repelem(class,length(idxs),1);
@@ -124,6 +125,7 @@ for i=1:length(nameFolds)
                 chem_comp_OE  = [chem_comp_OE;tempComp];
                 
             catch
+                compound
                 cand_3_total = [cand_3_total;0];
                 cand_3_del   = [cand_3_del;0];
                 cand_3_dR   = [cand_3_dR;0];

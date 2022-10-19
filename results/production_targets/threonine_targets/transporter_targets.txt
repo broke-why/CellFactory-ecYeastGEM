@@ -1,7 +1,7 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1218_REV	L-threonine transport (reversible)	1000	YBR069C or YCL025C or YDR046C or YDR508C or YKR039W	H+[c] + L-threonine[c] => H+[e] + L-threonine[e]
-r_1115	ammonia transport	1.80247864399825	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_1115	ammonia transport	1.80247864399822	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
 r_1099	2-oxoadipate and 2-oxoglutarate transport	0.294	YOR222W or YPL134C	2-oxoadipic acid[m] + 2-oxoglutarate[c] => 2-oxoadipic acid[c] + 2-oxoglutarate[m]
-r_2132	oxoglutarate/malate exchange	0.293332560976508	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
-r_1194	L-glutamate transport	0.292040994144239	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1237	ornithine transport	0.291244509429728	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_2132	oxoglutarate/malate exchange	0.293332560973858	YOR222W or YPL134C	(S)-malate[c] + 2-oxoglutarate[m] => (S)-malate[m] + 2-oxoglutarate[c]
+r_1194	L-glutamate transport	0.292040994136461	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1237	ornithine transport	0.291244509418788	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]

@@ -1,7 +1,7 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1183_REV	L-alanine transport (reversible)	1000	YBR068C or YCL025C or YDR046C or YKR039W or YOL020W or YOR348C or YPL265W	H+[c] + L-alanine[c] => H+[e] + L-alanine[e]
-r_1115	ammonia transport	2.67516444349402	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_1237	ornithine transport	0.293629976060045	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
-r_1110	ADP/ATP transporter	0.285314341772219	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
-r_1245	phosphate transport	0.281988019568709	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
-r_2034	pyruvate transport	0.242570387979418	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1115	ammonia transport	2.67516444349714	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_1237	ornithine transport	0.293629976061759	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1110	ADP/ATP transporter	0.285314341772235	YBL030C or YBR085W or YMR056C	ADP[c] + ATP[m] => ADP[m] + ATP[c]
+r_1245	phosphate transport	0.28198801956873	YER053C or YJR077C	H+[c] + phosphate[c] => H+[m] + phosphate[m]
+r_2034	pyruvate transport	0.242570387979243	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]

@@ -1,6 +1,6 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1238_REV	orntithine transport (reversible)	1000	YEL063C or YKR039W	H+[c] + ornithine[c] => H+[e] + ornithine[e]
-r_1237	ornithine transport	19.6892484440746	ORT1	H+[c] + ornithine[m] + 0.0015296 prot_Q12375[c] => H+[m] + ornithine[c]
-r_1194	L-glutamate transport	14.1018117305373	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1115	ammonia transport	2.60913926709857	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
-r_2034	pyruvate transport	0.288675028113755	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1237	ornithine transport	19.6892484440769	ORT1	H+[c] + ornithine[m] + 0.0015296 prot_Q12375[c] => H+[m] + ornithine[c]
+r_1194	L-glutamate transport	14.1018117305386	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1115	ammonia transport	2.60913926690265	YDR384C or YGR121C or YNL142W or YPR138C	ammonium[e] => ammonium[c]
+r_2034	pyruvate transport	0.288675028113691	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]

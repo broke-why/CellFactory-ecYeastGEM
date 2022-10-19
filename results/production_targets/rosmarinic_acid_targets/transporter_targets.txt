@@ -1,4 +1,4 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1106	acetate transport	1000	YCR010C	acetate[c] => acetate[e]
-r_1194	L-glutamate transport	2.68929610746581	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1194	L-glutamate transport	2.68929610746646	YPR021C	L-glutamate[c] => L-glutamate[m]
 r_1237	ornithine transport	0.145193082637183	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]

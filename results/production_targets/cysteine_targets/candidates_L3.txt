@@ -1,0 +1,20 @@
+genes	enzymes	shortNames	MWs	pathways	actions	k_scores	unique	conectivity	groups	EV_type	EUV_comparison	priority
+YGR155W	P32582	CYS4	56.02121	sce00260  Glycine, serine and threonine metabolism sce00270  Cysteine and methionine metabolism sce01130  Biosynthesis of antibiotics sce01230  Biosynthesis of amino acids	OE	958.116802943536	1	4	0	essential_tightly_const	up_distinct	1
+YFR030W	P39692	MET10	114.82714	sce00920  Sulfur metabolism	OE	123.169624575538	0	6	1	essential_tightly_const	up_distinct	1
+YJR137C	P47169	MET5	161.21721	sce00920  Sulfur metabolism	OE	123.169624575538	0	6	1	essential_tightly_const	up_distinct	1
+YKL001C	Q02196	MET14	23.06018	sce00230  Purine metabolism sce00920  Sulfur metabolism	OE	123.169624575538	1	5	0	essential_tightly_const	up_distinct	1
+YCL050C	P16550	APA1	36.49211	sce00230  Purine metabolism sce00920  Sulfur metabolism	OE	123.169624575538	1	9	0	essential_tightly_const	up_distinct	1
+YOL064C	P32179	MET22	39.14886	sce00920  Sulfur metabolism sce01130  Biosynthesis of antibiotics	OE	123.169624575538	1	4	0	essential_tightly_const	up_distinct	1
+YPR167C	P18408	MET16	30.3799	sce00920  Sulfur metabolism	OE	123.169624575538	1	7	0	essential_tightly_const	up_distinct	1
+YDR353W	P29509	TRR1	34.23767	sce00450  Selenocompound metabolism	OE	105.522466287144	1	6	0	essential_tightly_const	up_distinct	1
+YNL241C	P11412	ZWF1	57.5209	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	21.1917509851495	1	5	0	essential_tightly_const	up_distinct	1
+YGR208W	P42941	SER2	34.20684	sce00260  Glycine, serine and threonine metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.3881836516223	1	4	0	essential_tightly_const	up_distinct	1
+YOR184W	P33330	SER1	43.41501	sce00260  Glycine, serine and threonine metabolism sce00750  Vitamin B6 metabolism sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism sce01230  Biosynthesis of amino acids	OE	1.3881836516223	1	4	0	essential_tightly_const	up_distinct	1
+YKL029C	P36013	MAE1	74.37529	sce00620  Pyruvate metabolism sce01200  Carbon metabolism	KD	0.291246995580308	1	7	0	biomass_opt	down_distinct	1
+YOL140W	P18544	ARG8	46.68082	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KD	0.291244509431963	1	4	0	biomass_opt	down_distinct	1
+YER069W	Q01217	ARG5,6	94.86823	sce00220  Arginine biosynthesis sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01210  2-Oxocarboxylic acid metabolism sce01230  Biosynthesis of amino acids	KD	0.291244509431963	1	9	0	biomass_opt	down_distinct	1
+YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KD	0.288555937040027	1	4	0	biomass_opt	down_distinct	1
+YOR175C	Q08548	ALE1	72.22714	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.271836579088691	1	19	0	biomass_coupled	down_distinct	1
+YHR163W	P38858	SOL3	27.78417	sce00030  Pentose phosphate pathway sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	21.1917509851495	1	5	0	production_opt_tight	up_subset	2
+YHR183W	P38720	GND1	53.54274	sce00030  Pentose phosphate pathway sce00480  Glutathione metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics sce01200  Carbon metabolism	OE	21.1917509851495	1	6	0	production_opt_tight	up_subset	2
+YDR503C	Q04396	LPP1	31.58604	sce00561  Glycerolipid metabolism sce00564  Glycerophospholipid metabolism sce01110  Biosynthesis of secondary metabolites	KD	0.207961800488531	1	35	0	biomass_coupled	down_subset	2

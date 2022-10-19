@@ -74,7 +74,8 @@ disp([' * ' num2str(height(candidates)) ' gene targets remain'])
 disp('  ')
 writetable(candidates,[resultsFolder '/candidates_ecFSEOF.txt'],'Delimiter','\t','QuoteStrings',false);
 
-% 3.- Enzyme usage variability analysis (EVA)
+% 3.- Enzyme usage variability analysis (EVA) and prioritization of targets
+
 step = step+1;
 disp([num2str(step) '.-  **** Running enzyme usage variability analysis ****'])
 tempModel = model;
@@ -148,7 +149,7 @@ disp('  ')
 %Generate table with FVA results
 writetable(candidates,[resultsFolder '/candidates_enzUsageFVA.txt'],'Delimiter','\t','QuoteStrings',false);
 
-% 4.- Assess genes redundancy
+% Assess genes redundancy
 step = step+1;
 disp([num2str(step) '.-  **** Ranking gene targets by priority level:'])
 %disp([num2str(step) '.-  **** Assess genes redundancy ****'])
@@ -156,7 +157,7 @@ disp('  ')
 %Get Genes-metabolites network
 disp('  Constructing genes-metabolites graph')
 disp('  ')
-[GeneMetMatrix,~,Gconect] = getGeneMetMatrix(tempModel,candidates.genes);
+[GeneMetMatrix,~,Gconect] = getMetGeneMatrix(tempModel,candidates.genes);
 %Get independent genes from GeneMetMatrix
 disp('  Obtain redundant vectors in genes-metabolites graph (redundant targets)')
 disp('  ')
@@ -206,7 +207,7 @@ writetable(candidates,[resultsFolder '/candidates_priority.txt'],'Delimiter','\t
 step = step+1;
 disp('  ')
 disp([num2str(step) '.-  **** Find flux leak targets to block ****'])
-candidates = block_leaks(candidates,targetIndx,tempModel);
+candidates = find_flux_leaks(candidates,targetIndx,tempModel);
 disp([' * ' num2str(height(candidates)) ' gene targets remain']) 
 
 % 6.- Mechanistic validations of FSEOF results

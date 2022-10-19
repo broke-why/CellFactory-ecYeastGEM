@@ -1,4 +1,4 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_1129	coenzyme A transport	1.01187427997469	YHR002W	coenzyme A[c] => coenzyme A[m]
-r_2034	pyruvate transport	1.00191576116111	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_1244	phosphate transport	1.00187735864945	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_2034	pyruvate transport	1.00191576116299	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1244	phosphate transport	1.00187735864569	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]

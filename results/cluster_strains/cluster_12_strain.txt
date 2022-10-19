@@ -1,8 +1,0 @@
-genes	action
-ODC2	KD
-ODC1	KD
-TPI1	OE
-PRO1	OE
-PRO2	OE
-HAM1	OE
-PPN1	OE

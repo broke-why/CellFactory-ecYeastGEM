@@ -1,57 +1,58 @@
-"chemicals"	"results_folder"	"ecModel"	"media"	"carbon_source"	"overexpression"	"downregulation"	"deletion"	"common_OE"	"common_KO_KD"	"ovlp_OE"	"ovlp_KO_KD"
-"2-phenylethanol"	"2-phenylethanol_targets"	"ec2-phenylethanol.mat"	"Min"	"glucose"	"YGL148W,YHR137W,YNL316C,YPR074C,YDR380W"	"YAL038W,YBR166C"	"YDR035W,YBR249C,YPR060C,YGL202W"	"YGL148W,YNL316C,YDR380W"	NA	0.6	0
-"3-Methyl-1-Butanol"	"3-methylbutanol_targets"	"ec3-methylbutanol.mat"	"YEP"	"glucose"	"YMR108W,YJR016C,YLR355C,YDR380W,YMR303C,YNL104C"	""	"YPL061W,YHR208W"	NA	NA	0	0
-"4-hydroxymandelic"	"4-hydroxymandelic_acid_targets"	"ec4-hydroxymandelic_acid.mat"	"Min"	"glucose"	"YDR127W"	""	"YNL316C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"	"YDR127W"	NA	1	0
-"Adipic acid"	"adipic_acid_targets"	"ecAdipic_acid.mat"	"YEP"	"glucose"	""	""	"YDR035W,YBR249C,YNL241C"	NA	NA	0	0
-"Amorphadiene"	"amorphadiene_targets"	"ecAmorphadiene.mat"	"Min"	"glucose"	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YNR043W,YJL167W,YPL117C"	"YHR190W"	"YBR020W,YBR018C,YBR019C"	"YML075C,YMR220W,YMR208W,YNR043W,YJL167W,YPL117C"	NA	0.75	0
-"Artemisinic acid"	"artemisinic-acid_targets"	"ecArtemisinic.mat"	"YEP"	"glucose"	"YML075C,YLR450W"	"YHR190W"	""	"YML075C"	NA	0.5	0
-"Astaxanthin"	"astaxanthin_targets"	"ecAstaxanthin.mat"	"YEP"	"glucose"	"YML075C"	""	""	NA	NA	0	0
-"_-Amyrin"	"beta_amyrin_targets"	"ecbeta_Amyrin.mat"	"YEP"	"glucose"	"YHR190W,YJL167W"	""	""	"YHR190W,YJL167W"	NA	1	0
-"_-Carotene"	"beta_carotene_targets"	"ecbeta_Carotene.mat"	"YEP"	"glucose"	"YML075C"	""	""	NA	NA	0	0
-"_-ionone"	"beta_ionone_targets"	"ecbeta_Ionone.mat"	"YEP"	"glucose"	"YJL167W,YML075C,YPL069C"	"YHR190W"	"YDR284C,YDR503C"	"YPL069C"	NA	0.333333333333333	0
-"Betaxanthin"	"betaxanthin_targets"	"ecBetaxanthin.mat"	"YEP"	"raffinose"	""	""	"YBR249C"	NA	NA	0	0
-"Caffeic acid"	"caffeic_acid_targets"	"ecCaffeic_acid.mat"	"YEP"	"glucose"	""	""	"YDR380W,YLR134W"	NA	NA	0	0
-"cis,cis-muconic acid"	"cis_muconate_targets"	"eccis_Muconate.mat"	"YEP"	"glucose"	""	""	"YDR035W,YBR249C,YNL241C"	NA	NA	0	0
-"p-coumaric acid"	"coumaric_acid_targets"	"ecCoumaric_acid.mat"	"YEP"	"glucose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	NA	NA	0	0
-"p-coumaric acid"	"coumaric-acid_targets"	"ecCoumaric_acid_xylose.mat"	"Min"	"xylose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	NA	NA	0	0
-"docosanol"	"docosanol_targets"	"ecDocosanol.mat"	"Min"	"glucose"	"YJL196C,YCR034W,YNR016C"	""	"YCR048W,YOR245C,YNR019W,YNR008W,YGL205W,YLR372W,YBR020W"	NA	NA	0	0
-"Farnesene"	"farnesene_targets"	"ecFarnesene.mat"	"Min"	"glucose"	"YML075C,YJL167W,YDL215C"	"YHR190W"	"YDR503C,YDR284C,YOR375C"	"YML075C,YJL167W"	NA	0.666666666666667	0
-"FFA"	"ffas_targets"	"ecFFAs.mat"	"Min"	"glucose"	""	""	"YGL205W,YOR317W,YMR246W,YMR110C,YDL078C"	NA	NA	0	0
-"Fumaric acid"	"fumaric_acid_targets"	"ecFumaric_acid.mat"	"Min"	"glucose"	"YBR218C"	""	""	NA	NA	0	0
-"Geraniol"	"geraniol_targets"	"ecGeraniol.mat"	"YEP"	"glucose"	"YML075C,YPL117C,YJL167W"	""	""	"YML075C,YPL117C"	NA	0.666666666666667	0
-"Glutathione"	"glutathione_targets"	"ecGlutathione.mat"	"YEP"	"glucose"	"YJL101C,YDR300C"	""	""	"YJL101C"	NA	0.5	0
-"Hemoglobin"	"hemoglobin_targets"	"ecHemoglobin.mat"	"Min"	"glucose"	"YDL205C"	""	""	NA	NA	0	0
-"Isobutanol"	"isobutanol_targets"	"ecIsobutanol.mat"	"YEP"	"glucose"	"YMR108W,YJR016C,YLR355C,YDR380W,YMR303C,YNL104C"	""	"YPL061W,YHR208W"	NA	NA	0	0
-"Itaconic acid"	"itaconic_acid_targets"	"ecItaconic_acid.mat"	"YEP"	"glucose"	""	""	"YJR078W,YJR019C"	NA	NA	0	0
-"Lactic acid"	"lactate_targets"	"ecLactate.mat"	"YEP"	"glucose"	""	""	"YDL022W,YML054C,YLR044C,YOL086C,YPL061W"	NA	NA	0	0
-"Limonene"	"limonene_targets"	"ecLimonene.mat"	"Min"	"glucose"	"YJL167W"	""	""	NA	NA	0	0
-"Linalool"	"linalool_targets"	"ecLinalool.mat"	"Min"	"glucose"	"YJL167W"	""	""	NA	NA	0	0
-"Lupeol"	"lupeol_targets"	"ecLupeol.mat"	"Min"	"glucose"	"YML075C,YML126C"	"YHR072W"	""	NA	NA	0	0
-"Malate"	"malate_targets"	"ecMalate.mat"	"Min"	"glucose"	"YBR218C,YOL126C"	""	"YLR044C,YLR134W,YGR087C,YDL078C"	"YOL126C"	NA	0.5	0
-"mandelic"	"mandelic_acid_targets"	"ecmandelic_acid.mat"	"Min"	"glucose"	"YDR127W"	""	"YBR166C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"	"YDR127W"	NA	1	0
-"Miltiradiene"	"miltiradiene_targets"	"ecMiltiradiene.mat"	"YEP"	"glucose"	"YPL069C,YJL167W,YML075C"	""	""	"YPL069C"	NA	0.333333333333333	0
-"Naringenin"	"naringenin_targets"	"ecNaringenin.mat"	"Min"	"glucose"	""	""	"YDR035W,YBR249C,YDR380W,YLR134W,YGR087C"	NA	NA	0	0
-"n-butanol"	"n-butanol_targets"	"ecn-Butanol.mat"	"YEP"	"glucose"	"YCL017C,YHR002W"	""	"YOL086C"	NA	NA	0	0
-"Nicotianamine"	"nicotianamine_targets"	"ecNicotianamine.mat"	"YEP"	"glucose"	""	""	"YGL125W"	NA	NA	0	0
-"Oleanolic acid"	"oleanolate_targets"	"ecOleanolate.mat"	"YEP"	"glucose"	"YML075C,YGR175C,YHR190W"	""	"YBR020W"	NA	NA	0	0
-"L-ornithine "	"ornithine_targets"	"ecOrnithine.mat"	"Min"	"glucose"	"YOR130C,YPR021C,YOR375C"	"YJL088W"	"YLR438W"	"YOR375C"	"YLR438W"	0.333333333333333	0.5
-"Patchoulol"	"patchoulol_targets"	"ecPatchoulol.mat"	"YEP"	"glucose"	"YML075C,YPL117C,YJL167W"	"YHR190W"	""	NA	NA	0	0
-"Protopanaxadiol"	"protopanaxadiol_targets"	"ecProtopanaxadiol.mat"	"Min"	"glucose"	"YHR190W,YGR175C,YJL167W,YML075C"	""	""	NA	NA	0	0
-"Psilocybin"	"psilocybin_targets"	"ecPsilocybin.mat"	"Min"	"glucose"	"YDR127W,YGL148W"	""	"YBR249C"	NA	NA	0	0
-"Pyruvate"	"pyruvate_targets"	"ecPyruvate.mat"	"YEP"	"glucose"	""	""	"YLR044C,YLR134W,YGR087C"	NA	"YLR044C,YLR134W,YGR087C"	0	0.75
-"Rosmarinic acid"	"rosmarinic_acid_targets"	"ecRosmarinic_acid.mat"	"Min"	"glucose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	NA	NA	0	0
-"Salidroside"	"salidroside_targets"	"ecSalidroside.mat"	"YEP"	"glucose"	""	""	"YNL316C,YLR044C,YKL211C"	NA	NA	0	0
-"Santalene"	"santalene_targets"	"ecSantalene.mat"	"Min"	"glucose"	"YML075C,YJL167W,YDL215C"	"YHR190W"	"YDR503C,YDR284C,YOR375C"	"YML075C,YJL167W"	NA	0.666666666666667	0
-"Succinic acid"	"suc-retca_targets"	"ecSuc-reTCA.mat"	"Min"	"glucose"	""	""	"YLR044C,YLR134W,YGR087C,YPL262W,YER065C,YNL117W"	NA	NA	0	0
-"Taxa-4(20),11(12)-dien-6alpha-yl acetate"	"taxadien_alpha_yl_acetate_targets"	"ecTaxadien_5alpha_yl_acetate.mat"	"YEP"	"glucose"	"YMR220W,YMR208W,YJL167W,YNR043W"	""	""	NA	NA	0	0
-"triacylglycerol"	"triacylglycerol_targets"	"ectriacylglycerol.mat"	"Min"	"glucose"	"YNR016C,YMR165C"	""	"YMR313C,YKR089C,YOR081C,YPL147W"	NA	NA	0	0
-"tyrosine"	"tyrosine_targets"	"ecTyrosine.mat"	"YEP"	"glucose"	""	""	"YDR035W,YBR249C,YDR380W,Zwf1"	NA	NA	0	0
-"Tyrosol"	"tyrosol_targets"	"ecTyrosol.mat"	"YEP"	"glucose"	""	""	"YNL316C,YLR044C,YKL211C"	NA	NA	0	0
-"Valencene"	"valencene_targets"	"ecValencene.mat"	"YEP"	"glucose"	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YJL167W,YNR043W,YPL117C"	"YHR190W"	"YPL069C,YDR284C,YDR503C"	"YML075C,YMR220W,YMR208W,YJL167W,YNR043W,YPL117C"	NA	0.75	0
-"vanillin-_-glucoside"	"vanillinbetaglucoside_targets"	"ecVanillin___glucoside.mat"	"Min"	"glucose"	""	""	"YMR318C,YLR300W"	NA	NA	0	0
-"Vitamin A"	"vitamin_a_targets"	"ecVitamin_A.mat"	"Min"	"xylose"	""	""	"YPL061W"	NA	NA	0	0
-"Xanthone"	"xanthone_targets"	"ecXanthone.mat"	"YEP"	"glucose"	""	"YJL167W"	""	NA	NA	0	0
-"Nootkatone"	"nootkatone_targets"	"ecNootkatone.mat"	"YEP"	"glucose"	"YJL167W,YML075C"	"YHR190W"	""	"YJL167W,YML075C"	NA	1	0
-"Cinnamoyltropine"	"cinnamoyltropine_targets"	"ecCinnamoyltropine.mat"	"YEP"	"glucose"	"YKL184W,YPL111W,YJL071W,YMR020W"	""	"YMR170C,YMR169C,YOR374W,YER073W,YMR110C,YLR017W"	"YKL184W"	NA	0.25	0
-"Squalene"	"squalene_targets"	"ecSqualene.mat"	"YEP"	"ethanol"	"YML075C,YJL167W,YHR190W,YMR220W,YPL028W,YMR208W,YML126C,YNR043W,YMR303C"	""	""	"YML075C,YJL167W,YHR190W,YMR220W,YMR208W,YNR043W"	NA	0.666666666666667	0
-"S-adenosyl-L-methionine"	"s-adenosyl-l-methionine_targets"	"ecS-adenosyl-L-methionine.mat"	"YEP"	"glucose"	"YDR502C"	""	"YOL052C"	NA	NA	0	0
+"chemicals"	"results_folder"	"ecModel"	"media"	"carbon_source"	"overexpression"	"downregulation"	"deletion"	"internal_ids"	"common_OE"	"common_KO_KD"	"ovlp_OE"	"ovlp_KO_KD"
+"2-phenylethanol"	"2-phenylethanol_targets"	"ec2-phenylethanol.mat"	"Min"	"D-glucose"	"YGL148W,YHR137W,YNL316C,YPR074C,YDR380W"	"YAL038W,YBR166C"	"YDR035W,YBR249C,YPR060C,YGL202W"	"phenylethanol"	"YGL148W,YNL316C,YDR380W"	NA	0.6	0
+"3-Methyl-1-Butanol"	"3-methylbutanol_targets"	"ec3-methylbutanol.mat"	"YEP"	"D-glucose"	"YMR108W,YJR016C,YLR355C,YDR380W,YMR303C,YNL104C"	""	"YPL061W,YHR208W"	"methylbutanol"	NA	NA	0	0
+"4-hydroxymandelic"	"4-hydroxymandelic_acid_targets"	"ec4-hydroxymandelic_acid.mat"	"Min"	"D-glucose"	"YDR127W"	""	"YNL316C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"	"hydroxymandelic_acid"	NA	NA	0	0
+"Adipic acid"	"adipic_acid_targets"	"ecAdipic_acid.mat"	"YEP"	"D-glucose"	""	""	"YDR035W,YBR249C,YNL241C"	"adipic_acid"	NA	NA	0	0
+"Amorphadiene"	"amorphadiene_targets"	"ecAmorphadiene.mat"	"Min"	"D-glucose"	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YNR043W,YJL167W,YPL117C"	"YHR190W"	"YBR020W,YBR018C,YBR019C"	"amorphadiene"	"YML075C,YMR220W,YMR208W,YNR043W,YJL167W,YPL117C"	NA	0.75	0
+"Artemisinic acid"	"artemisinic-acid_targets"	"ecArtemisinic_acid.mat"	"YEP"	"D-glucose"	"YML075C,YLR450W"	"YHR190W"	""	"artemisinic_acid"	NA	NA	0	0
+"Astaxanthin"	"astaxanthin_targets"	"ecAstaxanthin.mat"	"YEP"	"D-glucose"	"YML075C"	""	""	"astaxanthin"	NA	NA	0	0
+"_-Amyrin"	"beta_amyrin_targets"	"ecbeta_Amyrin.mat"	"YEP"	"D-glucose"	"YHR190W,YJL167W"	""	""	"beta_amyrin"	NA	NA	0	0
+"_-Carotene"	"beta_carotene_targets"	"ecbeta_Carotene.mat"	"YEP"	"D-glucose"	"YML075C"	""	""	"beta_carotene"	NA	NA	0	0
+"_-ionone"	"beta_ionone_targets"	"ecbeta_Ionone.mat"	"YEP"	"D-glucose"	"YJL167W,YML075C,YPL069C"	"YHR190W"	"YDR284C,YDR503C"	"beta_ionone"	NA	NA	0	0
+"Betaxanthin"	"betaxanthin_targets"	"ecBetaxanthin.mat"	"YEP"	"raffinose"	""	""	"YBR249C"	"betaxanthin"	NA	NA	0	0
+"Caffeic acid"	"caffeic_acid_targets"	"ecCaffeic_acid.mat"	"YEP"	"D-glucose"	""	""	"YDR380W,YLR134W"	"caffeic_acid"	NA	NA	0	0
+"cis,cis-muconic acid"	"cis_muconate_targets"	"eccis_Muconate.mat"	"YEP"	"D-glucose"	""	""	"YDR035W,YBR249C,YNL241C"	"cis_muconate"	NA	NA	0	0
+"p-coumaric acid"	"coumaric_acid_targets"	"ecCoumaric_acid.mat"	"YEP"	"D-glucose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	"coumaric_acid"	NA	NA	0	0
+"p-coumaric acid"	"coumaric-acid_targets"	"ecCoumaric_acid_xylose.mat"	"Min"	"D-xylose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	"coumaric_acid_xylose"	NA	NA	0	0
+"docosanol"	"docosanol_targets"	"ecDocosanol.mat"	"Min"	"D-glucose"	"YJL196C,YCR034W,YNR016C"	""	"YCR048W,YOR245C,YNR019W,YNR008W,YGL205W,YLR372W,YBR020W"	"docosanol"	NA	NA	0	0
+"Farnesene"	"farnesene_targets"	"ecFarnesene.mat"	"Min"	"D-glucose"	"YML075C,YJL167W,YDL215C"	"YHR190W"	"YDR503C,YDR284C,YOR375C"	"farnesene"	"YML075C,YJL167W"	NA	0.666666666666667	0
+"FFA"	"ffas_targets"	"ecFFAs.mat"	"Min"	"D-glucose"	""	""	"YGL205W,YOR317W,YMR246W,YMR110C,YDL078C"	"ffas"	NA	NA	0	0
+"Fumaric acid"	"fumaric_acid_targets"	"ecFumaric_acid.mat"	"Min"	"D-glucose"	"YBR218C"	""	""	"fumaric_acid"	NA	NA	0	0
+"Geraniol"	"geraniol_targets"	"ecGeraniol.mat"	"YEP"	"D-glucose"	"YML075C,YPL117C,YJL167W"	""	""	"geraniol"	"YML075C,YPL117C"	NA	0.666666666666667	0
+"Glutathione"	"glutathione_targets"	"ecGlutathione.mat"	"YEP"	"D-glucose"	"YJL101C,YDR300C"	""	""	"glutathione"	"YJL101C"	NA	0.5	0
+"Hemoglobin"	"hemoglobin_targets"	"ecHemoglobin.mat"	"Min"	"D-glucose"	"YDL205C"	""	""	"hemoglobin"	NA	NA	0	0
+"Isobutanol"	"isobutanol_targets"	"ecIsobutanol.mat"	"YEP"	"D-glucose"	"YMR108W,YJR016C,YLR355C,YDR380W,YMR303C,YNL104C"	""	"YPL061W,YHR208W"	"isobutanol"	NA	NA	0	0
+"Itaconic acid"	"itaconic_acid_targets"	"ecItaconic_acid.mat"	"YEP"	"D-glucose"	""	""	"YJR078W,YJR019C"	"itaconic_acid"	NA	NA	0	0
+"Lactic acid"	"lactate_targets"	"ecLactate.mat"	"YEP"	"D-glucose"	""	""	"YDL022W,YML054C,YLR044C,YOL086C,YPL061W"	"lactate"	NA	NA	0	0
+"Limonene"	"limonene_targets"	"ecLimonene.mat"	"Min"	"D-glucose"	"YJL167W"	""	""	"limonene"	NA	NA	0	0
+"Linalool"	"linalool_targets"	"ecLinalool.mat"	"Min"	"D-glucose"	"YJL167W"	""	""	"linalool"	NA	NA	0	0
+"Lupeol"	"lupeol_targets"	"ecLupeol.mat"	"Min"	"D-glucose"	"YML075C,YML126C"	"YHR072W"	""	"lupeol"	NA	NA	0	0
+"Malate"	"malate_targets"	"ecMalate.mat"	"Min"	"D-glucose"	"YBR218C,YOL126C"	""	"YLR044C,YLR134W,YGR087C,YDL078C"	"malate"	"YOL126C"	NA	0.5	0
+"mandelic"	"mandelic_acid_targets"	"ecmandelic_acid.mat"	"Min"	"D-glucose"	"YDR127W"	""	"YBR166C,YER090W,YDR380W,YLR134W,YGL202W,YBR249C"	"mandelic_acid"	NA	NA	0	0
+"Miltiradiene"	"miltiradiene_targets"	"ecMiltiradiene.mat"	"YEP"	"D-glucose"	"YPL069C,YJL167W,YML075C"	""	""	"miltiradiene"	"YPL069C"	NA	0.333333333333333	0
+"Naringenin"	"naringenin_targets"	"ecNaringenin.mat"	"Min"	"D-glucose"	""	""	"YDR035W,YBR249C,YDR380W,YLR134W,YGR087C"	"naringenin"	NA	NA	0	0
+"n-butanol"	"n-butanol_targets"	"ecn-Butanol.mat"	"YEP"	"D-glucose"	"YCL017C,YHR002W"	""	"YOL086C"	"n_butanol"	NA	NA	0	0
+"Nicotianamine"	"nicotianamine_targets"	"ecNicotianamine.mat"	"YEP"	"D-glucose"	""	""	"YGL125W"	"nicotianamine"	NA	NA	0	0
+"Oleanolic acid"	"oleanolate_targets"	"ecOleanolate.mat"	"YEP"	"D-glucose"	"YML075C,YGR175C,YHR190W"	""	"YBR020W"	"oleanolate"	NA	NA	0	0
+"L-ornithine "	"ornithine_targets"	"ecOrnithine.mat"	"Min"	"D-glucose"	"YOR130C,YPR021C,YOR375C"	"YJL088W"	"YLR438W"	"ornithine"	"YOR375C"	"YLR438W"	0.333333333333333	0.5
+"Patchoulol"	"patchoulol_targets"	"ecPatchoulol.mat"	"YEP"	"D-glucose"	"YML075C,YPL117C,YJL167W"	"YHR190W"	""	"patchoulol"	NA	NA	0	0
+"Protopanaxadiol"	"protopanaxadiol_targets"	"ecProtopanaxadiol.mat"	"Min"	"D-glucose"	"YHR190W,YGR175C,YJL167W,YML075C"	""	""	"protopanaxadiol"	NA	NA	0	0
+"Psilocybin"	"psilocybin_targets"	"ecPsilocybin.mat"	"Min"	"D-glucose"	"YDR127W,YGL148W"	""	"YBR249C"	"psilocybin"	NA	NA	0	0
+"Pyruvate"	"pyruvate_targets"	"ecPyruvate.mat"	"YEP"	"D-glucose"	""	""	"YLR044C,YLR134W,YGR087C"	"pyruvate"	NA	"YLR044C,YLR134W,YGR087C"	0	0.75
+"Rosmarinic acid"	"rosmarinic_acid_targets"	"ecRosmarinic_acid.mat"	"Min"	"D-glucose"	""	""	"YBR249C,YPR060C,YDR380W,YLR134W"	"rosmarinic_acid"	NA	NA	0	0
+"Salidroside"	"salidroside_targets"	"ecSalidroside.mat"	"YEP"	"D-glucose"	""	""	"YNL316C,YLR044C,YKL211C"	"salidroside"	NA	NA	0	0
+"Santalene"	"santalene_targets"	"ecSantalene.mat"	"Min"	"D-glucose"	"YML075C,YJL167W,YDL215C"	"YHR190W"	"YDR503C,YDR284C,YOR375C"	"santalene"	"YML075C,YJL167W"	NA	0.666666666666667	0
+"Succinic acid"	"suc-retca_targets"	"ecSuccinate.mat"	"Min"	"D-glucose"	""	""	"YLR044C,YLR134W,YGR087C,YPL262W,YER065C,YNL117W"	"succinate"	NA	NA	0	0
+"Succinic acid"	"suc-retca_targets"	"ecSuc-reTCA.mat"	"Min"	"D-glucose"	""	""	"YLR044C,YLR134W,YGR087C,YPL262W,YER065C,YNL117W"	"suc_retca"	NA	NA	0	0
+"Taxa-4(20),11(12)-dien-6alpha-yl acetate"	"taxadien_alpha_yl_acetate_targets"	"ecTaxadien_5alpha_yl_acetate.mat"	"YEP"	"D-glucose"	"YMR220W,YMR208W,YJL167W,YNR043W"	""	""	"taxadien_alpha_yl_acetate"	NA	NA	0	0
+"triacylglycerol"	"triacylglycerol_targets"	"ectriacylglycerol.mat"	"Min"	"D-glucose"	"YNR016C,YMR165C"	""	"YMR313C,YKR089C,YOR081C,YPL147W"	"triacylglycerol"	NA	NA	0	0
+"tyrosine"	"tyrosine_targets"	"ecTyrosine.mat"	"YEP"	"D-glucose"	""	""	"YDR035W,YBR249C,YDR380W,Zwf1"	"tyrosine"	NA	NA	0	0
+"Tyrosol"	"tyrosol_targets"	"ecTyrosol.mat"	"YEP"	"D-glucose"	""	""	"YNL316C,YLR044C,YKL211C"	"tyrosol"	NA	NA	0	0
+"Valencene"	"valencene_targets"	"ecValencene.mat"	"YEP"	"D-glucose"	"YML075C,YMR220W,YPL028W,YMR208W,YML126C,YJL167W,YNR043W,YPL117C"	"YHR190W"	"YPL069C,YDR284C,YDR503C"	"valencene"	"YML075C,YMR220W,YMR208W,YJL167W,YNR043W,YPL117C"	NA	0.75	0
+"vanillin-_-glucoside"	"vanillinbetaglucoside_targets"	"ecVanillin_beta_glucoside.mat"	"Min"	"D-glucose"	""	""	"YMR318C,YLR300W"	"vanillin_beta_glucoside"	NA	NA	0	0
+"Vitamin A"	"vitamin_a_targets"	"ecVitamin_A.mat"	"Min"	"D-xylose"	""	""	"YPL061W"	"vitamin_a"	NA	NA	0	0
+"Xanthone"	"xanthone_targets"	"ecXanthone.mat"	"YEP"	"D-glucose"	""	"YJL167W"	""	"xanthone"	NA	NA	0	0
+"Nootkatone"	"nootkatone_targets"	"ecNootkatone.mat"	"YEP"	"D-glucose"	"YJL167W,YML075C"	"YHR190W"	""	"nootkatone"	"YJL167W,YML075C"	NA	1	0
+"Cinnamoyltropine"	"cinnamoyltropine_targets"	"ecCinnamoyltropine.mat"	"YEP"	"D-glucose"	"YKL184W,YPL111W,YJL071W,YMR020W"	""	"YMR170C,YMR169C,YOR374W,YER073W,YMR110C,YLR017W"	"cinnamoyltropine"	"YKL184W"	NA	0.25	0
+"Squalene"	"squalene_targets"	"ecSqualene.mat"	"YEP"	"ethanol"	"YML075C,YJL167W,YHR190W,YMR220W,YPL028W,YMR208W,YML126C,YNR043W,YMR303C"	""	""	"squalene"	"YML075C,YJL167W,YHR190W,YMR220W,YMR208W,YNR043W"	NA	0.666666666666667	0
+"S-adenosyl-L-methionine"	"s-adenosyl-l-methionine_targets"	"ecS-adenosyl-L-methionine.mat"	"YEP"	"D-glucose"	"YDR502C"	""	"YOL052C"	"s_adenosyl_l_methionine"	NA	NA	0	0

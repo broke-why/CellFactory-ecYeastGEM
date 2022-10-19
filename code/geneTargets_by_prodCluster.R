@@ -13,6 +13,7 @@ library(plotly)
 library(htmlwidgets)
 library(readr)
 library(reshape2)
+library(fmsb)
 
 # Setting the working directory to the directory which contains this script
 if (exists("RStudio.Version")){
@@ -32,14 +33,18 @@ clusters      <- unique(prod_clusters$cluster)
 prod_clusters$ecModel<- gsub('-','_',prod_clusters$ecModel)
 prod_clusters$ecModel<- gsub(',','_',prod_clusters$ecModel)
 prod_clusters$ecModel<- substr(prod_clusters$ecModel,3,(nchar(prod_clusters$ecModel)-4))
-prod_clusters$ecModel<- gsub('_','',prod_clusters$ecModel)
+#prod_clusters$ecModel<- gsub('_','',prod_clusters$ecModel)
+prod_clusters$ecModel<- gsub('__','',prod_clusters$ecModel)
 prod_clusters$ecModel<-tolower(prod_clusters$ecModel)
 prod_clusters$ecModel<-gsub('[0-9]+', '', prod_clusters$ecModel)
+prod_clusters$ecModel[grep('butanediol',prod_clusters$ecModel)] <- 'rrbutanediol'
+idxs <- grep('_',substr(prod_clusters$ecModel,1,1))
+prod_clusters$ecModel[idxs] <- substr(prod_clusters$ecModel[idxs],2,nchar(prod_clusters$ecModel[idxs]))
 #
-allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_mech_validated.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_L3.txt',sep='\t',stringsAsFactors = TRUE)
 targetsMat    <- allTargetsMat
 rownames(targetsMat) <- targetsMat$shortNames
-targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
+#targetsMat <- targetsMat[rowSums(targetsMat[,5:ncol(targetsMat)])>0,]
 newDF <- targetsMat[,5:ncol(targetsMat)]
 newDF <- as.data.frame(t(newDF))
 names <- data.frame(names=rownames(newDF))
@@ -57,10 +62,14 @@ for (cluster in clusters){
   products <- rownames(clust_mat)
   products <- paste(products,collapse = ' // ')
   newRow <- data.frame(cluster,length(indexes),products)
+  scores <- c(0,0.25,4)
   for (i in 1:3){
+    
     tempMat <- clust_mat
-    tempMat[tempMat != i] <- 0
-    tempMat[tempMat == i] <- 1
+    tempMat[tempMat == scores[i]] <- 100
+    
+    tempMat[tempMat != scores[i] & tempMat != 100] <- 0
+    tempMat[tempMat == 100] <- 1
     indexes2  <- which(colSums(tempMat)==nChems)
     genes     <- colnames(clust_mat)[indexes2]
     action    <- rep(actions[i],length(indexes2))
@@ -74,7 +83,7 @@ for (cluster in clusters){
 colnames(strains_summary) <- c('cluster','n_prods','chemicals','KOs','KDs','OEs')
 fileName <- '../results/cluster_strains/cluster_strains_summary.txt'
 write.table(strains_summary,fileName,quote=FALSE,row.names = FALSE,sep = '\t')
-strains_summary <- strains_summary[which(strains_summary$n_prods>2),]
+strains_summary <- strains_summary[which(strains_summary$n_prods>=3),]
 newDF <- data.frame(OE=strains_summary$OEs,KD=strains_summary$KDs,KO=strains_summary$KOs)
 rownames(newDF) <- gsub('cluster_','c',strains_summary$cluster)
 legLabels <- c('OE','KD','KO')

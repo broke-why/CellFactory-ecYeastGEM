@@ -1,9 +1,0 @@
-genes	enzymes	shortNames	MWs	pathways	actions	k_scores	EV_type	OE	minUsage	maxUsage	pUsage	unique	conectivity	groups	priority	foldChange_yield	foldChange_pRate	FCC
-BPS	A4ZYX5	BPS	43.039		OE	1000	tightly_const	2	7.86566092222539e-06	7.86566092224112e-06	7.86566092222539e-06	1	2	0	1	1.00187187903525	1.00187452498512	0
-TXS	A0A161I263	TXS	57.849		OE	1000	tightly_const	2	0.00155740086260063	0.00155740086260374	0.00155740086260063	1	6	0	1	1.98900911564256	1.99179282278885	0.995939408849667
-YDR502C	P19358	SAM2	42.2555	sce00270  Cysteine and methionine metabolism sce01110  Biosynthesis of secondary metabolites sce01230  Biosynthesis of amino acids	KD	0.293827460547136	subOpt_isoenz	0	0	2.14145067005705e-09	0	0	7	2	2	1.00000000046826	1.00000000000001	0
-YBL039C	P28274	URA7	64.70953	sce00240  Pyrimidine metabolism	KD	0.258201785040243	subOpt_isoenz	0	0	3.67356730947926e-08	0	0	12	7	2	1.00000000044596	1.0000000000001	0
-YLR438W	P07991	CAR2	46.08557	sce00330  Arginine and proline metabolism sce01110  Biosynthesis of secondary metabolites sce01130  Biosynthesis of antibiotics	KO	0	subOpt_isoenz	0	0	1.63844658019204e-11	0	1	4	0	2	1.00000000046829	1.00000000000001	0
-YER070W	P21524	RNR1	99.56021	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.02830997427589e-10	0	0	24	17	3	1.00000000047328	0.999999999999997	0
-YGR180C	P49723	RNR4	40.05407	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	2.34498685299656e-09	0	0	24	17	3	1.00000000047226	0.999999999999997	0
-YIL066C	P21672	RNR3	97.51369	sce00230  Purine metabolism sce00240  Pyrimidine metabolism sce00480  Glutathione metabolism	KO	0	subOpt_isoenz	0	0	9.40629516197233e-10	0	0	24	17	3	1.00000000046771	1.00000000000001	0

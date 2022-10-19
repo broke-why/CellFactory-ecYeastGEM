@@ -1,9 +1,9 @@
 rxn_IDs	rxnNames	K_score	grRules	rxn_formula
 r_4224No1	Sodium transport ATPase 5 (EC 3.6.3.7) (No1)	1000	YDR038C	pmet_r_4224[c] + 1.6026e-06 prot_Q12691[c] => ADP[c] + H+[c] + phosphate[c] + sodium[e]
-r_1244	phosphate transport	46.2961166074996	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
-r_2034	pyruvate transport	2.08875899047442	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
-r_1194	L-glutamate transport	0.226729032861341	YPR021C	L-glutamate[c] => L-glutamate[m]
-r_1237	ornithine transport	0.163390624011538	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
+r_1244	phosphate transport	46.2961166111626	YBR296C or YCR037C or YJL198W or YML123C or YNR013C	H+[e] + phosphate[e] => H+[c] + phosphate[c]
+r_2034	pyruvate transport	2.08875899036646	(YGL080W and YGR243W) or (YGL080W and YHR162W)	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]
+r_1194	L-glutamate transport	0.226729032861348	YPR021C	L-glutamate[c] => L-glutamate[m]
+r_1237	ornithine transport	0.163390624011548	YOR130C	H+[c] + ornithine[m] => H+[m] + ornithine[c]
 r_1129	coenzyme A transport	0	YHR002W	coenzyme A[c] => coenzyme A[m]
 r_1120	carnithine-acetylcarnithine carrier	1000	YOR100C	(R)-carnitine[m] + O-acetylcarnitine[c] => (R)-carnitine[c] + O-acetylcarnitine[m]
 r_1258_REV	sodium proton antiporter (reversible)	1000	YDR456W or YLR138W	H+[c] + sodium[e] => H+[e] + sodium[c]
