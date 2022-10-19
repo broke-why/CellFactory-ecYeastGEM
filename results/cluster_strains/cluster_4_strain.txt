@@ -1,4 +1,5 @@
 genes	action
-GND1	OE
-ZWF1	OE
-RKI1	OE
+PDB1	OE
+PDA1	OE
+PDX1	OE
+LAT1	OE
