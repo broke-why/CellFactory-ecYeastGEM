@@ -126,8 +126,8 @@ newDF$family <- factor(newDF$family,levels = famLvls)
 orgStr <- as.character(origin)
 orgStr[orgStr=='1']<-'N'
 orgStr[orgStr=='0']<-'H'
-Plim[Plim==0] <- 0.5
-Plim[Plim==1] <- 1
+Plim[Plim==0] <- 5
+Plim[Plim==1] <- 10
 newDF$Plim <- factor(Plim,levels = unique(Plim))
 newDF$origin <- factor(orgStr,levels = unique(orgStr))
 #PCA
@@ -151,38 +151,10 @@ getPalette2  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
 colnames(tsne_plot)[(ncol(tsne_plot)-2)]<- 'family'
 colnames(tsne_plot)[(ncol(tsne_plot)-1)]<- 'Plim'
 colnames(tsne_plot)[(ncol(tsne_plot))]<- 'origin'
-p <- plot_ly(tsne_plot,x=~x, y=~y, text =~newDF.chemical, type="scatter", mode="markers", color=~family,colors = getPalette2(colourCount),symbol=~origin,symbols=c(8,20),size=8)%>% 
+p <- plot_ly(tsne_plot,x=~x, y=~y, text =~newDF.chemical, type="scatter", mode="markers", color=~family,colors = getPalette2(colourCount),symbol=~origin,symbols=c(8,20),size=Plim)%>% 
 layout(title= list(text = paste('tsne_',i,'_perplexity')))
 plotTitle <- paste('../results/plots/cluster_analysis/tSNE_allTargets_',i,'.pdf',sep='')
-#orca(p, plotTitle,width=900,height=600)
+orca(p, plotTitle,width=900,height=600)
 name <-paste("../results/plots/tsne/tsne_",i,".html",sep = '')
-saveWidget(p, name, selfcontained = F, libdir = "lib")
-}
-idxs <- c()
-for (i in 1:nrow(metTurnover)){
-  chemical <- rownames(metTurnover)[i]
-  #chemical <- substr(chemical, 1, (nchar(chemical)-8))
-  index<- which(prodCap$compound==chemical)
-  idxs <- c(idxs,index)
-}
-metsDF <- data.frame(prodCap$compound,prodCap$family,metTurnover)
-colnames(metsDF)[1] <- 'family'
-colnames(metsDF)[2] <- 'compound'
-for (i in 1:25)
-{
-  set.seed(18) # Set a seed if you want reproducible results
-  perplxty <- i
-  tsne_out  <- Rtsne(metTurnover,dims=2,perplexity=perplxty, max_iter = 1000,theta=0.1) # Run TSNE
-  tsne_plot <- data.frame(x = tsne_out$Y[,1], y = tsne_out$Y[,2],metsDF$compound,metsDF$family)
-  #Define color pallete
-  colourCount2 <- length(unique(tsne_plot$family))
-  getPalette2  <- colorRampPalette(brewer.pal(colourCount, "Paired"))
-  colnames(tsne_plot)[3] <- 'family'
-  colnames(tsne_plot)[4] <- 'compound'
-  p <- plot_ly(tsne_plot,x=~x, y=~y, text =~compound, type="scatter", mode="markers", color=~family,colors = getPalette2(colourCount))%>% 
-    layout(title= list(text = paste('tsne_',i,'_perplexity')))
-  plotTitle <- paste('../results/plots/tSNE_metTO_',i,'.html',sep='')
-  #orca(p, plotTitle)
-  #name <-paste(plotTitle,sep = '')
-  saveWidget(p, plotTitle, selfcontained = F, libdir = "lib")
-}
+#saveWidget(p, name, selfcontained = F, libdir = "lib")
+}2
