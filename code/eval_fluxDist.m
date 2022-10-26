@@ -20,35 +20,40 @@ Prot_cost =[];
 precursors = {'D-glucose 6-phosphate' 'D-fructose 6-phosphate' 'ribose-5-phosphate' ...
               'D-erythrose 4-phosphate' 'glyceraldehyde 3-phosphate' '3-phosphonato-D-glycerate(3-)' ...
               'phosphoenolpyruvate' 'pyruvate' 'acetyl-CoA' '2-oxoglutarate' ...
-              'succinyl-CoA' 'oxaloacetate'};                  
+              'succinyl-CoA' 'oxaloacetate'}; 
+precursors = {'ATP' 'NADH' 'NADPH' 'coenzyme A'}; 
 compartments = [1 1 1 1 1 1 1 1 1 1 9 1];  
 prec_mTO = table(precursors');
 %Loop through all maxRate folders
 mkdir('../results/production_capabilities/yieldPlots')
 
 % metTOsWT = [];
-% ecModel = changeMedia_batch(ecModel_batch,'D-glucose exchange (reversible)','Min');
-% 
-% [~,~,~,fluxDist,~,~] = calculate_potential(ecModel,growthPos,growthPos,CS_index,0.180,true);
-% 
-% for k=1:length(precursors)
-%     midx = find(strcmpi(ecModel_batch.metNames,precursors{k}));
-%     midx = midx(find(ecModel_batch.metComps(midx) == compartments(k)));
-%     if ~isempty(midx)
-%         rxns = find(ecModel_batch.S(midx,:));
-%         [iA,rxns2] = ismember(ecModel_batch.rxns(rxns),fluxDist.rxns);
-%         rxns = rxns(iA);
-%         rxns2 = rxns2(find(rxns2));
-%         %compute turnover numbers
-%         metTO = 0.5*sum(abs(ecModel_batch.S(midx,rxns))*fluxDist.flux(rxns2));
-%     else
-%         disp(precursors{k})
-%         pause
-%     end
-%     
-%     metTOsWT = [metTOsWT;metTO];
-%     
-% end
+ecModelWT = changeMedia_batch(ecModel_batch,'D-glucose exchange (reversible)','Min',1);
+growthPos = find(strcmpi(ecModelWT.rxnNames,'growth'));
+CS_index = find(strcmpi(ecModelWT.rxnNames,'D-glucose exchange (reversible)'));
+[~,~,~,fluxDist,~,~] = calculate_potential(ecModelWT,growthPos,growthPos,CS_index,0.180,true);
+metTOsWT = [];
+for k=1:length(precursors)
+    midx = find(strcmpi(ecModel_batch.metNames,precursors{k}));
+    %midx = midx(find(ecModel_batch.metComps(midx) == compartments(k)));
+    metTO = 0;
+    for i=1:length(midx)
+        
+        if ~isempty(midx)
+            rxns = find(ecModel_batch.S(midx(i),:));
+            [iA,rxns2] = ismember(ecModel_batch.rxns(rxns),fluxDist.rxns);
+            rxns = rxns(iA);
+            rxns2 = rxns2(find(rxns2));
+            %compute turnover numbers
+            metTO = metTO + 0.5*sum(abs(ecModel_batch.S(midx(i),rxns))*fluxDist.flux(rxns2));
+        else
+            disp(precursors{k})
+            pause
+        end
+    end
+    metTOsWT = [metTOsWT;metTO];
+    
+end
 
 
 for i=1:height(chemicals_info)
@@ -123,6 +128,7 @@ for i=1:height(chemicals_info)
                 str = str(3:(end-3));
                 str = regexprep(str,'[^a-zA-Z]','');
                 str = strrep(str,',','_');
+                str = strrep(str,'.','');
                 str = strrep(str,'.mat','');
                 str = strrep(str,'(','');
                 str = strrep(str,')','');
@@ -132,19 +138,23 @@ for i=1:height(chemicals_info)
                 metTOs = [];
                 for k=1:length(precursors)
                     midx = find(strcmpi(ecModel_batch.metNames,precursors{k}));
-                    midx = midx(find(ecModel_batch.metComps(midx) == compartments(k)));
+                    %midx = midx(find(ecModel_batch.metComps(midx) == compartments(k)));
+                    metTO = 0;
+                    for j=1:numel(midx)
                     if ~isempty(midx)
-                        rxns = find(ecModel_batch.S(midx,:));
+                        rxns = find(ecModel_batch.S(midx(j),:));
                         [iA,rxns2] = ismember(ecModel_batch.rxns(rxns),fluxDist_1.rxns);
                         rxns = rxns(iA);
                         rxns2 = rxns2(find(rxns2));
                         %compute turnover numbers
-                        metTO = 0.5*sum(abs(ecModel_batch.S(midx,rxns))*fluxDist_1.flux(rxns2));
+                        metTO = metTO + 0.5*sum(abs(ecModel_batch.S(midx(j),rxns))*fluxDist_1.flux(rxns2));                        
                     else
                         disp(precursors{k})
                     end 
+                    end
                     metTOs = [metTOs;metTO];
                 end
+                metTOs = metTOs./metTOsWT;
                 eval(['prec_mTO.' str '=metTOs;'])
                 %now with GEM
 %                 if ~isempty(indexGEM)
@@ -186,7 +196,9 @@ elseif protFree
     file2 = '../results/production_capabilities/proteinLimitations_allChemicals.txt';
     file3 = '../results/fluxDist_distance_allChemicals_noProt.txt';
     file4 = '../results/fluxDistributions_allChemicals.txt';
-    file5 = '../results/met_precursors_turnovers_allChemicals.txt';
+    file5 = '../results/met_cofactors_turnovers_allChemicals.txt';
+    %file5 = '../results/met_precursors_turnovers_allChemicals.txt';
+
 end
     
 prod_capabilities.Properties.VariableNames = {'compound' 'type' 'family' 'MW' 'bioYield_gem' 'prodYield_gem' 'prodRate_gem' 'bioYield_ec' 'prodYield_ec' 'prodRate_ec' 'cFlux_l' 'cFlux_h' 'Pburden' 'CCMratio' 'protScaled'};
