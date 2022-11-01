@@ -77,7 +77,7 @@ for (cluster in clusters){
     newRow <- cbind(newRow,length(indexes2))
   }
   strains_summary <- rbind(strains_summary,newRow)
-  fileName <- paste('../results/cluster_strains/',cluster,'_strain.txt',sep='')
+  fileName <- paste('../results/cluster_strains/cluster_',cluster,'_strain.txt',sep='')
   write.table(newStrain,fileName,quote=FALSE,row.names = FALSE,sep = '\t')
 }
 colnames(strains_summary) <- c('cluster','n_prods','chemicals','KOs','KDs','OEs')
