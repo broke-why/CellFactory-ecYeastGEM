@@ -1,4 +1,5 @@
 genes	action
+LPP1	KD
 PDB1	OE
 PDA1	OE
 PDX1	OE

@@ -1,6 +1,7 @@
 genes	action
 MAE1	KO
 LPP1	KD
+ARO4	OE
 ARO1	OE
 ARO2	OE
 SOL3	OE

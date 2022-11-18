@@ -1,4 +1,6 @@
 genes	action
+ARG5,6	KD
+ARG8	KD
 ERG12	OE
 ERG8	OE
 MVD1	OE

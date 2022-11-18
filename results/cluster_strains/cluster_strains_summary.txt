@@ -1,17 +1,9 @@
 cluster	n_prods	chemicals	KOs	KDs	OEs
-cluster_1	9	linalool // artemisinic_acid // beta_amyrin // geraniol // limonene // amorphadiene // santalene // squalene // farnesene	1	0	9
-cluster_2	2	triacylglycerol // ergosterol	0	0	30
-cluster_3	5	hp_malcoa // ffas // laurate // oleate // palmitoleate	0	3	14
-cluster_4	13	cysteine // alanine // asparagine // aspartate // histidine // homoserine // isoleucine // methionine // serine // threonine // valine // hp_asp // n_butanol	0	0	3
-cluster_5	8	proline // glutathione // putrescine // spermine // ornithine // arginine // citrulline // lysine	0	2	12
-cluster_6	5	methylbutanol // leucine // itaconic_acid // glutamate // glutamine	1	4	9
-cluster_7	8	fumaric_acid // malate // citrate // succinate // oxoglutarate // acetate // glycolate // glycine	4	4	3
-cluster_8	4	adipic_acid // cis_muconate // glycerol // hydroxymandelic_acid	1	7	3
-cluster_9	6	tryptophan // tyrosine // cinnamate // mandelic_acid // phenylethanol // phenylalanine	1	9	7
-cluster_10	4	lactate // pyruvate // rrbutanediol // isobutanol	0	5	9
-cluster_11	12	psilocybin // catechin // genistein // kaempferol // astaxanthin // lupeol // patchoulol // glycyrrhetinic_acid // lycopene // miltiradiene // s_reticuline // ergothioneine	0	6	5
-cluster_12	16	betaxanthin // beta_carotene // oleanolate // protopanaxadiol // nootkatone // taxadien_alpha_yl_acetate // valencene // naringenin // quercetin // vanillin_beta_glucoside // beta_ionone // choline // cinnamoyltropine // nicotianamine // caffeic_acid // docosanol	0	2	5
-cluster_13	5	l_pac // hexanoate // coumaric_acid // rosmarinic_acid // resveratrol	8	3	2
-cluster_14	3	ara // dha // epa	0	5	14
-cluster_15	2	hypoxanthine // xanthine	5	4	57
-cluster_16	2	tyrosol // salidroside	21	6	10
+1	16	betaxanthin // caffeic_acid // vanillin_beta_glucoside // beta_ionone // glycyrrhetinic_acid // miltiradiene // lycopene // taxadien_alpha_yl_acetate // protopanaxadiol // genistein // quercetin // catechin // kaempferol // patchoulol // oleanolate // lupeol	7	10	0
+2	8	beta_carotene // cinnamoyltropine // ara // dha // epa // astaxanthin // psilocybin // docosanol	7	10	0
+3	8	ergosterol // squalene // santalene // farnesene // amorphadiene // limonene // geraniol // artemisinic_acid	0	1	7
+4	5	itaconic_acid // glutamine // proline // putrescine // spermine	0	1	4
+5	4	valencene // nootkatone // linalool // beta_amyrin	0	2	3
+6	4	tryptophan // adipic_acid // cis_muconate // hydroxymandelic_acid	1	1	1
+7	4	phenylalanine // phenylethanol // mandelic_acid // cinnamate	1	1	8
+8	3	ffas // oleate // palmitoleate	0	5	10
