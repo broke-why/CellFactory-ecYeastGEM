@@ -1,0 +1,53 @@
+cluster	mw	type	family	ecModel	id
+1	358.3	heterologous	terpene	ecBetaxanthin.mat	betaxanthin
+1	180.16	heterologous	organic acid	ecCaffeic_acid.mat	caffeic_acid
+1	314.29	heterologous	aromatic	ecVanillin_beta_glucoside.mat	vanillin_beta_glucoside
+1	192.3	heterologous	aromatic	ecbeta_Ionone.mat	beta_ionone
+1	470.7	heterologous	terpene	ecGlycyrrhetinic_acid.mat	glycyrrhetinic_acid
+1	272.5	heterologous	terpene	ecMiltiradiene.mat	miltiradiene
+1	536.873	heterologous	terpene	ecLycopene.mat	lycopene
+1	330.5	heterologous	terpene	ecTaxadien_5alpha_yl_acetate.mat	taxadien_alpha_yl_acetate
+1	460.73	heterologous	terpene	ecProtopanaxadiol.mat	protopanaxadiol
+1	270.241	heterologous	flavonoid	ecGenistein.mat	genistein
+1	302.236	heterologous	flavonoid	ecQuercetin.mat	quercetin
+1	290.26	heterologous	flavonoid	ecCatechin.mat	catechin
+1	286.23	heterologous	flavonoid	ecKaempferol.mat	kaempferol
+1	222.36	heterologous	terpene	ecPatchoulol.mat	patchoulol
+1	456.7	heterologous	terpene	ecOleanolate.mat	oleanolate
+1	426.72	heterologous	terpene	ecLupeol.mat	lupeol
+2	536.8726	heterologous	terpene	ecbeta_Carotene.mat	beta_carotene
+2	307.82	heterologous	alkaloid	ecCinnamoyltropine.mat	cinnamoyltropine
+2	304.474	heterologous	fatty acids and lipids	ecARA.mat	ara
+2	328.488	heterologous	fatty acids and lipids	ecDHA.mat	dha
+2	302.451	heterologous	fatty acids and lipids	ecEPA.mat	epa
+2	596.841	heterologous	terpene	ecAstaxanthin.mat	astaxanthin
+2	284.248101	heterologous	alkaloid	ecPsilocybin.mat	psilocybin
+2	326.61	heterologous	alcohol	ecDocosanol.mat	docosanol
+3	396.64836	native	fatty acids and lipids	ecErgosterol.mat	ergosterol
+3	410.73	heterologous	terpene	ecSqualene.mat	squalene
+3	204.35	heterologous	terpene	ecSantalene.mat	santalene
+3	204.36	heterologous	terpene	ecFarnesene.mat	farnesene
+3	204.351	heterologous	terpene	ecAmorphadiene.mat	amorphadiene
+3	136.24	heterologous	terpene	ecLimonene.mat	limonene
+3	154.25	heterologous	terpene	ecGeraniol.mat	geraniol
+3	234.33	heterologous	terpene	ecArtemisinic_acid.mat	artemisinic_acid
+4	130.1	heterologous	organic acid	ecItaconic_acid.mat	itaconic_acid
+4	146.14458	native	amino acid	ecglutamine.mat	glutamine
+4	115.1305	native	amino acid	ecProline.mat	proline
+4	90.1674	native	bioamine	ecPutrescine.mat	putrescine
+4	206.372	native	bioamine	ecSpermine.mat	spermine
+5	204.35	heterologous	terpene	ecValencene.mat	valencene
+5	218.33	heterologous	terpene	ecNootkatone.mat	nootkatone
+5	154.25	heterologous	terpene	ecLinalool.mat	linalool
+5	426.72	heterologous	terpene	ecbeta_Amyrin.mat	beta_amyrin
+6	204.22526	native	amino acid	ecTryptophan.mat	tryptophan
+6	146.14	heterologous	organic acid	ecAdipic_acid.mat	adipic_acid
+6	142.11	heterologous	organic acid	eccis_Muconate.mat	cis_muconate
+6	168.148	heterologous	aromatic	ec4-hydroxymandelic_acid.mat	hydroxymandelic_acid
+7	165.18918	native	amino acid	ecPhenylalanine.mat	phenylalanine
+7	122.1644	native	alcohol	ec2-phenylethanol.mat	phenylethanol
+7	152.1473	heterologous	aromatic	ecmandelic_acid.mat	mandelic_acid
+7	148.1586	heterologous	aromatic	ecCinnamate.mat	cinnamate
+8	396.64836	native	fatty acids and lipids	ecFFAs.mat	ffas
+8	282.4614	native	fatty acids and lipids	ecOleate.mat	oleate
+8	253.40026	native	fatty acids and lipids	ecPalmitoleate.mat	palmitoleate

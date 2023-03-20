@@ -26,7 +26,7 @@ dir.create('../results/cluster_strains')
 families <- c('amino acid','alkaloid','organic acid','protein','alcohol','terpene','fatty acids and lipids','flavonoid','aromatic','bioamine')
 codes    <- c('_AA','_alk','_oAc','_pro','_alc','_ter','_FA','_fla','_aro','_bioAm')
 #Load chemicals cluster info
-filename      <- '../data/product_clusters.txt'
+filename      <- '../results/cluster_strains/product_clusters.txt'
 prod_clusters <- read_delim(filename,"\t", escape_double = FALSE, na = "NA",trim_ws = TRUE)
 clusters      <- unique(prod_clusters$cluster)
 #reformat
@@ -77,7 +77,7 @@ for (cluster in clusters){
     newRow <- cbind(newRow,length(indexes2))
   }
   strains_summary <- rbind(strains_summary,newRow)
-  fileName <- paste('../results/cluster_strains/',cluster,'_strain.txt',sep='')
+  fileName <- paste('../results/cluster_strains/cluster_',cluster,'_strain.txt',sep='')
   write.table(newStrain,fileName,quote=FALSE,row.names = FALSE,sep = '\t')
 }
 colnames(strains_summary) <- c('cluster','n_prods','chemicals','KOs','KDs','OEs')
@@ -88,7 +88,7 @@ newDF <- data.frame(OE=strains_summary$OEs,KD=strains_summary$KDs,KO=strains_sum
 rownames(newDF) <- gsub('cluster_','c',strains_summary$cluster)
 legLabels <- c('OE','KD','KO')
 newDF <- t(newDF)
-maxLim <- 20# max(newDF)
+maxLim <- 12# max(newDF)
 minLim <- 0
 newDF <- rbind(rep(maxLim,ncol(newDF)),rep(0,ncol(newDF)),newDF)
 newDF <- as.data.frame(newDF,stringsAsFactors = FALSE)
@@ -96,8 +96,8 @@ newDF <- as.data.frame(newDF,stringsAsFactors = FALSE)
 #plot spider plot
 colors_border = c(rgb(0.8,0.6,0,0.8), rgb(0.4,0.4,0.40,0.8),rgb(0.1,0,0.8,0.8))
 colors_in     = c(rgb(0.8,0.6,0,0.2), rgb(0.4,0.4,0.40,0.2),rgb(0.1,0,0.8,0.2))
-plotName <- '../results/plots/panGenes_by_clusters.png'
-png(plotName,width = 550, height = 500)
+plotName <- '../results/plots/panGenes_by_clusters.pdf'
+pdf(plotName,width = 6, height = 5.5)
 radarchart( newDF , axistype=1 , 
             #custom polygon
             pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,

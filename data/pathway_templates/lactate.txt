@@ -1,7 +1,0 @@
-Chemicals	RxnID	Description	Reaction	Gene	Protein	Enzyme	Kcat (1/s)	MW (KDa)	s.a.(µmol/min/mg)	Similar species	_ (h-1)	product yield in vivo	in silico	Medium	OE	deletion	Ref
-Lactic acid	1	L-lactate dehydrogenase	s_1399 + s_1203 + s_0794 + 3.95999e-05 prot_P19858 -> s_0063 + s_1198	LDHA (Bos taurus)	P19858	1.1.1.27	7.0146	36.598	11.5		0.29	0.89 g/g	0.77 g/g	YEP		"GPD1,CYB2,PDC1,ADH1, ALD6"	Introduction of a bacterial acetyl-CoA synthesis pathway improves lactic acid production in Saccharomyces cerevisiae
-	2	acetaldehyde dehydrogenase	s_0359 + s_0529 + s_1198 + 1.76929e-05 prot_P77445 -> s_0373 + s_1203 + s_0794	EutE (E.coli)	P77445	1.2.1.10	15.7	49.022									
-	3	draw_prot_P19858	36.598 prot_pool  -> prot_P19858 														
-	4	draw_prot_P77445	49.022 prot_pool  -> prot_P77445 														
-	5	L-lactate transport	s_0063 -> s_0064														
-	6	L-lactate exchange	s_0064 ->														
