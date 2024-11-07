@@ -52,6 +52,7 @@ helpsearch*/
 ##########################
 *.RData
 *.Rhistory
+/.Rproj.user
 
 # Non-complying tables #
 ########################
@@ -70,3 +71,7 @@ helpsearch*/
 *.css
 *.pdf
 *.docx
+
+/.idea
+.Rproj.user
+/CellFactory-ecYeastGEM.Rproj
