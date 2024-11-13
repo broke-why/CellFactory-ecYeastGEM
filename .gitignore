@@ -59,17 +59,14 @@ helpsearch*/
 *.xls
 *.xlsx
 *.tab
-*.png
 *.jpg
 *.tiff
-*.html
 *.jpeg
 *.mat
 *fluxLeak_targets.txt
 *.js
 *.map
 *.css
-*.pdf
 *.docx
 
 /.idea
