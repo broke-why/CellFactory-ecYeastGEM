@@ -1,4 +1,4 @@
-clear
+clear;
 current = pwd;
 %subSystems_GEM = mapEnzymeSubSystems(ecModel_batch.enzymes,ecModel_batch);
 chemicals_info = readtable('../data/chemicals_info.txt','Delimiter','\t');

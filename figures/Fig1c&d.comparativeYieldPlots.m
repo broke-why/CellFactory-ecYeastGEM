@@ -125,7 +125,7 @@ for i=1:height(chemicals_info)
                 end
                 %save plot file a jpg
                 set(gca,'FontSize',22)
-                saveas(gcf,['../results/production_capabilities/yieldPlots/'  compound '_yieldPlot.jpg'])
+                saveas(gcf,['output/fig1_yieldPlots/'  compound '_yieldPlot.jpg'])
                 hold off
                 close all
             end

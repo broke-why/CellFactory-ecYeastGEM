@@ -37,7 +37,7 @@ blank_theme <- theme_minimal()+
   )
 
 #load matrix indicating the relation between gene targets and chemical products
-allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_L3_discrete.txt',sep='\t',stringsAsFactors = TRUE)
+allTargetsMat <- read.csv('../results/production_targets/targetsMatrix_L3.txt',sep='\t',stringsAsFactors = TRUE)
 prot_lims <- read.csv('../results/production_capabilities/proteinLimitations_allChemicals.txt',sep='\t',stringsAsFactors = TRUE)
 #scatter plot for prot limitations
 p <- ggplot(prot_lims, aes(x=prot_lims$Prod_FC, y=prot_lims$Prot_cost)) +
@@ -188,9 +188,8 @@ radarchart( commonTargets , axistype=1 ,
             cglcol="grey", cglty=1, axislabcol="black", caxislabels=seq(minLim,maxLim*100,(maxLim-minLim)/4), cglwd=1.5,
             #custom labels
             vlcex=2, calcex = 1.5)
-plot(p)
+#plot(p)
 legend(x=1.1, y=1.1, legend = rows, bty = "n", pch=20 , col=colors_in , text.col = "black", cex=1.5, pt.cex=3)
 dev.off()
-
 
 
