@@ -25,8 +25,8 @@ def simulateGrowth(model, alpha):
     # fix growth and max product
     tmpgrow = sol.objective_value * 0.999*alpha
     tmpmodel.reactions.get_by_id('r_2111').bounds = (tmpgrow, tmpgrow)
-    product_id='r_1589'
-    # tmpmodel.objective = 'r_2052'
+    # product_id='r_1589'
+    product_id = 'r_2052'
     tmpmodel.objective = product_id
     product_max = tmpmodel.optimize()
     # print(product_max.objective_value)
@@ -163,7 +163,7 @@ cons_g_f0['actions'] = actions
 cons_g_f0['gene'] = list(cons_g_f0.index)
 
 #cons_g_f.to_excel(r"C:\Users\Administrator\Desktop\product production enhance targets.xlsx")
-cons_g_f0.to_excel(r"code/GEM_simulation/output/fseof_result_2PE.xlsx")
+cons_g_f0.to_excel(r"code/GEM_simulation/output/fseof_result.xlsx")
 
 
 
