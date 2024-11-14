@@ -26,7 +26,7 @@ def simulateGrowth(model, alpha):
     tmpgrow = sol.objective_value * 0.999*alpha
     tmpmodel.reactions.get_by_id('r_2111').bounds = (tmpgrow, tmpgrow)
     # product_id='r_1589'
-    product_id = 'r_2052'
+    product_id = 'r_2051'
     tmpmodel.objective = product_id
     product_max = tmpmodel.optimize()
     # print(product_max.objective_value)
@@ -60,9 +60,9 @@ def compare_substrate(model, Ysx):
         tmpflux = simulateGrowth(model, a)
         try:
             v_matrix.append(tmpflux.fluxes)
-            k_matrix.append(np.asarray(tmpflux.fluxes)/     # 相同项数的数组除以数组，我没想到这个
+            k_matrix.append(np.asarray(tmpflux.fluxes)/
                             np.asarray(flux_WT.fluxes))
-        except AttributeError:                              # 有nan就会报错，不管它，承昱这么写就不报错可以出结果了
+        except AttributeError:
             v_matrix.append(tmpflux)
             k_matrix.append(tmpflux)
         # print(a)
