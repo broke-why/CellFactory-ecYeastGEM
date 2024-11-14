@@ -34,8 +34,8 @@ disp(['*The production reaction for ' product_name ' has been found under the ID
 % Provide a directory path for the results files
 %results folder name
 % results_folder = 'results/production_targets/spermidine_targets';
-results_folder = strcat(current,'/../results/production_targets/spermidine_targets');
-mkdir(results_folder)
+results_folder_base = strcat(current,'/../results/production_targets/spermidine_targets');
+mkdir(results_folder_base);
 
 
 % 4. Constrain ecModel
@@ -70,12 +70,36 @@ disp(['a suboptimal biomass yield of: ' num2str(0.5*expYield) ' to: ' num2str(2*
 
 
 % 7. Run ecFactory method
-try
-    % swich workdir to ecFactory code folder
-    cd(ecFactory_path);
-    [optStrain,candidates,step] = run_ecFactory(const_ecModel,modelParam,expYield,results_folder,true);
-catch
-    disp('The model is not suitable for the ecFactory method')
+% try
+%     % swich workdir to ecFactory code folder
+%     cd(ecFactory_path);
+%     [optStrain,candidates,step] = run_ecFactory(const_ecModel,modelParam,expYield,results_folder,true);
+% catch
+%     disp('The model is not suitable for the ecFactory method')
+% end
+
+for i = 1:100
+    % Set random seed
+    rng(i);
+    
+    % Create a folder for this iteration's results
+    results_folder = strcat(results_folder_base, '/run_', num2str(i));
+
+    % Check if the results folder already exists
+    if exist(results_folder, 'dir')
+        disp(['Results folder for run ' num2str(i) ' already exists. Skipping this run.']);
+        continue;
+    end
+    
+    mkdir(results_folder);
+    
+    try
+        % Switch workdir to ecFactory code folder
+        cd(ecFactory_path);
+        [optStrain,candidates,step] = run_ecFactory(const_ecModel,modelParam,expYield,results_folder,true);
+    catch
+        disp(['The model is not suitable for the ecFactory method in run ' num2str(i)]);
+    end
 end
 
 % return workdir
