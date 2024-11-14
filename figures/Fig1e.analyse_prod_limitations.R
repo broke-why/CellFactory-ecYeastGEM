@@ -27,7 +27,8 @@ filename        <- paste('../results/production_capabilities/prodCapabilities_al
 df <- read.csv(filename,sep='\t',stringsAsFactors = FALSE)
 df$yield2 <- (df$prodRate_ec/df$cFlux_h)*(df$MW/180)
 df$prodYield_ec <- df$prodYield_ec*(df$MW/180)
-df[, "maxYield"] <- apply(df[, c(9,15)], 1, max)
+#df[, "maxYield"] <- apply(df[, c(9,16)], 1, max)
+df$maxYield <- pmax(df$yield2, df$prodYield_ec, na.rm = TRUE)
 df$maxYield    <- 1/df$maxYield
 df$protYield <- df$Pburden/(df$prodRate_ec*(df$MW/1000))
 df$prodYield_ec <- 1/df$prodYield_ec
@@ -48,12 +49,15 @@ colourCount2 <- length(codes)
 getPalette2  <- colorRampPalette(brewer.pal(colourCount2, "Paired"))
 df$limitation <- FALSE
 df$limitation[df$Pburden==max(df$Pburden)] <- TRUE
-df$MW <-df$MW/180
+#df$MW <-df$MW/180
 #df$limitation[df$Pburden==max(df$Pburden)] <- 'protein'
 p <- ggplot(df, aes(x=maxYield,y=protYield,shape=type,size=MW,color=family)) +
      geom_point(alpha=0.7) + theme_bw(base_size = 2*12)+ scale_x_log10()  + scale_y_log10() +
      scale_color_brewer(palette="Paired")+xlab('Substrate cost [g glucose/g product]') + ylab('Protein cost [g protein/g product]') +
-     scale_size_continuous(range = c(1, 12)) #+ scale_shape(aes(solid = limitation))
+     scale_size_continuous(range = c(1, 12)) + scale_size_continuous(range = c(1, 12), breaks = c(100, 200, 300))+guides(
+                                    shape = guide_legend(order = 1,override.aes = list(size = 4)),
+                                    color = guide_legend(order = 2,override.aes = list(size = 5)),  
+                                    size = guide_legend(order = 3))  #+ scale_shape(aes(solid = limitation))
 pdf('../results/production_capabilities/plots/protCost_vs_subsCost.pdf',width = 9, height = 8)
 plot(p)
 dev.off()
